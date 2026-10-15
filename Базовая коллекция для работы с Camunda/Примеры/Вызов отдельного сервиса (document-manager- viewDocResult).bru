@@ -1,0 +1,34 @@
+meta {
+  name: Вызов отдельного сервиса (document-manager: viewDocResult)
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://dev-bcc-gf-gateway-green-front.apps.dev-env.bcc.kz/document-manager/View/GetViewDocs?processId=camunda_course_main:1:c649dd99-6be0-11ee-bf62-0a580aad06b3&viewId=781
+  body: json
+  auth: inherit
+}
+
+params:query {
+  processId: camunda_course_main:1:c649dd99-6be0-11ee-bf62-0a580aad06b3
+  viewId: 781
+}
+
+headers {
+  --colvir-user: COLVIR_GF
+  --app-id: 0e42ca28-dc13-4244-a496-5596796d2bad
+}
+
+body:json {
+  {
+      "file": {
+          "businessKey": "Введите businessKey",
+          "clientIin": "Введите Ваш ИИН"
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

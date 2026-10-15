@@ -1,0 +1,70 @@
+meta {
+  name: opers api v1 core filenet create oper blank document
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/filenet/create_oper_blank_document/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "document_type": "string",
+    "client_id": "8fd0e0d8-0e3a-fb5e-1711-4132b368fdc2"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/filenet/create_oper_blank_document/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "document_type": "string",
+        "client_id": "8fd0e0d8-0e3a-fb5e-1711-4132b368fdc2"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "document_type": "string",
+          "client_id": "8fd0e0d8-0e3a-fb5e-1711-4132b368fdc2"
+        }
+      '''
+    }
+  }
+}

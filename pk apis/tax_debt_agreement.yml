@@ -1,0 +1,31 @@
+info:
+  name: tax_debt_agreement
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://open.egov.kz/proxy2/tax_debt_agreement?token=1af98c4aed474b6199ea44db15ee303c
+  headers:
+    - name: User-Agent
+      value: CUPA-uchet
+    - name: token
+      value: 1af98c4aed474b6199ea44db15ee303c
+      disabled: true
+  params:
+    - name: token
+      value: 1af98c4aed474b6199ea44db15ee303c
+      type: query
+  body:
+    type: xml
+    data: |-
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+      <sign:request xmlns:sign="http://xmlns.kztc-cits/sign">
+      <sign:iinBin>201240013776</sign:iinBin>
+      </sign:request>
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

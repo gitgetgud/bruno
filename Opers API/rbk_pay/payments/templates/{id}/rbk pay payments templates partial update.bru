@@ -1,0 +1,75 @@
+meta {
+  name: rbk pay payments templates partial update
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl}}/rbk_pay/payments/templates/:id/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 80
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "name": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/templates/:id/
+    method: PATCH
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "name": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "name": "string"
+        }
+      '''
+    }
+  }
+}

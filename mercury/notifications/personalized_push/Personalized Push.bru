@@ -1,0 +1,195 @@
+meta {
+  name: Personalized Push
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/notifications/personalized_push
+  body: json
+  auth: oauth2
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:oauth2 {
+  grant_type: password
+  access_token_url: /notifications/login
+  refresh_token_url: 
+  username: 
+  password: 
+  client_id: 
+  client_secret: 
+  scope: 
+  credentials_placement: basic_auth_header
+  credentials_id: 
+  token_source: access_token
+  token_placement: url
+  token_query_key: 
+  auto_fetch_token: true
+  auto_refresh_token: false
+}
+
+body:json {
+  {
+    "message_type": "string",
+    "data_en": "string",
+    "data_ru": "string",
+    "data_kz": "string",
+    "customer_ids": [
+      "",
+      ""
+    ],
+    "hooks": "string",
+    "customer_type": "ALL",
+    "title_en": "My RBK",
+    "title_ru": "My RBK",
+    "title_kz": "My RBK",
+    "deeplink": "string",
+    "btn_title_en": "string",
+    "btn_title_ru": "string",
+    "btn_title_kz": "string",
+    "image": "string",
+    "additional_data": {}
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/personalized_push
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: <token>
+    }
+  
+    body:json: {
+      {
+        "message_type": "string",
+        "data_en": "string",
+        "data_ru": "string",
+        "data_kz": "string",
+        "customer_ids": [
+          "",
+          ""
+        ],
+        "hooks": "string",
+        "customer_type": "ALL",
+        "title_en": "My RBK",
+        "title_ru": "My RBK",
+        "title_kz": "My RBK",
+        "deeplink": "string",
+        "btn_title_en": "string",
+        "btn_title_ru": "string",
+        "btn_title_kz": "string",
+        "image": "string",
+        "additional_data": {}
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Validation Error
+  
+  request: {
+    url: {{baseUrl}}/notifications/personalized_push
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: <token>
+    }
+  
+    body:json: {
+      {
+        "message_type": "string",
+        "data_en": "string",
+        "data_ru": "string",
+        "data_kz": "string",
+        "customer_ids": [
+          "",
+          ""
+        ],
+        "hooks": "string",
+        "customer_type": "ALL",
+        "title_en": "My RBK",
+        "title_ru": "My RBK",
+        "title_kz": "My RBK",
+        "deeplink": "string",
+        "btn_title_en": "string",
+        "btn_title_ru": "string",
+        "btn_title_kz": "string",
+        "image": "string",
+        "additional_data": {}
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 422
+      text: Unprocessable Entity (WebDAV) (RFC 4918)
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "detail": [
+            {
+              "loc": [
+                "string",
+                2136
+              ],
+              "msg": "string",
+              "type": "string"
+            },
+            {
+              "loc": [
+                3462,
+                "string"
+              ],
+              "msg": "string",
+              "type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

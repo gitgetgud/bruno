@@ -1,0 +1,39 @@
+info:
+  name: Создает подись данных в формате CMS.
+  type: http
+  seq: 1
+  tags:
+    - CMS
+
+http:
+  method: POST
+  url: "{{baseUrl}}/cms/sign"
+  body:
+    type: json
+    data: "{}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Подписанный CMS файл
+    request:
+      url: "{{baseUrl}}/cms/sign"
+      method: POST
+      body:
+        type: json
+        data: "{}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

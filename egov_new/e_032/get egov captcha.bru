@@ -1,0 +1,39 @@
+meta {
+  name: get egov captcha
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://egov.kz/services/P30.01/captcha?1636372205978
+  body: none
+  auth: inherit
+}
+
+params:query {
+  1636372205978: 
+}
+
+headers {
+  Connection: keep-alive
+  Pragma: no-cache
+  Cache-Control: no-cache
+  sec-ch-ua: "Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"
+  sec-ch-ua-mobile: ?0
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
+  sec-ch-ua-platform: "Windows"
+  Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+  Sec-Fetch-Site: same-origin
+  Sec-Fetch-Mode: no-cors
+  Sec-Fetch-Dest: image
+  Referer: https://egov.kz/services/P30.01/
+  Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+  Cookie: {{cookies_value}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}

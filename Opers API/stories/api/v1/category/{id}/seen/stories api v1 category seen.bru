@@ -1,0 +1,54 @@
+meta {
+  name: stories api v1 category seen
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/stories/api/v1/category/:id/seen/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 80
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Обновить историю просмотра
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/stories/api/v1/category/:id/seen/
+    method: POST
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

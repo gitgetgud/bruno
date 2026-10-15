@@ -1,0 +1,86 @@
+meta {
+  name: events exchange v2 opers rate
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/exchange/v2/opers/:id/rate/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "rate": "string",
+    "credit_amount": "string",
+    "debit_amount": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Oper provide rate to the specific application.
+  Asserts that status is CURRENCY_OPERS_EXCHANGE.created_for_opers
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/exchange/v2/opers/:id/rate/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "rate": "string",
+        "credit_amount": "string",
+        "debit_amount": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "rate": "string",
+          "credit_amount": "string",
+          "debit_amount": "string"
+        }
+      '''
+    }
+  }
+}

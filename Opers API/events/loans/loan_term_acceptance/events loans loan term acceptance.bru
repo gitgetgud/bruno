@@ -1,0 +1,73 @@
+meta {
+  name: events loans loan term acceptance
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/loans/loan_term_acceptance/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "contract_number": "string",
+    "is_accepted": false,
+    "phone": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/loans/loan_term_acceptance/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "contract_number": "string",
+        "is_accepted": false,
+        "phone": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "contract_number": "string",
+          "is_accepted": false,
+          "phone": "string"
+        }
+      '''
+    }
+  }
+}

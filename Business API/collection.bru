@@ -1,0 +1,28 @@
+meta {
+  name: Business API
+}
+
+auth {
+  mode: none
+}
+
+vars:pre-request {
+  documentsBase64: 
+  signedDoc: 
+  paymentID: 
+  openapi_base_url: 
+  openapi_client_id: 
+  openapi_client_secret: 
+  openapi_access_token: 
+  bccbiz_refresh_token: 
+  openapi_base_url__https___api-test.bcc.kz_openapi_client_id__eb0ce9c9-faa2-442e-8723-7b51bde76281_openapi_client_secret__8acdf9939428bed8847273e93b59ffc2: 
+}
+
+docs {
+  # Business Account Management API
+  Сервис предназначен для управления счетами клиента банка на площадке Партнера (BCC.OpenAPI)
+  
+  ## Для работы с сервисом требуется:
+  - действующий access_token Партнера (OpenAPI), передается в заголовке `Authorization` с префиксом `Bearer`
+  - действующий access_token Клиента BCC.Business передать в заголовке `x-client-token`
+}

@@ -1,0 +1,717 @@
+meta {
+  name: https://api.adata.kz/api/company/info/check/eUsy6Ph5fKv1X9rrpxzaUoe55KRm0Jxt6GgL7rHEEtNNthYDiDHKTgZ2lJ1R?token=0002462523
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://api.adata.kz/api/company/info/check/eUsy6Ph5fKv1X9rrpxzaUoe55KRm0Jxt6GgL7rHEEtNNthYDiDHKTgZ2lJ1R?token=0002462523
+  body: none
+  auth: inherit
+}
+
+params:query {
+  token: 0002462523
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: https://api.adata.kz/api/company/info/check/eUsy6Ph5fKv1X9rrpxzaUoe55KRm0Jxt6GgL7rHEEtNNthYDiDHKTgZ2lJ1R?token=0002462523
+  
+  request: {
+    url: https://api.adata.kz/api/company/info/check/eUsy6Ph5fKv1X9rrpxzaUoe55KRm0Jxt6GgL7rHEEtNNthYDiDHKTgZ2lJ1R?token=0002462523
+    method: GET
+    mode: none
+    params:query: {
+      token: 0002462523
+    }
+  }
+  
+  response: {
+    headers: {
+      Date: Thu, 02 Mar 2023 11:56:13 GMT
+      Content-Type: application/json
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      Cache-Control: no-cache, private
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "success": true,
+            "data": {
+                "basic": {
+                    "name_ru": "АКЦИОНЕРНОЕ ОБЩЕСТВО \"ЖАЛТЫРБУЛАК\"",
+                    "short_name": "АО \"ЖАЛТЫРБУЛАК\"",
+                    "biin": "080840012244",
+                    "legal_address": "город Алматы, Бостандыкский район, Проспект Аль-Фараби, дом, 13, офис блок 1В, 6-этаж, офис №605-606",
+                    "oked_id": "24410",
+                    "oked": "Производство благородных (драгоценных) металлов",
+                    "id_kato": 751410000,
+                    "kato_name": "БОСТАНДЫКСКИЙ РАЙОН",
+                    "id_krp": 215,
+                    "fullname_director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                    "director_iin": 740124301175,
+                    "date_registration": "2015-05-13",
+                    "krp": "Средние предприятия (101-150)",
+                    "company_problems": false,
+                    "financial_problems": true,
+                    "unreliable_zakup": false,
+                    "head_problems": false,
+                    "counterparty_type": "company",
+                    "is_nds_payer": true,
+                    "okeds": [
+                        {
+                            "i": "24410",
+                            "name_ru": "Производство благородных (драгоценных) металлов"
+                        }
+                    ],
+                    "secondary_okeds": [],
+                    "source_link": "https://pk.adata.kz/counterparty/main/company/080840012244",
+                    "type_of_ownership": "Частная собственность",
+                    "legal_form": "Акционерное общество"
+                },
+                "status": {
+                    "company_status": true,
+                    "pseudo_company": false,
+                    "bankcrupt": false,
+                    "inactive": false,
+                    "absent_at_address": false,
+                    "registration_invalid": false,
+                    "violation_tax": false,
+                    "tax_debt": 70.09
+                },
+                "riskFactor": {
+                    "company": {
+                        "bankrupt": false,
+                        "tax_risk_degree": "низкая",
+                        "irresponsible_taxpayer": false,
+                        "liquidating_taxpayer": false,
+                        "ban_leaving": false,
+                        "ban_leaving_sum": 0,
+                        "enforcement_debt": false,
+                        "enforcement_debt_sum": 0,
+                        "seized_property": false,
+                        "seized_bank_account": false,
+                        "ban_registration_actions_legal_ent": false,
+                        "ban_registration_actions_physical_ent": false,
+                        "ban_notarius_actions": false,
+                        "ban_seized_property_actions": false
+                    },
+                    "head": {
+                        "terrorist": false,
+                        "pedophile": false,
+                        "alimony_payer": false,
+                        "missing": false,
+                        "debtor_for_executive_documents": false,
+                        "citizen_hiding_from_investigation": false,
+                        "ban_leaving": false,
+                        "ban_leaving_sum": 0,
+                        "enforcement_debt": false,
+                        "enforcement_debt_sum": 0,
+                        "seized_property": false,
+                        "seized_bank_account": false,
+                        "ban_registration_actions_legal_ent": false,
+                        "ban_registration_actions_physical_ent": false,
+                        "ban_notarius_actions": false,
+                        "ban_seized_property_actions": false,
+                        "tax_debt": 0,
+                        "litigation": {
+                            "total_civil_count": 1,
+                            "total_criminal_count": 0,
+                            "total_administrative_count": 0,
+                            "court_cases": [
+                                {
+                                    "year": "2016",
+                                    "civil_count": 1,
+                                    "criminal_count": 0,
+                                    "administrative_count": 0
+                                }
+                            ]
+                        }
+                    }
+                },
+                "taxDeductions": {
+                    "sum": 1289906819.51,
+                    "details": [
+                        {
+                            "amount": 6047614,
+                            "year": 2023
+                        },
+                        {
+                            "amount": 198889437.43,
+                            "year": 2022
+                        },
+                        {
+                            "amount": 284941214,
+                            "year": 2021
+                        },
+                        {
+                            "amount": 335920447.48,
+                            "year": 2020
+                        },
+                        {
+                            "amount": 129059709.43,
+                            "year": 2019
+                        },
+                        {
+                            "amount": 127541070.57,
+                            "year": 2018
+                        },
+                        {
+                            "amount": 126719652.68,
+                            "year": 2017
+                        },
+                        {
+                            "amount": 54459364.6,
+                            "year": 2016
+                        },
+                        {
+                            "amount": 18778455.64,
+                            "year": 2015
+                        },
+                        {
+                            "amount": 4510775.77,
+                            "year": 2014
+                        },
+                        {
+                            "amount": 941035,
+                            "year": 2013
+                        },
+                        {
+                            "amount": 433229.36,
+                            "year": 2012
+                        },
+                        {
+                            "amount": 600381.05,
+                            "year": 2011
+                        },
+                        {
+                            "amount": 1064432.5,
+                            "year": 2010
+                        }
+                    ]
+                },
+                "litigation": {
+                    "total_civil_count": 5,
+                    "total_criminal_count": 0,
+                    "total_administrative_count": 1,
+                    "court_cases": [
+                        {
+                            "year": "2020",
+                            "civil_count": 1,
+                            "criminal_count": 0,
+                            "administrative_count": 1
+                        },
+                        {
+                            "year": "2019",
+                            "civil_count": 2,
+                            "criminal_count": 0,
+                            "administrative_count": 0
+                        },
+                        {
+                            "year": "2018",
+                            "civil_count": 2,
+                            "criminal_count": 0,
+                            "administrative_count": 0
+                        }
+                    ]
+                },
+                "founders": {
+                    "founders_cnt": 3,
+                    "founders_dtl": [
+                        {
+                            "name": "АБДУЛЛАЕВ АХМЕТЖАН МАХАМБЕТЖАНОВИЧ",
+                            "is_company": false
+                        },
+                        {
+                            "name": "ТОО \"AZALA MINING KZ\"",
+                            "is_company": true
+                        },
+                        {
+                            "name": "ТОО \"LANCASTER GLOBAL COMPANY\"",
+                            "is_company": true
+                        }
+                    ]
+                },
+                "connectedDiagram": {
+                    "affiliation_by_company": [
+                        {
+                            "name": "ТОО \"БОКЕ\"",
+                            "bin": 80840017304,
+                            "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                            "type": "Учреждаемая компания",
+                            "bin_formatted": "080840017304"
+                        },
+                        {
+                            "name": "ТОО \"ГОРНО-МЕТАЛЛУРГИЧЕСКАЯ КОМПАНИЯ \"ВАСИЛЬЕВСКОЕ\"",
+                            "bin": 141040025888,
+                            "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                            "type": "Учреждаемая компания",
+                            "bin_formatted": "141040025888"
+                        }
+                    ],
+                    "affiliation_by_head": {
+                        "head_name": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                        "companies": [
+                            {
+                                "name": "ТОО  \"BK GOLD\"",
+                                "bin": 70440018346,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Учредитель",
+                                "bin_formatted": "070440018346"
+                            },
+                            {
+                                "name": "ТОО \"КОПАЛЫ\"",
+                                "bin": 80840012234,
+                                "director": "ҚАМЗА ЭЛЬОНОРА ҚЫРҒЫЗБАЙҚЫЗЫ",
+                                "type": "Учредитель",
+                                "bin_formatted": "080840012234"
+                            },
+                            {
+                                "name": "ТОО \"ЖИЛАНДЫ\"",
+                                "bin": 80840017314,
+                                "director": "КАМЕНСКИЙ ИЛЬЯ НИКОЛАЕВИЧ",
+                                "type": "Учредитель",
+                                "bin_formatted": "080840017314"
+                            },
+                            {
+                                "name": "ТОО \"ALMAPHARM INVEST\" (АЛМАФАРМ ИНВЕСТ)",
+                                "bin": 111240003145,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Учредитель",
+                                "bin_formatted": "111240003145"
+                            },
+                            {
+                                "name": "ОФ \"NARHOZ MEO ALUMNI FUND\" (ФОНД ВЫПУСКНИКОВ НАРХОЗ МЭО)",
+                                "bin": 150940001337,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Учредитель",
+                                "bin_formatted": "150940001337"
+                            },
+                            {
+                                "name": "ТОО \"СВЖ ПРОЕКТ\"",
+                                "bin": 170140017080,
+                                "director": "ЖАНАБЕРГЕНОВ ТЫНЫШТЫК СИСЕНБАЕВИЧ",
+                                "type": "Учредитель",
+                                "bin_formatted": "170140017080"
+                            },
+                            {
+                                "name": "ТОО \"TECHNICAL TRADE\"",
+                                "bin": 170540019616,
+                                "director": "БУРХАНОВ НУРЖАС МЫРЗАХАНОВИЧ",
+                                "type": "Учредитель",
+                                "bin_formatted": "170540019616"
+                            },
+                            {
+                                "name": "ТОО \"STEPS AI\"",
+                                "bin": 220340030394,
+                                "director": "ҚАМЗА ЭЛЬОНОРА ҚЫРҒЫЗБАЙҚЫЗЫ",
+                                "type": "Учредитель",
+                                "bin_formatted": "220340030394"
+                            },
+                            {
+                                "name": "ТОО \"SAI ENGINE\"",
+                                "bin": 220840023598,
+                                "director": "КОНОН АНДРЕЙ СЕРГЕЕВИЧ",
+                                "type": "Учредитель",
+                                "bin_formatted": "220840023598"
+                            },
+                            {
+                                "name": "ТОО \"SAI MESSENGER\"",
+                                "bin": 220840023697,
+                                "director": "МАНКИН НУРЖАН ЖИЛКЫБАЕВИЧ",
+                                "type": "Учредитель",
+                                "bin_formatted": "220840023697"
+                            },
+                            {
+                                "name": "АО \"ЖАЛТЫРБУЛАК\"",
+                                "bin": 80840012244,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Руководитель",
+                                "bin_formatted": "080840012244"
+                            },
+                            {
+                                "name": "ТОО \"ГОРНО-МЕТАЛЛУРГИЧЕСКАЯ КОМПАНИЯ \"ВАСИЛЬЕВСКОЕ\"",
+                                "bin": 141040025888,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Руководитель",
+                                "bin_formatted": "141040025888"
+                            },
+                            {
+                                "name": "ТОО  \"BK GOLD\"",
+                                "bin": 70440018346,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Руководитель",
+                                "bin_formatted": "070440018346"
+                            },
+                            {
+                                "name": "ТОО \"DATA МАЙНИНГ\" (ДАТА МАЙНИНГ)",
+                                "bin": 50640010463,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Руководитель",
+                                "bin_formatted": "050640010463"
+                            },
+                            {
+                                "name": "ТОО \"БОКЕ\"",
+                                "bin": 80840017304,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Руководитель",
+                                "bin_formatted": "080840017304"
+                            },
+                            {
+                                "name": "ТОО \"ALMAPHARM INVEST\" (АЛМАФАРМ ИНВЕСТ)",
+                                "bin": 111240003145,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Руководитель",
+                                "bin_formatted": "111240003145"
+                            },
+                            {
+                                "name": "ОФ \"NARHOZ MEO ALUMNI FUND\" (ФОНД ВЫПУСКНИКОВ НАРХОЗ МЭО)",
+                                "bin": 150940001337,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Руководитель",
+                                "bin_formatted": "150940001337"
+                            },
+                            {
+                                "name": "ТОО \"ОЛТАН\"",
+                                "bin": 31040006482,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Руководитель",
+                                "bin_formatted": "031040006482"
+                            },
+                            {
+                                "name": "ТОО \"BERKUT MINING\" (БЕРКУТ МАЙНИНГ)",
+                                "bin": 110840010870,
+                                "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                "type": "Руководитель",
+                                "bin_formatted": "110840010870"
+                            }
+                        ]
+                    },
+                    "affiliation_by_founder": [
+                        {
+                            "founder_name": "АБДУЛЛАЕВ АХМЕТЖАН МАХАМБЕТЖАНОВИЧ",
+                            "founder_biin": 730325300188,
+                            "founder_biin_formatted": "730325300188",
+                            "companies": [
+                                {
+                                    "name": "ИП АБДУЛЛАЕВ А.М.",
+                                    "bin": 730325300188,
+                                    "director": "АБДУЛЛАЕВ АХМЕТЖАН МАХАМБЕТЖАНОВИЧ",
+                                    "type": "Руководитель",
+                                    "bin_formatted": "730325300188"
+                                },
+                                {
+                                    "name": "ТОО \"DATA ИНВЕСТ\"",
+                                    "bin": 440001626,
+                                    "director": "ХАМИТОВА БАКТЫБАЛА ДЖУМАДИЛОВНА",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "000440001626"
+                                },
+                                {
+                                    "name": "ТОО \"RTGOIL\"",
+                                    "bin": 11140018793,
+                                    "director": "СТЕЙПЛС ЭНДРЮ  ДАВИД ",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "011140018793"
+                                },
+                                {
+                                    "name": "ТОО \"СОВМЕСТНОЕ ПРЕДПРИЯТИЕ КОНСОЛИДЕЙТЕД САППЛАЙ ЭНД СЕРВИСЕЗ ИНТЕРНЭШНЛ ЛТД.\"",
+                                    "bin": 21040015073,
+                                    "director": "СТЭНДЛЭНД КИТ ",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "021040015073"
+                                },
+                                {
+                                    "name": "ОО \"ФЕДЕРАЦИЯ РЕАЛЬНОГО АЙКИДО РК\"",
+                                    "bin": 40640011142,
+                                    "director": "ИЛЬЧЕНКО ЛЮБОВЬ НИКОЛАЕВНА",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "040640011142"
+                                },
+                                {
+                                    "name": "ТОО \"GRATA EURASIA\"",
+                                    "bin": 50640004895,
+                                    "director": "МАХМУТОВА РАЙГУЛЬ МАХМУТОВНА",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "050640004895"
+                                },
+                                {
+                                    "name": "АО \"ЖАЛТЫРБУЛАК\"",
+                                    "bin": 80840012244,
+                                    "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "080840012244"
+                                },
+                                {
+                                    "name": "ТОО \"ЖИЛАНДЫ\"",
+                                    "bin": 80840017314,
+                                    "director": "КАМЕНСКИЙ ИЛЬЯ НИКОЛАЕВИЧ",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "080840017314"
+                                },
+                                {
+                                    "name": "ТОО \"KENTECH KYZMET\" (\"КЕНТЕК КЫЗМЕТ\")",
+                                    "bin": 110740007202,
+                                    "director": "ГИЛЛЕЙ ДЖОН МАРТИН ",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "110740007202"
+                                },
+                                {
+                                    "name": "ТОО \"ЮРИДИЧЕСКАЯ ФИРМА \"GRATA\"",
+                                    "bin": 920440000372,
+                                    "director": "ТУЛЕГЕНОВА ГУЛЬНАРА БОЛАТОВНА",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "920440000372"
+                                }
+                            ]
+                        },
+                        {
+                            "founder_name": "ТОО \"AZALA MINING KZ\"",
+                            "founder_biin": 151140001955,
+                            "founder_biin_formatted": "151140001955",
+                            "companies": [
+                                {
+                                    "name": "АО \"ЖАЛТЫРБУЛАК\"",
+                                    "bin": 80840012244,
+                                    "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "080840012244"
+                                }
+                            ]
+                        },
+                        {
+                            "founder_name": "ТОО \"LANCASTER GLOBAL COMPANY\"",
+                            "founder_biin": 160340006883,
+                            "founder_biin_formatted": "160340006883",
+                            "companies": [
+                                {
+                                    "name": "ТОО  \"BK GOLD\"",
+                                    "bin": 70440018346,
+                                    "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "070440018346"
+                                },
+                                {
+                                    "name": "АО \"ЖАЛТЫРБУЛАК\"",
+                                    "bin": 80840012244,
+                                    "director": "СЕЙДУЛЛАЕВ АЛИМБЕК АДАЙБЕКОВИЧ",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "080840012244"
+                                },
+                                {
+                                    "name": "ТОО \"ЖАНДИГ- С\"",
+                                    "bin": 990940003605,
+                                    "director": "КИМ ИГОРЬ ДОБРЫНЬЕВИЧ",
+                                    "type": "Учредитель",
+                                    "bin_formatted": "990940003605"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "licenseGeneral": {
+                    "total_licenses_count": 9,
+                    "total_other_docs_count": 53,
+                    "details": [
+                        {
+                            "year": "2023",
+                            "licenses_count": 1,
+                            "other_docs_count": 0
+                        },
+                        {
+                            "year": "2022",
+                            "licenses_count": 0,
+                            "other_docs_count": 1
+                        },
+                        {
+                            "year": "2021",
+                            "licenses_count": 0,
+                            "other_docs_count": 7
+                        },
+                        {
+                            "year": "2020",
+                            "licenses_count": 3,
+                            "other_docs_count": 4
+                        },
+                        {
+                            "year": "2019",
+                            "licenses_count": 0,
+                            "other_docs_count": 6
+                        },
+                        {
+                            "year": "2018",
+                            "licenses_count": 0,
+                            "other_docs_count": 5
+                        },
+                        {
+                            "year": "2017",
+                            "licenses_count": 1,
+                            "other_docs_count": 17
+                        },
+                        {
+                            "year": "2016",
+                            "licenses_count": 4,
+                            "other_docs_count": 6
+                        },
+                        {
+                            "year": "2015",
+                            "licenses_count": 0,
+                            "other_docs_count": 7
+                        }
+                    ]
+                },
+                "contract": {
+                    "total_count": 0,
+                    "total_sum": 0,
+                    "details": [
+                        {
+                            "year": "2023",
+                            "count": 0,
+                            "sum": 0
+                        },
+                        {
+                            "year": "2022",
+                            "count": 0,
+                            "sum": 0
+                        },
+                        {
+                            "year": "2021",
+                            "count": 0,
+                            "sum": 0
+                        },
+                        {
+                            "year": "2020",
+                            "count": 0,
+                            "sum": 0
+                        },
+                        {
+                            "year": "2019",
+                            "count": 0,
+                            "sum": 0
+                        },
+                        {
+                            "year": "Предыдущий период",
+                            "count": 0,
+                            "sum": 0
+                        }
+                    ]
+                },
+                "trustworthyAnalytics": {
+                    "shift": "high",
+                    "negative": {
+                        "count": 8,
+                        "factors": [
+                            {
+                                "code": "has_high_debt",
+                                "name": "Имеется задолженность более 1000 МРП",
+                                "group_name": "Финансы",
+                                "score_code": "high"
+                            },
+                            {
+                                "code": "max_head_participation",
+                                "name": "Участие руководителя в 5 и более компаниях",
+                                "group_name": "Руководитель и/или учредители",
+                                "score_code": "medium"
+                            },
+                            {
+                                "code": "has_young_head",
+                                "name": "Малый срок деятельности руководителя - менее 1 года",
+                                "group_name": "Руководитель и/или учредители",
+                                "score_code": "medium"
+                            },
+                            {
+                                "code": "has_problematic_affiliations",
+                                "name": "Имеются проблемы у компании с таким же руководителем/учредителем",
+                                "group_name": "Руководитель и/или учредители",
+                                "score_code": "medium"
+                            },
+                            {
+                                "code": "address_changed",
+                                "name": "Частая смена юридического адреса",
+                                "group_name": "Предприятие",
+                                "score_code": "medium"
+                            },
+                            {
+                                "code": "worse_in_market",
+                                "name": "Низкий рейтинг компании ",
+                                "group_name": "Предприятие",
+                                "score_code": "medium"
+                            },
+                            {
+                                "code": "no_contract_long_period",
+                                "name": "Не участвует в закупках",
+                                "group_name": "Предприятие",
+                                "score_code": "medium"
+                            },
+                            {
+                                "code": "monthly_salary_fund_is_null_twice",
+                                "name": "Возможное нарушение сроков уплаты налогов и обязательных платежей за последние 12 месяцев",
+                                "group_name": "Финансы",
+                                "score_code": "medium"
+                            }
+                        ],
+                        "score": -24.21
+                    },
+                    "positive": {
+                        "count": 6,
+                        "factors": [
+                            {
+                                "code": "has_short_term_work",
+                                "name": "Средний срок работы на рынке, более 5 лет",
+                                "group_name": "Предприятие",
+                                "score_code": "low"
+                            },
+                            {
+                                "code": "no_court_cases",
+                                "name": "Не является участником судебных дел за последние 12 месяцев",
+                                "group_name": "Предприятие",
+                                "score_code": "low"
+                            },
+                            {
+                                "code": "has_two_property_types",
+                                "name": "Наличие активов",
+                                "group_name": "Руководитель и/или учредители",
+                                "score_code": "medium"
+                            },
+                            {
+                                "code": "is_medium_company",
+                                "name": "Среднее предприятие",
+                                "group_name": "Предприятие",
+                                "score_code": "medium"
+                            },
+                            {
+                                "code": "has_two_document_types",
+                                "name": "Наличие лицензий или сертификатов или товарных знаков",
+                                "group_name": "Руководитель и/или учредители",
+                                "score_code": "medium"
+                            },
+                            {
+                                "code": "low_risk_degree",
+                                "name": "Низкая степень риска налогоплательщика",
+                                "group_name": "Предприятие",
+                                "score_code": "high"
+                            }
+                        ],
+                        "score": 29.06
+                    }
+                }
+            },
+            "message": "ready"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,319 @@
+meta {
+  name: [FE]<->[BE]: branches-cities
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://test.centermarket.kz/bank/bcc/leasing/v1/branches?code=ALM
+  body: none
+  auth: inherit
+}
+
+params:query {
+  code: ALM
+}
+
+headers {
+  accept: application/json
+  Cookie: cm_sid={{cm_sid}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: [FE]<->[BE]: branches-cities
+  
+  request: {
+    url: https://test.centermarket.kz/bank/bcc/leasing/v1/branches?code=ALM
+    method: GET
+    mode: none
+    params:query: {
+      code: ALM
+    }
+  
+    headers: {
+      accept: application/json
+      Cookie: cm_sid={{cm_sid}}
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx/1.25.5
+      Date: Wed, 11 Mar 2026 08:52:31 GMT
+      Content-Type: application/json
+      Content-Length: 1113
+      Connection: keep-alive
+      content-encoding: gzip
+      vary: Origin
+      vary: Accept-Encoding
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Content-Security-Policy: frame-ancestors 'self' *.bcc.kz *.centermarket.kz *.bcchub.kz
+      X-Content-Type-Options: nosniff
+      X-Permitted-Cross-Domain-Policies: none
+      Permissions-Policy: geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()
+      X-XSS-Protection: 1; mode=block
+      Referrer-Policy: no-referrer-when-downgrade
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "success": true,
+            "data": [
+                {
+                    "dep_id": 1445,
+                    "id": 1445,
+                    "name": "Центральное отделение №0302",
+                    "code": "AG1",
+                    "filial": "ALM",
+                    "address": "Р. ЗОРГЕ ул, дом 16 корп А"
+                },
+                {
+                    "dep_id": 1449,
+                    "id": 1449,
+                    "name": "Центральное отделение №0602",
+                    "code": "AG5",
+                    "filial": "ALM",
+                    "address": "АКСАЙ 2 мкр, дом 9 А, н.п. 46-47"
+                },
+                {
+                    "dep_id": 1523,
+                    "id": 1523,
+                    "name": "Отделение №1502",
+                    "code": "AQ2",
+                    "filial": "ALM",
+                    "address": "АЛГАБАС 1 мкр, дом 5 корп 19"
+                },
+                {
+                    "dep_id": 1614,
+                    "id": 1614,
+                    "name": "Центральное отделение №0102",
+                    "code": "AQ5",
+                    "filial": "ALM",
+                    "address": "ПАНФИЛОВА ул, дом 98"
+                },
+                {
+                    "dep_id": 1684,
+                    "id": 1684,
+                    "name": "Центральное отделение №0202",
+                    "code": "OPR",
+                    "filial": "ALM",
+                    "address": "БОГЕНБАЙ БАТЫРА ул, дом 156"
+                },
+                {
+                    "dep_id": 10025,
+                    "id": 10025,
+                    "name": "Отделение №2802 Private",
+                    "code": "AR8",
+                    "filial": "ALM",
+                    "address": "ЧАЙКОВСКОГО ул, дом 149, н.п. 41"
+                },
+                {
+                    "dep_id": 10027,
+                    "id": 10027,
+                    "name": "Отделение №2902 Premium Business",
+                    "code": "AP1",
+                    "filial": "ALM",
+                    "address": "ПАНФИЛОВА 98 ул"
+                },
+                {
+                    "dep_id": 10029,
+                    "id": 10029,
+                    "name": "Отделение №3102",
+                    "code": "AP4",
+                    "filial": "ALM",
+                    "address": "АУЭЗОВА ул, дом 60, БЦ \"ALMATY RESIDENCE\""
+                },
+                {
+                    "dep_id": 1446,
+                    "id": 1446,
+                    "name": "Центральное отделение №0402",
+                    "code": "AG2",
+                    "filial": "ALM",
+                    "address": "ТОЛЕ БИ ул, дом 143А"
+                },
+                {
+                    "dep_id": 1451,
+                    "id": 1451,
+                    "name": "Отделение №0702",
+                    "code": "AG7",
+                    "filial": "ALM",
+                    "address": "РЫСКУЛОВА ул, дом 101"
+                },
+                {
+                    "dep_id": 1631,
+                    "id": 1631,
+                    "name": "Отделение №1802",
+                    "code": "AF3",
+                    "filial": "ALM",
+                    "address": "ДЖАНДОСОВА ул, дом 1"
+                },
+                {
+                    "dep_id": 1647,
+                    "id": 1647,
+                    "name": "Отделение №2102",
+                    "code": "AF6",
+                    "filial": "ALM",
+                    "address": "МАЙЛИНА ул, дом 2 корп 2"
+                },
+                {
+                    "dep_id": 1654,
+                    "id": 1654,
+                    "name": "Отделение №2002",
+                    "code": "AF9",
+                    "filial": "ALM",
+                    "address": "АБАЯ пр-кт, дом 151"
+                },
+                {
+                    "dep_id": 1672,
+                    "id": 1672,
+                    "name": "Отделение №2202",
+                    "code": "AA3",
+                    "filial": "ALM",
+                    "address": "КУНАЕВА ул, дом 1"
+                },
+                {
+                    "dep_id": 1674,
+                    "id": 1674,
+                    "name": "Отделение №2402",
+                    "code": "AA5",
+                    "filial": "ALM",
+                    "address": "РОЗЫБАКИЕВА ул, дом 111"
+                },
+                {
+                    "dep_id": 10028,
+                    "id": 10028,
+                    "name": "Отделение №3002",
+                    "code": "AP3",
+                    "filial": "ALM",
+                    "address": "НҰРСҰЛТАН  НАЗАРБАЕВ пр-кт, дом 226"
+                },
+                {
+                    "dep_id": 10345,
+                    "id": 10345,
+                    "name": "Отделение №3302",
+                    "code": "AP9",
+                    "filial": "ALM",
+                    "address": "АЛЬ-ФАРАБИ пр-кт, дом 71"
+                },
+                {
+                    "dep_id": 1452,
+                    "id": 1452,
+                    "name": "Отделение №0802",
+                    "code": "AG8",
+                    "filial": "ALM",
+                    "address": "АЛЬ-ФАРАБИ пр-кт, дом 19 стр БЦНУРЛЫТАУ влад БЛОК1Б, оф 1"
+                },
+                {
+                    "dep_id": 1515,
+                    "id": 1515,
+                    "name": "Отделение №1302",
+                    "code": "B20",
+                    "filial": "ALM",
+                    "address": "КАРАСАЙ БАТЫРА ул, дом 30"
+                },
+                {
+                    "dep_id": 1516,
+                    "id": 1516,
+                    "name": "Отделение №1402",
+                    "code": "B21",
+                    "filial": "ALM",
+                    "address": "ШЕВЧЕНКО ул, дом 140"
+                },
+                {
+                    "dep_id": 1645,
+                    "id": 1645,
+                    "name": "Отделение №1702",
+                    "code": "AF5",
+                    "filial": "ALM",
+                    "address": "ШЕВЧЕНКО ул, дом 100, УГ.УЛ. СЕЙФУЛЛИНА"
+                },
+                {
+                    "dep_id": 1673,
+                    "id": 1673,
+                    "name": "Отделение №2302",
+                    "code": "AA4",
+                    "filial": "ALM",
+                    "address": "ГОГОЛЯ ул, дом 15"
+                },
+                {
+                    "dep_id": 8221,
+                    "id": 8221,
+                    "name": "Отделение №2602 Private",
+                    "code": "AE1",
+                    "filial": "ALM",
+                    "address": "ПАНФИЛОВА ул, дом 98"
+                },
+                {
+                    "dep_id": 1448,
+                    "id": 1448,
+                    "name": "Центральное отделение №0502",
+                    "code": "AG4",
+                    "filial": "ALM",
+                    "address": "ТИМИРЯЗЕВА ул, дом 42"
+                },
+                {
+                    "dep_id": 1482,
+                    "id": 1482,
+                    "name": "Отделение №1002",
+                    "code": "AG9",
+                    "filial": "ALM",
+                    "address": "ТОЛЕ БИ ул, дом 260"
+                },
+                {
+                    "dep_id": 1511,
+                    "id": 1511,
+                    "name": "Отделение №1202",
+                    "code": "AQ6",
+                    "filial": "ALM",
+                    "address": "МАМЫР-1 мкр, БЦ QUORUM ул, дом 26"
+                },
+                {
+                    "dep_id": 1620,
+                    "id": 1620,
+                    "name": "Центральное отделение №0902",
+                    "code": "AQ7",
+                    "filial": "ALM",
+                    "address": "НУРСУЛТАН НАЗАРБАЕВ пр-кт, дом 65"
+                },
+                {
+                    "dep_id": 1630,
+                    "id": 1630,
+                    "name": "Отделение №1602",
+                    "code": "AQ9",
+                    "filial": "ALM",
+                    "address": "ТОЛЕ  БИ ул, дом 302 Б"
+                },
+                {
+                    "dep_id": 1677,
+                    "id": 1677,
+                    "name": "Отделение №2502",
+                    "code": "AA6",
+                    "filial": "ALM",
+                    "address": "АЛЬ-ФАРАБИ пр-кт, дом 38 корп БЛОК C"
+                },
+                {
+                    "dep_id": 8222,
+                    "id": 8222,
+                    "name": "Отделение №2702 Private",
+                    "code": "AE2",
+                    "filial": "ALM",
+                    "address": "АЛЬ ФАРАБИ ул, дом 38"
+                }
+            ]
+        }
+      '''
+    }
+  }
+}

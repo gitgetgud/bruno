@@ -1,0 +1,30 @@
+meta {
+  name: SMS confirmation
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://{{ARM_HOST}}/proxy/users-service/api/auth/services/verify_sms
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "operation_uuid": "{{OPERATION_UUID}}",
+      "passcode": "111111"
+  }
+}
+
+script:post-response {
+  let password = bru.getEnvVar("NEW_PASSWORD")
+  let passwordEncrypted = bru.getEnvVar("NEW_PASSWORD_ENCRYPTED")
+  
+  bru.setEnvVar("PASSWORD", password)
+  bru.setEnvVar("PASSWORD_ENCRYPTED", passwordEncrypted)
+}
+
+settings {
+  encodeUrl: true
+}

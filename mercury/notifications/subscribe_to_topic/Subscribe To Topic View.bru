@@ -1,0 +1,140 @@
+meta {
+  name: Subscribe To Topic View
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/notifications/subscribe_to_topic/
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "token": "string",
+    "topic": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  For local usage
+  Subscribe user to a specific topic based on their language setting.
+  
+  data: An instance of TopicScheme containing the device token
+      and the language setting of the user.
+  check_perm: A dependency that checks user permissions, injected by Depends.
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/subscribe_to_topic/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "token": "string",
+        "topic": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Validation Error
+  
+  request: {
+    url: {{baseUrl}}/notifications/subscribe_to_topic/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "token": "string",
+        "topic": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 422
+      text: Unprocessable Entity (WebDAV) (RFC 4918)
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "detail": [
+            {
+              "loc": [
+                "string",
+                2136
+              ],
+              "msg": "string",
+              "type": "string"
+            },
+            {
+              "loc": [
+                3462,
+                "string"
+              ],
+              "msg": "string",
+              "type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

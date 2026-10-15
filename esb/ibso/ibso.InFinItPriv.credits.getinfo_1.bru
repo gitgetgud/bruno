@@ -1,0 +1,35 @@
+meta {
+  name: ibso.InFinItPriv.credits.getinfo_1
+  type: http
+  seq: 46
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.InFinItPriv.credits.getinfo",
+          "uuid": "42f6ef06-a008-4470-865c-9c97516209ad",
+          "sourceSystem": "SingleWindow",
+          "username": "SingleWindow",
+          "requestTime": "2022-01-17 11:50:22.388613",
+          "Data": {
+              "customerId": "0029UV"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

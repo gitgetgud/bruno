@@ -1,0 +1,89 @@
+meta {
+  name: Создание доставки для карт СДБО ЮЛ
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/delivery/opers_card_delivery/create_from_sdboul/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "application_id": "c695c15b-574a-7e7e-1daa-9764d31abbd7",
+    "division": "string",
+    "fio": "string",
+    "client_id": "string",
+    "iin": "string",
+    "phone": "string",
+    "delivery_address": "string",
+    "rbs_number": "string",
+    "card_mask": "string",
+    "plastic": "BUSSINES",
+    "embossing_first_name": "string",
+    "embossing_last_name": "string",
+    "client_id_w4": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/delivery/opers_card_delivery/create_from_sdboul/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "application_id": "c695c15b-574a-7e7e-1daa-9764d31abbd7",
+        "division": "string",
+        "fio": "string",
+        "client_id": "string",
+        "iin": "string",
+        "phone": "string",
+        "delivery_address": "string",
+        "rbs_number": "string",
+        "card_mask": "string",
+        "plastic": "BUSSINES",
+        "embossing_first_name": "string",
+        "embossing_last_name": "string",
+        "client_id_w4": ""
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {}
+      '''
+    }
+  }
+}

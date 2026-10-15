@@ -1,0 +1,54 @@
+meta {
+  name: Деактивировать специального клиента
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{baseUrl}}/opers/api/v1/core/vip/:iin/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  iin: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Деактивировать VIP/Premium клиента по ИИН.
+}
+
+example {
+  name: Клиент деактивирован
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/vip/:iin/
+    method: DELETE
+    mode: none
+    params:path: {
+      iin: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 202
+      text: Accepted
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

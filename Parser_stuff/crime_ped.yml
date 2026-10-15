@@ -1,0 +1,22 @@
+info:
+  name: crime_ped
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: https://data.egov.kz/api/v4/kameletke_tolmagandarga_zhynys/v11?apiKey=5f5769eb22dc49a6890e24971e52b284&source={"size":2147483647}
+  params:
+    - name: apiKey
+      value: 5f5769eb22dc49a6890e24971e52b284
+      type: query
+    - name: source
+      value: '{"size":2147483647}'
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

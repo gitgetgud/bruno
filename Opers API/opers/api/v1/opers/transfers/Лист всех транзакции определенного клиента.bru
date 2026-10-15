@@ -1,0 +1,92 @@
+meta {
+  name: Лист всех транзакции определенного клиента
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/transfers/?page=80&client_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  client_id: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  View for transfer money for client
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/transfers/?page=80&client_id=string
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      client_id: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "client_id": "string",
+            "amount": "string",
+            "currency": "string",
+            "id": "0a8908ce-7aac-42f7-7119-5c7ad8a064f5",
+            "iin": "string",
+            "created": "2002-10-27T15:21:56.081Z",
+            "from_iban": "string",
+            "to_iban": "string",
+            "status": "string",
+            "transfer_type": "string",
+            "opers_name": "string"
+          },
+          {
+            "client_id": "string",
+            "amount": "string",
+            "currency": "string",
+            "id": "303e65de-1142-6550-da1d-6ac18ede0ee4",
+            "iin": "string",
+            "created": "2025-06-09T19:55:13.307Z",
+            "from_iban": "string",
+            "to_iban": "string",
+            "status": "string",
+            "transfer_type": "string",
+            "opers_name": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

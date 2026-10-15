@@ -1,0 +1,77 @@
+meta {
+  name: Оплата налога
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/taxes/payment/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "phone": "string",
+    "iin": "string",
+    "char_code": "string",
+    "bcc_id": "string",
+    "payment_amount": "string",
+    "payer_account": "string",
+    "provider_id": "6acb21f0-3c5a-5c33-63ad-1d3f6c90a33a",
+    "taxpayer_name": "string",
+    "vin_code": "string",
+    "client_type": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: payment id
+  
+  request: {
+    url: {{baseUrl}}/taxes/payment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "phone": "string",
+        "iin": "string",
+        "char_code": "string",
+        "bcc_id": "string",
+        "payment_amount": "string",
+        "payer_account": "string",
+        "provider_id": "6acb21f0-3c5a-5c33-63ad-1d3f6c90a33a",
+        "taxpayer_name": "string",
+        "vin_code": "string",
+        "client_type": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

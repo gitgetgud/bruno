@@ -1,0 +1,80 @@
+meta {
+  name: OpenAPI authorization
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{openapi_base_url}}/bcc/production/v2/oauth/token
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  client_id: {{openapi_client_id}}
+  client_secret: {{openapi_client_secret}}
+  scope: bcc.application.business.account.management 
+  grant_type: client_credentials
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+      var jsonData = res.getBody();
+      bru.setEnvVar("openapi_access_token", jsonData.access_token, "secret")
+  });
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: OpenAPI authorization
+  
+  request: {
+    url: {{openapi_base_url}}/bcc/production/v2/oauth/token
+    method: POST
+    mode: formUrlEncoded
+    body:form-urlencoded: {
+      client_id: {{openapi_client_id}}
+      client_secret: {{openapi_client_secret}}
+      scope: bcc.application.business.account.management 
+      grant_type: client_credentials
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: FAIL FAIL
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Cache-Control: private, no-store, no-cache, must-revalidate
+      Pragma: no-cache
+      Content-Security-Policy: default-src 'self'; style-src 'unsafe-inline'
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "token_type": "Bearer",
+            "access_token": "AAIkZWIwY2U5YzktZmFhMi00NDJlLTg3MjMtN2I1MWJkZTc2MjgxR7QhsHRkK51DpSxyjDjUkFccwU-UNlNUU9ozxe7JlpEXXvkagw_c0X1iZ6dWKGI4seQZNdjLNAsMdkS42uhZb0OC6v-PYBY888xY2t6f0PtmNvSguzA5LVGYCOjmv6f7jLhBLZlfUD3qlsFnFGhENj05yQy4uQ12DksHcGhgfjo07Q23dss34W8vajHF3ntQ",
+            "expires_in": 3600,
+            "consented_on": 1770765799,
+            "scope": "bcc.application.business.account.management"
+        }
+      '''
+    }
+  }
+}

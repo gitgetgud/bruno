@@ -1,0 +1,35 @@
+meta {
+  name: Генерация токена для deploy-а процесса
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://dev-camunda-core-green-front.apps.dev-env.bcc.kz/inline/api/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  ~: 770315402562
+}
+
+body:json {
+  {
+      "username": "Ваш корпоративный логин",
+      "password": "Пароль от вашего корпаративного логина"
+  }
+  
+}
+
+script:pre-request {
+  let currentUrl = req.getUrl().toString();
+  
+  if (!currentUrl.startsWith('http://') && !currentUrl.startsWith('https://')) {
+      req.getUrl() = 'https://' + currentUrl;
+  }
+}
+
+settings {
+  encodeUrl: true
+}

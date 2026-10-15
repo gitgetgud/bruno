@@ -1,0 +1,19 @@
+info:
+  name: adilet debtors google
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: https://www.google.com/recaptcha/api2/reload?k=6LdPj8YZAAAAAF94C16Pd93KT8a_TCy-XihB4CBL
+  params:
+    - name: k
+      value: 6LdPj8YZAAAAAF94C16Pd93KT8a_TCy-XihB4CBL
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

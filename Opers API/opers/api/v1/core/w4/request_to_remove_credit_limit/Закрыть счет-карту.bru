@@ -1,0 +1,73 @@
+meta {
+  name: Закрыть счет/карту
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/w4/request_to_remove_credit_limit/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "phone_number": "string",
+    "client_id": "string",
+    "iban": "string",
+    "rbs_number": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/w4/request_to_remove_credit_limit/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "phone_number": "string",
+        "client_id": "string",
+        "iban": "string",
+        "rbs_number": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "otp_uuid": "baa5d067-391c-6d8a-4047-fc2dd84d704e"
+        }
+      '''
+    }
+  }
+}

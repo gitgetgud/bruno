@@ -1,0 +1,22 @@
+info:
+  name: anticaptcha_test
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: https://anti-captcha.com/v3.php?action=check&token=
+  params:
+    - name: action
+      value: check
+      type: query
+    - name: token
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

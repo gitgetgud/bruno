@@ -1,0 +1,96 @@
+meta {
+  name: Создать перевод в рамках банка вместо клиента(ОПЕР)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/opers/transfers/create_inner_bank/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "from_iban": "stri",
+    "debit_currency": "string",
+    "credit_currency": "string",
+    "debit_amount": "string",
+    "credit_amount": "string",
+    "knp": "string",
+    "phone": "string",
+    "client_id": "string",
+    "to_iban": "string",
+    "beneficiary_iin": "string",
+    "paypurp": "string",
+    "beneficiary_fio": "string",
+    "beneficiary_phone": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  View for transfer money for client
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/transfers/create_inner_bank/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "from_iban": "stri",
+        "debit_currency": "string",
+        "credit_currency": "string",
+        "debit_amount": "string",
+        "credit_amount": "string",
+        "knp": "string",
+        "phone": "string",
+        "client_id": "string",
+        "to_iban": "string",
+        "beneficiary_iin": "string",
+        "paypurp": "string",
+        "beneficiary_fio": "string",
+        "beneficiary_phone": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "d672ea6e-8d0a-dd38-04c3-55651f156a76",
+          "is_sms_required": true
+        }
+      '''
+    }
+  }
+}

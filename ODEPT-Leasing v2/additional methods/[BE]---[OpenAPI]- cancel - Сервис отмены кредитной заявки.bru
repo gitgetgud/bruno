@@ -1,0 +1,158 @@
+meta {
+  name: [BE]<->[OpenAPI]: cancel - Сервис отмены кредитной заявки
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/cancel
+  body: json
+  auth: bearer
+}
+
+params:path {
+  sme-leasing-uuid: {{online_auto_leasing_id}}
+}
+
+headers {
+  X-User-ID: +77777777777
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+body:json {
+  {
+      "group": "Клиент",  // Группа причины отмены (например, "Клиент", "Система" и др.)
+      "reason": "Клиент передумал" // Описание причины отмены (например, "Клиент передумал")
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: cancel - Сервис отмены кредитной заявки
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/cancel
+    method: POST
+    mode: json
+    params:path: {
+      sme-leasing-uuid: {{online_auto_leasing_id}}
+    }
+  
+    headers: {
+      X-User-ID: +77777777777
+    }
+  
+    body:json: {
+      {
+          "group": "Клиент",  // Группа причины отмены (например, "Клиент", "Система" и др.)
+          "reason": "Клиент передумал" // Описание причины отмены (например, "Клиент передумал")
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Mon, 23 Jun 2025 05:55:33 GMT
+      X-Global-Transaction-ID: 95dd62ed6858ec5512636ce1
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST
+      X-RateLimit-Limit: name=default,100;
+      X-RateLimit-Remaining: name=default,70;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "ADD_GUARANTORS",
+            "id": "34277b39-8e3c-47fd-9e26-3dc1ef56e953",
+            "orderNumber": "1000600419",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "",
+                    "ru": ""
+                },
+                "stageName": {
+                    "kz": "Приложить документы",
+                    "ru": "Приложить документы"
+                }
+            },
+            "processingEventStatus": "UNPROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: CLIENT_CANCELED
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/cancel
+    method: POST
+    mode: json
+    params:path: {
+      sme-leasing-uuid: {{online_auto_leasing_id}}
+    }
+  
+    headers: {
+      X-User-ID: +77777777777
+    }
+  
+    body:json: {
+      {
+          "group": "Клиент",  // Группа причины отмены (например, "Клиент", "Система" и др.)
+          "reason": "Клиент передумал" // Описание причины отмены (например, "Клиент передумал")
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "CLIENT_CANCELED",
+            "id": "93c0118b-4e20-44ac-95a2-e4f0a2a5d70b",
+            "orderNumber": "2023255515",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "Менеджер/уәкілетті тұлға туралы деректер жоқ",
+                    "ru": "Нет данных по руководителю/уполномоченного лица"
+                },
+                "stageName": {
+                    "kz": "Өтінім клиенттің бастамасымен тоқтатылды",
+                    "ru": "Заявка отменена клиентом"
+                }
+            },
+            "processingEventStatus": "PROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}

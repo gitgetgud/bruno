@@ -1,0 +1,47 @@
+meta {
+  name: onboarding.pCheckAccountExists
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{adapter_url}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token}}
+}
+
+body:json {
+  {
+      "meta": {
+          "version": "1.0",
+          "command": {
+              "source": "pkg",
+              "dso": "onboarding.pCheckAccountExists",
+              "dsoType": 1
+          },
+          "event": {
+              "id": "5aa4f318-ac31-4fe6-b121-81deda3d9cbe",
+              "time": "2023-07-12T14:50:03.216168328+06:00"//{{currentDate}}
+          }
+      },
+      "payload": {
+          "taxcode": "900810300190"
+      }
+  }
+}
+
+script:pre-request {
+  var moment = require('moment');
+  
+  var currentDate = new Date(moment())
+  pm.collectionVariables.set('currentDate', currentDate.toISOString());
+  
+}
+
+settings {
+  encodeUrl: true
+}

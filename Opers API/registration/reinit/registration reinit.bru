@@ -1,0 +1,69 @@
+meta {
+  name: registration reinit
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/reinit/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "string",
+    "phone": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Application id
+  
+  request: {
+    url: {{baseUrl}}/registration/reinit/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "phone": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "5f57eec6-1998-282d-c4ab-6a7ad45a8fc7"
+        }
+      '''
+    }
+  }
+}

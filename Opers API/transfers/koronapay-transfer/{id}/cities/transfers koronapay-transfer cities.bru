@@ -1,0 +1,77 @@
+meta {
+  name: transfers koronapay-transfer cities
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/transfers/koronapay-transfer/:id/cities/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Золотая Корона
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/koronapay-transfer/:id/cities/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "beneficiary_country": 3293,
+          "beneficiary_city": 9040,
+          "phone_number": "string",
+          "from_iban": "string",
+          "beneficiary_last_name": "string",
+          "beneficiary_first_name": "string",
+          "beneficiary_phone_number": "string",
+          "iin": "string",
+          "from_currency": "USD",
+          "to_currency": "XAU",
+          "to_amount": "string",
+          "beneficiary_middle_name": "string",
+          "beneficiary_is_resident": false
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,67 @@
+meta {
+  name: opers api v1 core current account information
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/current_account/information/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iban": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/current_account/information/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iban": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iban": "string"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,74 @@
+meta {
+  name: card plastic emission verify sms
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/card/plastic_emission/verify_sms/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "application_uuid": "string",
+    "passcode": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Подтверждение СМС
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/plastic_emission/verify_sms/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "application_uuid": "string",
+        "passcode": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "application_uuid": "string",
+          "status": 4238
+        }
+      '''
+    }
+  }
+}

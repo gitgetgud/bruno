@@ -1,0 +1,77 @@
+meta {
+  name: Внести замечание
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/safe_room_revision/revision/:id/enter_remark/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "inventory_book_remark": "string",
+    "vnd_nbrk_remark": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/:id/enter_remark/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "inventory_book_remark": "string",
+        "vnd_nbrk_remark": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "string"
+        }
+      '''
+    }
+  }
+}

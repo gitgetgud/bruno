@@ -1,0 +1,79 @@
+meta {
+  name: Выбор оффера
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/retail_products/aviata/select_offer/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "datetime": "1976-12-09T20:09:59.493Z",
+    "application_uuid": "255b86fd-ee7c-6ce4-be08-3b0ede2dfa7b",
+    "offer_id": 8758
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/retail_products/aviata/select_offer/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "datetime": "1976-12-09T20:09:59.493Z",
+        "application_uuid": "255b86fd-ee7c-6ce4-be08-3b0ede2dfa7b",
+        "offer_id": 8758
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "selected_offer": {
+            "id": 974,
+            "term": 9048,
+            "rate": "string",
+            "amount": "string",
+            "product_type": "string"
+          },
+          "agreement_file_path": "string",
+          "card_issuance_file_path": "string"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,111 @@
+meta {
+  name: events exchange v2 opers list
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/events/exchange/v2/opers/?iin=string&client_id=string&search=string&ordering=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  iin: string
+  client_id: string
+  search: string
+  ordering: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/exchange/v2/opers/?iin=string&client_id=string&search=string&ordering=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      iin: string
+      client_id: string
+      search: string
+      ordering: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 3407,
+          "results": [
+            {
+              "status_name": "string",
+              "id": "d10c33f2-5bc3-782c-c69f-c0ded2587a95",
+              "created": "1967-03-31T01:10:25.929Z",
+              "modified": "1964-11-15T05:15:26.840Z",
+              "status": 11,
+              "to_iban": "string",
+              "from_iban": "string",
+              "rate": "string",
+              "credit_currency": "string",
+              "debit_currency": "string",
+              "credit_amount": "string",
+              "debit_amount": "string",
+              "document_ref_id": "string",
+              "client_id": "string",
+              "iin": "string",
+              "modified_operationist": "string",
+              "is_created_by_client": true
+            },
+            {
+              "status_name": "string",
+              "id": "b9d818e4-a56b-05ad-1ba5-15cd6c123a89",
+              "created": "1988-05-22T09:28:44.713Z",
+              "modified": "2002-01-25T17:41:52.770Z",
+              "status": 2,
+              "to_iban": "string",
+              "from_iban": "string",
+              "rate": "string",
+              "credit_currency": "string",
+              "debit_currency": "string",
+              "credit_amount": "string",
+              "debit_amount": "string",
+              "document_ref_id": "string",
+              "client_id": "string",
+              "iin": "string",
+              "modified_operationist": "string",
+              "is_created_by_client": false
+            }
+          ],
+          "next": "https://vwyGStDLdbGatLizP.dxzehwSwyL,jgnPqSBjNzrzMa.2JKlrIH33UhXqgrk3u6rPLZmXxoukdOSLcJzNONuRp",
+          "previous": "http://JiDsoPOiPWVQdDuz.zukuHxHc0VP"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,73 @@
+meta {
+  name: events processes read
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/events/processes/:code/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  code: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/processes/:code/
+    method: GET
+    mode: none
+    params:path: {
+      code: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "code": "string",
+          "plastics": [
+            "string"
+          ],
+          "products": [
+            "string"
+          ],
+          "currencies": [
+            "string"
+          ],
+          "commissions": [
+            "string"
+          ]
+        }
+      '''
+    }
+  }
+}

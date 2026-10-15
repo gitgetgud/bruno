@@ -1,0 +1,35 @@
+meta {
+  name: 6_ibso.FindClient
+  type: http
+  seq: 6
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdboul/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboulUser
+  password: SdboulUser2020
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.FindClient",
+          "uuid": "3505c24a-9523-4594-85b2-60adca269fc3",
+          "requestTime": "2022-07-04T13:51:45+00:00",
+          "sourceSystem": "SdboulL",
+          "username": "SdboulUser",
+          "Data": {
+              "clientIdn": "880726301661"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

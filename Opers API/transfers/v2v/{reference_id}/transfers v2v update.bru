@@ -1,0 +1,84 @@
+meta {
+  name: transfers v2v update
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{baseUrl}}/transfers/v2v/:reference_id/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  reference_id: string
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "status": 3,
+    "commission": "string",
+    "error_description": "string",
+    "rrn": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/v2v/:reference_id/
+    method: PUT
+    mode: json
+    params:path: {
+      reference_id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "status": 3,
+        "commission": "string",
+        "error_description": "string",
+        "rrn": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "status": 3,
+          "commission": "string",
+          "error_description": "string",
+          "rrn": "string"
+        }
+      '''
+    }
+  }
+}

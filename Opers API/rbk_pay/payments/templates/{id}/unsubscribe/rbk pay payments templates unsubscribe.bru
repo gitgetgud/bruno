@@ -1,0 +1,50 @@
+meta {
+  name: rbk pay payments templates unsubscribe
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/payments/templates/:id/unsubscribe/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 80
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/templates/:id/unsubscribe/
+    method: POST
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

@@ -1,0 +1,88 @@
+meta {
+  name: Получение списка VIP/Premium клиентов
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/vip/?iin=string&fio__icontains=string&page=80&fio=string&is_vip=false&is_premium=false
+  body: none
+  auth: inherit
+}
+
+params:query {
+  iin: string
+  fio__icontains: string
+  page: 80
+  fio: string
+  is_vip: false
+  is_premium: false
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Эндпоинт для получения списка VIP и Premium клиентов с фильтрацией по ИИН, ФИО и типу клиента.
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/vip/?iin=string&fio__icontains=string&page=80&fio=string&is_vip=false&is_premium=false
+    method: GET
+    mode: none
+    params:query: {
+      iin: string
+      fio__icontains: string
+      page: 80
+      fio: string
+      is_vip: false
+      is_premium: false
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "iin": "string",
+            "fio": "string",
+            "client_id": "string",
+            "created": "string",
+            "id": 8698
+          },
+          {
+            "iin": "string",
+            "fio": "string",
+            "client_id": "string",
+            "created": "string",
+            "id": 1848
+          }
+        ]
+      '''
+    }
+  }
+}

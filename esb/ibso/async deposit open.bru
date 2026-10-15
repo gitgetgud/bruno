@@ -1,0 +1,44 @@
+meta {
+  name: async deposit open
+  type: http
+  seq: 18
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+headers {
+  : 
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.DepositOpen",
+          "uuid": "0c2375aa-abdd-4e04-ac01-87434452e12c",
+          "sourceSystem": "singleWindow",
+          "username": "singleWindow",
+          "requestTime": "2021-11-05 05:02:23.218639",
+          "Data": {
+              "customerId": "83017502921",
+              "iban": "KZ268210539870492025",
+              "sdclCode": "82044726318",
+              "amount": "1000",
+              "capital": "1",
+              "rewarIban": ""
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

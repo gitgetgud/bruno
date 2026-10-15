@@ -1,0 +1,50 @@
+meta {
+  name: Принять ознакомление кассира
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/opers/client-info/looked_client_card_data/?log_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  log_id: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/client-info/looked_client_card_data/?log_id=string
+    method: POST
+    mode: none
+    params:query: {
+      log_id: string
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

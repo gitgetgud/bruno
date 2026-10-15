@@ -1,0 +1,36 @@
+meta {
+  name: [BE]<->[OpenAPI]: GetToken
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://api-sandbox.bcc.kz/bcc/production/v2/oauth/token
+  body: formUrlEncoded
+  auth: basic
+}
+
+headers {
+  Content-Type: application/x-www-form-urlencoded
+  Authorization: Basic MjEwNzMzYzktNjVhMS00OTY3LTllNGUtZTlkYTE4YTU0YzM3Okg0blIzckU2dkUzdUg0aVQwdlMxZE02bUU3dVg0bUQxb0gzckQ3c1Ixc0E4aE4zd04y
+  Cookie: fa7f047e1e6a6013e6678e09e17ee941=9a1e2c622a3c630d549f42e08a479b24
+}
+
+auth:basic {
+  username: 210733c9-65a1-4967-9e4e-e9da18a54c37
+  password: H4nR3rE6vE3uH4iT0vS1dM6mE7uX4mD1oH3rD7sR1sA8hN3wN2
+}
+
+body:form-urlencoded {
+  grant_type: client_credentials
+  scope: bcc.application.leasing.api
+}
+
+script:post-response {
+  let responseData = res.getBody();
+  bru.setEnvVar("x_ibm_access_token", responseData.access_token);
+}
+
+settings {
+  encodeUrl: true
+}

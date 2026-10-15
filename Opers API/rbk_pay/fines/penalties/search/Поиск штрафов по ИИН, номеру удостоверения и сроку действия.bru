@@ -1,0 +1,113 @@
+meta {
+  name: Поиск штрафов по ИИН, номеру удостоверения и сроку действия
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/fines/penalties/search/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "string",
+    "doc_num": "string",
+    "doc_issue_date": "1985-01-07"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/fines/penalties/search/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "doc_num": "string",
+        "doc_issue_date": "1985-01-07"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "string",
+          "f_name": "string",
+          "l_name": "strin",
+          "m_name": "string",
+          "birthday": "1958-06-13T21:36:26.919Z",
+          "violations": [
+            {
+              "av_original_id": "string",
+              "offence_org": "string",
+              "commission_date": "1991-02-14T08:00:08.985Z",
+              "penalty_size": "string",
+              "payment_size": "string",
+              "balance_size": "string",
+              "kbk": "string",
+              "kno": "string",
+              "knp": "string",
+              "half_sum_expired_date": "2015-05-18T22:50:06.109Z",
+              "act_num": "string",
+              "protocol_num": "string",
+              "protocol_date": "string",
+              "qualification": "string",
+              "decision": "string",
+              "doc_name": "string"
+            },
+            {
+              "av_original_id": "string",
+              "offence_org": "str",
+              "commission_date": "2011-08-24T16:04:29.935Z",
+              "penalty_size": "string",
+              "payment_size": "string",
+              "balance_size": "string",
+              "kbk": "string",
+              "kno": "string",
+              "knp": "string",
+              "half_sum_expired_date": "1994-03-14T23:23:03.185Z",
+              "act_num": "string",
+              "protocol_num": "string",
+              "protocol_date": "string",
+              "qualification": "str",
+              "decision": "string",
+              "doc_name": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

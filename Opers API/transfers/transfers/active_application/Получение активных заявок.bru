@@ -1,0 +1,285 @@
+meta {
+  name: Получение активных заявок
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/transfers/transfers/active_application/
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/transfers/active_application/
+    method: GET
+    mode: none
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "ext_id": "string",
+            "transfer_type": "string",
+            "swift_info": {
+              "id": "string",
+              "transfer_type": "string",
+              "status": 7001,
+              "status_details": "string",
+              "status_display": "string",
+              "currency": "string",
+              "amount": "string",
+              "reference_number": "string",
+              "to_iban": "string",
+              "beneficiary_name": "string",
+              "beneficiary_address": "string",
+              "beneficiary_place": "string",
+              "beneficiary_code": "string",
+              "beneficiary_account": "string",
+              "payer_account": "string",
+              "commission_type": 7680,
+              "commission_account": "string",
+              "country": {
+                "code": "string",
+                "two_char_code": "string",
+                "three_char_code": "s",
+                "name": "string",
+                "full_name": "string",
+                "international_name": "string"
+              },
+              "payment_purpose_code": {
+                "code": "string",
+                "name": "string",
+                "short_name": "string"
+              },
+              "payment_purpose_description": "string",
+              "swift_bank": {
+                "swift_code": "string",
+                "name": "string",
+                "int_name": "string",
+                "phone": "string",
+                "address": "string",
+                "city": "string",
+                "country_code": "string",
+                "crd": "string",
+                "cacc": "string"
+              },
+              "correspondent_swift_bank": {
+                "swift_code": "string",
+                "name": "string",
+                "int_name": "string",
+                "phone": "string",
+                "address": "string",
+                "city": "string",
+                "country_code": "string",
+                "crd": "string",
+                "cacc": "string"
+              },
+              "correspondent_account": "string",
+              "is_terms_agreed": false,
+              "is_support_requested": true,
+              "document_details": {
+                "key_0": "string",
+                "key_1": "string"
+              },
+              "client_data": {
+                "key_0": "string",
+                "key_1": "string",
+                "key_2": "string"
+              },
+              "client_id": "string",
+              "phone_number": "string",
+              "from_sdbo": false,
+              "is_active": false,
+              "created": "2019-05-18T10:08:02.015Z",
+              "modified": "1968-04-08T12:11:10.715Z",
+              "documents": [
+                {
+                  "id": 5048,
+                  "path": "string",
+                  "description": "string"
+                },
+                {
+                  "id": 2310,
+                  "path": "string",
+                  "description": "string"
+                }
+              ],
+              "payer_name": "string",
+              "currency_control_code": "string",
+              "payment_details": "string",
+              "payer_bank": "string",
+              "can_repeat": false
+            },
+            "exchange_info": {
+              "status": "string",
+              "iin": "string",
+              "phone": "string",
+              "to_iban": "string",
+              "from_iban": "string",
+              "credit_currency": "string",
+              "debit_currency": "string",
+              "credit_amount": "string",
+              "debit_amount": "string",
+              "rate": "string",
+              "document_ref_id": "string",
+              "modified_operationist": "string",
+              "client_id": "string",
+              "is_rate_provided": false,
+              "is_custom_rate_provided": true,
+              "is_created_by_client": true,
+              "failed_reason": "string",
+              "data": {}
+            },
+            "created": "1997-03-11T00:26:34.615Z",
+            "modified": "1983-05-11T16:13:26.116Z"
+          },
+          {
+            "ext_id": "string",
+            "transfer_type": "string",
+            "swift_info": {
+              "id": "string",
+              "transfer_type": "string",
+              "status": 5307,
+              "status_details": "string",
+              "status_display": "string",
+              "currency": "string",
+              "amount": "string",
+              "reference_number": "string",
+              "to_iban": "string",
+              "beneficiary_name": "string",
+              "beneficiary_address": "string",
+              "beneficiary_place": "string",
+              "beneficiary_code": "string",
+              "beneficiary_account": "string",
+              "payer_account": "string",
+              "commission_type": 2908,
+              "commission_account": "string",
+              "country": {
+                "code": "strin",
+                "two_char_code": "string",
+                "three_char_code": "string",
+                "name": "string",
+                "full_name": "string",
+                "international_name": "string"
+              },
+              "payment_purpose_code": {
+                "code": "string",
+                "name": "string",
+                "short_name": "string"
+              },
+              "payment_purpose_description": "string",
+              "swift_bank": {
+                "swift_code": "string",
+                "name": "string",
+                "int_name": "string",
+                "phone": "string",
+                "address": "string",
+                "city": "string",
+                "country_code": "string",
+                "crd": "string",
+                "cacc": "string"
+              },
+              "correspondent_swift_bank": {
+                "swift_code": "string",
+                "name": "string",
+                "int_name": "string",
+                "phone": "string",
+                "address": "string",
+                "city": "string",
+                "country_code": "string",
+                "crd": "string",
+                "cacc": "string"
+              },
+              "correspondent_account": "string",
+              "is_terms_agreed": false,
+              "is_support_requested": true,
+              "document_details": {
+                "key_0": "string",
+                "key_1": "string",
+                "key_2": "string",
+                "key_3": "string",
+                "key_4": "string"
+              },
+              "client_data": {
+                "key_0": "string"
+              },
+              "client_id": "string",
+              "phone_number": "string",
+              "from_sdbo": false,
+              "is_active": false,
+              "created": "1983-06-14T04:02:13.454Z",
+              "modified": "1948-10-05T18:23:23.396Z",
+              "documents": [
+                {
+                  "id": 7378,
+                  "path": "string",
+                  "description": "string"
+                },
+                {
+                  "id": 4514,
+                  "path": "str",
+                  "description": "string"
+                }
+              ],
+              "payer_name": "string",
+              "currency_control_code": "string",
+              "payment_details": "string",
+              "payer_bank": "string",
+              "can_repeat": true
+            },
+            "exchange_info": {
+              "status": "string",
+              "iin": "string",
+              "phone": "string",
+              "to_iban": "string",
+              "from_iban": "string",
+              "credit_currency": "string",
+              "debit_currency": "string",
+              "credit_amount": "string",
+              "debit_amount": "strin",
+              "rate": "string",
+              "document_ref_id": "string",
+              "modified_operationist": "string",
+              "client_id": "string",
+              "is_rate_provided": false,
+              "is_custom_rate_provided": true,
+              "is_created_by_client": false,
+              "failed_reason": "string",
+              "data": {}
+            },
+            "created": "1986-11-12T16:42:32.056Z",
+            "modified": "2004-06-08T08:17:40.264Z"
+          }
+        ]
+      '''
+    }
+  }
+}

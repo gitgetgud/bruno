@@ -1,0 +1,113 @@
+meta {
+  name: Аналитика по карте
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/card/statements/rbs_history_analytics/?period=YEAR&rbs_number=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  period: YEAR
+  rbs_number: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/statements/rbs_history_analytics/?period=YEAR&rbs_number=string
+    method: GET
+    mode: none
+    params:query: {
+      period: YEAR
+      rbs_number: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "information": {
+            "rbs_number": "string",
+            "common_refill": 8951,
+            "common_withdrawal": 3576,
+            "common_purchase": 3233,
+            "common_retail_purchase": 2330,
+            "common_purchase_count": 1018,
+            "common_cashback_amount": 3083,
+            "common_cashback_share": 6793.1344617393515,
+            "max_purchase_amount": 6128,
+            "max_purchase_amount_provider": "string",
+            "max_purchase_cashback": 7355,
+            "max_purchase_cashback_provider": "string",
+            "provider_with_max_frequency": "string",
+            "provider_frequency_with_max": 8097,
+            "provider_frequency_with_max_common_sum": 5903,
+            "category_with_max_frequency": "string",
+            "category_frequency_with_max": 7763,
+            "category_frequency_with_max_common_sum": 7582,
+            "max_period_amount": 8794,
+            "first_step": 6655,
+            "second_step": 8313,
+            "details": [
+              {
+                "range": "string",
+                "amount": 762
+              },
+              {
+                "range": "string",
+                "amount": 9250
+              }
+            ],
+            "amount_free_service_vip_card": 8073,
+            "amount_free_airport_priveleges": 4781
+          },
+          "categories": [
+            {
+              "name": "string",
+              "information": {
+                "cashback": 466,
+                "amount": 8385
+              }
+            },
+            {
+              "name": "string",
+              "information": {
+                "cashback": 7170,
+                "amount": 6742
+              }
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

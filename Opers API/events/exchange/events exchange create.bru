@@ -1,0 +1,82 @@
+meta {
+  name: events exchange create
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/events/exchange/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "full_name": "string",
+    "amount": "string",
+    "rate": "string",
+    "phone": "string",
+    "division": "001-010-001",
+    "currency": "CHF"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/exchange/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "full_name": "string",
+        "amount": "string",
+        "rate": "string",
+        "phone": "string",
+        "division": "001-010-001",
+        "currency": "CHF"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "full_name": "string",
+          "amount": "string",
+          "rate": "string",
+          "phone": "string",
+          "division": "001-010-001",
+          "currency": "CHF"
+        }
+      '''
+    }
+  }
+}

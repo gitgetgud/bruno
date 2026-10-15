@@ -1,0 +1,87 @@
+meta {
+  name: Завершить ревизию
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/safe_room_revision/revision/:id/finish_revision/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "revision_kind": 1,
+    "revision_type": 1,
+    "revision_date": "1996-02-16T06:55:12.365Z",
+    "created_by_user_data": "string",
+    "additional_data": "string",
+    "status": 5,
+    "branch": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/:id/finish_revision/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "revision_kind": 1,
+        "revision_type": 1,
+        "revision_date": "1996-02-16T06:55:12.365Z",
+        "created_by_user_data": "string",
+        "additional_data": "string",
+        "status": 5,
+        "branch": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "string"
+        }
+      '''
+    }
+  }
+}

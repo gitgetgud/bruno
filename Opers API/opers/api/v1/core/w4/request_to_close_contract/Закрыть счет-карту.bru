@@ -1,0 +1,77 @@
+meta {
+  name: Закрыть счет/карту
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/w4/request_to_close_contract/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "client_id": "string",
+    "phone_number": "string",
+    "iban": "string",
+    "rbs_number": "string",
+    "remainder_to_iban": "string",
+    "remainder_to_banks_income": true
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/w4/request_to_close_contract/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "client_id": "string",
+        "phone_number": "string",
+        "iban": "string",
+        "rbs_number": "string",
+        "remainder_to_iban": "string",
+        "remainder_to_banks_income": true
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "otp_uuid": "baa5d067-391c-6d8a-4047-fc2dd84d704e"
+        }
+      '''
+    }
+  }
+}

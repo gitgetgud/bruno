@@ -1,0 +1,78 @@
+meta {
+  name: Список налогов
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/taxes/info_codes/bcc_codes/?page=80&type=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  type: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/taxes/info_codes/bcc_codes/?page=80&type=string
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      type: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "data": [
+            {
+              "code": "string",
+              "name": "string",
+              "id": "string",
+              "iin": "string",
+              "is_poena": true
+            },
+            {
+              "code": "string",
+              "name": "string",
+              "id": "string",
+              "iin": "string",
+              "is_poena": false
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

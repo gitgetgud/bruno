@@ -1,0 +1,253 @@
+meta {
+  name: 4 STEP: GET THE RESPONSE OF SIGNED DOCUMENT
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://egov.kz/services/P30.05/rest/request-states/10100544810778
+  body: none
+  auth: inherit
+}
+
+headers {
+  Connection: keep-alive
+  sec-ch-ua: "Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"
+  Accept: application/json, text/plain, */*
+  sec-ch-ua-mobile: ?0
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+  sec-ch-ua-platform: "Windows"
+  Sec-Fetch-Site: same-origin
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Dest: empty
+  Referer: https://egov.kz/services/P30.05/
+  Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+  Cookie: _zero_ss=618a5644d6419.1636456005.1636456010.2;SSESSf0d09e6725a5b1994b1b0ab11a8d594d=GMdlvHz7OMgv-GKoaEmMABYL3MsuvKOSw9DNN2MIbPU;SSO=4006eba4-f4a8-479f-9201-ea5767970454;_gid=GA1.2.517375502.1636456006;cookiesession1=678B76BFUVWXZAHIJKLMNOPQRSTVB97D;_ym_visorc=w;_ym_isad=2;_ym_uid=1636456005779626184;_ga=GA1.2.481261747.1636456006;_zero_cc=3e1286509d6753;egovLang=ru;_ym_d=1636456005;has_js=1;_gat_gtag_UA_30759057_1=1;egov-client-type=PORTAL;
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}
+
+example {
+  name: https://egov.kz/services/P30.05/rest/request-states/10100541665540
+  
+  request: {
+    url: https://egov.kz/services/P30.05/rest/request-states/10100541665540
+    method: GET
+    mode: none
+    headers: {
+      Connection: keep-alive
+      sec-ch-ua: "Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"
+      Accept: application/json, text/plain, */*
+      sec-ch-ua-mobile: ?0
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+      sec-ch-ua-platform: "Windows"
+      Sec-Fetch-Site: same-origin
+      Sec-Fetch-Mode: cors
+      Sec-Fetch-Dest: empty
+      Referer: https://egov.kz/services/P30.05/
+      Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+      Cookie: LTT=1635335809111; LTT=1635335784220; LTT=1635335780625; cookiesession1=678B772AIKLMNOPQRSTVWXYZABCD71E1; egov-client-type=PORTAL; has_js=1; _zero_cc=63843ac8a48982; _ym_d=1635242553; _ym_uid=1635242553260483271; egovLang=ru; _gid=GA1.2.2102397583.1635242557; _ga=GA1.2.61266959.1635242557; SSESSf0d09e6725a5b1994b1b0ab11a8d594d=eHVYoyZe6jeimOvimqTJy5_ZOdLHDJxbjsrAnnEeyts; egov-client-type=PORTAL; locale=ru; sign.certType=file; sign.file=null; _zero_ss=6178dee353f10.1635311331.1635311378.2; SERVERID=s1; LTT=1635329880694; SSO=0aaf755f-466c-4a8e-8f7d-c92162de58fd
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx
+      Date: Wed, 27 Oct 2021 11:59:37 GMT
+      Content-Type: application/json;charset=utf-8
+      Connection: keep-alive
+      Set-Cookie: egov-client-type=PORTAL; Path=/
+      Set-Cookie: JSESSIONID=UJkZXBNl5AwCAGylZkJixuBA; Path=/P30.05
+      Set-Cookie: LTT=1635335977201
+      Access-Control-Allow-Credentials: true
+      Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD
+      Access-Control-Allow-Headers: Authorization, Origin, X-Requested-With, Content-Type, Accept
+      content-length: 2832
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": "APPROVED",
+            "bpmProcessStatus": "APPROVED",
+            "completed": true,
+            "declarantIdentificationNumber": "141040028436",
+            "declarantName": "Товарищество с ограниченной ответственностью \"Учёт.Бухгалтерия\"",
+            "applicationCode": "P30.05",
+            "nameRu": "Справка обо всех регистрационных действиях юридического лица",
+            "nameKz": "Заңды тұлғаның барлық тіркеу әрекеттері туралы анықтама",
+            "appCreationDate": 1635333534954,
+            "updatedDate": 1635333535859,
+            "declaration": null,
+            "resultsForDownload": [
+                {
+                    "nameKk": "Заңды тұлғаның барлық тіркеу әрекеттері туралы анықтама - қаз",
+                    "nameRu": "Справка обо всех регистрационных действиях юридического лица - каз",
+                    "nameEn": "The certificate of all registration activities of a legal entity - kaz",
+                    "url": "http://egov.kz/services/eds-generation-download/rest/document/downloadNamed/id/00000000-0ad3-2756-6a1c-c0eca0df45bf/view/kk/P30.05%20-%20kk%20-%2010100541665540.pdf?login=pep&password=pep",
+                    "language": "kz",
+                    "name": "Справка обо всех регистрационных действиях юридического лица - каз"
+                },
+                {
+                    "nameKk": "Заңды тұлғаның барлық тіркеу әрекеттері туралы анықтама - орыс",
+                    "nameRu": "Справка обо всех регистрационных действиях юридического лица - рус",
+                    "nameEn": "The certificate of all registration activities of a legal entity - rus",
+                    "url": "http://egov.kz/services/eds-generation-download/rest/document/downloadNamed/id/00000000-0ad3-2756-6a1c-c0eca0df45bf/view/ru/P30.05%20-%20ru%20-%2010100541665540.pdf?login=pep&password=pep",
+                    "language": "ru",
+                    "name": "Справка обо всех регистрационных действиях юридического лица - рус"
+                }
+            ],
+            "availableActions": null,
+            "eds": {
+                "createdDate": 1610692105000,
+                "endedDate": 1642228105000,
+                "iin": "760713302515",
+                "bin": "940340000421",
+                "fullName": "ТЛЕНЧИЕВ АЛАН ТУЛЕБАЕВИЧ",
+                "organization": "ГОСУДАРСТВЕННОЕ УЧРЕЖДЕНИЕ \"МИНИСТЕРСТВО ЮСТИЦИИ РЕСПУБЛИКИ КАЗАХСТАН\"",
+                "issuer": null,
+                "status": "VALID_SIGN"
+            },
+            "statusGo": {
+                "code": "002",
+                "name": {
+                    "ru": "Запрос обработан успешно",
+                    "kk": "Сұраныс cәтті орындалды",
+                    "en": null
+                }
+            },
+            "operatorIin": null,
+            "operatorName": null,
+            "recipientUin": "090640004684",
+            "recipientFullName": "Товарищество с ограниченной ответственностью \"Khan-Turan Travel\"",
+            "approvals": null,
+            "paymentInformation": null,
+            "approvalProcessInfos": null,
+            "serializedApplication": null
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: https://egov.kz/services/P30.05/rest/request-states/10100541665540
+  
+  request: {
+    url: https://egov.kz/services/P30.05/rest/request-states/10100544810778
+    method: GET
+    mode: none
+    headers: {
+      Connection: keep-alive
+      sec-ch-ua: "Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"
+      Accept: application/json, text/plain, */*
+      sec-ch-ua-mobile: ?0
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+      sec-ch-ua-platform: "Windows"
+      Sec-Fetch-Site: same-origin
+      Sec-Fetch-Mode: cors
+      Sec-Fetch-Dest: empty
+      Referer: https://egov.kz/services/P30.05/
+      Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+      Cookie: _zero_ss=618a5644d6419.1636456005.1636456010.2;SSESSf0d09e6725a5b1994b1b0ab11a8d594d=GMdlvHz7OMgv-GKoaEmMABYL3MsuvKOSw9DNN2MIbPU;SSO=4006eba4-f4a8-479f-9201-ea5767970454;_gid=GA1.2.517375502.1636456006;cookiesession1=678B76BFUVWXZAHIJKLMNOPQRSTVB97D;_ym_visorc=w;_ym_isad=2;_ym_uid=1636456005779626184;_ga=GA1.2.481261747.1636456006;_zero_cc=3e1286509d6753;egovLang=ru;_ym_d=1636456005;has_js=1;_gat_gtag_UA_30759057_1=1;egov-client-type=PORTAL;
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx
+      Date: Tue, 09 Nov 2021 11:10:04 GMT
+      Content-Type: application/json;charset=utf-8
+      Connection: keep-alive
+      Set-Cookie: egov-client-type=PORTAL; Domain=egov.kz; Path=/
+      Set-Cookie: JSESSIONID=sgsaf2AKLl1dT9G-iT0E0W9q; Path=/P30.05
+      Set-Cookie: LTT=1636456204030
+      Access-Control-Allow-Credentials: true
+      Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD
+      Access-Control-Allow-Headers: Authorization, Origin, X-Requested-With, Content-Type, Accept
+      content-length: 2841
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": "APPROVED",
+            "bpmProcessStatus": "APPROVED",
+            "completed": true,
+            "declarantIdentificationNumber": "141040028436",
+            "declarantName": "\"Учёт.Бухгалтерия\" жауапкершілігі шектеулі серіктестігі",
+            "applicationCode": "P30.05",
+            "nameRu": "Справка обо всех регистрационных действиях юридического лица",
+            "nameKz": "Заңды тұлғаның барлық тіркеу әрекеттері туралы анықтама",
+            "appCreationDate": 1636456183967,
+            "updatedDate": 1636456185652,
+            "declaration": null,
+            "resultsForDownload": [
+                {
+                    "nameKk": "Заңды тұлғаның барлық тіркеу әрекеттері туралы анықтама - қаз",
+                    "nameRu": "Справка обо всех регистрационных действиях юридического лица - каз",
+                    "nameEn": "The certificate of all registration activities of a legal entity - kaz",
+                    "url": "http://egov.kz/services/eds-generation-download/rest/document/downloadNamed/id/00000000-0aeb-4bd7-958b-40b406f706a7/view/kk/P30.05%20-%20kk%20-%2010100544810778.html?login=pep&password=pep",
+                    "language": "kz",
+                    "noPaper": true,
+                    "name": "Справка обо всех регистрационных действиях юридического лица - каз"
+                },
+                {
+                    "nameKk": "Заңды тұлғаның барлық тіркеу әрекеттері туралы анықтама - орыс",
+                    "nameRu": "Справка обо всех регистрационных действиях юридического лица - рус",
+                    "nameEn": "The certificate of all registration activities of a legal entity - rus",
+                    "url": "http://egov.kz/services/eds-generation-download/rest/document/downloadNamed/id/00000000-0aeb-4bd7-958b-40b406f706a7/view/ru/P30.05%20-%20ru%20-%2010100544810778.html?login=pep&password=pep",
+                    "language": "ru",
+                    "noPaper": true,
+                    "name": "Справка обо всех регистрационных действиях юридического лица - рус"
+                }
+            ],
+            "availableActions": null,
+            "eds": {
+                "createdDate": 1610692105000,
+                "endedDate": 1642228105000,
+                "iin": "760713302515",
+                "bin": "940340000421",
+                "fullName": "ТЛЕНЧИЕВ АЛАН ТУЛЕБАЕВИЧ",
+                "organization": "ГОСУДАРСТВЕННОЕ УЧРЕЖДЕНИЕ \"МИНИСТЕРСТВО ЮСТИЦИИ РЕСПУБЛИКИ КАЗАХСТАН\"",
+                "issuer": null,
+                "status": "VALID_SIGN"
+            },
+            "statusGo": {
+                "code": "002",
+                "name": {
+                    "ru": "Запрос обработан успешно",
+                    "kk": "Сұраныс cәтті орындалды",
+                    "en": null
+                }
+            },
+            "operatorIin": null,
+            "operatorName": null,
+            "recipientUin": "080540008929",
+            "recipientFullName": "\"Abylai-khan Construction\" жауапкершілігі шектеулі серіктестігі",
+            "approvals": null,
+            "paymentInformation": null,
+            "approvalProcessInfos": null,
+            "serializedApplication": null
+        }
+      '''
+    }
+  }
+}

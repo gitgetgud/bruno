@@ -1,0 +1,78 @@
+meta {
+  name: Список скин карт
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/junior_banking/card_skins/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/junior_banking/card_skins/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "id": 6070,
+            "achievement_text": "string",
+            "name": "string",
+            "image": "http://JRuSAhtJaQJKgn.dtdI,",
+            "mini_image": "http://QchKwpZJmIWkTJHqhnSFbKpA.minEfqhTOrqjRbqkEq",
+            "video": "https://pPz.uhaHkZhp3oAX+Ef2XDbfT2Bz7RXnjn7kR4YdEZ",
+            "achievement_type": "ENOUGH_KEEPER_REFILL"
+          },
+          {
+            "id": 9207,
+            "achievement_text": "string",
+            "name": "string",
+            "image": "https://wAIDZeE.djrWNwVSRdDoeJa8956,4pZ3Wc",
+            "mini_image": "http://OlMsSqiERzrWyWmAXa.kiKz8-pE9FhwuFtuIGjt9dXaNHe4FGf0",
+            "video": "https://F.lqAcamvFMm5LEHjis7UZn-XiW,",
+            "achievement_type": "ENOUGH_TEMPLATES"
+          }
+        ]
+      '''
+    }
+  }
+}

@@ -1,0 +1,87 @@
+meta {
+  name: registration coordinates
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/:id/coordinates/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "created": "1954-08-01T10:47:13.725Z",
+    "latitude": "string",
+    "longitude": "string",
+    "altitude": "string",
+    "address": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/registration/:id/coordinates/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "created": "1954-08-01T10:47:13.725Z",
+        "latitude": "string",
+        "longitude": "string",
+        "altitude": "string",
+        "address": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "created": "1954-08-01T10:47:13.725Z",
+          "latitude": "string",
+          "longitude": "string",
+          "altitude": "string",
+          "address": "string"
+        }
+      '''
+    }
+  }
+}

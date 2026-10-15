@@ -1,0 +1,97 @@
+meta {
+  name: 3. services/signing/rest/app/xml?PageQueryID=348d053d-e170-46fe-999a-c79454bda2e1
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://egov.kz/services/signing/rest/app/xml?PageQueryID=348d053d-e170-46fe-999a-c79454bda2e1
+  body: none
+  auth: inherit
+}
+
+params:query {
+  PageQueryID: 348d053d-e170-46fe-999a-c79454bda2e1
+}
+
+headers {
+  Connection: keep-alive
+  sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"
+  Accept: application/json, text/plain, */*
+  sec-ch-ua-mobile: ?0
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36
+  sec-ch-ua-platform: "Windows"
+  Sec-Fetch-Site: same-origin
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Dest: empty
+  Referer: https://egov.kz/services/signing/?PageQueryID=348d053d-e170-46fe-999a-c79454bda2e1
+  Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+  Cookie: LTT=1637580392065; LTT=1637580614613; LTT=1637580598978; cookiesession1=678B772AIKLMNOPQRSTVWXYZABCD71E1; _zero_cc=63843ac8a48982; _ym_d=1635242553; _ym_uid=1635242553260483271; _ga=GA1.2.61266959.1635242557; _gid=GA1.2.1732024309.1637573812; _ym_isad=2; egov-client-type=PORTAL; has_js=1; _ym_visorc=w; egovLang=ru; SSO=00f978af-adf9-4ed6-80fc-06abbfa44cd3; SSESSf0d09e6725a5b1994b1b0ab11a8d594d=NUlP2PxC8mq3JCqRVH7jMBQWsUhrhMWtgOIxO-gfQjQ; LTT=1637579863231; locale=ru; SERVERID=s2; sign.file=null; sign.certType=file; _zero_ss=619b7b8c7f12d.1637579660.1637580250.6
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}
+
+example {
+  name: 3. services/signing/rest/app/xml?PageQueryID=348d053d-e170-46fe-999a-c79454bda2e1
+  
+  request: {
+    url: https://egov.kz/services/signing/rest/app/xml?PageQueryID=348d053d-e170-46fe-999a-c79454bda2e1
+    method: GET
+    mode: none
+    params:query: {
+      PageQueryID: 348d053d-e170-46fe-999a-c79454bda2e1
+    }
+  
+    headers: {
+      Connection: keep-alive
+      sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"
+      Accept: application/json, text/plain, */*
+      sec-ch-ua-mobile: ?0
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36
+      sec-ch-ua-platform: "Windows"
+      Sec-Fetch-Site: same-origin
+      Sec-Fetch-Mode: cors
+      Sec-Fetch-Dest: empty
+      Referer: https://egov.kz/services/signing/?PageQueryID=348d053d-e170-46fe-999a-c79454bda2e1
+      Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+      Cookie: LTT=1637580392065; LTT=1637580614613; LTT=1637580598978; cookiesession1=678B772AIKLMNOPQRSTVWXYZABCD71E1; _zero_cc=63843ac8a48982; _ym_d=1635242553; _ym_uid=1635242553260483271; _ga=GA1.2.61266959.1635242557; _gid=GA1.2.1732024309.1637573812; _ym_isad=2; egov-client-type=PORTAL; has_js=1; _ym_visorc=w; egovLang=ru; SSO=00f978af-adf9-4ed6-80fc-06abbfa44cd3; SSESSf0d09e6725a5b1994b1b0ab11a8d594d=NUlP2PxC8mq3JCqRVH7jMBQWsUhrhMWtgOIxO-gfQjQ; LTT=1637579863231; locale=ru; SERVERID=s2; sign.file=null; sign.certType=file; _zero_ss=619b7b8c7f12d.1637579660.1637580250.6
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx
+      Date: Mon, 22 Nov 2021 11:37:36 GMT
+      Content-Type: application/json;charset=UTF-8
+      Connection: keep-alive
+      Set-Cookie: egov-client-type=PORTAL; Domain=egov.kz; Path=/
+      Set-Cookie: JSESSIONID=CwHKXo3BRJFJ+38Acisu4JHZ; Path=/signing
+      Set-Cookie: LTT=1637581056191
+      Access-Control-Allow-Credentials: true
+      Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD
+      Access-Control-Allow-Headers: Authorization, Origin, X-Requested-With, Content-Type, Accept
+      content-length: 1374
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "xml": [
+                "<ns2pep:request xmlns:ns2pep=\"http://3004_v2.reports.egp.gbdul.tamur.kz\" xmlns:ns3=\"http://www.w3.org/2000/09/xmldsig#\"><ns2pep:requestNumber>10100548295658</ns2pep:requestNumber><ns2pep:declarantId>141040028436</ns2pep:declarantId><ns2pep:requestDate>2021-11-22T17:29:57.406+06:00</ns2pep:requestDate><ns2pep:requestSystemId>PORTAL</ns2pep:requestSystemId><ns2pep:businessData><ns2pep:Person><IIN>801207300789</IIN><FIO><SurName>ХОДЖАМКУЛОВ</SurName><Name>ТИМУР</Name><MiddleName>НУРАХУНОВИЧ</MiddleName></FIO><Document><DocumentTypeNameKz>ҚР ЖЕКЕ КУӘЛІГІ</DocumentTypeNameKz><DocumentTypeNameRu>УДОСТОВЕРЕНИЕ РК</DocumentTypeNameRu><DocumentNumber>018887082</DocumentNumber><IssueDate>2006-01-27+06:00</IssueDate><IssuerTypeNameKz>ҚР ӘДІЛЕТ МИНИСТРЛІГІ</IssuerTypeNameKz><IssuerTypeNameRu>МИНИСТЕРСТВО ЮСТИЦИИ РК</IssuerTypeNameRu></Document></ns2pep:Person><ns2pep:Requestor><ns2pep:Organization><BIN>141040028436</BIN><NameRu>Товарищество с ограниченной ответственностью \"Учёт.Бухгалтерия\"</NameRu><NameKz>\"Учёт.Бухгалтерия\" жауапкершілігі шектеулі серіктестігі</NameKz></ns2pep:Organization></ns2pep:Requestor></ns2pep:businessData></ns2pep:request>"
+            ]
+        }
+      '''
+    }
+  }
+}

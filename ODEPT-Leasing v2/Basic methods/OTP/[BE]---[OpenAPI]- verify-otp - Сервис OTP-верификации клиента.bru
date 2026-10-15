@@ -1,0 +1,203 @@
+meta {
+  name: [BE]<->[OpenAPI]: verify-otp - Сервис OTP-верификации клиента
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/verify-otp
+  body: json
+  auth: bearer
+}
+
+params:path {
+  sme-leasing-uuid: {{online_auto_leasing_id}}
+}
+
+headers {
+  X-User-ID: +77777777777
+  accept: application/json
+  content-type: application/json
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+body:json {
+  {
+      "password": "1234"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: VERIFICATION SUCCESS - 200
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/verify-otp
+    method: POST
+    mode: json
+    params:path: {
+      sme-leasing-uuid: {{online_auto_leasing_id}}
+    }
+  
+    headers: {
+      X-User-ID: +77777777777
+      accept: application/json
+      content-type: application/json
+    }
+  
+    body:json: {
+      {
+          "message": {
+              "ru": "",
+              "kz": ""
+          },
+          "password": "1234"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Mon, 23 Jun 2025 05:45:22 GMT
+      X-Global-Transaction-ID: 95dd62ed6858e9f2210c3662
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST
+      X-RateLimit-Limit: name=default,100;
+      X-RateLimit-Remaining: name=default,84;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "VERIFICATION",
+            "id": "34277b39-8e3c-47fd-9e26-3dc1ef56e953",
+            "orderNumber": "1000600419",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "",
+                    "ru": ""
+                },
+                "stageName": {
+                    "kz": "ОТП арқылы клиентті тексеру",
+                    "ru": "Верификация клиента по ОТП"
+                }
+            },
+            "processingEventStatus": "PROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: NOT_FOUND - 404
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/98edfb9e-7563-438c-9705-cb4b1346030a/verify-otp
+    method: POST
+    mode: json
+    headers: {
+      X-User-ID: +77777777777
+      accept: application/json
+      content-type: application/json
+    }
+  
+    body:json: {
+      {
+          "message": {
+              "ru": "",
+              "kz": ""
+          },
+          "password": "1234"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "message": "Resource not found: loan application 98edfb9e-7563-438c-9705-cb4b1346030a not found",
+            "status": "404 NOT_FOUND"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: [BE]<->[OpenAPI]: verify-otp - Сервис OTP-верификации клиента
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/verify-otp
+    method: POST
+    mode: json
+    params:path: {
+      sme-leasing-uuid: {{online_auto_leasing_id}}
+    }
+  
+    headers: {
+      X-User-ID: +77777777777
+      accept: application/json
+      content-type: application/json
+    }
+  
+    body:json: {
+      {
+          "password": "1235"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+      Access-Control-Allow-Origin: *
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      WWW-Authenticate: default
+      X-Backside-Transport: FAIL FAIL
+      Connection: close
+    }
+  
+    status: {
+      code: 401
+      text: Unauthorized
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "httpCode": "401",
+            "httpMessage": "Unauthorized",
+            "moreInformation": "application is not registered, or active"
+        }
+      '''
+    }
+  }
+}

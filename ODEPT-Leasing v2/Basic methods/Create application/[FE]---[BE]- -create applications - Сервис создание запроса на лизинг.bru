@@ -1,0 +1,201 @@
+meta {
+  name: [FE]<->[BE]: /create applications - Сервис создание запроса на лизинг
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://test.centermarket.kz/bank/bcc/leasing/v1/application
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+  Cookie: cm_sid={{cm_sid}}
+  ~Correlation-Id: 1
+  ~Idempotency-Key: 2
+}
+
+body:json {
+  {
+      "clientInfo": {
+        "iin": "{{bin}}", //BE
+        "mobile": "+77777777777",
+        "registrationDate": "2026-03-11",//BE
+        "branch": {
+          "dep_id": 1614,
+          "id": 1614,
+          "longname": "Центральное отделение №0102",//BE
+          "code": "AQ5",//BE
+          "filial": "ALM" //BE
+        },
+        "city": {
+          "code": "ALM"
+      }
+    },
+     "partnerInfo": {
+        "bin": "050640003525",
+        "longname": "ТОО Allur Distribution"
+      },
+      "creditInfo": {
+        "amount": 20000000,
+        "loanAmount": 16000000,
+        "advanceAmount": 4000000,
+        "term": 37,
+        "currency": "KZT",
+        "rate": 23.5,
+        "advance": 20,
+        "country": "Китай"
+      },
+    "itemsInfo": {
+        "provisions": [
+          {
+            "carMark": "GEELY",
+            "carModel": "COOLRAY FLAGSHIP",
+            "carModelID": 2316,
+            "prodCountryName": "КНР",
+            "prodCountry": "CN",
+            "buildYear": 2025
+          },
+          {
+            "carMark": "GEELY",
+            "carModel": "MONJARO",
+            "carModelID": 2318,
+            "prodCountryName": "КНР",
+            "prodCountry": "CN",
+            "buildYear": 2025
+          }
+        ]
+      }
+    }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: [FE]<->[BE]: /create applications - Сервис создание запроса на лизинг
+  
+  request: {
+    url: https://test.centermarket.kz/bank/bcc/leasing/v1/application
+    method: POST
+    mode: json
+    headers: {
+      accept: application/json
+      ~Correlation-Id: 1
+      ~Idempotency-Key: 2
+      Content-Type: application/json
+      Cookie: cm_sid:djQubG9jYWwueUR2ckZpS0tkTExRV2lYUE0xbE91cUhRUkJMWlJjUFpQTzgtR1dUQndRaklTeHNXWTRmQ0d2UlYwb1RxMWdqQVdkYU9qX2FJWG1BR1F3bWw5eWRWODhHWmozNE1QcFZDVkNyRy11WG5qdXBjNDVkdXpYZWlhWjh2N3Y2NVJxazV3VGg5U0dUamtmMkdtbTVFNWt6RXJBeG40S3FiZURmalNYNndOZDRUMG52ZmJXSkZ0cExBdnQwQ1FrMWltbmVFa09nSlFrN2N4ZkFta0RqU0hTak91WlBPRGxnNFYxMXVMNkhmMUg0V2V4N1IwMEhCNFBLcVZmZUZYbVUtWkVEWEREejRfVUlSbmhPWkR3SFU5S2g2WktTY0RkUlk5TnN5OFY0UTdtSHVZVFVkaXcyT3VQVGRvSXNYa1o2SXBhS0dqbjBxVkhwdC1NVTd6ZW5ob0UtVXZYWTFZVWpxTnZNaHFhaFRUcXhLZmF1cmFIR3hjUWc0dDZ0Z0paSlI2QW83QjlYVi0yVTR1UGpOcWV2RGtpOXlueFprS2RNY1VTeVlFXzNmRl9NUXFwc2lNbF91X2t3OUVsaG05Y3NFZlpsSE9RbE5NN2ZkWWNlSjBQRQ==
+    }
+  
+    body:json: {
+      {
+          "clientInfo": {
+            "iin": "050140001307",
+            "mobile": "+77777777777",
+            "registrationDate": "2026-03-02",
+            "branch": {
+              "dep_id": 1614,
+              "id": 1614,
+              "longname": "Центральное отделение №0102",
+              "code": "AQ5",
+              "filial": "ALM"
+            },
+            "city": {
+              "code": "ALM"
+          }
+        },
+         "partnerInfo": {
+            "bin": "050640003525",
+            "longname": "ТОО Allur Distribution"
+          },
+          "creditInfo": {
+            "amount": 20000000,
+            "loanAmount": 16000000,
+            "advanceAmount": 4000000,
+            "term": 37,
+            "currency": "KZT",
+            "rate": 23.5,
+            "advance": 20,
+            "country": "Китай"
+          },
+        "itemsInfo": {
+            "provisions": [
+              {
+                "carMark": "GEELY",
+                "carModel": "COOLRAY FLAGSHIP",
+                "carModelID": 2316,
+                "prodCountryName": "КНР",
+                "prodCountry": "CN",
+                "buildYear": 2025
+              },
+              {
+                "carMark": "GEELY",
+                "carModel": "MONJARO",
+                "carModelID": 2318,
+                "prodCountryName": "КНР",
+                "prodCountry": "CN",
+                "buildYear": 2025
+              }
+            ]
+          }
+        }
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx/1.25.5
+      Date: Mon, 02 Mar 2026 06:56:10 GMT
+      Content-Type: application/json
+      Content-Length: 244
+      Connection: keep-alive
+      content-encoding: gzip
+      vary: Origin
+      vary: Accept-Encoding
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Content-Security-Policy: frame-ancestors 'self' *.bcc.kz *.centermarket.kz *.bcchub.kz
+      X-Content-Type-Options: nosniff
+      X-Permitted-Cross-Domain-Policies: none
+      Permissions-Policy: geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()
+      X-XSS-Protection: 1; mode=block
+      Referrer-Policy: no-referrer-when-downgrade
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "success": true,
+            "data": {
+                "id": "d323dc47-1f88-4050-b8eb-8a245f1e062d",
+                "eventName": "START_PROCESS",
+                "orderNumber": "2040171267",
+                "processDefinitionFKey": "auto_leasing_new",
+                "processInfo": {
+                    "comments": {
+                        "ru": "",
+                        "kz": ""
+                    },
+                    "stageName": {
+                        "ru": "",
+                        "kz": ""
+                    }
+                },
+                "processingEventStatus": "PROCESSED",
+                "status": "ACTIVE"
+            }
+        }
+      '''
+    }
+  }
+}

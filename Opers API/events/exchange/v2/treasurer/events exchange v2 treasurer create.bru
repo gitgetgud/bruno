@@ -1,0 +1,94 @@
+meta {
+  name: events exchange v2 treasurer create
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/events/exchange/v2/treasurer/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "client_id": "string",
+    "iin": "stringstring",
+    "credit_amount": "string",
+    "debit_amount": "string",
+    "rate": "string",
+    "credit_currency": "string",
+    "debit_currency": "string",
+    "to_iban": "stringstringstr",
+    "from_iban": "stringstringstring",
+    "is_custom_rate_provided": true
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/exchange/v2/treasurer/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "client_id": "string",
+        "iin": "stringstring",
+        "credit_amount": "string",
+        "debit_amount": "string",
+        "rate": "string",
+        "credit_currency": "string",
+        "debit_currency": "string",
+        "to_iban": "stringstringstr",
+        "from_iban": "stringstringstring",
+        "is_custom_rate_provided": true
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "client_id": "string",
+          "iin": "stringstring",
+          "credit_amount": "string",
+          "debit_amount": "string",
+          "rate": "string",
+          "credit_currency": "string",
+          "debit_currency": "string",
+          "to_iban": "stringstringstr",
+          "from_iban": "stringstringstring",
+          "is_custom_rate_provided": true
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,73 @@
+meta {
+  name: Список зарплатных проектов
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/card_emission/salary_projects/?iin=string&at_the_branch=string&search=string&ordering=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  iin: string
+  at_the_branch: string
+  search: string
+  ordering: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/card_emission/salary_projects/?iin=string&at_the_branch=string&search=string&ordering=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      iin: string
+      at_the_branch: string
+      search: string
+      ordering: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "name": "string",
+          "bin": "string",
+          "efee_code": "string",
+          "status_code": "string",
+          "department": "string"
+        }
+      '''
+    }
+  }
+}

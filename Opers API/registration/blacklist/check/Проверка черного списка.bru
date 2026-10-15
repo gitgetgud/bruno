@@ -1,0 +1,81 @@
+meta {
+  name: Проверка черного списка
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/blacklist/check/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "data": [
+      {
+        "identifier": "string"
+      },
+      {
+        "identifier": "string"
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/registration/blacklist/check/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "data": [
+          {
+            "identifier": "string"
+          },
+          {
+            "identifier": "string"
+          }
+        ]
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "is_exists": false
+        }
+      '''
+    }
+  }
+}

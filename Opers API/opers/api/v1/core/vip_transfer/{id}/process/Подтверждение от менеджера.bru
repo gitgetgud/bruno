@@ -1,0 +1,71 @@
+meta {
+  name: Подтверждение от менеджера
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/vip_transfer/:id/process/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "action": "DENY"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Подтверждает или отклоняет перевод специального клиента.
+}
+
+example {
+  name: OK
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/vip_transfer/:id/process/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "action": "DENY"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

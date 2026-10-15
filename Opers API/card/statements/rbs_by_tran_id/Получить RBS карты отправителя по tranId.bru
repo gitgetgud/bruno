@@ -1,0 +1,62 @@
+meta {
+  name: Получить RBS карты отправителя по tranId
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/card/statements/rbs_by_tran_id/?tran_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  tran_id: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/statements/rbs_by_tran_id/?tran_id=string
+    method: GET
+    mode: none
+    params:query: {
+      tran_id: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "rbs_number": "string",
+          "name": "string"
+        }
+      '''
+    }
+  }
+}

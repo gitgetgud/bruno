@@ -1,0 +1,158 @@
+meta {
+  name: validation exmplained
+  type: http
+  seq: 7
+}
+
+get {
+  url: https://m.krisha.kz/valuation/ajax-search?flat_building=1&flat_floor=1&flat_renovation=2&flat_toilet=2&house_floor_num=4&house_year=2000&live_furniture=2&live_rooms=1&live_square=60&map_geo_text=Бостандыкский+р-н&map_house_num=179%D0%B0&map_lat=43.22714&map_lon=76.904789&map_street=Ауэзова
+  body: none
+  auth: inherit
+}
+
+params:query {
+  flat_building: 1
+  flat_floor: 1
+  flat_renovation: 2
+  flat_toilet: 2
+  house_floor_num: 4
+  house_year: 2000
+  live_furniture: 2
+  live_rooms: 1
+  live_square: 60
+  map_geo_text: Бостандыкский+р-н
+  map_house_num: 179%D0%B0
+  map_lat: 43.22714
+  map_lon: 76.904789
+  map_street: Ауэзова
+}
+
+headers {
+  User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0
+  Accept: application/json, text/plain, */*
+  Accept-Language: en-US,en;q=0.5
+  Accept-Encoding: gzip, deflate, br
+  X-Requested-With: XMLHttpRequest
+  DNT: 1
+  Connection: keep-alive
+  Referer: https://m.krisha.kz/webview/valuation
+  Cookie: krssid=4ean7a4sl790ckak2nsp6n0q3v; krishauid=cbfc93768ba6399417f6bbd036688636d6992023; ssaid=7dca42a0-67f1-11ed-8efb-154b19ad5812; _ga=GA1.2.7dca42a0-67f1-11ed-8efb-154b19ad5812; __tld__=null; kr_cdn_host=//pvlkt-kz.kcdn.online
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: validation exmplained
+  
+  request: {
+    url: https://m.krisha.kz/valuation/ajax-search?flat_building=1&flat_floor=1&flat_renovation=2&flat_toilet=2&house_floor_num=4&house_year=2000&live_furniture=2&live_rooms=1&live_square=60&map_geo_text=%D0%91%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D1%8B%D0%BA%D1%81%D0%BA%D0%B8%D0%B9+%D1%80-%D0%BD&map_house_num=179%D0%B0&map_lat=43.22714&map_lon=76.904789&map_street=%D0%90%D1%83%D1%8D%D0%B7%D0%BE%D0%B2%D0%B0
+    method: GET
+    mode: none
+    params:query: {
+      flat_building: 1
+      flat_floor: 1
+      flat_renovation: 2
+      flat_toilet: 2
+      house_floor_num: 4
+      house_year: 2000
+      live_furniture: 2
+      live_rooms: 1
+      live_square: 60
+      map_geo_text: %D0%91%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D1%8B%D0%BA%D1%81%D0%BA%D0%B8%D0%B9+%D1%80-%D0%BD
+      map_house_num: 179%D0%B0
+      map_lat: 43.22714
+      map_lon: 76.904789
+      map_street: %D0%90%D1%83%D1%8D%D0%B7%D0%BE%D0%B2%D0%B0
+    }
+  
+    headers: {
+      User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0
+      Accept: application/json, text/plain, */*
+      Accept-Language: en-US,en;q=0.5
+      Accept-Encoding: gzip, deflate, br
+      X-Requested-With: XMLHttpRequest
+      DNT: 1
+      Connection: keep-alive
+      Referer: https://m.krisha.kz/webview/valuation
+      Cookie: krssid=4ean7a4sl790ckak2nsp6n0q3v; krishauid=cbfc93768ba6399417f6bbd036688636d6992023; ssaid=7dca42a0-67f1-11ed-8efb-154b19ad5812; _ga=GA1.2.7dca42a0-67f1-11ed-8efb-154b19ad5812; __tld__=null; kr_cdn_host=//pvlkt-kz.kcdn.online
+      Sec-Fetch-Dest: empty
+      Sec-Fetch-Mode: cors
+      Sec-Fetch-Site: same-origin
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx
+      Date: Sat, 19 Nov 2022 10:12:43 GMT
+      Content-Type: application/json; charset=UTF-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      Expires: Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control: no-store, no-cache, must-revalidate
+      Pragma: no-cache
+      x-xss-protection: 1; report=https://m.krisha.kz/status/xssReport
+      X-Pod: mono-mobile-7bb9cf979c-rwxwb
+      X-Frame-Options: SAMEORIGIN
+      X-Frame-Options: SAMEORIGIN
+      X-Bug-Bounty: Please report bugs and vulnerabilities to bugs@kolesa.kz
+      Content-Security-Policy: frame-ancestors 'self' http://webvisor.com https://webvisor.com
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Content-Encoding: br
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "result": {
+                "price": 36431524,
+                "squarePrice": 607192,
+                "similarPriceMin": 23.5,
+                "similarPriceMax": 38.3,
+                "confidence": "0%"
+            },
+            "similars": [],
+            "isAgentAllowed": true,
+            "analyticsData": {
+                "price": "36431524",
+                "upper_bound": "38253100",
+                "lower_bound": "23500000",
+                "confidence": "",
+                "square_price": "607192",
+                "similar_adverts": "",
+                "search_radius": "2000",
+                "shown_adverts": "",
+                "live_rooms": "1",
+                "flat_building": "1",
+                "flat_floor": "1",
+                "live_square": "60",
+                "flat_renovation": "2",
+                "flat_toilet": "2",
+                "live_furniture": "2",
+                "map_street": "Ауэзова",
+                "map_house_num": "179а",
+                "map_lon": "76.904789",
+                "map_lat": "43.22714",
+                "house_floor_num": "4",
+                "house_year": "2000",
+                "map_geo_text": "Казахстан — Алматы — Бостандыкский р-н",
+                "map_geo_id": "2",
+                "city": "алматы",
+                "date": "2022-11-19"
+            }
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,166 @@
+meta {
+  name: opers api v1 core card emission create
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/card_emission/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "client_id": "string",
+    "iin": "string",
+    "currency": "string",
+    "plastic": "string",
+    "should_deliver": false,
+    "with_epin": false,
+    "with_additional_card": false,
+    "with_sms_inform": true,
+    "phone": "string",
+    "embossing_first_name": "string",
+    "embossing_last_name": "string",
+    "product": "string",
+    "commission": "string",
+    "card_prod": 2440,
+    "acc_prod": [
+      6125,
+      146
+    ],
+    "rbk_card_fil": "string",
+    "delivery_address": "string",
+    "division": "string",
+    "with_priority_pass": false,
+    "secret_word": "string",
+    "existing_iban": "string",
+    "product_category": "STANDART",
+    "efee_code": "string",
+    "is_multi": false,
+    "is_individual": false,
+    "is_base": true,
+    "is_print_division": false,
+    "is_blank_printed": false,
+    "printer_id": "string",
+    "institution_code": "string",
+    "order_dprt": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/card_emission/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "client_id": "string",
+        "iin": "string",
+        "currency": "string",
+        "plastic": "string",
+        "should_deliver": false,
+        "with_epin": false,
+        "with_additional_card": false,
+        "with_sms_inform": true,
+        "phone": "string",
+        "embossing_first_name": "string",
+        "embossing_last_name": "string",
+        "product": "string",
+        "commission": "string",
+        "card_prod": 2440,
+        "acc_prod": [
+          6125,
+          146
+        ],
+        "rbk_card_fil": "string",
+        "delivery_address": "string",
+        "division": "string",
+        "with_priority_pass": false,
+        "secret_word": "string",
+        "existing_iban": "string",
+        "product_category": "STANDART",
+        "efee_code": "string",
+        "is_multi": false,
+        "is_individual": false,
+        "is_base": true,
+        "is_print_division": false,
+        "is_blank_printed": false,
+        "printer_id": "string",
+        "institution_code": "string",
+        "order_dprt": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "client_id": "string",
+          "iin": "string",
+          "currency": "string",
+          "plastic": "string",
+          "should_deliver": false,
+          "with_epin": false,
+          "with_additional_card": false,
+          "with_sms_inform": true,
+          "phone": "string",
+          "embossing_first_name": "string",
+          "embossing_last_name": "string",
+          "product": "string",
+          "commission": "string",
+          "card_prod": 2440,
+          "acc_prod": [
+            6125,
+            146
+          ],
+          "rbk_card_fil": "string",
+          "delivery_address": "string",
+          "division": "string",
+          "with_priority_pass": false,
+          "secret_word": "string",
+          "existing_iban": "string",
+          "product_category": "STANDART",
+          "efee_code": "string",
+          "is_multi": false,
+          "is_individual": false,
+          "is_base": true,
+          "is_print_division": false,
+          "is_blank_printed": false,
+          "printer_id": "string",
+          "institution_code": "string",
+          "order_dprt": "string"
+        }
+      '''
+    }
+  }
+}

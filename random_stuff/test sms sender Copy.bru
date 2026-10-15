@@ -1,0 +1,30 @@
+meta {
+  name: test sms sender Copy
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://sagwm.kazincombank.kz:5555/arm/notifications/send
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: NotificationCenterUser
+  password: pvZlF4Fo10UGA2qCc0Jj
+}
+
+body:json {
+  {
+    "customer_id": "97343316106",
+    "phone": "+77769702012",
+    "message": "SMS send from backend",
+    "message_id": "b6714957",
+    "data": "SMS send from backend"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

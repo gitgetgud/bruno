@@ -1,0 +1,94 @@
+meta {
+  name: Добавить клиентов используя Excel
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/vip/import-from-excel/
+  body: multipartForm
+  auth: inherit
+}
+
+headers {
+  Content-Type: multipart/form-data
+}
+
+body:multipart-form {
+  file: @file()
+  client_type: VIP
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Добавить VIP/Premium клиентов из Excel файла.
+}
+
+example {
+  name: Клиенты добавлены
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/vip/import-from-excel/
+    method: POST
+    mode: multipartForm
+    headers: {
+      Content-Type: multipart/form-data
+      Authorization: Basic <credentials>
+    }
+  
+    body:multipart-form: {
+      file: @file()
+      client_type: VIP
+    }
+  }
+  
+  response: {
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Ошибка валидации файла
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/vip/import-from-excel/
+    method: POST
+    mode: multipartForm
+    headers: {
+      Content-Type: multipart/form-data
+      Authorization: Basic <credentials>
+    }
+  
+    body:multipart-form: {
+      file: @file()
+      client_type: VIP
+    }
+  }
+  
+  response: {
+    status: {
+      code: 400
+      text: Bad Request
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

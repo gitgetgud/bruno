@@ -1,0 +1,342 @@
+meta {
+  name: Получение платежных услуг по региону и категории
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/rbk_pay/v2/services?region_id=string&category_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  region_id: string
+  category_id: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/v2/services?region_id=string&category_id=string
+    method: GET
+    mode: none
+    params:query: {
+      region_id: string
+      category_id: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "provider": {
+              "params": [
+                {
+                  "name": "string",
+                  "id": 5961,
+                  "mask": "string",
+                  "keyboard": "MOBILE_PHONE",
+                  "priority": -435875426
+                },
+                {
+                  "name": "string",
+                  "id": 234,
+                  "mask": "string",
+                  "keyboard": "NUMPAD",
+                  "priority": -1755584545
+                }
+              ],
+              "name": "string",
+              "iban": "string",
+              "bin": "string",
+              "knp": "stri",
+              "kbe": "string",
+              "id": "d620bef5-71bd-a411-d2ef-0564864b6c03",
+              "name_kz": "string",
+              "name_en": "string",
+              "bank_income_iban": "st",
+              "code": "string",
+              "disclaimer": "string",
+              "mandatory_description": "string",
+              "created_at": "1962-04-22T09:37:00.648Z",
+              "min_commission_amount": "string",
+              "min_allowed_payment_amount": "string",
+              "commission_percentage": "string",
+              "is_paid_by_provider": false,
+              "category": 1792
+            },
+            "id": 399,
+            "name": "string",
+            "payment_service_parameters": {
+              "paynet_id": "string",
+              "id": 4636,
+              "name": "string",
+              "alias": "string",
+              "order": "string",
+              "user_sample": "string",
+              "mask": "string",
+              "checker_template": "string",
+              "data_type": "string",
+              "length": "string",
+              "is_uid": true,
+              "is_for_user": true,
+              "is_visible": true,
+              "is_for_payment": false,
+              "is_for_subscription": false,
+              "entries": {
+                "paynet_id": "string",
+                "value": "string"
+              },
+              "hint": "string",
+              "keyboard": "IIN",
+              "description": "string"
+            },
+            "supplier": {
+              "id": 9680,
+              "name": "string"
+            },
+            "payment_service_category": {
+              "id": 6438,
+              "name": "string"
+            },
+            "kassa_service_parameters": {
+              "id": 4504,
+              "name": "string",
+              "mask": "string",
+              "reg_exp": "string",
+              "mask_edit": "string",
+              "options": {},
+              "sum": "string",
+              "check": "string",
+              "hidden": "string",
+              "value": "string",
+              "optional": "string",
+              "print": "string",
+              "request_pay_status": "string",
+              "label": "string",
+              "hint": "string",
+              "keyboard": "MOBILE_PHONE"
+            },
+            "provider_id": "string",
+            "third_party_provider": {
+              "provider_type": 1,
+              "android_version": "string",
+              "ios_version": "string",
+              "provider_uuid": "11fdafea-f17f-bee1-5506-cf0b1c9b000a",
+              "parameters": {
+                "name": "string",
+                "mask": "string",
+                "keyboard": "DEFAULT"
+              }
+            },
+            "min_sum": "string",
+            "max_sum": "string",
+            "paynet_id": "string",
+            "kassa_id": 586893448,
+            "alias": "string",
+            "is_invoiceable": false,
+            "is_tax_service": false,
+            "is_penalty_service": true,
+            "is_allowed_for_get_balance": true,
+            "is_consolidated": false,
+            "should_notify": false,
+            "on_demand_amount": true,
+            "fee": "string",
+            "percent_fee": "string",
+            "min_fee": "string",
+            "pos_terminal_id": "string",
+            "merchant_id": "string",
+            "purpose": "string",
+            "knp": "string",
+            "trans_account": "string",
+            "type_interface": "string",
+            "icon_image": "https://uSyPNdqlvWyuExuZQkBpTgxcHOT.hlojUnoqqqtva2q+Ph4OoTiXNAtnmVwA0VWIMGT",
+            "hint": "string",
+            "cashback": "string",
+            "logo": "string",
+            "code": "string",
+            "description": "string",
+            "tags": [
+              "string",
+              "string"
+            ],
+            "alternative_title": "string",
+            "paynet_base_id": -228924,
+            "bcc_code": "string",
+            "kassa_commission": [
+              2682,
+              9503
+            ]
+          },
+          {
+            "provider": {
+              "params": [
+                {
+                  "name": "string",
+                  "id": 8575,
+                  "mask": "string",
+                  "keyboard": "DEFAULT",
+                  "priority": 622830139
+                },
+                {
+                  "name": "string",
+                  "id": 2998,
+                  "mask": "string",
+                  "keyboard": "NUMPAD",
+                  "priority": 477611205
+                }
+              ],
+              "name": "string",
+              "iban": "string",
+              "bin": "string",
+              "knp": "st",
+              "kbe": "string",
+              "id": "ebc768cf-cb06-8f4b-df0e-084545139623",
+              "name_kz": "string",
+              "name_en": "string",
+              "bank_income_iban": "string",
+              "code": "string",
+              "disclaimer": "string",
+              "mandatory_description": "string",
+              "created_at": "2009-07-16T07:50:20.639Z",
+              "min_commission_amount": "string",
+              "min_allowed_payment_amount": "string",
+              "commission_percentage": "string",
+              "is_paid_by_provider": true,
+              "category": 4242
+            },
+            "id": 8170,
+            "name": "string",
+            "payment_service_parameters": {
+              "paynet_id": "strin",
+              "id": 4642,
+              "name": "string",
+              "alias": "string",
+              "order": "string",
+              "user_sample": "string",
+              "mask": "string",
+              "checker_template": "string",
+              "data_type": "string",
+              "length": "string",
+              "is_uid": false,
+              "is_for_user": true,
+              "is_visible": false,
+              "is_for_payment": false,
+              "is_for_subscription": false,
+              "entries": {
+                "paynet_id": "string",
+                "value": "string"
+              },
+              "hint": "string",
+              "keyboard": "MOBILE_PHONE",
+              "description": "string"
+            },
+            "supplier": {
+              "id": 4176,
+              "name": "string"
+            },
+            "payment_service_category": {
+              "id": 6094,
+              "name": "string"
+            },
+            "kassa_service_parameters": {
+              "id": 8452,
+              "name": "string",
+              "mask": "string",
+              "reg_exp": "string",
+              "mask_edit": "string",
+              "options": {},
+              "sum": "string",
+              "check": "string",
+              "hidden": "string",
+              "value": "string",
+              "optional": "string",
+              "print": "string",
+              "request_pay_status": "string",
+              "label": "string",
+              "hint": "string",
+              "keyboard": "DATE"
+            },
+            "provider_id": "string",
+            "third_party_provider": {
+              "provider_type": 1,
+              "android_version": "string",
+              "ios_version": "string",
+              "provider_uuid": "366915f7-4869-0a4a-836c-864d73d1f25e",
+              "parameters": {
+                "name": "string",
+                "mask": "string",
+                "keyboard": "DATE"
+              }
+            },
+            "min_sum": "string",
+            "max_sum": "string",
+            "paynet_id": "string",
+            "kassa_id": 1687301838,
+            "alias": "string",
+            "is_invoiceable": false,
+            "is_tax_service": true,
+            "is_penalty_service": true,
+            "is_allowed_for_get_balance": false,
+            "is_consolidated": false,
+            "should_notify": false,
+            "on_demand_amount": true,
+            "fee": "string",
+            "percent_fee": "string",
+            "min_fee": "string",
+            "pos_terminal_id": "string",
+            "merchant_id": "string",
+            "purpose": "string",
+            "knp": "string",
+            "trans_account": "string",
+            "type_interface": "string",
+            "icon_image": "https://TauBxsiBZPGYgpF.ubsUhIrXGHj48DRDmwaSMvv5hsMMf2Mg-5jcsxRWJ5VzPnevXaZg8pkCI",
+            "hint": "string",
+            "cashback": "string",
+            "logo": "string",
+            "code": "string",
+            "description": "string",
+            "tags": [
+              "string",
+              "string"
+            ],
+            "alternative_title": "string",
+            "paynet_base_id": 2024438201,
+            "bcc_code": "string",
+            "kassa_commission": [
+              401,
+              9306
+            ]
+          }
+        ]
+      '''
+    }
+  }
+}

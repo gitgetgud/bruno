@@ -1,0 +1,407 @@
+meta {
+  name: [BE]<->[OpenAPI]: sme-leasing - Сервис создания заявки на автолизинг
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing
+  body: json
+  auth: bearer
+}
+
+headers {
+  X-Initiator-System: OPEN_API
+  X-Process-Definition-F-Key: auto_leasing_new
+  X-System-Owner: GREEN_FRONT
+  X-User-ID: +77777777777
+  accept: application/json
+  content-type: application/json
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+body:json {
+  {
+      "clientInfo": {
+        "iin": "230840009217",
+        "mobile": "+77777777777",
+        "registrationDate": "2026-02-18",
+        "branch": {
+          "dep_id": 1614,
+          "id": 1614,
+          "longname": "Центральное отделение №0102",
+          "code": "AQ5",
+          "filial": "ALM"
+        },
+        "city": {
+          "code": "ALM"
+      }
+    },
+     "partnerInfo": {
+        "bin": "050640003525",
+        "longname": "ТОО Allur Distribution"
+      },
+      "creditInfo": {
+        "amount": 20000000,
+        "loanAmount": 16000000,
+        "advanceAmount": 4000000,
+        "term": 37,
+        "currency": "KZT",
+        "rate": 23.5,
+        "advance": 20,
+        "country": "Китай"
+      },
+    "itemsInfo": {
+        "provisions": [
+          {
+            "carMark": "GEELY",
+            "carModel": "COOLRAY FLAGSHIP",
+            "carModelID": 2316,
+            "prodCountryName": "КНР",
+            "prodCountry": "CN",
+            "buildYear": 2025
+          },
+          {
+            "carMark": "GEELY",
+            "carModel": "MONJARO",
+            "carModelID": 2318,
+            "prodCountryName": "КНР",
+            "prodCountry": "CN",
+            "buildYear": 2025
+          }
+        ]
+      }
+    }
+}
+
+script:post-response {
+  let responseData = res.getBody();
+  bru.setEnvVar("online_auto_leasing_id", responseData.id);
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: START_PROCESS - 200
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing
+    method: POST
+    mode: json
+    headers: {
+      X-Initiator-System: OPEN_API
+      X-Process-Definition-F-Key: auto_leasing_new
+      X-System-Owner: GREEN_FRONT
+      X-User-ID: +77777777777
+      accept: application/json
+      content-type: application/json
+    }
+  
+    body:json: {
+      {
+          "clientInfo": {
+            "iin": "230840009217",
+            "mobile": "+77777777777",
+            "registrationDate": "2024-12-14",
+            "branch": {
+              "dep_id": 1704,
+              "id": 1704,
+              "longname": "Отделение №0311",
+              "code": "KZ6",
+              "filial": "KZO"
+            },
+            "city": {
+              "code": "KZO",
+              "longname": "Филиал Акционерного Общества \"Банк ЦентрКредит\" в городе Кызылорда",
+              "name": "Кызылорда"
+            },
+            "firstPersonIin": "750214400015",
+            "companyName": "Товарищество с ограниченной ответственностью \"Детский ясли-сад \"Маржан-Әли\""
+          },
+          "partnerInfo": {
+            "bin": "050640003525",
+            "account": "",
+            "longname": "ТОО Allur Distribution"
+          },
+          "creditInfo": {
+            "amount": 6250000,
+            "loanAmount": 5000000,
+            "advanceAmount": 1250000,
+            "term": 37,
+            "currency": "KZT",
+            "rate": 22.5,
+            "advance": 20,
+            "country": "Китай"
+          },
+          "incomeVerification": true,
+          "itemsInfo": {
+            "orderInfo": {
+              "orderID": "JND"
+            },
+            "provisions": [
+              {
+                "carMark": "JAC",
+                "carMarkName": "JAC",
+                "carModel": "N56",
+                "carModelName": "N56",
+                "prodCountryName": "Китай",
+                "prodCountry": "CN",
+                "buildYear": 2025
+              }
+            ]
+          },
+          "sPRInfo": {
+            "initialTerm": 37,
+            "maxTerm": 37,
+            "initialInterestRate": 22.5,
+            "maxInterestRate": 22.5,
+            "ltv": 0.8
+          }
+        }
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Mon, 23 Jun 2025 05:40:42 GMT
+      X-Global-Transaction-ID: 95dd62ed6858e8da21ae1100
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST
+      X-RateLimit-Limit: name=default,100;
+      X-RateLimit-Remaining: name=default,87;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "START_PROCESS",
+            "id": "2f1c1cd9-b47a-45b6-a546-8498b18313e9",
+            "orderNumber": "2023255109",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "",
+                    "ru": ""
+                },
+                "stageName": {
+                    "kz": "",
+                    "ru": ""
+                }
+            },
+            "processingEventStatus": "PROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: BAD_REQUEST - 400
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing
+    method: POST
+    mode: json
+    headers: {
+      X-Initiator-System: OPEN_API
+      X-Process-Definition-F-Key: auto_leasing_new
+      X-System-Owner: GREEN_FRONT
+      X-User-ID: +77777777777
+      accept: application/json
+      content-type: application/json
+    }
+  
+    body:json: {
+      {
+          "clientInfo": {
+            "iin": "060840002213",
+            "mobile": "+77777777777",
+            "registrationDate": "2025-10-31", 
+            "email": "test@test.ru",
+            "branch": {
+              "dep_id": 1445,
+              "id": 1445,
+              "longname": "Центральное отделение №0302",
+              "code": "AG1",
+              "filial": "ALM"
+            },
+            "city": {
+              "code": "ALM"/*,
+              "longname": "Алматинский Городской Филиал  Акционерного Общества \"Банк ЦентрКредит\"",
+              "name": "Кызылорда"*/
+            }
+          },
+          "partnerInfo": {
+            "bin": "050640003525",
+            /*"account": "",*/
+            "longname": "Без партнера"
+          },
+          "creditInfo": {
+            "amount": 10000000,
+            "loanAmount": 7000000,
+            "advanceAmount": 3000000,
+            "term": 37,
+            "currency": "KZT",
+            "rate": 22.5,
+            "advance": 30,
+            "country": "Китай"
+          },
+          /*"incomeVerification": false,*/
+          "itemsInfo": {
+          /* "orderInfo": {
+              "orderID": "JND"
+            },*/
+           "provisions": [
+              {
+                "carMark": "JAC",
+              //  "carMarkName": "JAC",
+                "carModel": "JS4",
+              //  "carModelName": "JS4",
+                "prodCountryName": "Китай",
+                "prodCountry": "CN",
+                "buildYear": 2025
+              }
+            ]
+          }/*,
+         "sPRInfo": {
+            "initialTerm": 37,
+            "maxTerm": 37,
+            "initialInterestRate": 22.5,
+            "maxInterestRate": 22.5,
+            "ltv": 0.8
+          }*/
+        }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "message": "Request binding failed: Required request header 'X-User-ID' for method parameter type String is not present",
+            "status": "400 BAD_REQUEST"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: Unauthorized - 401
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing
+    method: POST
+    mode: json
+    headers: {
+      X-Initiator-System: OPEN_API
+      X-Process-Definition-F-Key: auto_leasing_new
+      X-System-Owner: GREEN_FRONT
+      X-User-ID: +77777777777
+      accept: application/json
+      content-type: application/json
+    }
+  
+    body:json: {
+      {
+          "clientInfo": {
+            "iin": "060840002213",
+            "mobile": "+77777777777",
+            "registrationDate": "2025-10-31", 
+            "email": "test@test.ru",
+            "branch": {
+              "dep_id": 1445,
+              "id": 1445,
+              "longname": "Центральное отделение №0302",
+              "code": "AG1",
+              "filial": "ALM"
+            },
+            "city": {
+              "code": "ALM"/*,
+              "longname": "Алматинский Городской Филиал  Акционерного Общества \"Банк ЦентрКредит\"",
+              "name": "Кызылорда"*/
+            }
+          },
+          "partnerInfo": {
+            "bin": "050640003525",
+            /*"account": "",*/
+            "longname": "Без партнера"
+          },
+          "creditInfo": {
+            "amount": 10000000,
+            "loanAmount": 7000000,
+            "advanceAmount": 3000000,
+            "term": 37,
+            "currency": "KZT",
+            "rate": 22.5,
+            "advance": 30,
+            "country": "Китай"
+          },
+          /*"incomeVerification": false,*/
+          "itemsInfo": {
+          /* "orderInfo": {
+              "orderID": "JND"
+            },*/
+           "provisions": [
+              {
+                "carMark": "JAC",
+              //  "carMarkName": "JAC",
+                "carModel": "JS4",
+              //  "carModelName": "JS4",
+                "prodCountryName": "Китай",
+                "prodCountry": "CN",
+                "buildYear": 2025
+              }
+            ]
+          }/*,
+         "sPRInfo": {
+            "initialTerm": 37,
+            "maxTerm": 37,
+            "initialInterestRate": 22.5,
+            "maxInterestRate": 22.5,
+            "ltv": 0.8
+          }*/
+        }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "httpCode": "401",
+            "httpMessage": "Unauthorized",
+            "moreInformation": "application is not registered, or active"
+        }
+      '''
+    }
+  }
+}

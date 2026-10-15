@@ -1,0 +1,48 @@
+meta {
+  name: ibso.MyTransferOutV2
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.MyTransferOutV2",
+          "uuid": "6614db3-dc12-4334-b82a-f69fbb5b5a1",
+          "sourceSystem": "SingleWindow",
+          "username": "singleWindowUser",
+          "requestTime": "2021-11-05T04:05:44",
+          "Data": {
+              "operationType": "3034",
+              "fromIban": "KZ828210239870253867",
+              "currency": "KZT",
+              "amount": "8000.00",
+              "knp": "423",
+              "debitCurrency": "KZT",
+              "debitAmount": "100.0000",
+              "creditAmount": "100.0000",
+              "cmsAmount": "250.00",
+              "cmsCurrency": "KZT",
+              "benAccount": "KZ13914052204KZ01UFD",
+              "benBankBik": "BRKEKZKA",
+              "kbe": "19",
+              "benTaxCode": "760727350784",
+              "benName": "Абишев Ердос Жанатович",
+              "vip": "314000.00",
+              "sumLim": "8000.00",
+              "paypurp": "погашения кредита",
+              "operationDscr": "погашения кредита"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

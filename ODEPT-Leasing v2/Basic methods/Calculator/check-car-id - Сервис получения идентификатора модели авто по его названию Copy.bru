@@ -1,0 +1,102 @@
+meta {
+  name: check-car-id - Сервис получения идентификатора модели авто по его названию Copy
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://api-sandbox.bcc.kz/bcc/production/api/v1/loans/application/sme-leasing/check-car-id
+  body: json
+  auth: bearer
+}
+
+headers {
+  X-User-ID: +77777777777
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+body:json {
+  {
+      "partner": "Общий каталог авто",
+      "cars": [
+          {
+              "carMark": "GEELY",
+              "carModel": "COOLRAY FLAGSHIP"
+          },
+          {
+              "carMark": "GEELY",
+              "carModel": "MONJARO"
+          }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: check-car-id - Сервис получения идентификатора модели авто по его названию
+  
+  request: {
+    url: https://api-sandbox.bcc.kz/bcc/production/api/v1/loans/application/sme-leasing/check-car-id
+    method: POST
+    mode: json
+    headers: {
+      X-User-ID: +77777777777
+    }
+  
+    body:json: {
+      {
+          "partner": "Общий каталог авто",
+          "cars": [
+              {
+                  "carMark": "GEELY",
+                  "carModel": "COOLRAY FLAGSHIP"
+              },
+              {
+                  "carMark": "GEELY",
+                  "carModel": "COOLRAY"
+              },
+              {
+                  "carMark": "AUDI",
+                  "carModel": "A6"
+              },
+              {
+                  "carMark": "Audi",
+                  "carModel": "A6"
+              }
+          ]
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "cars": [
+                {
+                    "carMark": "GEELY",
+                    "carModel": "COOLRAY FLAGSHIP",
+                    "carModelId": 2316
+                },
+                {
+                    "carMark": "GEELY",
+                    "carModel": "MONJARO",
+                    "carModelId": 2318
+                }
+            ]
+        }
+      '''
+    }
+  }
+}

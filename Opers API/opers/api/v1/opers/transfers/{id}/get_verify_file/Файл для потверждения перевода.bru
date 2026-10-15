@@ -1,0 +1,75 @@
+meta {
+  name: Файл для потверждения перевода
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/transfers/:id/get_verify_file/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  View for transfer money for client
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/transfers/:id/get_verify_file/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "client_id": "string",
+          "amount": "string",
+          "currency": "string",
+          "id": "5d7c1587-2a30-ab49-0cda-35a542e32d30",
+          "iin": "stri",
+          "created": "2016-05-31T21:12:23.982Z",
+          "from_iban": "string",
+          "to_iban": "string",
+          "status": "string",
+          "transfer_type": "string",
+          "opers_name": "string"
+        }
+      '''
+    }
+  }
+}

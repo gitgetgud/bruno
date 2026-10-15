@@ -1,0 +1,51 @@
+meta {
+  name: esb_messages/
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://apiarm.kazincombank.kz/notifications/esb_messages/
+  body: json
+  auth: basic
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: {{esb_user_test}}
+  password: {{esb_password_test}}
+}
+
+body:json {
+  {
+    "customer_id": "{{customer_id}}",
+    "message_id": "asdfasdf",
+    "data": "test pp",
+    "phone": "+7772517797",
+    "initiator": "IBSO",
+    "message_type": "INFO"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Generated from cURL: curl -X 'POST' \
+    'https://apiarm.kazincombank.kz/notifications/esb_messages/' \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "customer_id": "0003LA",
+    "message_id": "asdfasdf",
+    "data": "test pp",
+    "phone": "+7772517797",
+    "initiator": "ISO",
+    "message_type": "INFO"
+  }'
+}

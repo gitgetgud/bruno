@@ -1,0 +1,207 @@
+meta {
+  name: Создание платежа
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{openapi_base_url}}/bcc/production/v1/business-account-management/transfers
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~convertKaz: 
+}
+
+headers {
+  x-client-token: {{bccbiz_access_token}}
+}
+
+auth:bearer {
+  token: {{openapi_access_token}}
+}
+
+body:json {
+  {
+      "amount": 1000,
+      "currency": "KZT",
+      "knp": "852",
+      "sender": {
+          "accountNumber": "KZ628562203146438789",
+          "isThirdPartyPayment": false
+      },
+      "receiver": {
+          "idn": "131240009772",
+          "name": "ТОО \"Мобизон\"",
+          "accountNumber": "KZ69722S000000745112",
+          "code": "17",
+          "bankIdentifierCode": "CASPKZKA",
+          "isThirdPartyPayment": false
+      },
+      "signatureA": "Яомяття И.У.",
+      "signatureB": "Не предусмотрен",
+      "narrative": "оплата по заказу №098331",
+      "type": "EXTERNAL",
+      "comission_account": "KZ628562203146438789",
+      "is_urgent": false
+  }
+}
+
+script:post-response {
+  test("Status code is 201", function () {
+      expect(res.getStatus()).to.equal(201);
+      var jsonData = res.getBody();
+      pm.collectionVariables.set("paymentID", jsonData.id)
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  # Метод для создания платежа
+  
+  предназначен для инициирования нового платежного поручения (перевода) от имени Клиента через платформу Партнёра.
+  
+  С его помощью приложение Партнёра формирует черновик платежа в статусе "Создан", который затем может быть подписан уполномоченным лицом.
+  
+  
+}
+
+example {
+  name: 200 OK
+  
+  request: {
+    url: {{openapi_base_url}}/bcc/production/v1/business-account-management/transfers
+    method: POST
+    mode: json
+    params:query: {
+      ~convertKaz: 
+    }
+  
+    headers: {
+      x-client-token: {{bccbiz_access_token}}
+    }
+  
+    body:json: {
+      {
+          "amount": 1000,
+          "currency": "KZT",
+          "knp": "852",
+          "sender": {
+              "accountNumber": "KZ628562203146438789",
+              "isThirdPartyPayment": false
+          },
+          "receiver": {
+              "idn": "131240009772",
+              "name": "ТОО \"Мобизон\"",
+              "accountNumber": "KZ69722S000000745112",
+              "code": "17",
+              "bankIdentifierCode": "CASPKZKA",
+              "isThirdPartyPayment": false
+          },
+          "signatureA": "Яомяття И.У.",
+          "signatureB": "Не предусмотрен",
+          "narrative": "оплата по заказу №098331",
+          "type": "EXTERNAL",
+          "comission_account": "KZ628562203146438789",
+          "is_urgent": false
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Tue, 03 Feb 2026 05:42:40 GMT
+      X-Global-Transaction-ID: 95dd62ed69818acf9e453222
+      vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+      x-traceparent-id: 00-69818acf1262f086c4b711d808ab1bf3-4794eb899b766fe7-00
+      x-xss-protection: 0
+      expires: 0
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      X-Frame-Options: deny
+      Content-Security-Policy: default-src 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+      X-Permitted-Cross-Domain-Policies: none
+      Referrer-Policy: no-referrer
+      Clear-Site-Data: "cache", "cookies", "storage"
+      Cross-Origin-Embedder-Policy: require-corp
+      Cross-Origin-Opener-Policy: same-origin
+      Cross-Origin-Resource-Policy: same-origin
+      Permissions-Policy: accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      Cache-Control: no-store, max-age=0
+      Pragma: cookieName=cookieValue; Path=/; Secure; HttpOnly; SameSite=Strict
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST
+      X-RateLimit-Limit: name=rate-limit,100;
+      X-RateLimit-Remaining: name=rate-limit,85;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "id": 15394763,
+            "valueDate": "03-02-2026",
+            "docDate": "03-02-2026",
+            "timeSent": "03-02-2026 05:42:39",
+            "commissionAccount": "KZ628562203146438789",
+            "channel": "BusinessAPI",
+            "partnerId": "eb0ce9c9-faa2-442e-8723-7b51bde76281",
+            "amount": 1000,
+            "currency": "KZT",
+            "division": "AG1",
+            "knp": "852",
+            "sender": {
+                "idn": "991040006615",
+                "name": "О ataООО\"tnrtn an ",
+                "accountNumber": "KZ628562203146438789",
+                "code": "17",
+                "isThirdPartyPayment": false,
+                "bankIdentifierCode": "KCJBKZKX",
+                "country": "KZ",
+                "intermediary": null,
+                "bank": null,
+                "isLegalEntity": null
+            },
+            "receiver": {
+                "idn": "131240009772",
+                "name": "ТОО \"Мобизон\"",
+                "accountNumber": "KZ69722S000000745112",
+                "code": "17",
+                "isThirdPartyPayment": false,
+                "bankIdentifierCode": "CASPKZKA",
+                "country": null,
+                "intermediary": null,
+                "bank": null,
+                "isLegalEntity": true
+            },
+            "signatureA": "Яомяття И.У.",
+            "signatureB": "Не предусмотрен",
+            "narrative": "оплата по заказу №098331",
+            "type": "EXTERNAL",
+            "clientCode": "08950992",
+            "customerId": 993721,
+            "state": "CREATED",
+            "isUrgent": false,
+            "nds": 0,
+            "ndoc": "23"
+        }
+      '''
+    }
+  }
+}

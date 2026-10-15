@@ -1,0 +1,68 @@
+meta {
+  name: faces selfies user face
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/faces/selfies/user_face/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/faces/selfies/user_face/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "string",
+          "img": "http://JJxSjyBYVmHpRBFN.ltPiGkxf-0.,G"
+        }
+      '''
+    }
+  }
+}

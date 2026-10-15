@@ -1,0 +1,27 @@
+meta {
+  name: Create transfer
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://dev.centermarket.kz/bank/bcc/oapi/bcc-bam/api/v1/transfer
+  body: json
+  auth: inherit
+}
+
+headers {
+  Cookie: {{cm_sid_dev}}
+}
+
+body:json {
+  {
+    "buyers_company_ceo": "Яомяття И.У.",
+    "iban": "KZ628562203146438789",
+    "order_id": "8c51a70c-1d4b-447f-99cb-d4dd00d04940"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

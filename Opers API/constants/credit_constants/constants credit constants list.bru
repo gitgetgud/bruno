@@ -1,0 +1,81 @@
+meta {
+  name: constants credit constants list
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/constants/credit_constants/?tags=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  tags: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/constants/credit_constants/?tags=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      tags: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 7308,
+          "results": [
+            {
+              "key": "string",
+              "value": "string",
+              "tags": [
+                "string"
+              ]
+            },
+            {
+              "key": "string",
+              "value": "string",
+              "tags": [
+                "string"
+              ]
+            }
+          ],
+          "next": "https://tqyJXkEslFZCCZAywW.bpbZr78Y",
+          "previous": "http://BXMcIGGOsLR.qvkzXfZ,Bn+SZYBHv.2hNp2wdyjOBzLg9WX-cJ"
+        }
+      '''
+    }
+  }
+}

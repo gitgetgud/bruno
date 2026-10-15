@@ -1,0 +1,23 @@
+meta {
+  name: Вызов отдельного сервиса (document-manager: base64)
+  type: http
+  seq: 7
+}
+
+get {
+  url: https://dev-bcc-gf-gateway-green-front.apps.dev-env.bcc.kz/document-manager/File/download/hash/7084bbbd-f7a0-483f-b602-346f693b30f3
+  body: none
+  auth: inherit
+}
+
+script:pre-request {
+  let currentUrl = req.getUrl().toString();
+  
+  if (!currentUrl.startsWith('http://') && !currentUrl.startsWith('https://')) {
+      req.getUrl() = 'https://' + currentUrl;
+  }
+}
+
+settings {
+  encodeUrl: true
+}

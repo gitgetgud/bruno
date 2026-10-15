@@ -1,0 +1,43 @@
+meta {
+  name: ibso.getStatementAccount
+  type: http
+  seq: 19
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+headers {
+  : 
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.GetStatementAccount",
+          "uuid": "f124be76-5b9e-4b2e-81c5-96b8990b74cd",
+          "sourceSystem": "singleWindow",
+          "username": "singleWindow",
+          "requestTime": "2021-10-13 09:11:25.864760",
+          "Data": {
+              "dateBegin": "2018-09-09",
+              "dateEnd": "2021-10-09",
+              "iban": "KZ8882112PDY10000002",
+              "rowFrom": "0",
+              "rowTo": "2"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

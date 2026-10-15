@@ -1,0 +1,130 @@
+info:
+  name: https://egov.kz/services/P30.01/rest/app/xml
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://egov.kz/services/P30.01/rest/app/xml
+  headers:
+    - name: Host
+      value: egov.kz
+    - name: Connection
+      value: keep-alive
+    - name: Content-Length
+      value: "52"
+    - name: Pragma
+      value: no-cache
+    - name: Cache-Control
+      value: no-cache
+    - name: sec-ch-ua
+      value: '"Google Chrome";v="87", " Not;A Brand";v="99", "Chromium";v="87"'
+    - name: Accept
+      value: application/json, text/plain, */*
+    - name: sec-ch-ua-mobile
+      value: ?0
+    - name: User-Agent
+      value: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36
+    - name: Content-Type
+      value: application/json;charset=UTF-8
+    - name: Origin
+      value: https://egov.kz
+    - name: Sec-Fetch-Site
+      value: same-origin
+    - name: Sec-Fetch-Mode
+      value: cors
+    - name: Sec-Fetch-Dest
+      value: empty
+    - name: Referer
+      value: https://egov.kz/services/P30.01/
+    - name: Accept-Encoding
+      value: gzip, deflate, br
+    - name: Accept-Language
+      value: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+    - name: Cookie
+      value: LTT=1610533358199; LTT=1610540152686; LTT=1610540152334; egov-client-type=PORTAL; cookiesession1=678B76BA1234ABCDEFGIJKLMNOPQ30C0; _zero_cc=z5ffe7b3b321ad; _ga=GA1.2.471023877.1610520412; _gid=GA1.2.1293255859.1610520412; _ym_d=1610520412; _ym_uid=1610520412535630076; _ym_isad=2; has_js=1; egovLang=ru; SSESSf0d09e6725a5b1994b1b0ab11a8d594d=d9vujeed-sV5GyR0X6ZRxVDR8XbgWfjTAlzSopZaN2M; egov-client-type=PORTAL; LTT=1610533314585; locale=ru; SSO=1d2e2cb3-4e1f-4c83-86e6-d1e5a43312bf; _zero_ss=5fff007369193.1610547316.1610547340.2; _ym_visorc=w
+  body:
+    type: json
+    data: '{"declarantUin":"141040028436","bin":"201240013776"}'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: https://egov.kz/services/P30.01/rest/app/xml
+    request:
+      url: https://egov.kz/services/P30.01/rest/app/xml
+      method: POST
+      headers:
+        - name: Host
+          value: egov.kz
+        - name: Connection
+          value: keep-alive
+        - name: Content-Length
+          value: "52"
+        - name: Pragma
+          value: no-cache
+        - name: Cache-Control
+          value: no-cache
+        - name: sec-ch-ua
+          value: '"Google Chrome";v="87", " Not;A Brand";v="99", "Chromium";v="87"'
+        - name: Accept
+          value: application/json, text/plain, */*
+        - name: sec-ch-ua-mobile
+          value: ?0
+        - name: User-Agent
+          value: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36
+        - name: Content-Type
+          value: application/json;charset=UTF-8
+        - name: Origin
+          value: https://egov.kz
+        - name: Sec-Fetch-Site
+          value: same-origin
+        - name: Sec-Fetch-Mode
+          value: cors
+        - name: Sec-Fetch-Dest
+          value: empty
+        - name: Referer
+          value: https://egov.kz/services/P30.01/
+        - name: Accept-Encoding
+          value: gzip, deflate, br
+        - name: Accept-Language
+          value: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+        - name: Cookie
+          value: LTT=1610533358199; LTT=1610540152686; LTT=1610540152334; egov-client-type=PORTAL; cookiesession1=678B76BA1234ABCDEFGIJKLMNOPQ30C0; _zero_cc=z5ffe7b3b321ad; _ga=GA1.2.471023877.1610520412; _gid=GA1.2.1293255859.1610520412; _ym_d=1610520412; _ym_uid=1610520412535630076; _ym_isad=2; has_js=1; egovLang=ru; SSESSf0d09e6725a5b1994b1b0ab11a8d594d=d9vujeed-sV5GyR0X6ZRxVDR8XbgWfjTAlzSopZaN2M; egov-client-type=PORTAL; LTT=1610533314585; locale=ru; SSO=1d2e2cb3-4e1f-4c83-86e6-d1e5a43312bf; _zero_ss=5fff007369193.1610547316.1610547340.2; _ym_visorc=w
+      body:
+        type: json
+        data: '{"declarantUin":"141040028436","bin":"201240013776"}'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx
+        - name: Date
+          value: Wed, 13 Jan 2021 12:17:54 GMT
+        - name: Content-Type
+          value: application/json;charset=UTF-8
+        - name: Connection
+          value: keep-alive
+        - name: Set-Cookie
+          value: egov-client-type=PORTAL; Path=/
+        - name: Set-Cookie
+          value: JSESSIONID=j69x8Mrvu7lSxZ-xzCcIDAmE; Path=/P30.01
+        - name: Set-Cookie
+          value: LTT=1610540274172
+        - name: Strict-Transport-Security
+          value: max-age=15768000
+        - name: content-length
+          value: "892"
+      body:
+        type: json
+        data: |-
+          {
+              "xml": "<ns2pep:request xmlns:ns2pep=\"http://3001_v2.reports.egp.gbdul.tamur.kz\" xmlns:ns3=\"http://www.w3.org/2000/09/xmldsig#\"><ns2pep:requestNumber>10100473855851</ns2pep:requestNumber><ns2pep:declarantId>141040028436</ns2pep:declarantId><ns2pep:requestDate>2021-01-13T18:17:54.181+06:00</ns2pep:requestDate><ns2pep:requestSystemId>PORTAL</ns2pep:requestSystemId><ns2pep:businessData><ns2pep:BIN>201240013776</ns2pep:BIN><ns2pep:Requestor><ns2pep:Organization><BIN>141040028436</BIN><NameRu>Товарищество с ограниченной ответственностью \"Учёт.Бухгалтерия\"</NameRu><NameKz>\"Учёт.Бухгалтерия\" жауапкершілігі шектеулі серіктестігі</NameKz></ns2pep:Organization><ns2pep:Legal>false</ns2pep:Legal></ns2pep:Requestor></ns2pep:businessData></ns2pep:request>",
+              "timestamp": 1610540274258
+          }

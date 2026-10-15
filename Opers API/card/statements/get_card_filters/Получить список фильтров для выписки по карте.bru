@@ -1,0 +1,42 @@
+meta {
+  name: Получить список фильтров для выписки по карте
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/card/statements/get_card_filters/
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/statements/get_card_filters/
+    method: GET
+    mode: none
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

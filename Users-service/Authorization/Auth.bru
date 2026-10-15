@@ -1,0 +1,116 @@
+meta {
+  name: Auth
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://{{ARM_HOST}}/proxy/users-service/api/auth/token
+  body: json
+  auth: inherit
+}
+
+headers {
+  X-Fingerprint: {{X-Fingerprint}}
+  Accept-Language: {{Accept-Language}}
+  User-Agent: {{User-Agent}}
+}
+
+body:json {
+  {
+      "password": "{{PASSWORD_ENCRYPTED}}",
+      "username": "{{USERNAME_ENCRYPTED}}"
+  }
+}
+
+script:pre-request {
+  eval(bru.getGlobalEnvVar('pmlib_code'))
+  
+  let publicKey = bru.getEnvVar("PUBLIC_KEY")
+  let username = bru.getEnvVar("USERNAME")
+  let password = bru.getEnvVar("PASSWORD")
+  let keyObj = pmlib.rs.KEYUTIL.getKey(publicKey)
+  
+  let usernameEncrypted = pmlib.rs.KJUR.crypto.Cipher.encrypt(username, keyObj, "RSA")
+  let passwordEncrypted = pmlib.rs.KJUR.crypto.Cipher.encrypt(password, keyObj, "RSA")
+  let base64UsernameEncrypted = Buffer.from(usernameEncrypted, "hex").toString("base64")
+  let base64PasswordEncrypted = Buffer.from(passwordEncrypted, "hex").toString("base64")
+  
+  bru.setEnvVar("USERNAME_ENCRYPTED", base64UsernameEncrypted)
+  bru.setEnvVar("PASSWORD_ENCRYPTED", base64PasswordEncrypted)
+}
+
+script:post-response {
+  let jsonData = res.getBody()
+  bru.setEnvVar("JWT_ACCESS_TOKEN", jsonData.access_token)
+  bru.setEnvVar("JWT_REFRESH_TOKEN", jsonData.refresh_token)
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Auth
+  
+  request: {
+    url: https://{{ARM_HOST}}/proxy/users-service/api/auth/token
+    method: POST
+    mode: json
+    headers: {
+      X-Fingerprint: {{X-Fingerprint}}
+      Accept-Language: {{Accept-Language}}
+      User-Agent: {{User-Agent}}
+    }
+  
+    body:json: {
+      {
+          "password": "{{PASSWORD_ENCRYPTED}}",
+          "username": "{{USERNAME_ENCRYPTED}}"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: XXXXXX
+      Date: Tue, 20 Sep 2022 12:27:49 GMT
+      Content-Type: application/json
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      X-Response-Time: 0.40496182441711426
+      Strict-Transport-Security: max-age=15552000
+      Content-Encoding: gzip
+      content-length: 2146
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJjdXN0b21lcl9leHRlcm5hbF9pZCI6IjAwMUxINiIsInVzZXJfaWQiOjEwMDEzMDk0LCJjdXN0b21lcl91c2VyX2lkIjoxMDAxMzA5NCwiY3VzdG9tZXJfaWQiOjEwMDEzMDk0LCJ1c2VyX25hbWUiOiJ1Y2dZSHNHUUIwK1hKemU5TGlOeUVpd05zako5TVlha0pTNXdISlZsbzlVcmdOSWIzVkhXU1NXbk1XSXFMYjdOZ3M2ZndiNXlRK2c4M0RjTWNQWWxxeEtCMmx4MCtzYkxWcEJxRXpPR0Q5L1J6VkI4eDIzU3pRNkN6NUh1TXQyZkcyMlJTaUJaNHRwdGFITzB1L0xxYks2YnlieFNDZ0NYMDJQUUtmM3JGMlFGTDZ2RWZ5QVFzdWdnNEJ3NnIrbTdibkl0NDI0d29iU1FXYjhNRFVEdWFOdlJmTkFyRERhQ3RSOXZmem5rSFBxQnRnQ0RkaWFQdlFFYlFyMzhnNTRWUmQ0RDV2bWlOZitJNGFNdkRpaGRUTnJlbEYrbmRadkJvR2NWNkNVOTNzNk1oU0diY0JIcFBhRmFhUkQxc0t0cjdvNnFGWXgzUFlFVkEvRmhiUGVXY0FvWTRmWjhPTHBVc2RQM3ZwTjlSUFBScnd6K1M4cnpTN1pBa2xXWTlLYkRwbXhacEdZOWFSKzZHQmZyY0pUdTJVSG5CVytvMlpFNmlEdk40bnhzckE5T2crN0VtVzc4VlNvRkJNOUg4ZGU2eG0xTDlUcndPTytWY0pxekQxc0o1N2pSK1N0ekMwYkRSRjVWbmVaS1pVMkUyYUQzSUZJbW5NM2x1MUlVNy84cEVzbDNiK2tZb01qOGs3R0Q4bFVuKzZoaWE3TFhJRVBDTGpvdTlxOWJXeU9Ea25rQzdPZWJyS1pnM3RUS0JHdEl2QWsvcm12SUNJeXNQLzdpNDVDVGRqeFV5NEZ3Tit1ek1XRVh5b1F5MUNzWmlJem95eEEzOUtld2JpVEU4QjRHT3RhaU5yM3RhZWw3d1RCN2ZndVF0aWQvWGtHdFNPbllXZkR0eU0vZ0pmRT0iLCJyb2xlX2lkIjo0LCJ1c2VyX3R5cGUiOiJjdXN0b21lciIsImlzX2p1bmlvciI6ZmFsc2UsImlzX290cF9wYXNzd29yZCI6ZmFsc2UsImlzX290cF9leHBpcmVkIjpmYWxzZSwiZXhpdF9mcm9tX2p1bmlvciI6ZmFsc2UsImV4cCI6MTY2MzY3Nzc2OX0.b1MMeAtqMuCCg_u4PtHTeYcjwWY9Uffoo_LAThsFBFmCgLSX0jkdmOeBlipwsdOBP391iIGVZVfXFq8rDGndLDqiBliMzTdI-l50C26_9nsiftjKhlV_q6DgfJbU6vkfY9nVMBciQqsVtiNmOytW-M9okm8cMbFPDVSq1jFRm0tdSvLxUJASXgybatug8hMt-esXoiWQCqFxT0xO_W9wY0w1IE4KQs1uPrYlprBS79EkZwcNCZJkmS0hAR7zvol4CUXvs-Pyim5H-WAVXJMC5JapwYGU1eS3ST0duHJZGLjp2djn3CfhZkBFlEOsdHfjHucVODLNMGfdg_1LN92Ipg",
+            "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJjdXN0b21lcl9leHRlcm5hbF9pZCI6IjAwMUxINiIsInVzZXJfaWQiOjEwMDEzMDk0LCJjdXN0b21lcl91c2VyX2lkIjoxMDAxMzA5NCwiY3VzdG9tZXJfaWQiOjEwMDEzMDk0LCJ1c2VyX25hbWUiOiJ1Y2dZSHNHUUIwK1hKemU5TGlOeUVpd05zako5TVlha0pTNXdISlZsbzlVcmdOSWIzVkhXU1NXbk1XSXFMYjdOZ3M2ZndiNXlRK2c4M0RjTWNQWWxxeEtCMmx4MCtzYkxWcEJxRXpPR0Q5L1J6VkI4eDIzU3pRNkN6NUh1TXQyZkcyMlJTaUJaNHRwdGFITzB1L0xxYks2YnlieFNDZ0NYMDJQUUtmM3JGMlFGTDZ2RWZ5QVFzdWdnNEJ3NnIrbTdibkl0NDI0d29iU1FXYjhNRFVEdWFOdlJmTkFyRERhQ3RSOXZmem5rSFBxQnRnQ0RkaWFQdlFFYlFyMzhnNTRWUmQ0RDV2bWlOZitJNGFNdkRpaGRUTnJlbEYrbmRadkJvR2NWNkNVOTNzNk1oU0diY0JIcFBhRmFhUkQxc0t0cjdvNnFGWXgzUFlFVkEvRmhiUGVXY0FvWTRmWjhPTHBVc2RQM3ZwTjlSUFBScnd6K1M4cnpTN1pBa2xXWTlLYkRwbXhacEdZOWFSKzZHQmZyY0pUdTJVSG5CVytvMlpFNmlEdk40bnhzckE5T2crN0VtVzc4VlNvRkJNOUg4ZGU2eG0xTDlUcndPTytWY0pxekQxc0o1N2pSK1N0ekMwYkRSRjVWbmVaS1pVMkUyYUQzSUZJbW5NM2x1MUlVNy84cEVzbDNiK2tZb01qOGs3R0Q4bFVuKzZoaWE3TFhJRVBDTGpvdTlxOWJXeU9Ea25rQzdPZWJyS1pnM3RUS0JHdEl2QWsvcm12SUNJeXNQLzdpNDVDVGRqeFV5NEZ3Tit1ek1XRVh5b1F5MUNzWmlJem95eEEzOUtld2JpVEU4QjRHT3RhaU5yM3RhZWw3d1RCN2ZndVF0aWQvWGtHdFNPbllXZkR0eU0vZ0pmRT0iLCJyb2xlX2lkIjo0LCJ1c2VyX3R5cGUiOiJjdXN0b21lciIsImlzX2p1bmlvciI6ZmFsc2UsImlzX290cF9wYXNzd29yZCI6ZmFsc2UsImlzX290cF9leHBpcmVkIjpmYWxzZSwiZXhpdF9mcm9tX2p1bmlvciI6ZmFsc2UsImV4cCI6MTY2MzY4NDA2OX0.EbhWf5D_iDnb_5BfurnOWE0yD1u1te2TqUq8nZJnZ5mxdnxMFxnTukG2D1CrVPXABc8Fk8qcN5tmsdEWrGCypS5cSsFRVTHR9AlkRKFJ4wIsijHkgUPhGlHmtLdoGvDE42cxalS9vUTO-Qzgiio0cVnXVxxKeTB1hVVTsY1sh1JaKvtU3KXRn5PVCIAoYPAdG-DS2wcSCmvoLsMmsGN37ysndArFVPf9cIKnRapaaLQIyJR6KYJRDk6cGFiUgXEHQX3jUUJBbHSs0vFxhcbsg8b7QQdxCibA-M60LynE82IJiobyZoUyapLP9FGrPYwwEg08M9t1s7FMuegoxKgOhA",
+            "customer_external_id": "001LH6",
+            "customer_id": 10013094,
+            "expires_in": 900,
+            "user_id": 10013094,
+            "customer_user_id": 10013094,
+            "role_id": 4,
+            "is_junior": false,
+            "is_otp_password": false,
+            "customer": {
+                "id": 10013094,
+                "name": "КОВРИГИН МИХАИЛ ЮРЬЕВИЧ"
+            },
+            "is_otp_expired": false,
+            "exit_from_junior": false
+        }
+      '''
+    }
+  }
+}

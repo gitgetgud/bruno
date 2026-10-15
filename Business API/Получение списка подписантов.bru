@@ -1,0 +1,46 @@
+meta {
+  name: Получение списка подписантов
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{openapi_base_url}}/bcc/production/v1/business-account-management/transfers/company/signatories
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~convertKaz: 
+}
+
+headers {
+  x-client-token: {{bccbiz_access_token}}
+}
+
+auth:bearer {
+  token: {{openapi_access_token}}
+}
+
+script:post-response {
+  test("Status code is 201", function () {
+      expect(res.getStatus()).to.equal(201);
+      var jsonData = res.getBody();
+      pm.collectionVariables.set("paymentID", jsonData.id)
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  # Метод для создания платежа
+  
+  предназначен для инициирования нового платежного поручения (перевода) от имени Клиента через платформу Партнёра.
+  
+  С его помощью приложение Партнёра формирует черновик платежа в статусе "Создан", который затем может быть подписан уполномоченным лицом.
+  
+  
+}

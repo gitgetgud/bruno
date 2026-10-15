@@ -1,0 +1,142 @@
+meta {
+  name: Create New Token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/notifications/token/
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-fingerprint: string
+  accept-language: ru
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "token": "string",
+    "os": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  ### Create new API token
+  
+  Note:         There is an artifact from the previous version of the application.        In the tokens there can be multiple tokens with the same customer_id.        As the result there is a mechanism to delete old versions of the tokens.        Basically this mechanism deletes all the tokens with certain customer_id and creates a new one as replacements        **Deprecated. Issue is fixed**
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/token/
+    method: POST
+    mode: json
+    headers: {
+      x-fingerprint: string
+      accept-language: ru
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Bearer <token>
+    }
+  
+    body:json: {
+      {
+        "token": "string",
+        "os": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Validation Error
+  
+  request: {
+    url: {{baseUrl}}/notifications/token/
+    method: POST
+    mode: json
+    headers: {
+      x-fingerprint: string
+      accept-language: ru
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Bearer <token>
+    }
+  
+    body:json: {
+      {
+        "token": "string",
+        "os": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 422
+      text: Unprocessable Entity (WebDAV) (RFC 4918)
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "detail": [
+            {
+              "loc": [
+                "string",
+                2136
+              ],
+              "msg": "string",
+              "type": "string"
+            },
+            {
+              "loc": [
+                3462,
+                "string"
+              ],
+              "msg": "string",
+              "type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

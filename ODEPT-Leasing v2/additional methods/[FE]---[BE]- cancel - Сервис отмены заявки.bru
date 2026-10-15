@@ -1,0 +1,27 @@
+meta {
+  name: [FE]<->[BE]: cancel - Сервис отмены заявки
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://odept.kz/api/bcc-leasing/v1/leasing/applications/{{online_auto_leasing_id}}/cancel
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "group": "Клиент",
+    "reason": "Клиент передумал"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

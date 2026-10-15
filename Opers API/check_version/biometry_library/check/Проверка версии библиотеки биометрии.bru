@@ -1,0 +1,63 @@
+meta {
+  name: Проверка версии библиотеки биометрии
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/check_version/biometry_library/check/?page=80&name=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  name: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/check_version/biometry_library/check/?page=80&name=string
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      name: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "is_exist": true
+        }
+      '''
+    }
+  }
+}

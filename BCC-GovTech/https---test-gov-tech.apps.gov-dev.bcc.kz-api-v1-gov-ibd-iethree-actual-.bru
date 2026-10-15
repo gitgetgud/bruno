@@ -1,0 +1,38 @@
+meta {
+  name: https://test-gov-tech.apps.gov-dev.bcc.kz/api/v1/gov/ibd/iethree-actual/
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://test-gov-tech.apps.gov-dev.bcc.kz/api/v1/gov/ibd/iethree-actual/
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept: */*
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "iinBin": "51749138241",
+    "requestId": "aaeb7dbd-3ede-49c4-bc39-ec83970c0100"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Generated from cURL: curl -X 'POST' \
+    'https://test-gov-tech.apps.gov-dev.bcc.kz/api/v1/gov/ibd/iethree-actual/' \
+    -H 'accept: */*' \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "iinBin": "51749138241",
+    "requestId": "aaeb7dbd-3ede-49c4-bc39-ec83970c0100"
+  }'
+}

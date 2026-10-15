@@ -1,0 +1,72 @@
+meta {
+  name: transfers limits create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/limits/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  View to chec
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/limits/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "string",
+          "img": "http://JJxSjyBYVmHpRBFN.ltPiGkxf-0.,G"
+        }
+      '''
+    }
+  }
+}

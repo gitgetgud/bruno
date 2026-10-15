@@ -1,0 +1,89 @@
+meta {
+  name: Выдача шифрованных данных карты для Apple in-app provisioning
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers_service/public/inapp_provisioning/apple/generate_pass_data/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "nonce": "string",
+    "nonce_signature": "stri",
+    "certificates": [
+      "string",
+      "string"
+    ],
+    "rbs": "string",
+    "exp": "string",
+    "name": "string",
+    "brand": "string",
+    "product_type": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers_service/public/inapp_provisioning/apple/generate_pass_data/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "nonce": "string",
+        "nonce_signature": "stri",
+        "certificates": [
+          "string",
+          "string"
+        ],
+        "rbs": "string",
+        "exp": "string",
+        "name": "string",
+        "brand": "string",
+        "product_type": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "ephemeral_public_key": "string",
+          "activation_data": "string",
+          "encrypted_pass_data": "string"
+        }
+      '''
+    }
+  }
+}

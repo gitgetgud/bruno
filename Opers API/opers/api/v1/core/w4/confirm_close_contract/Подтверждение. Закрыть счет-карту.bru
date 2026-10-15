@@ -1,0 +1,61 @@
+meta {
+  name: Подтверждение. Закрыть счет/карту
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/w4/confirm_close_contract/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "otp_uuid": "b045ccff-28e6-b4b8-c585-ba6484584db1",
+    "passcode": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/w4/confirm_close_contract/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "otp_uuid": "b045ccff-28e6-b4b8-c585-ba6484584db1",
+        "passcode": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

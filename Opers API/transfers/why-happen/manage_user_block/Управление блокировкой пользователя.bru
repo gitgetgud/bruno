@@ -1,0 +1,78 @@
+meta {
+  name: Управление блокировкой пользователя
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/why-happen/manage_user_block/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "dt": "2021-09-13T18:25:47.647Z",
+    "uid": "string",
+    "client_id": "string",
+    "action": "string",
+    "comments": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/why-happen/manage_user_block/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "dt": "2021-09-13T18:25:47.647Z",
+        "uid": "string",
+        "client_id": "string",
+        "action": "string",
+        "comments": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "taxCode": "strin",
+          "clientStatusCode": "string",
+          "is_hard_blocked": true,
+          "dt": "1951-03-25T08:55:46.861Z"
+        }
+      '''
+    }
+  }
+}

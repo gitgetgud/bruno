@@ -1,0 +1,93 @@
+meta {
+  name: safe room revision auditor partial update
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/safe_room_revision/auditor/:id/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 80
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "first_name": "string",
+    "last_name": "string",
+    "middle_name": "string",
+    "email": "0bwrVvmyauA92@uKSAcdIplyMeFTjNNzNsUvRwVgrDVsHI.orn",
+    "client_id": "string",
+    "position_name": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/auditor/:id/
+    method: PATCH
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "first_name": "string",
+        "last_name": "string",
+        "middle_name": "string",
+        "email": "0bwrVvmyauA92@uKSAcdIplyMeFTjNNzNsUvRwVgrDVsHI.orn",
+        "client_id": "string",
+        "position_name": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "first_name": "string",
+          "last_name": "string",
+          "id": 9174,
+          "created": "1976-10-29T20:55:59.977Z",
+          "modified": "2022-07-27T12:29:05.218Z",
+          "middle_name": "string",
+          "email": "oW1KTmWf-Ipr@wwVbzMdhUZqNCDKvZga.yc",
+          "client_id": "string",
+          "position_name": "string"
+        }
+      '''
+    }
+  }
+}

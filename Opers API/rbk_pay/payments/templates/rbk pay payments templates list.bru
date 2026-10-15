@@ -1,0 +1,346 @@
+meta {
+  name: rbk pay payments templates list
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/rbk_pay/payments/templates/
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/templates/
+    method: GET
+    mode: none
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "payment": {
+              "status": null,
+              "provider": {
+                "params": [
+                  "string"
+                ],
+                "category": {
+                  "name": "string",
+                  "id": 1207
+                },
+                "id": "fd098b9c-c3b7-616a-d52a-412d8727c724",
+                "name": "string",
+                "iban": "string",
+                "bin": "stri",
+                "knp": "string",
+                "kbe": "string",
+                "region": [
+                  "ddda162c-47a4-c88e-ec6e-0a8029633258",
+                  "e760c62a-7adc-f3ee-6b11-6b5cd7752df8"
+                ],
+                "disclaimer": "string"
+              },
+              "client_id": "string",
+              "phone": "string",
+              "iin": "string",
+              "from_iban": "string",
+              "fare_tolem": {
+                "balance": "string",
+                "pay_route_number": "string",
+                "pay_bus_reg_number": "string",
+                "pay_ticket_number": "string",
+                "payment": "87918d2a-5916-1a2b-79ec-8aeab4a97ad4",
+                "id": 3663
+              },
+              "paynet": {
+                "parameters": [
+                  "string",
+                  "string"
+                ],
+                "service_id": "string",
+                "payment_service": {
+                  "third_party_provider": {
+                    "provider_uuid": "c51b6e45-000c-ef65-cf6e-d1268c8b13e1"
+                  },
+                  "code": "string"
+                },
+                "operation_description": "string",
+                "pay_purpose": "string"
+              },
+              "kassa24": {
+                "parameters": [
+                  "string",
+                  "string"
+                ],
+                "service_id": "string",
+                "payment_service": {
+                  "third_party_provider": {
+                    "provider_uuid": "2270a9fb-6e61-9b5b-8403-c90f2024e84b"
+                  },
+                  "code": "string"
+                },
+                "operation_description": "string",
+                "pay_purpose": "string",
+                "addings": {}
+              },
+              "penalties": {
+                "iin": "string",
+                "doc_num": "string",
+                "doc_issue_date": "1991-07-27",
+                "l_name": "string",
+                "f_name": "s",
+                "birthday": "1974-06-15T06:05:36.130Z",
+                "av_original_id": "string",
+                "offence_org": "string",
+                "commission_date": "1977-11-13T20:18:46.739Z",
+                "penalty_size": "string",
+                "payment_size": "string",
+                "balance_size": "string",
+                "kbk": "string",
+                "kno": "string",
+                "knp": "string",
+                "id": 5677,
+                "m_name": "string",
+                "act_num": "string",
+                "protocol_num": "string",
+                "protocol_date": "string",
+                "half_sum_expired_date": "2015-12-15T02:08:04.133Z",
+                "qualification": "string",
+                "decision": "string",
+                "doc_name": "string"
+              },
+              "otbasy": {
+                "payment_service": {
+                  "third_party_provider": {
+                    "provider_uuid": "884a2c9b-4c52-b897-85a0-c32b7d924f69"
+                  },
+                  "code": "string"
+                },
+                "acc_alt_code": "string",
+                "p_code": "string",
+                "rrn": "string",
+                "iban": "string",
+                "currency": "string",
+                "payment": "5c70dede-2000-385a-c5b0-bc02ebf6cf4c",
+                "id": 7328,
+                "hermes_id": "string",
+                "cancel_state": "string"
+              },
+              "egov_info": {
+                "order_number": "string"
+              },
+              "id": "c9bc1771-63e6-a357-5bf5-46177147336a",
+              "invoice_id": 755720002,
+              "account": "string",
+              "payment_type": "KASSA24",
+              "to_iban": "string",
+              "currency": "string",
+              "ibso_folder_id": "string",
+              "ibso_document_ref_id": "string",
+              "ibso_err_code": "string",
+              "created": "1956-02-26T13:11:44.563Z",
+              "modified": "1985-12-31T07:20:04.654Z",
+              "amount": "string",
+              "icon_image": "string",
+              "invoice_generated": "string",
+              "repeat_available": "string",
+              "merchant_name": "string",
+              "link_receipt": "string",
+              "card_number_mask": "string"
+            },
+            "id": 2426,
+            "provider_id": "string",
+            "provider_name": "string",
+            "is_subscribed": false,
+            "is_invoiceable": "string",
+            "category_id": "string",
+            "category_name": "string",
+            "name": "string",
+            "parameters": [
+              "string",
+              "string"
+            ],
+            "main_parametr": "string",
+            "from_iban": "string",
+            "additional_parameters": "string"
+          },
+          {
+            "payment": {
+              "status": null,
+              "provider": {
+                "params": [
+                  "string"
+                ],
+                "category": {
+                  "name": "string",
+                  "id": 1845
+                },
+                "id": "2c77c7b2-bc40-0cd4-d4e0-8407fe36511e",
+                "name": "string",
+                "iban": "string",
+                "bin": "string",
+                "knp": "string",
+                "kbe": "string",
+                "region": [
+                  "7a5eb89c-ed8f-0c0a-fd72-b5d828cd53da",
+                  "f53e4498-ba8b-db20-876b-f7f8d6309275"
+                ],
+                "disclaimer": "string"
+              },
+              "client_id": "string",
+              "phone": "string",
+              "iin": "string",
+              "from_iban": "string",
+              "fare_tolem": {
+                "balance": "string",
+                "pay_route_number": "str",
+                "pay_bus_reg_number": "string",
+                "pay_ticket_number": "string",
+                "payment": "1245c381-eed0-e781-c780-2066bb6744ac",
+                "id": 5401
+              },
+              "paynet": {
+                "parameters": [
+                  "string",
+                  "string"
+                ],
+                "service_id": "string",
+                "payment_service": {
+                  "third_party_provider": {
+                    "provider_uuid": "4ea8ae89-56c5-257a-0b26-7ffe1522521f"
+                  },
+                  "code": "string"
+                },
+                "operation_description": "string",
+                "pay_purpose": "string"
+              },
+              "kassa24": {
+                "parameters": [
+                  "string",
+                  "string"
+                ],
+                "service_id": "string",
+                "payment_service": {
+                  "third_party_provider": {
+                    "provider_uuid": "accea3fd-202d-db29-d2ab-c6ed81e88273"
+                  },
+                  "code": "string"
+                },
+                "operation_description": "string",
+                "pay_purpose": "string",
+                "addings": {}
+              },
+              "penalties": {
+                "iin": "string",
+                "doc_num": "string",
+                "doc_issue_date": "2013-02-22",
+                "l_name": "string",
+                "f_name": "string",
+                "birthday": "2024-09-16T13:30:27.677Z",
+                "av_original_id": "string",
+                "offence_org": "string",
+                "commission_date": "2010-05-20T19:24:01.237Z",
+                "penalty_size": "string",
+                "payment_size": "string",
+                "balance_size": "string",
+                "kbk": "string",
+                "kno": "string",
+                "knp": "string",
+                "id": 3525,
+                "m_name": "string",
+                "act_num": "string",
+                "protocol_num": "string",
+                "protocol_date": "string",
+                "half_sum_expired_date": "1988-04-01T12:14:08.853Z",
+                "qualification": "string",
+                "decision": "string",
+                "doc_name": "string"
+              },
+              "otbasy": {
+                "payment_service": {
+                  "third_party_provider": {
+                    "provider_uuid": "02cab48a-1cb9-9bd6-5187-9285c2553bfc"
+                  },
+                  "code": "string"
+                },
+                "acc_alt_code": "string",
+                "p_code": "string",
+                "rrn": "strin",
+                "iban": "string",
+                "currency": "s",
+                "payment": "fff742fb-0e93-6453-7c73-c0d6fc5dcc7f",
+                "id": 2249,
+                "hermes_id": "string",
+                "cancel_state": "string"
+              },
+              "egov_info": {
+                "order_number": "string"
+              },
+              "id": "cd2abb00-0c68-ef3c-9160-fe00b529deb3",
+              "invoice_id": 1628238964,
+              "account": "string",
+              "payment_type": "TOLEM_QR",
+              "to_iban": "string",
+              "currency": "string",
+              "ibso_folder_id": "string",
+              "ibso_document_ref_id": "string",
+              "ibso_err_code": "string",
+              "created": "1957-10-29T10:14:16.023Z",
+              "modified": "1981-07-17T06:45:14.472Z",
+              "amount": "string",
+              "icon_image": "string",
+              "invoice_generated": "string",
+              "repeat_available": "string",
+              "merchant_name": "string",
+              "link_receipt": "string",
+              "card_number_mask": "string"
+            },
+            "id": 84,
+            "provider_id": "string",
+            "provider_name": "string",
+            "is_subscribed": false,
+            "is_invoiceable": "string",
+            "category_id": "string",
+            "category_name": "string",
+            "name": "string",
+            "parameters": [
+              "string",
+              "string"
+            ],
+            "main_parametr": "string",
+            "from_iban": "string",
+            "additional_parameters": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

@@ -1,0 +1,73 @@
+meta {
+  name: Создание ревизии
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/safe_room_revision/revision/create_revision/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "revision_date": "2023-10-07",
+    "revision_type": "string",
+    "revision_kind": "string",
+    "branch_code": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/create_revision/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "revision_date": "2023-10-07",
+        "revision_type": "string",
+        "revision_kind": "string",
+        "branch_code": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "revision_id": "string"
+        }
+      '''
+    }
+  }
+}

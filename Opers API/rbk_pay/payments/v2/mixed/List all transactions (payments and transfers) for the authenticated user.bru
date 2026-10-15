@@ -1,0 +1,50 @@
+meta {
+  name: List all transactions (payments and transfers) for the authenticated user.
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/rbk_pay/payments/v2/mixed/
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Query Parameters:
+  - size: Number of items per page (default: 20)
+  - page: Page number (default: 0)
+  - from_date: Filter transactions from this date
+  - to_date: Filter transactions to this date
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/v2/mixed/
+    method: GET
+    mode: none
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

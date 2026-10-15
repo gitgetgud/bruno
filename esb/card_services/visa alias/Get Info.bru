@@ -1,0 +1,54 @@
+meta {
+  name: Get Info
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+     "Request":{
+        "serviceCode":"tswitch.GetVisaAliasInfo",
+        "uuid":"6614db3-dc12-4334-b82a-f69fbb5b5a1",
+        "sourceSystem":"SingleWindow",
+        "username":"SingleWindow",
+        "Data":{
+           "Information":{
+              "RegNumber":"AAA-2022-04-18-004",
+              "ObjectType":"Contract",
+              "ActionType":"Inquiry",
+              "ResultDtls":{
+                 "Parm":{
+                    "ParmCode":"VisaAliasInfo",
+                    "Value":"Y"
+                 }
+              },
+              "ObjectFor":{
+                 "ContractIDT":{
+                    "RBSNumber":"ADS-00000001",
+                    "Client":{
+                       "ClientInfo":{
+                          "ClientNumber":"OTC_006"
+                       }
+                    }
+                 }
+              }
+           }
+        }
+     }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,102 @@
+meta {
+  name: rbk pay payments providers list
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/rbk_pay/payments/providers/?region=string&category=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  region: string
+  category: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/providers/?region=string&category=string
+    method: GET
+    mode: none
+    params:query: {
+      region: string
+      category: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "params": [
+              "string"
+            ],
+            "category": {
+              "name": "string",
+              "id": 3945
+            },
+            "id": "8a1c90e7-b943-d748-b415-6ca054b389c9",
+            "name": "string",
+            "iban": "string",
+            "bin": "string",
+            "knp": "string",
+            "kbe": "string",
+            "region": [
+              "9bb5c581-99bd-fa57-8b01-653fdea4ca97",
+              "233b1654-6023-1e8c-ba5c-a5855dbe7cab"
+            ],
+            "disclaimer": "string"
+          },
+          {
+            "params": [
+              "string"
+            ],
+            "category": {
+              "name": "string",
+              "id": 249
+            },
+            "id": "b56575c0-23a7-bbe8-f956-3c9111e82b64",
+            "name": "string",
+            "iban": "string",
+            "bin": "string",
+            "knp": "string",
+            "kbe": "string",
+            "region": [
+              "eb91197e-0585-6ac0-1b1b-d59dc4438d27",
+              "5796896f-caa6-a4b6-38b9-9314e4d6d247"
+            ],
+            "disclaimer": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

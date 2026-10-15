@@ -1,0 +1,77 @@
+meta {
+  name: registration passport
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/:id/passport/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "identity_data": {}
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/registration/:id/passport/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "identity_data": {}
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "identity_front": "https://wdtLOO.jpwrY42cy0FrTOZTQo",
+          "identity_data": {},
+          "identity_mini": "https://fMYTUPctDVxlbboIUDBWcYWU.nwkDiZlBZPiC15nme+Vt"
+        }
+      '''
+    }
+  }
+}

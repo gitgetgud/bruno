@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Базовая коллекция для работы с Camunda",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

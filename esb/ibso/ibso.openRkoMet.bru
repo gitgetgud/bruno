@@ -1,0 +1,37 @@
+meta {
+  name: ibso.openRkoMet
+  type: http
+  seq: 41
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.openRkoMet",
+          "uuid": "6614db3-dc12-4334-b82a-f69fbb5b5a1",
+          "sourceSystem": "SingleWindow",
+          "username": "SingleWindow",
+          "Data": {
+              "clientID": "880114301129",
+              "currency": "AUX",
+              "departCode": "001-004-004",
+              "iban": "KZ658210439870251999"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

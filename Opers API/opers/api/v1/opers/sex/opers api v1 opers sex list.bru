@@ -1,0 +1,73 @@
+meta {
+  name: opers api v1 opers sex list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/sex/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/sex/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 4378,
+          "results": [
+            {
+              "code": "s",
+              "description": "string"
+            },
+            {
+              "code": "s",
+              "description": "string"
+            }
+          ],
+          "next": "http://LLqgJdEmWyschhzmwXrvP.arvhyJwWfag1wYs-77oQ7mijNvx0lJuku2Q",
+          "previous": "https://QuXrZbjgggXDSCUsGvcUbzjqqYe.remgKwgmTzfk+z1teGr9KunbraIAMHuDn3Ca3gr24B0EWp.8cP6qRlezfH"
+        }
+      '''
+    }
+  }
+}

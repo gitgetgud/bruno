@@ -1,0 +1,44 @@
+meta {
+  name: ibso. getinfo
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/tayyab/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: TayyabUser
+  password: Onnhalr3pLSKghrH76sk
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.GetInfo",
+          "uuid": "3505c24a-9523-4594-85b2-60adca269fc3",
+          "requestTime": "2019-10-31T13:51:45+00:00",
+          "sourceSystem": "Tayyab",
+          "username": "Tayyab",
+          "Data": {
+              "operationType": "3032",
+              "idCode": "KZ148210439870339374",
+              "currency": "KZT",
+              "amount": "100",
+              "kbe": "23",
+              "knp": "852",
+              "extId": "abc123",
+              "operationDscr": "Beeline, Мобильная связь, +7 (777) 351-88-86",
+              "cmsAmount": "0",
+              "paypurp": "Мобильная связь"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

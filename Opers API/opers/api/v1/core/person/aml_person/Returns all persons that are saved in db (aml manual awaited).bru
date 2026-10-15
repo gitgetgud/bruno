@@ -1,0 +1,99 @@
+meta {
+  name: Returns all persons that are saved in db (aml manual awaited).
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/person/aml_person/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Parameters
+  ----------
+      auth: filters out by user_id in jwt token
+  
+  Returns
+  ----------
+      Paginated response.
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/person/aml_person/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 5826,
+          "results": [
+            {
+              "status_name": "string",
+              "created_by": "string",
+              "data": {},
+              "id": "87be0c09-9223-9524-3343-d2e0f2fee865",
+              "created": "2014-05-28T05:29:10.280Z",
+              "modified": "1948-11-10T04:43:18.643Z",
+              "status": 1,
+              "error_reason": "string",
+              "document": "http://VzLYLLECyTLGGY.pzlgGr5Q8sYH778x1DTweisU4O3SnPWkl,7QqBqQlXlxxRT,TxuNPwg-",
+              "opers_username": "string"
+            },
+            {
+              "status_name": "string",
+              "created_by": "string",
+              "data": {},
+              "id": "090db5bc-6dad-3aab-67c2-be18b5bf9a75",
+              "created": "1976-08-31T12:05:22.471Z",
+              "modified": "1951-01-19T01:02:38.697Z",
+              "status": 2,
+              "error_reason": "string",
+              "document": "https://bUDbdQa.ymcrb,F4T2vVnARfaUetiO3-a.5lwLwd9YrPl9foCaEDo9A+yOo4aQU",
+              "opers_username": "string"
+            }
+          ],
+          "next": "https://IZAmUfUlsFQLinIpladJxRTwemohjw.mzsmwl1upZx4vybkAoBgBJ0qH1tFcPpZVjElwB-ygaUiN2EKyv8",
+          "previous": "http://hoTFdIGOCIGLHsaJSpTjqYwRuixwgTd.ukpdexLVw0KAx1htoEJ3HY52AIWSbi0S"
+        }
+      '''
+    }
+  }
+}

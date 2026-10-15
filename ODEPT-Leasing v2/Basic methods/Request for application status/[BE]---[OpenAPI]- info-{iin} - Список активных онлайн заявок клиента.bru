@@ -1,0 +1,121 @@
+meta {
+  name: [BE]<->[OpenAPI]: info/{iin} - Список активных онлайн заявок клиента
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{gateway_host}}/bcc/production/api/v1/loans/client/application/info/:iin
+  body: none
+  auth: bearer
+}
+
+params:path {
+  iin: {{bin}}
+}
+
+headers {
+  X-User-ID: +77777777777
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: info/{iin} - OTP
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/client/application/info/:iin
+    method: GET
+    mode: none
+    params:path: {
+      iin: 850525300700
+    }
+  
+    headers: {
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "VERIFICATION",
+            "id": "15d7576b-361e-4844-a65a-01f05d30982c",
+            "orderNumber": "2026363567",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "",
+                    "ru": ""
+                },
+                "stageName": {
+                    "kz": "ОТП арқылы клиентті тексеру",
+                    "ru": "Верификация клиента по ОТП"
+                }
+            },
+            "processingEventStatus": "UNPROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: info/{iin} - Список активных онлайн заявок клиента Copy 2
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/client/application/info/:iin
+    method: GET
+    mode: none
+    params:path: {
+      iin: 850525300700
+    }
+  
+    headers: {
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "BANK_REJECTED",
+            "id": "15d7576b-361e-4844-a65a-01f05d30982c",
+            "orderNumber": "2026363567",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "Менеджер/уәкілетті тұлға туралы деректер жоқ",
+                    "ru": "Нет данных по руководителю/уполномоченного лица"
+                },
+                "stageName": {
+                    "kz": "Получение данных Уполномоченного лица",
+                    "ru": "Получение данных Уполномоченного лица"
+                }
+            },
+            "processingEventStatus": "PROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}

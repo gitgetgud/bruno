@@ -1,0 +1,59 @@
+meta {
+  name: Повторная отправка СМС на номер ребенка
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/junior_banking/resend_sms/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "registration_uuid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/junior_banking/resend_sms/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "registration_uuid": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

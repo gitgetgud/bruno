@@ -1,0 +1,119 @@
+meta {
+  name: opers api v1 opers registration read
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/registration/:id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/registration/:id/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "biochecks": [
+            {
+              "vendor": "stri",
+              "result": 6248.467911448978,
+              "registration": "52000257-74a4-5748-33e3-66a44d3a53be",
+              "id": 4578,
+              "created": "2010-10-31T07:06:58.643Z",
+              "modified": "1953-12-21T09:05:06.661Z"
+            },
+            {
+              "vendor": "string",
+              "result": 8491.100351591393,
+              "registration": "ef0a48a1-b90c-a392-493f-0e8fedae7813",
+              "id": 1511,
+              "created": "1981-07-22T18:51:29.971Z",
+              "modified": "2023-04-16T00:28:00.238Z"
+            }
+          ],
+          "iin": "string",
+          "phone": "strin",
+          "product": "string",
+          "id": "0144b5a1-dd60-5e88-15b6-c216d38d2f45",
+          "identity_front": "string",
+          "identity_back": "string",
+          "identity_mini": "string",
+          "selfie": "string",
+          "created": "1991-10-01T03:50:14.722Z",
+          "modified": "1992-01-13T03:48:12.845Z",
+          "status": 503,
+          "is_foreg": false,
+          "is_non_resident_iban_correct": true,
+          "is_non_resident": false,
+          "is_test": false,
+          "is_active": false,
+          "is_remind_login": true,
+          "is_agreement_checked": false,
+          "is_core_banking_client": true,
+          "should_open_account": false,
+          "should_open_card": true,
+          "login": "string",
+          "non_resident_iban": "string",
+          "fio": "string",
+          "fatca": {},
+          "identity_data": {},
+          "gkb_data": {},
+          "foreg_data": {},
+          "aml_client": false,
+          "bank_customer_id": "string",
+          "bank_way4_id": "string",
+          "region_kato": "string",
+          "street": "string",
+          "house": "string",
+          "flat": "string",
+          "division": "string",
+          "delivery_address": "string",
+          "error_reason": "string",
+          "error_point": "AML_NET_ERROR",
+          "system_error_information": "string",
+          "retry_counter": 21051
+        }
+      '''
+    }
+  }
+}

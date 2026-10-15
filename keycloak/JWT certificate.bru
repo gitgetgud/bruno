@@ -1,0 +1,81 @@
+meta {
+  name: JWT certificate
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{KEYCLOAK_BASE_URL}}/auth/realms/{{REALM_NAME}}/protocol/openid-connect/certs
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: JWT certificate
+  
+  request: {
+    url: {{KEYCLOAK_BASE_URL}}/auth/realms/{{REALM_NAME}}/protocol/openid-connect/certs
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Cache-Control: no-cache
+      X-XSS-Protection: 1; mode=block
+      X-Frame-Options: SAMEORIGIN
+      Referrer-Policy: no-referrer
+      Date: Fri, 03 Jun 2022 23:46:11 GMT
+      Connection: keep-alive
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      X-Content-Type-Options: nosniff
+      Content-Type: application/json
+      Content-Length: 2957
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "keys": [
+                {
+                    "kid": "xwCsmHFA2TJVfw_emTlNv0dcdGqCF0Tl_wL-I-veE9Y",
+                    "kty": "RSA",
+                    "alg": "RSA-OAEP",
+                    "use": "enc",
+                    "n": "juJmzk7KT6gKv8q4cjdHrpXb8DXK9fZo5FnsC9IevvRW-UzSAYyGRPCBEGKg1rooNs007jdcJfvvkv-mKBh3dq-MHEcO3_tw1b_rbu4uv__KD3EzM9GWRVmqvQrSQM4fJJ3VDifv5BpfzBhInl35w6Z036dSTGRl6QBM-yhGjooH7s10TuQ-99uWYSRIz8rsYs5SySNkkqBb88sGUISDk5Lkt5ev8T3YY-lXxNDhNHErWQCqWjQHSMOm0Zp_KPTwjJw0D0e6JwGh4Wgyqprw15gIzMuwp0nd1qu3JPIdF_6scfMi9KxeYTPXts1PRDXMO2jlQAUHJqZXQvwb1deQKw",
+                    "e": "AQAB",
+                    "x5c": [
+                        "MIICqzCCAZMCBgGA4nuFSjANBgkqhkiG9w0BAQsFADAZMRcwFQYDVQQDDA5pbWFnZWJvYXJkYXV0aDAeFw0yMjA1MjAxNzE4MDdaFw0zMjA1MjAxNzE5NDdaMBkxFzAVBgNVBAMMDmltYWdlYm9hcmRhdXRoMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjuJmzk7KT6gKv8q4cjdHrpXb8DXK9fZo5FnsC9IevvRW+UzSAYyGRPCBEGKg1rooNs007jdcJfvvkv+mKBh3dq+MHEcO3/tw1b/rbu4uv//KD3EzM9GWRVmqvQrSQM4fJJ3VDifv5BpfzBhInl35w6Z036dSTGRl6QBM+yhGjooH7s10TuQ+99uWYSRIz8rsYs5SySNkkqBb88sGUISDk5Lkt5ev8T3YY+lXxNDhNHErWQCqWjQHSMOm0Zp/KPTwjJw0D0e6JwGh4Wgyqprw15gIzMuwp0nd1qu3JPIdF/6scfMi9KxeYTPXts1PRDXMO2jlQAUHJqZXQvwb1deQKwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBfShpRxCLhssuoaz+aM39+UELnIcKy4j7tmFp+E6hCJHmdLz8kf1I3yaguhLdWwFXm6qmJwXyirjr+qnZA2gSE3i8zchQFV3ZS+EiH27e4YUHrmC5db6SlJydd5Zah4wH5G8AvAajj/RuqVd2JKms9TtUTPUDO5vkLFNG/PfS3ey1oQ+UC1gMux+pGRh1wnb+1VdxIPU5B9jPS1lPQADsyGMvl2Ea5IIl/yhW1sR81rCWH2KSt96uOarPsQZCBtrGpsIeqa6F9aSSBFY0rwM/r1S9WAhWVazTSeKr954XDQ7hyCyS0rL3HTk2G6SN68atYogzPZMoaeOokTI0RzV+6"
+                    ],
+                    "x5t": "_zM6w-_PGEPCiZp1FPo_bYdCnHA",
+                    "x5t#S256": "0fXyS6Fp0dN_-ivvQZa_hmTQqG81ogQghkPTd3RWunQ"
+                },
+                {
+                    "kid": "wkv6i6P1lm82iSytnWmCJ7mTDivzx9Qtk5kO-Go9zZM",
+                    "kty": "RSA",
+                    "alg": "RS256",
+                    "use": "sig",
+                    "n": "mTQOnKMTDxwk3NMfasrCX79SRNkcXPjfxae8uHN1dg_sXDDbm24uuYcAN212dewP2zj0zzqzt28mOpGFTFirqCHrOGS2-kW-EpTBZI7WU8wb9hQMsvGwBOOWW3NRfExpoxvF4oa5QuqSTbTM4nQHXlJPZqjMMp54cCUZLOlW2VJov6q60OnPBmmpHTV8-8vaTVfZNo77FYuTWRVoYF5rc3_KfqcV8DwHmSHGF9fOwvzo4rSkklQ4C_j3g255SyBWkUc2TIur9UmQBM6B4oHVIxdlPQ_chT7KPzU6ePrPUJldhS4RwVv4hLPpNwwcby0Cb4bO90nTZR5nzcO7EaMnMw",
+                    "e": "AQAB",
+                    "x5c": [
+                        "MIICqzCCAZMCBgGA4nuFEDANBgkqhkiG9w0BAQsFADAZMRcwFQYDVQQDDA5pbWFnZWJvYXJkYXV0aDAeFw0yMjA1MjAxNzE4MDdaFw0zMjA1MjAxNzE5NDdaMBkxFzAVBgNVBAMMDmltYWdlYm9hcmRhdXRoMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmTQOnKMTDxwk3NMfasrCX79SRNkcXPjfxae8uHN1dg/sXDDbm24uuYcAN212dewP2zj0zzqzt28mOpGFTFirqCHrOGS2+kW+EpTBZI7WU8wb9hQMsvGwBOOWW3NRfExpoxvF4oa5QuqSTbTM4nQHXlJPZqjMMp54cCUZLOlW2VJov6q60OnPBmmpHTV8+8vaTVfZNo77FYuTWRVoYF5rc3/KfqcV8DwHmSHGF9fOwvzo4rSkklQ4C/j3g255SyBWkUc2TIur9UmQBM6B4oHVIxdlPQ/chT7KPzU6ePrPUJldhS4RwVv4hLPpNwwcby0Cb4bO90nTZR5nzcO7EaMnMwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQAqgBJc+kb9GxY6yvQYQG39tP7YWMAGU/Yep+alz/jYlETIb8kbFRIFgUTAMiJ+cp4WMSDTYw3X43nFEwFz6h9i1niw4P7y2PpNvKoH8hwuVDDnFMbP7S7YVuNmuZKpwpHDvcXtzhuG7d0LCNFJOarRd6S2bJyF7Ud0M6SYEnp78b+vwLjsXyI014bCS7elM+y7DBjSoaW8PyaSGqWMOe37bR6Zo8696HD5dC/mA+fVlXGhy7FUhIkycOey9yzMHiLjDTr+6CGeNNwsP1jH7I9a5v0Rd1f530cscxmCmaZDWPEW3YIAF4eyI91VU24YNb/NkRA/u1AWRwFfHL+fo4qX"
+                    ],
+                    "x5t": "G0Ca9WXQaTpMXqu5higEnEuGABc",
+                    "x5t#S256": "6vLn7HQRGXw6ruayrUCfTQKuiOFXjsC9wxi7oJg_FPY"
+                }
+            ]
+        }
+      '''
+    }
+  }
+}

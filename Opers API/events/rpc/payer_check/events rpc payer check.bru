@@ -1,0 +1,77 @@
+meta {
+  name: events rpc payer check
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/rpc/payer_check/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "stringstring",
+    "payment_month": "string",
+    "payment_amount": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Checks ESP payment
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/rpc/payer_check/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring",
+        "payment_month": "string",
+        "payment_amount": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "stringstring",
+          "payment_month": "string",
+          "payment_amount": "string"
+        }
+      '''
+    }
+  }
+}

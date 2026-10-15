@@ -1,0 +1,69 @@
+meta {
+  name: Получение инфо по IBAN
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/transfers/transfers/account_info/?page=80&size=80&iban=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  size: 80
+  iban: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/transfers/account_info/?page=80&size=80&iban=string
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      size: 80
+      iban: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "kbe": "string",
+          "tax_code": "string",
+          "name": "string",
+          "account_currency": "string",
+          "iban": "string"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,18 @@
+info:
+  name: get_goszakup
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: https://ows.goszakup.gov.kz/v3/subject/biin/201040000013
+  headers:
+    - name: Authorization
+      value: Bearer 45471cbe3793c90e20273e8af2409af5
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,77 @@
+meta {
+  name: rahmet repayment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rahmet/repayment/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "from_iban": "string",
+    "to_iban": "string",
+    "amount": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Customer Repay endpoint
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rahmet/repayment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "from_iban": "string",
+        "to_iban": "string",
+        "amount": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "from_iban": "string",
+          "to_iban": "string",
+          "amount": "string"
+        }
+      '''
+    }
+  }
+}

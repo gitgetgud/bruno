@@ -1,0 +1,77 @@
+meta {
+  name: events exchange v2 banking read
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/events/exchange/v2/banking/:id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/exchange/v2/banking/:id/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "status_name": "string",
+          "id": "59a89394-d1a8-387f-c80f-ed23484e94bb",
+          "created": "1951-07-22T04:03:53.233Z",
+          "modified": "1958-04-07T09:03:14.458Z",
+          "status": 6,
+          "to_iban": "string",
+          "from_iban": "string",
+          "rate": "string",
+          "credit_currency": "string",
+          "debit_currency": "string",
+          "credit_amount": "string",
+          "debit_amount": "string",
+          "document_ref_id": "string",
+          "client_id": "string",
+          "iin": "string",
+          "modified_operationist": "string",
+          "is_created_by_client": false
+        }
+      '''
+    }
+  }
+}

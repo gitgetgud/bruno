@@ -1,0 +1,80 @@
+meta {
+  name: opers api v1 core tswitch clear pin attempts
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/tswitch/clear_pin_attempts/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "institution": "string",
+    "order_department": "string",
+    "client_id": "string",
+    "rbs_number": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Clears pin attempts on specific card
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/tswitch/clear_pin_attempts/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "institution": "string",
+        "order_department": "string",
+        "client_id": "string",
+        "rbs_number": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "institution": "string",
+          "order_department": "string",
+          "client_id": "string",
+          "rbs_number": "string"
+        }
+      '''
+    }
+  }
+}

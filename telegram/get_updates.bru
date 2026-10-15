@@ -1,0 +1,15 @@
+meta {
+  name: get_updates
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://api.telegram.org/bot{{bot_token}}/getUpdates
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

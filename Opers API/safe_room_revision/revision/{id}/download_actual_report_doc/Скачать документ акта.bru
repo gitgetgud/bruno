@@ -1,0 +1,50 @@
+meta {
+  name: Скачать документ акта
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/safe_room_revision/revision/:id/download_actual_report_doc/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: FILE
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/:id/download_actual_report_doc/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

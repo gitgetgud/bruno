@@ -1,0 +1,39 @@
+meta {
+  name: 8_ibso.GetDistricts
+  type: http
+  seq: 8
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdboul/soa
+  body: json
+  auth: basic
+}
+
+headers {
+  ~: 
+}
+
+auth:basic {
+  username: SdboulUser
+  password: SdboulUser2020
+}
+
+body:json {
+  {
+    "Request": {
+      "serviceCode": "ibso.GetDistricts",
+      "uuid": "984503f6-bf1f-459f-bc8c-9dc641412f70",
+      "sourceSystem": "sdboul",
+      "username": "SdboulUser",
+      "requestTime": "2022-06-29 11:10:27.759271",
+      "Data": {
+        "refCode": "Districts"
+      }
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

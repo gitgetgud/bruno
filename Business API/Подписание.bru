@@ -1,0 +1,93 @@
+meta {
+  name: Подписание
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://nca-node.infra.orb.local/cms/sign
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "data": "{{documentsBase64}}",
+    "signers": [
+      {
+        "key": "{{bccbiz_p12}}",
+        "password": "{{bccbiz_p12_pass}}"
+      }
+    ],
+    "withTsp": false,
+    "tsaPolicy": "TSA_GOST_POLICY",
+    "detached": false
+  }
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+      var jsonData = res.getBody();
+      pm.collectionVariables.set("signedDoc", jsonData.cms)
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Подписание
+  
+  request: {
+    url: http://nca-node.infra.orb.local/cms/sign
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "data": "{{documentsBase64}}",
+        "signers": [
+          {
+            "key": "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",
+            "password": "Qwerty12"
+          //   "keyAlias": "<string>"
+          }
+        ],
+        "withTsp": false,
+        "tsaPolicy": "TSA_GOST_POLICY",
+        "detached": false
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Vary: Origin
+      Vary: Access-Control-Request-Method
+      Vary: Access-Control-Request-Headers
+      Content-Type: application/json
+      Transfer-Encoding: chunked
+      Date: Tue, 03 Feb 2026 05:53:19 GMT
+      Keep-Alive: timeout=60
+      Connection: keep-alive
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "message": "OK",
+            "cms": "MIIGOgYJKoZIhvcNAQcCoIIGKzCCBicCAQExDjAMBggqgw4DCgEDAwUAMHIGCSqGSIb3DQEHAaBlBGMN/4ECAQL/ggAB/4AAAEN/AwEBFkRhdGFDb252ZXJzaW9uc1JlcXVlc3QB/4AAAQIBCkRvY3VtZW50SUQBBAABDERhdGFiYXNlTmFtZQEMAAAAEP+CAAEB/AHVz5YBA2t6dACgggPtMIID6TCCA1GgAwIBAgIUKjDPWrF7mNGxi8NUCUPkROGD8uYwDgYKKoMOAwoBAQIDAgUAMF0xTjBMBgNVBAMMRdKw0JvQotCi0KvSmiDQmtCj05jQm9CQ0J3QlNCr0KDQo9Co0Ksg0J7QoNCi0JDQm9Cr0pogKEdPU1QpIFRFU1QgMjAyMjELMAkGA1UEBhMCS1owHhcNMjUxMDE3MDc1OTMwWhcNMjYxMDE3MDc1OTMwWjB9MSAwHgYKCZImiZPyLGQBAQwQMS4yLjM5OC42LjEwLjEuMTEYMBYGA1UEAwwP0JjQoSAi0KLQtdGB0YIiMQswCQYDVQQGEwJLWjEYMBYGA1UECgwP0JDQniAi0KLQldCh0KIiMRgwFgYDVQQLDA9CSU4xMjM0NTY3ODkwMjEwgawwIwYJKoMOAwoBAQICMBYGCiqDDgMKAQECAgEGCCqDDgMKAQMDA4GEAASBgFyfMphRyeaMA6jUj9ATnixqqknWc9tXDoouznab7Aip+b6puifMdvYUWsetFMzi27XA757C49IuO/U/cJD/GhMl9+fUrDQwoJEUh28SbvPFg37X9DSocF574NRBuCceDPT6C/gfv2mvbhrklSAdwnW9NZItn5L+awUfgFzmpO1bo4IBdTCCAXEwEwYDVR0lBAwwCgYIKoMOAwMEAQIwOAYDVR0gBDEwLzAtBgYqgw4DAwIwIzAhBggrBgEFBQcCARYVaHR0cDovL3BraS5nb3Yua3ovY3BzMCwGA1UdHwQlMCMwIaAfoB2GG2h0dHA6Ly9jcmwucGtpLmdvdi5rei8qLmNybDBcBggrBgEFBQcBAQRQME4wIgYIKwYBBQUHMAGGFmh0dHA6Ly9vY3NwLnBraS5nb3Yua3owKAYIKwYBBQUHMAKGHGh0dHA6Ly9wa2kuZ292Lmt6L2NlcnQvKi5jZXIwLAYDVR0uBCUwIzAhoB+gHYYbaHR0cDovL2NybC5wa2kuZ292Lmt6LyouY3JsMA4GA1UdDwEB/wQEAwIDyDAdBgNVHQ4EFgQUqjDPWrF7mNGxi8NUCUPkROGD8uYwHwYDVR0jBBgwFoAU+tJLG6OgyWH+HKhQPmqiu0UNuKMwFgYGKoMOAwMFBAwwCgYIKoMOAwMFAQEwDgYKKoMOAwoBAQIDAgUAA4GBALMCIcpa8dXcaF4ZWVYKDg4pc9yWiMX7RKXzEsZUT9kw2utd2Zor1Xec+F17TkRU2o33WOmeaRS8NHPmpPctHfYlibKAs+20FM3X3GVRJxrjHe4LFzzfk3xTnxb81kaq+oiad7Qd5OwhZuaee71yOBzakgfHbAzNX95so8Ke6lpcMYIBqzCCAacCAQEwdTBdMU4wTAYDVQQDDEXSsNCb0KLQotCr0pog0JrQo9OY0JvQkNCd0JTQq9Cg0KPQqNCrINCe0KDQotCQ0JvQq9KaIChHT1NUKSBURVNUIDIwMjIxCzAJBgNVBAYTAktaAhQqMM9asXuY0bGLw1QJQ+RE4YPy5jAMBggqgw4DCgEDAwUAoIGJMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI2MDIwMzA1NTMxOVowTwYJKoZIhvcNAQkEMUIEQCuba3qmZppRB9CFriuu+keGzKQzpidTxVlUbL1BbXJ5m3n3XbvLzVUj7ktAcSg2U1rmStgxOHP7Vyt5gVoGx+AwDgYKKoMOAwoBAQIDAgUABIGAmckNPTQn95qgpMo0cYJhYT6Dhu91nSnY90cfJ8WyFEQyEg7YxwWsIMHLC1BbOZOqtOCqLiAH6qDB7PzQDIoFihgOhOQHZSLIRsHk7lNNNHcyjFu4mWFe5bEDugPn1ALJCK7l3p5rw3uwzfdynvCa7hR2ykqkiThwjs3rB9LWo2o="
+        }
+      '''
+    }
+  }
+}

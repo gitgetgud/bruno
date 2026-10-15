@@ -1,0 +1,81 @@
+meta {
+  name: Инициация создания заявки на кредит/рассрочку
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/retail_products/aviata/init_application/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "datetime": "2005-04-14T23:32:32.817Z",
+    "iin": "string",
+    "phone": "string",
+    "external_id": "string",
+    "product_type": "string",
+    "term": 6341,
+    "loan_amount": "string",
+    "is_usa_resident": true
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/retail_products/aviata/init_application/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "datetime": "2005-04-14T23:32:32.817Z",
+        "iin": "string",
+        "phone": "string",
+        "external_id": "string",
+        "product_type": "string",
+        "term": 6341,
+        "loan_amount": "string",
+        "is_usa_resident": true
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "application_uuid": "b5d58d9e-e50f-a382-61a8-35a26476d717"
+        }
+      '''
+    }
+  }
+}

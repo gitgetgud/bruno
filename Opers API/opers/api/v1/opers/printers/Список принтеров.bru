@@ -1,0 +1,70 @@
+meta {
+  name: Список принтеров
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/printers/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/printers/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "code": "string",
+            "name": "string",
+            "branch": "string"
+          },
+          {
+            "code": "string",
+            "name": "string",
+            "branch": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

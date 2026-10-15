@@ -1,0 +1,22 @@
+info:
+  name: anticaptcha gettaskresult
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: https://api.anti-captcha.com/getTaskResult
+  body:
+    type: json
+    data: |-
+      {
+          "clientKey":"122641a55bf2932e7ee3f248c442c805",
+          "taskId": 390275633
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

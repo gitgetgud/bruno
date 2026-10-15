@@ -1,0 +1,73 @@
+meta {
+  name: registration aml create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/aml/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "status": "string",
+    "uid": "b29d3b56-452c-8d55-c43b-3adc59bffa11",
+    "comment": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/registration/aml/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "status": "string",
+        "uid": "b29d3b56-452c-8d55-c43b-3adc59bffa11",
+        "comment": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "status": "string",
+          "uid": "b29d3b56-452c-8d55-c43b-3adc59bffa11",
+          "comment": "string"
+        }
+      '''
+    }
+  }
+}

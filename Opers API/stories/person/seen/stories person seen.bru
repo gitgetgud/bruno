@@ -1,0 +1,71 @@
+meta {
+  name: stories person seen
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/stories/person/seen/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "story_id": 7397
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Обновить историю просмотра
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/stories/person/seen/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "story_id": 7397
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "story_id": 7397
+        }
+      '''
+    }
+  }
+}

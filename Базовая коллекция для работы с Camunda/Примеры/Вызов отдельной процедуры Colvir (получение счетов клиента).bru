@@ -1,0 +1,26 @@
+meta {
+  name: Вызов отдельной процедуры Colvir (получение счетов клиента)
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://dev-bcc-gf-gateway-green-front.apps.dev-env.bcc.kz/colvir/service/getClientAccsByIin
+  body: json
+  auth: inherit
+}
+
+headers {
+  --colvir-user: COLVIR_GF
+  --app-id: 0e42ca28-dc13-4244-a496-5596796d2bad
+}
+
+body:json {
+  {
+      "piin": "Введите Ваш ИИН"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

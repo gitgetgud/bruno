@@ -1,0 +1,35 @@
+meta {
+  name: Card_statement
+  type: http
+  seq: 16
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdboul/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboulUser
+  password: SdboulUser2020
+}
+
+body:json {
+  {
+  "Request": {
+  "serviceCode": "ibso.DefinitionGetBenef",
+  "uuid": "bd78ae15-931a-4350-8f4c-cf478e2f0012",
+  "sourceSystem": "Sdboul",
+  "username": "SdboulUser",
+  "requestTime": "2021-11-08 12:30:00.890808",
+  "Data": {
+  "customerId": "9768513780"
+  }
+  }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

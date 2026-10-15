@@ -1,0 +1,33 @@
+meta {
+  name: sdbo.ibso.GetClient
+  type: http
+  seq: 12
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdbo/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboUser
+  password: s6L8EHOUuwhgHf6NyRyo
+}
+
+body:json {
+  {
+  	"version": "TL 1.0",
+  	"type": "GetClient",
+  	"id": "6F0000FF-8B00-D000-B00D-00CF4FC000FF",
+  	"dateTime": "2017-11-28T23:37:11.894",
+  	"source": "DBO_INFIN",
+  	"body": [ {
+              "mobile": "77778288828"
+  	} ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

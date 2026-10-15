@@ -1,0 +1,242 @@
+meta {
+  name: Блоки описаний в странице кэшбэка
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/cashback/cashback_info/info/?page=80&region_id=1&code=0
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  region_id: 1
+  code: 0
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/cashback/cashback_info/info/?page=80&region_id=1&code=0
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      region_id: 1
+      code: 0
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "description_type": 7470,
+            "is_hidden": false,
+            "priority": 5870,
+            "cashback_percent": 9164.626378716166,
+            "categories": [
+              {
+                "category": "string",
+                "percent": "string",
+                "category_icons": [
+                  {
+                    "id": 978,
+                    "name": "string",
+                    "image_path": "string",
+                    "title": "string",
+                    "url": "string",
+                    "category_percent": "string",
+                    "category_name": "string"
+                  },
+                  {
+                    "id": 4377,
+                    "name": "string",
+                    "image_path": "string",
+                    "title": "string",
+                    "url": "string",
+                    "category_percent": "string",
+                    "category_name": "string"
+                  }
+                ],
+                "percent_junior": "string"
+              },
+              {
+                "category": "string",
+                "percent": "string",
+                "category_icons": [
+                  {
+                    "id": 924,
+                    "name": "string",
+                    "image_path": "string",
+                    "title": "string",
+                    "url": "string",
+                    "category_percent": "string",
+                    "category_name": "string"
+                  },
+                  {
+                    "id": 6495,
+                    "name": "string",
+                    "image_path": "string",
+                    "title": "string",
+                    "url": "string",
+                    "category_percent": "string",
+                    "category_name": "string"
+                  }
+                ],
+                "percent_junior": "string"
+              }
+            ],
+            "random_icons": [
+              {
+                "id": 5950,
+                "name": "string",
+                "image_path": "string",
+                "title": "string",
+                "url": "string",
+                "category_percent": "string",
+                "category_name": "string"
+              },
+              {
+                "id": 7000,
+                "name": "string",
+                "image_path": "string",
+                "title": "string",
+                "url": "string",
+                "category_percent": "string",
+                "category_name": "string"
+              }
+            ],
+            "card_info": {
+              "rbs_number": "string",
+              "is_turned": false,
+              "corr_by_card": true,
+              "corr_by_deposit": true,
+              "card_row_days": 5635,
+              "deposit_row_days": 8119,
+              "max_row_days": 7346,
+              "cashback_percent": 9336.12619886701
+            },
+            "info_url": "string"
+          },
+          {
+            "description_type": 8408,
+            "is_hidden": true,
+            "priority": 700,
+            "cashback_percent": 6760.7392990029975,
+            "categories": [
+              {
+                "category": "string",
+                "percent": "string",
+                "category_icons": [
+                  {
+                    "id": 6994,
+                    "name": "string",
+                    "image_path": "string",
+                    "title": "string",
+                    "url": "string",
+                    "category_percent": "string",
+                    "category_name": "string"
+                  },
+                  {
+                    "id": 1207,
+                    "name": "string",
+                    "image_path": "string",
+                    "title": "string",
+                    "url": "string",
+                    "category_percent": "string",
+                    "category_name": "string"
+                  }
+                ],
+                "percent_junior": "string"
+              },
+              {
+                "category": "string",
+                "percent": "string",
+                "category_icons": [
+                  {
+                    "id": 7453,
+                    "name": "string",
+                    "image_path": "string",
+                    "title": "string",
+                    "url": "string",
+                    "category_percent": "string",
+                    "category_name": "string"
+                  },
+                  {
+                    "id": 6974,
+                    "name": "string",
+                    "image_path": "string",
+                    "title": "string",
+                    "url": "string",
+                    "category_percent": "string",
+                    "category_name": "string"
+                  }
+                ],
+                "percent_junior": "string"
+              }
+            ],
+            "random_icons": [
+              {
+                "id": 2583,
+                "name": "string",
+                "image_path": "string",
+                "title": "string",
+                "url": "string",
+                "category_percent": "string",
+                "category_name": "string"
+              },
+              {
+                "id": 2980,
+                "name": "string",
+                "image_path": "string",
+                "title": "string",
+                "url": "string",
+                "category_percent": "string",
+                "category_name": "string"
+              }
+            ],
+            "card_info": {
+              "rbs_number": "string",
+              "is_turned": true,
+              "corr_by_card": true,
+              "corr_by_deposit": false,
+              "card_row_days": 7120,
+              "deposit_row_days": 2311,
+              "max_row_days": 8622,
+              "cashback_percent": 6321.608544833642
+            },
+            "info_url": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

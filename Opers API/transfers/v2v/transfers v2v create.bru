@@ -1,0 +1,94 @@
+meta {
+  name: transfers v2v create
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/transfers/v2v/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "client_id": "string",
+    "amount": "string",
+    "is_refill": true,
+    "reference_id": "string",
+    "from_iban": "string",
+    "from_card_id": 1773713274,
+    "to_iban": "string",
+    "commission": "string",
+    "currency_id": "KZT",
+    "transfer_type": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/v2v/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "client_id": "string",
+        "amount": "string",
+        "is_refill": true,
+        "reference_id": "string",
+        "from_iban": "string",
+        "from_card_id": 1773713274,
+        "to_iban": "string",
+        "commission": "string",
+        "currency_id": "KZT",
+        "transfer_type": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "client_id": "string",
+          "amount": "string",
+          "is_refill": true,
+          "reference_id": "string",
+          "from_iban": "string",
+          "from_card_id": 1773713274,
+          "to_iban": "string",
+          "commission": "string",
+          "currency_id": "KZT",
+          "transfer_type": "string"
+        }
+      '''
+    }
+  }
+}

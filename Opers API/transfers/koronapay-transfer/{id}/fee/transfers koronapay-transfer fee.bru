@@ -1,0 +1,115 @@
+meta {
+  name: transfers koronapay-transfer fee
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/koronapay-transfer/:id/fee/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: string
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "beneficiary_country": 3293,
+    "beneficiary_city": 9040,
+    "phone_number": "string",
+    "from_iban": "string",
+    "beneficiary_last_name": "string",
+    "beneficiary_first_name": "string",
+    "beneficiary_phone_number": "string",
+    "iin": "string",
+    "from_currency": "USD",
+    "to_currency": "XAU",
+    "to_amount": "string",
+    "beneficiary_middle_name": "string",
+    "beneficiary_is_resident": false
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Золотая Корона
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/koronapay-transfer/:id/fee/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "beneficiary_country": 3293,
+        "beneficiary_city": 9040,
+        "phone_number": "string",
+        "from_iban": "string",
+        "beneficiary_last_name": "string",
+        "beneficiary_first_name": "string",
+        "beneficiary_phone_number": "string",
+        "iin": "string",
+        "from_currency": "USD",
+        "to_currency": "XAU",
+        "to_amount": "string",
+        "beneficiary_middle_name": "string",
+        "beneficiary_is_resident": false
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "beneficiary_country": 3293,
+          "beneficiary_city": 9040,
+          "phone_number": "string",
+          "from_iban": "string",
+          "beneficiary_last_name": "string",
+          "beneficiary_first_name": "string",
+          "beneficiary_phone_number": "string",
+          "iin": "string",
+          "from_currency": "USD",
+          "to_currency": "XAU",
+          "to_amount": "string",
+          "beneficiary_middle_name": "string",
+          "beneficiary_is_resident": false
+        }
+      '''
+    }
+  }
+}

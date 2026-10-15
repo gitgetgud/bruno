@@ -1,0 +1,64 @@
+meta {
+  name: delivery dar delivery city list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/delivery/dar_delivery_city/
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/delivery/dar_delivery_city/
+    method: GET
+    mode: none
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "id": 3985,
+            "city_name": "string",
+            "delivery_prefix": "st",
+            "division": "string"
+          },
+          {
+            "id": 5248,
+            "city_name": "string",
+            "delivery_prefix": "string",
+            "division": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

@@ -1,0 +1,22 @@
+meta {
+  name: Login by token
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{KEYCLOAK_BASE_URL}}/auth/realms/{{REALM_NAME}}/protocol/openid-connect/token
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  redirect_uri: http://localhost:3000/login
+  code: 5c76e0c7-714e-4b1f-a084-4cdeb6db0f09.d43ab808-196b-40be-82e2-f422cfb08577.fbcbd979-eb62-4a59-951d-8602ce462f94
+  client_id: {{CLIENT_ID}}
+  grant_type: authorization_code
+}
+
+settings {
+  encodeUrl: true
+}

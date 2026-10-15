@@ -1,0 +1,19 @@
+meta {
+  name: [FE]<->[BE]: retry - Сервис повторного запроса ОТП
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://odept.kz/api/bcc-leasing/v1/leasing/applications/bf3289e9-7476-4a8c-b05a-ab53cdf404b0/retry
+  body: none
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}

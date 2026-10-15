@@ -1,0 +1,101 @@
+meta {
+  name: events card emission list
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/events/card_emission/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/card_emission/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 2206,
+          "results": [
+            {
+              "id": "e8022ad0-8381-8f25-6bf2-4b156eff1e1e",
+              "readable_id": "XujK5cfo",
+              "status": 3,
+              "iin": "string",
+              "rbs_number": "string",
+              "iban": "string",
+              "phone": "string",
+              "currency": "string",
+              "product": "string",
+              "plastic": "string",
+              "commission": "string",
+              "should_deliver": false,
+              "delivery_address": "string",
+              "card_number": "string",
+              "division": "string",
+              "failed_reason": "string"
+            },
+            {
+              "id": "279c0f4c-4c61-ac24-d3cf-e995dc11256a",
+              "readable_id": "Mm-Ws",
+              "status": 1,
+              "iin": "string",
+              "rbs_number": "string",
+              "iban": "string",
+              "phone": "string",
+              "currency": "string",
+              "product": "string",
+              "plastic": "string",
+              "commission": "string",
+              "should_deliver": true,
+              "delivery_address": "string",
+              "card_number": "string",
+              "division": "string",
+              "failed_reason": "string"
+            }
+          ],
+          "next": "http://DXMmzRpubnqxjR.mydPIJNyYr4lf78TC3BumjGBOGnnSYSEgUSuI0XeWFFaBFZx",
+          "previous": "http://iBZRYVHmLhiZvSXLuRGswEBz.lnywpkqV3T4n-H67A"
+        }
+      '''
+    }
+  }
+}

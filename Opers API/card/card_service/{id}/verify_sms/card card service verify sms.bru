@@ -1,0 +1,75 @@
+meta {
+  name: card card service verify sms
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/card/card_service/:id/verify_sms/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 80
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "passcode": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/card_service/:id/verify_sms/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "passcode": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "passcode": "string"
+        }
+      '''
+    }
+  }
+}

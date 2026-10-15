@@ -1,0 +1,67 @@
+meta {
+  name: Сброс пароля, отправка СМС
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/liveness_process/reset_password_v2/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "application_uuid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/registration/liveness_process/reset_password_v2/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "application_uuid": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "application_uuid": "string"
+        }
+      '''
+    }
+  }
+}

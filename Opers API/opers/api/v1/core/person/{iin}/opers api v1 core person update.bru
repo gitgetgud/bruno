@@ -1,0 +1,90 @@
+meta {
+  name: opers api v1 core person update
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/opers/api/v1/core/person/:iin/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  iin: string
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "firstname": "string",
+    "lastname": "string",
+    "citizenship": "string",
+    "resident": false,
+    "isClient": true,
+    "idn": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/person/:iin/
+    method: PUT
+    mode: json
+    params:path: {
+      iin: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "firstname": "string",
+        "lastname": "string",
+        "citizenship": "string",
+        "resident": false,
+        "isClient": true,
+        "idn": ""
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "firstname": "string",
+          "lastname": "string",
+          "citizenship": "string",
+          "resident": false,
+          "isClient": true,
+          "idn": ""
+        }
+      '''
+    }
+  }
+}

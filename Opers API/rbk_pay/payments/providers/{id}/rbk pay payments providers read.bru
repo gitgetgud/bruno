@@ -1,0 +1,78 @@
+meta {
+  name: rbk pay payments providers read
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/rbk_pay/payments/providers/:id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/providers/:id/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "params": [
+            "string"
+          ],
+          "category": {
+            "name": "string",
+            "id": 3453
+          },
+          "id": "143ce853-5c42-81f1-d31a-cde6ef3c1caf",
+          "name": "string",
+          "iban": "string",
+          "bin": "string",
+          "knp": "string",
+          "kbe": "string",
+          "region": [
+            "fef7eae2-6887-13d6-c11b-7b1557b6d579",
+            "701443aa-684c-bec3-9d12-604c07d63717"
+          ],
+          "disclaimer": "string"
+        }
+      '''
+    }
+  }
+}

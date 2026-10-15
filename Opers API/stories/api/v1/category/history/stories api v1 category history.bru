@@ -1,0 +1,70 @@
+meta {
+  name: stories api v1 category history
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/stories/api/v1/category/history/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  История просмотра категорий
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/stories/api/v1/category/history/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "category_id": 1857
+          },
+          {
+            "category_id": 5753
+          }
+        ]
+      '''
+    }
+  }
+}

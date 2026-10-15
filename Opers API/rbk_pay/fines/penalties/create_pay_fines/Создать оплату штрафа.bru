@@ -1,0 +1,84 @@
+meta {
+  name: Создать оплату штрафа
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/fines/penalties/create_pay_fines/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "string",
+    "penalty_iin": "string",
+    "penalty_doc_num": "string",
+    "penalty_doc_issue_date": "2019-02-11",
+    "phone": "string",
+    "from_iban": "string",
+    "av_original_id": "string",
+    "amount": "string",
+    "request_uuid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/fines/penalties/create_pay_fines/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "penalty_iin": "string",
+        "penalty_doc_num": "string",
+        "penalty_doc_issue_date": "2019-02-11",
+        "phone": "string",
+        "from_iban": "string",
+        "av_original_id": "string",
+        "amount": "string",
+        "request_uuid": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "d672ea6e-8d0a-dd38-04c3-55651f156a76",
+          "is_sms_required": true
+        }
+      '''
+    }
+  }
+}

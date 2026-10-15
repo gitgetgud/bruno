@@ -1,0 +1,68 @@
+meta {
+  name: opers api v1 opers countries-excluded-kz list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/countries-excluded-kz/
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/countries-excluded-kz/
+    method: GET
+    mode: none
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "code": "string",
+            "code_alpha_2": "st",
+            "code_alpha_3": "s",
+            "name": "string",
+            "intl_name": "string",
+            "full_name": "string"
+          },
+          {
+            "code": "string",
+            "code_alpha_2": "st",
+            "code_alpha_3": "s",
+            "name": "string",
+            "intl_name": "string",
+            "full_name": "strin"
+          }
+        ]
+      '''
+    }
+  }
+}

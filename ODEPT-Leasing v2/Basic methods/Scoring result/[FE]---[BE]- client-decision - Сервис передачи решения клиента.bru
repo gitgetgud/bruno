@@ -1,0 +1,82 @@
+meta {
+  name: [FE]<->[BE]: client-decision - Сервис передачи решения клиента
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://test.centermarket.kz/bank/bcc/leasing/v1/application/{{online_auto_leasing_id}}/client-decision
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+  Cookie: cm_sid={{cm_sid}}
+}
+
+body:json {
+  {
+    "decision": "CONFIRMED"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: [FE]<->[BE]: client-decision - Сервис передачи решения клиента
+  
+  request: {
+    url: https://odept.kz/api/bcc-leasing/v1/leasing/applications/bf3289e9-7476-4a8c-b05a-ab53cdf404b0/client-decision
+    method: POST
+    mode: json
+    headers: {
+      accept: application/json
+      Content-Type: application/json
+    }
+  
+    body:json: {
+      {
+        "alternativeInfo": {
+          "amount": 0,
+          "term": 37,
+          "rate": 25.5
+        },
+        "decision": "ACCEPTED"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "APPROVED",
+            "id": "string",
+            "orderNumber": "string",
+            "processDefinitionFKey": "string",
+            "processInfo": {
+                "comments": {
+                    "kz": "string",
+                    "ru": "string"
+                },
+                "stageName": {
+                    "kz": "string",
+                    "ru": "string"
+                }
+            },
+            "processingEventStatus": "PROCESSED",
+            "status": "COMPLETED"
+        }
+      '''
+    }
+  }
+}

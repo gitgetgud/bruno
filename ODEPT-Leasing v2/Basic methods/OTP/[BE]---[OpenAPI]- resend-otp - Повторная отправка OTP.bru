@@ -1,0 +1,169 @@
+meta {
+  name: [BE]<->[OpenAPI]: resend-otp - Повторная отправка OTP
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/resend-otp
+  body: none
+  auth: bearer
+}
+
+params:path {
+  sme-leasing-uuid: {{online_auto_leasing_id}}
+}
+
+headers {
+  X-Initiator-System: OPEN_API
+  X-Process-Definition-F-Key: auto_leasing_new
+  X-System-Owner: GREEN_FRONT
+  X-User-ID: +77777777777
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: resend-otp
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/resend-otp
+    method: POST
+    mode: none
+    params:path: {
+      sme-leasing-uuid: {{online_auto_leasing_id}}
+    }
+  
+    headers: {
+      X-Initiator-System: OPEN_API
+      X-Process-Definition-F-Key: auto_leasing_new
+      X-System-Owner: GREEN_FRONT
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Mon, 23 Jun 2025 05:43:00 GMT
+      X-Global-Transaction-ID: 95dd62ed6858e964210bde22
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST
+      X-RateLimit-Limit: name=default,100;
+      X-RateLimit-Remaining: name=default,85;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "VERIFICATION",
+            "id": "34277b39-8e3c-47fd-9e26-3dc1ef56e953",
+            "orderNumber": "1000600419",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "",
+                    "ru": ""
+                },
+                "stageName": {
+                    "kz": "ОТП арқылы клиентті тексеру",
+                    "ru": "Верификация клиента по ОТП"
+                }
+            },
+            "processingEventStatus": "UNPROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: BAD_REQUEST - 400
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/resend-otp
+    method: POST
+    mode: none
+    params:path: {
+      sme-leasing-uuid: {{online_auto_leasing_id}}
+    }
+  
+    headers: {
+      X-Initiator-System: OPEN_API
+      X-Process-Definition-F-Key: auto_leasing_new
+      X-System-Owner: GREEN_FRONT
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "message": "Failed to convert value 'null' to required type 'UUID'",
+            "status": "400 BAD_REQUEST"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: Unauthorized - 401
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/resend-otp
+    method: POST
+    mode: none
+    params:path: {
+      sme-leasing-uuid: {{online_auto_leasing_id}}
+    }
+  
+    headers: {
+      X-Initiator-System: OPEN_API
+      X-Process-Definition-F-Key: auto_leasing_new
+      X-System-Owner: GREEN_FRONT
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "httpCode": "401",
+            "httpMessage": "Unauthorized",
+            "moreInformation": "application is not registered, or active"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,70 @@
+meta {
+  name: Delete file
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{S3_HOST}}/{{bucket}}/uniquekey?uploads=
+  body: none
+  auth: awsv4
+}
+
+params:query {
+  uploads: 
+}
+
+auth:awsv4 {
+  accessKeyId: {{accessKey}}
+  secretAccessKey: {{secretKey}}
+  sessionToken: 
+  service: s3
+  region: us-east-1
+  profileName: 
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Upload
+  
+  request: {
+    url: {{S3_HOST}}/{{bucket}}/filename?uploads=
+    method: PUT
+    mode: none
+    params:query: {
+      uploads: 
+    }
+  }
+  
+  response: {
+    headers: {
+      Accept-Ranges: bytes
+      Content-Length: 0
+      Content-Security-Policy: block-all-mixed-content
+      ETag: "8109259ae7d02d59cc23402bb6f7b3be"
+      Server: MinIO
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Vary: Origin
+      Vary: Accept-Encoding
+      X-Amz-Request-Id: 16F5538BEE202800
+      X-Content-Type-Options: nosniff
+      X-Xss-Protection: 1; mode=block
+      Date: Sat, 04 Jun 2022 05:24:58 GMT
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

@@ -1,0 +1,81 @@
+meta {
+  name: [FE]<->[BE]:  verify-otp - Сервис верификации ОТП
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://test.centermarket.kz/bank/bcc/leasing/v1/application/{{online_auto_leasing_id}}/verify-otp
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+  Cookie: cm_sid={{cm_sid}}
+  ~X-User-ID: +77777777777
+}
+
+body:json {
+  {
+    "otp": "1234"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: [FE]<->[BE]:  verify-otp - Сервис верификации ОТП
+  
+  request: {
+    url: https://test.centermarket.kz/bank/bcc/leasing/v1/application/7b296d2b-c4d6-4d31-b9c2-8e7156d639c3/verify-otp?
+    method: POST
+    mode: json
+    headers: {
+      accept: application/json
+      Content-Type: application/json
+      ~X-User-ID: +77777777777
+      Cookie: cm_sid=djQubG9jYWwuS0wzOHl1RkFGMTk5dmlrN21rR01SUTdid2RYZ1NveGFnV29nMVBYMVdRbmROeGVkeXFleVNkQ3YzLVlaTDVYMnVteWRXd19MWkRvSUVwb2I0ckNzNVd4eGtJWmNYYXVpajRpMHVYMVBEdzgtYmFYOVQ4VnZhb0RBZTJfTVp6VHZpUXU0MG9zZ2ppUHRLQU9WN3FibkxEQUs4OXJWS3YycEdGLVNhcF9TYy1RdWttVjZMQjUwRzY3dDRvMjlPUnBzU0tVNm83ME1BOXlHUnBXSEJLZHFPV2k4MlJTbXM3UjJHVkF4VkRWSzluUkZDbk8zS2VUXzZCVWUzYnMtN0V0LVVwNVpxa3lTdXJ2R1JjZHhFTVR1WHFzUGFEOFBfemNhdEdzeE1RRnV0eUowY21tNC1iSFEwUFRGdzBVSHBXR25qVzJMbHlTWTl0R1k2M1U4V09aRTZELWZxa2Jid0R2ZlZWOFRnTFBOVXowMjg1ZU9xNGtBWm9aZzgwd2xYZ1lxSzRPaE8xLXVTelZVY0twQ3FXakFBV0c5ODhBcndBV3FCZmJMVmNpSlJBUm9kbE1EeDNWSDNidU5oQVZZMWxxX0hKWm5WVXVQZ0x0OXN6Zw==
+    }
+  
+    body:json: {
+      {
+        "otp": "1234"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx/1.25.5
+      Date: Mon, 02 Mar 2026 07:13:26 GMT
+      Content-Type: application/json
+      Content-Length: 104
+      Connection: keep-alive
+      content-encoding: gzip
+      vary: Origin
+      vary: Accept-Encoding
+      Content-Security-Policy: frame-ancestors 'self' *.bcc.kz *.centermarket.kz *.bcchub.kz
+    }
+  
+    status: {
+      code: 500
+      text: Internal Server Error
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 500,
+            "success": false,
+            "error": "E_INTERNAL_SERVER",
+            "message": "status failed"
+        }
+      '''
+    }
+  }
+}

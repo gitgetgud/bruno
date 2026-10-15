@@ -1,0 +1,73 @@
+meta {
+  name: Генерация документа по закрытию счета/карты
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/w4/generate_close_account_document/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "process_uuid": "string",
+    "full_name": "string",
+    "client_iin": "string",
+    "identity_card_info": "string",
+    "branch_code": "string",
+    "opers_name": "string",
+    "iban": "string",
+    "rbs_number": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/w4/generate_close_account_document/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "process_uuid": "string",
+        "full_name": "string",
+        "client_iin": "string",
+        "identity_card_info": "string",
+        "branch_code": "string",
+        "opers_name": "string",
+        "iban": "string",
+        "rbs_number": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

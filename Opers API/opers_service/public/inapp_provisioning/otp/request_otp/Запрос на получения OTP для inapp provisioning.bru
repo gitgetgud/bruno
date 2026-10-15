@@ -1,0 +1,69 @@
+meta {
+  name: Запрос на получения OTP для inapp provisioning
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers_service/public/inapp_provisioning/otp/request_otp/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "id": 9601
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers_service/public/inapp_provisioning/otp/request_otp/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "id": 9601
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "card_id": 8473,
+          "phone": "string",
+          "payment_type": "SAMSUNG_PAY"
+        }
+      '''
+    }
+  }
+}

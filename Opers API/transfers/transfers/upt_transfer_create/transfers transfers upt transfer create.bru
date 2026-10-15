@@ -1,0 +1,97 @@
+meta {
+  name: transfers transfers upt transfer create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/transfers/upt_transfer_create/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "currency": "string",
+    "amount": "string",
+    "phone": "string",
+    "iin": "stringstring",
+    "from_iban": "string",
+    "beneficiary_country_code": "string",
+    "beneficiary_name": "string",
+    "beneficiary_surname": "string",
+    "kbe": "",
+    "beneficiary_number": "",
+    "beneficiary_number_code": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/transfers/upt_transfer_create/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "currency": "string",
+        "amount": "string",
+        "phone": "string",
+        "iin": "stringstring",
+        "from_iban": "string",
+        "beneficiary_country_code": "string",
+        "beneficiary_name": "string",
+        "beneficiary_surname": "string",
+        "kbe": "",
+        "beneficiary_number": "",
+        "beneficiary_number_code": ""
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "currency": "string",
+          "amount": "string",
+          "phone": "string",
+          "iin": "stringstring",
+          "from_iban": "string",
+          "beneficiary_country_code": "string",
+          "beneficiary_name": "string",
+          "beneficiary_surname": "string",
+          "kbe": "",
+          "beneficiary_number": "",
+          "beneficiary_number_code": ""
+        }
+      '''
+    }
+  }
+}

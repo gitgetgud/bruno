@@ -1,0 +1,82 @@
+meta {
+  name: Обновление курс валют
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/currency-info/update_currency_values/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "value": "string",
+    "rate": "string",
+    "baseCurrency": "string",
+    "currency": "string",
+    "date_begin": "1973-12-29T06:08:40.840Z",
+    "rateType": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/currency-info/update_currency_values/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "value": "string",
+        "rate": "string",
+        "baseCurrency": "string",
+        "currency": "string",
+        "date_begin": "1973-12-29T06:08:40.840Z",
+        "rateType": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "value": "string",
+          "rate": "string",
+          "baseCurrency": "string",
+          "currency": "string",
+          "date_begin": "1973-12-29T06:08:40.840Z",
+          "rateType": "string"
+        }
+      '''
+    }
+  }
+}

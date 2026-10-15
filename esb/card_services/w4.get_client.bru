@@ -1,0 +1,35 @@
+meta {
+  name: w4.get_client
+  type: http
+  seq: 8
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "wildfly.singleWindow.w4.getClient",
+          "uuid": "befa4ac5-d199-4f9e-b5a3-51978a8961de",
+          "sourceSystem": "SingleWindow",
+          "username": "SingleWindow",
+          "requestTime": "2021-09-01 20:30:04.645512",
+          "Data": {
+              "clientId": "61769598983"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

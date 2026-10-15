@@ -1,0 +1,21 @@
+meta {
+  name: Master realm admin refresh
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{KEYCLOAK_BASE_URL}}/auth/realms/master/protocol/openid-connect/token
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  refresh_token: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZWIzMmMwOS0xY2JmLTRjODAtYmQ3My01NjE3MDI4MTkwMmUifQ.eyJleHAiOjE2NTE5MDY0ODYsImlhdCI6MTY1MTkwNDY4NiwianRpIjoiYzE0NWY4NzUtMzEwNS00MDM3LWJiMzYtNThhM2ZlOTBmOTZhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiIwYzJkNzA2ZS0zZWUxLTRkZjEtYjMwYi04YzdlMmE4YzJiZGQiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6Ijc0NmFiYTU1LTU3NWQtNDMxNi1iYmFmLTAxMmFiN2Y0ZGM0ZSIsInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6Ijc0NmFiYTU1LTU3NWQtNDMxNi1iYmFmLTAxMmFiN2Y0ZGM0ZSJ9.9Y8TKr-Kd7iA6FdyfgXnxbeBqUKcyOicYesd1MCoaFs
+  client_id: admin-cli
+  grant_type: refresh_token
+}
+
+settings {
+  encodeUrl: true
+}

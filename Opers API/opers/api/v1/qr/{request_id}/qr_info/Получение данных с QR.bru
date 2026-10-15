@@ -1,0 +1,50 @@
+meta {
+  name: Получение данных с QR
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/qr/:request_id/qr_info/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  request_id: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/qr/:request_id/qr_info/
+    method: POST
+    mode: none
+    params:path: {
+      request_id: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

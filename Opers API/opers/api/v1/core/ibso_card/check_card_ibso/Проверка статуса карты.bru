@@ -1,0 +1,74 @@
+meta {
+  name: Проверка статуса карты
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/ibso_card/check_card_ibso/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "rbk_cards_id": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/ibso_card/check_card_ibso/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "rbk_cards_id": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "hermes_id": "string",
+          "rbk_cards_id": "string",
+          "status": "string",
+          "card_number": "string",
+          "acc_card_number": "string",
+          "card_id": "string",
+          "pan": "string",
+          "card_prod": "string"
+        }
+      '''
+    }
+  }
+}

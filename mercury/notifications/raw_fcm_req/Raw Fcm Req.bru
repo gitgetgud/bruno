@@ -1,0 +1,133 @@
+meta {
+  name: Raw Fcm Req
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/notifications/raw_fcm_req
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "customer_id": "string",
+    "mtype": "string",
+    "title": "string",
+    "body": "string",
+    "badge": 2348
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/raw_fcm_req
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+    }
+  
+    body:json: {
+      {
+        "customer_id": "string",
+        "mtype": "string",
+        "title": "string",
+        "body": "string",
+        "badge": 2348
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Validation Error
+  
+  request: {
+    url: {{baseUrl}}/notifications/raw_fcm_req
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+    }
+  
+    body:json: {
+      {
+        "customer_id": "string",
+        "mtype": "string",
+        "title": "string",
+        "body": "string",
+        "badge": 2348
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 422
+      text: Unprocessable Entity (WebDAV) (RFC 4918)
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "detail": [
+            {
+              "loc": [
+                "string",
+                2136
+              ],
+              "msg": "string",
+              "type": "string"
+            },
+            {
+              "loc": [
+                3462,
+                "string"
+              ],
+              "msg": "string",
+              "type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,85 @@
+meta {
+  name: Выбор счета для оплаты
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/opers/api/v1/qr/:request_id/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  request_id: string
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "rbs_number": "string",
+    "card_holder_name": "string",
+    "expiry": "string",
+    "iin": "string",
+    "iban": "string",
+    "fio": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/qr/:request_id/
+    method: PUT
+    mode: json
+    params:path: {
+      request_id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "rbs_number": "string",
+        "card_holder_name": "string",
+        "expiry": "string",
+        "iin": "string",
+        "iban": "string",
+        "fio": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "request_id": "string"
+        }
+      '''
+    }
+  }
+}

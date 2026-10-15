@@ -1,0 +1,80 @@
+meta {
+  name: Создание карт через ибсо
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/ibso_card/create_card_ibso/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "rbk_card_fil": "string",
+    "acc_prod": "string",
+    "card_prod": "string",
+    "inn": "string",
+    "delivery": "string",
+    "pin": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/ibso_card/create_card_ibso/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "rbk_card_fil": "string",
+        "acc_prod": "string",
+        "card_prod": "string",
+        "inn": "string",
+        "delivery": "string",
+        "pin": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "hermes_id": "string",
+          "result": "string",
+          "rbk_cards_id": "string",
+          "errors": "string"
+        }
+      '''
+    }
+  }
+}

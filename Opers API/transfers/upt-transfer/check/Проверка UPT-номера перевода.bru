@@ -1,0 +1,96 @@
+meta {
+  name: Проверка UPT-номера перевода
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/upt-transfer/check/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "ref_number": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/upt-transfer/check/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "ref_number": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "upt_ref_out": "string",
+          "amount_out": "string",
+          "amount_currency_out": "string",
+          "beneficiary_fullname_out": "string",
+          "correspondent_ref_out": "string",
+          "sender_fullname_out": "string",
+          "sender_name_out": "string",
+          "sender_middlename_out": "string",
+          "sender_lastname_out": "string",
+          "sender_country_out": "string",
+          "sender_phone_out": "string",
+          "sender_adress_out": "string",
+          "narrative_out": "string",
+          "beneficiary_name_out": "string",
+          "beneficiary_middlename_out": "string",
+          "beneficiary_lastname_out": "string",
+          "beneficiary_country_out": "string",
+          "beneficiary_id_out": "string",
+          "beneficiary_birth_place_out": "string",
+          "beneficiary_birth_date_out": "string",
+          "beneficiary_mother_name_out": "string",
+          "beneficiary_father_name_out": "string",
+          "beneficiary_phone_out": "string",
+          "security_question_id_out": "string",
+          "expense_amount_out": "string",
+          "expense_amount_currency_out": "string",
+          "refund_out": "string",
+          "sender_id_out": "string",
+          "sender_birth_date_out": "string",
+          "transaction_channel_out": "string"
+        }
+      '''
+    }
+  }
+}

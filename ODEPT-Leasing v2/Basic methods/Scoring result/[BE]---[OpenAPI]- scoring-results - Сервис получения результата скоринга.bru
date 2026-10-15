@@ -1,0 +1,139 @@
+meta {
+  name: [BE]<->[OpenAPI]: scoring-results - Сервис получения результата скоринга
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/scoring-results
+  body: none
+  auth: bearer
+}
+
+params:path {
+  sme-leasing-uuid: {{online_auto_leasing_id}}
+}
+
+headers {
+  X-User-ID: +77777777777
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: scoring-results - Сервис получения результата скоринга
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/scoring-results
+    method: GET
+    mode: none
+    params:path: {
+      sme-leasing-uuid: {{online_auto_leasing_id}}
+    }
+  
+    headers: {
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Mon, 23 Jun 2025 06:11:28 GMT
+      X-Global-Transaction-ID: 95dd62ed6858f0100c0b3477
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: GET
+      X-RateLimit-Limit: name=default,100;
+      X-RateLimit-Remaining: name=default,94;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {}
+      '''
+    }
+  }
+}
+
+example {
+  name: [BE]<->[OpenAPI]: scoring-results - Сервис получения результата скоринга
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/scoring-results
+    method: GET
+    mode: none
+    params:path: {
+      sme-leasing-uuid: {{online_auto_leasing_id}}
+    }
+  
+    headers: {
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Mon, 02 Mar 2026 10:28:21 GMT
+      X-Global-Transaction-ID: 95dd62ed69a56645471929e5
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      X-Frame-Options: deny
+      Content-Security-Policy: default-src 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+      X-Permitted-Cross-Domain-Policies: none
+      Referrer-Policy: no-referrer
+      Clear-Site-Data: "cache", "cookies", "storage"
+      Cross-Origin-Embedder-Policy: require-corp
+      Cross-Origin-Opener-Policy: same-origin
+      Cross-Origin-Resource-Policy: same-origin
+      Permissions-Policy: accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      Cache-Control: no-store, max-age=0
+      Pragma: cookieName=cookieValue; Path=/; Secure; HttpOnly; SameSite=Strict
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: GET
+      X-RateLimit-Limit: name=default,100;
+      X-RateLimit-Remaining: name=default,81;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "alternativeInfo": {
+                "amount": 16000000,
+                "rate": 23.5,
+                "term": 37
+            },
+            "decision": "ALTERNATIVE"
+        }
+      '''
+    }
+  }
+}

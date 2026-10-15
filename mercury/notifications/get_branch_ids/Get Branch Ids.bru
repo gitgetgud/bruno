@@ -1,0 +1,54 @@
+meta {
+  name: Get Branch Ids
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/notifications/get_branch_ids
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  # Returns all branch ids. Future change possible
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/get_branch_ids
+    method: GET
+    mode: none
+    headers: {
+      Accept: application/json
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}

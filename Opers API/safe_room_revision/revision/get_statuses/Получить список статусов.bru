@@ -1,0 +1,257 @@
+meta {
+  name: Получить список статусов
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/safe_room_revision/revision/get_statuses/?id=string&revision_kind=string&revision_type=string&created=string&modified=string&status=string&branch__code=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  id: string
+  revision_kind: string
+  revision_type: string
+  created: string
+  modified: string
+  status: string
+  branch__code: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/get_statuses/?id=string&revision_kind=string&revision_type=string&created=string&modified=string&status=string&branch__code=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      id: string
+      revision_kind: string
+      revision_type: string
+      created: string
+      modified: string
+      status: string
+      branch__code: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 5819,
+          "results": [
+            {
+              "revision_kind": 1,
+              "revision_type": 1,
+              "revision_date": "2000-05-09T18:31:09.821Z",
+              "id": "102fe77f-a54c-7eb0-cf14-2254f61f921c",
+              "auditors": [
+                {
+                  "first_name": "str",
+                  "last_name": "string",
+                  "id": 7400,
+                  "created": "1979-07-23T22:45:08.023Z",
+                  "modified": "1963-12-13T11:35:56.973Z",
+                  "middle_name": "string",
+                  "email": "LYx@rSByIhTZxgVESRyrBLAhTopAPEhtyN.ztwh",
+                  "client_id": "string",
+                  "position_name": "string"
+                },
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 745,
+                  "created": "1946-01-13T00:38:54.484Z",
+                  "modified": "1984-09-07T07:33:27.476Z",
+                  "middle_name": "string",
+                  "email": "7K8p@ozyecceS.sbha",
+                  "client_id": "string",
+                  "position_name": "string"
+                }
+              ],
+              "financially_responsible_persons": [
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 5033,
+                  "created": "1965-04-11T16:14:58.159Z",
+                  "modified": "2024-07-30T02:13:07.278Z",
+                  "middle_name": "string",
+                  "email": "OEta3ii2@ziDZTcucjsAY.fjgh",
+                  "client_id": "string",
+                  "position_name": "string",
+                  "additional_data": "string",
+                  "plombirator_number": "string"
+                },
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 2766,
+                  "created": "1947-04-12T08:10:06.124Z",
+                  "modified": "1953-06-06T17:43:01.578Z",
+                  "middle_name": "string",
+                  "email": "bizNk4N60W5-drG@NfrMtHCxrOYDITUxLxMtGChSE.mrro",
+                  "client_id": "string",
+                  "position_name": "string",
+                  "additional_data": "string",
+                  "plombirator_number": "string"
+                }
+              ],
+              "cashiers": [
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 5385,
+                  "created": "2003-04-04T21:45:20.939Z",
+                  "modified": "1973-02-15T23:47:51.442Z",
+                  "middle_name": "string",
+                  "email": "O-rIPrya3T@kyyPauVMuA.dftg",
+                  "client_id": "string",
+                  "position_name": "string"
+                },
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 4848,
+                  "created": "1983-02-22T03:10:13.774Z",
+                  "modified": "1986-10-16T18:22:04.056Z",
+                  "middle_name": "string",
+                  "email": "IBC@XLiGDxoqcAZVZ.jhi",
+                  "client_id": "string",
+                  "position_name": "string"
+                }
+              ],
+              "existing_added_orders": "string",
+              "created": "1973-07-02T02:57:11.793Z",
+              "modified": "1958-03-21T06:36:29.133Z",
+              "created_by_user_data": "string",
+              "additional_data": "string",
+              "status": 6,
+              "branch": "string"
+            },
+            {
+              "revision_kind": 0,
+              "revision_type": 0,
+              "revision_date": "1955-05-27T16:12:19.244Z",
+              "id": "560b0940-288e-1e1e-fccb-f3a7c32b891d",
+              "auditors": [
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 1954,
+                  "created": "1982-07-05T23:29:33.433Z",
+                  "modified": "2021-10-21T18:30:17.945Z",
+                  "middle_name": "string",
+                  "email": "qsmEJHfQd983QtI@jHDNzFeSayCclOfvPdH.fp",
+                  "client_id": "string",
+                  "position_name": "string"
+                },
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 1625,
+                  "created": "1958-10-16T10:15:22.516Z",
+                  "modified": "1993-12-28T14:55:05.459Z",
+                  "middle_name": "string",
+                  "email": "KImEGWdSjplPO@POQODhwKAVoisJ.mua",
+                  "client_id": "string",
+                  "position_name": "string"
+                }
+              ],
+              "financially_responsible_persons": [
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 4957,
+                  "created": "2015-07-07T22:24:58.398Z",
+                  "modified": "2011-03-07T00:45:29.590Z",
+                  "middle_name": "string",
+                  "email": "kIK@puEhirszDwwcv.tw",
+                  "client_id": "string",
+                  "position_name": "string",
+                  "additional_data": "string",
+                  "plombirator_number": "string"
+                },
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 8220,
+                  "created": "1947-07-16T16:44:16.884Z",
+                  "modified": "1981-02-16T12:00:28.821Z",
+                  "middle_name": "string",
+                  "email": "S0Z6MMxEObRIZA@pzSgbvPpBCuxwfwqzq.bchj",
+                  "client_id": "string",
+                  "position_name": "string",
+                  "additional_data": "string",
+                  "plombirator_number": "string"
+                }
+              ],
+              "cashiers": [
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 4382,
+                  "created": "1999-08-29T23:00:21.756Z",
+                  "modified": "2025-02-15T11:22:30.207Z",
+                  "middle_name": "string",
+                  "email": "3jiK@rPUDCOqqdamZLIVwK.bq",
+                  "client_id": "string",
+                  "position_name": "string"
+                },
+                {
+                  "first_name": "string",
+                  "last_name": "string",
+                  "id": 4415,
+                  "created": "1989-05-16T10:53:01.774Z",
+                  "modified": "2022-10-04T17:25:14.491Z",
+                  "middle_name": "string",
+                  "email": "ZHc8bxoWSh@YZhmGBeZrHwQACpKXUBsdxlBMiWfVw.pjs",
+                  "client_id": "string",
+                  "position_name": "string"
+                }
+              ],
+              "existing_added_orders": "string",
+              "created": "1975-10-22T08:08:34.489Z",
+              "modified": "2013-03-16T11:56:06.952Z",
+              "created_by_user_data": "string",
+              "additional_data": "string",
+              "status": 1,
+              "branch": "string"
+            }
+          ],
+          "next": "http://LmUoOGMk.mxyuVI1sF,sFrEypOgxAJkkEJYmM1GdmIUEAzYZ8zXkX2+OS-PNhfaxeT1xY",
+          "previous": "http://TRjtRTaMVoOBzo.rojZYWMXuHY0pJRRtiJ,eMTJ,euv7R79rRWsnznxqHOGe6Y9mDkDl,l6eCmXRpMg"
+        }
+      '''
+    }
+  }
+}

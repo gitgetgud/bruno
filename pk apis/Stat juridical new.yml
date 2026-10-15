@@ -1,0 +1,47 @@
+info:
+  name: Stat juridical new
+  type: http
+  seq: 16
+
+http:
+  method: GET
+  url: https://stat.gov.kz/api/juridicalusr/counter/gov/?bin=201240013776&lang=ru
+  headers:
+    - name: User-Agent
+      value: Mozilla/5.0 (X11; Linux x86_64; rv:93.0) Gecko/20100101 Firefox/93.0
+    - name: Accept
+      value: application/json, text/plain, */*
+    - name: Accept-Language
+      value: ru
+    - name: DNT
+      value: "1"
+    - name: Connection
+      value: keep-alive
+    - name: Referer
+      value: https://stat.gov.kz/jur-search/bin
+    - name: Cookie
+      value: cookiesession1=678B76DDMPQRSTUVWXYZABCDEFGHA676
+    - name: Sec-Fetch-Dest
+      value: empty
+    - name: Sec-Fetch-Mode
+      value: cors
+    - name: Sec-Fetch-Site
+      value: same-origin
+    - name: Pragma
+      value: no-cache
+    - name: Cache-Control
+      value: no-cache
+  params:
+    - name: bin
+      value: "201240013776"
+      type: query
+    - name: lang
+      value: ru
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

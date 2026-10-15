@@ -1,0 +1,81 @@
+meta {
+  name: Массовое открытие карт от ИБСО
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/card_emission/create_mass_card_at_ibso/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "uuid": "7d4fcb45-9569-c8c3-ace2-e59f75dff164",
+    "clientId": "string",
+    "iin": "string",
+    "account_product": "string",
+    "card_product": "string",
+    "cardMask": "string",
+    "created": "1974-10-01T03:41:28.044Z",
+    "division": "string",
+    "embossingFirstName": "string",
+    "embossingLastName": "string",
+    "fio": "string",
+    "rbsNumber": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/card_emission/create_mass_card_at_ibso/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "uuid": "7d4fcb45-9569-c8c3-ace2-e59f75dff164",
+        "clientId": "string",
+        "iin": "string",
+        "account_product": "string",
+        "card_product": "string",
+        "cardMask": "string",
+        "created": "1974-10-01T03:41:28.044Z",
+        "division": "string",
+        "embossingFirstName": "string",
+        "embossingLastName": "string",
+        "fio": "string",
+        "rbsNumber": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

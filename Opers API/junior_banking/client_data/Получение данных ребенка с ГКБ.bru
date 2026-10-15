@@ -1,0 +1,70 @@
+meta {
+  name: Получение данных ребенка с ГКБ
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/junior_banking/client_data/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "registration_uuid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/junior_banking/client_data/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "registration_uuid": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "surname": "string",
+          "name": "string",
+          "embossing_surname": "string",
+          "embossing_name": "string"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,34 @@
+meta {
+  name: 2_adata_info Copy
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+     "Request":{
+        "serviceCode":"adata.getIinBinInfo",
+        "uuid":"6614db3-dc12-4334-b82a-f69fbb5b5a2",
+        "sourceSystem":"SingleWindow",
+        "username":"SingleWindow",
+        "Data":{
+           "iinBin":"940712401358"         
+        }
+     }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

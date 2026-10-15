@@ -1,0 +1,61 @@
+meta {
+  name: kcell
+  type: http
+  seq: 22
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+headers {
+  : 
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "beeline.GetVerify",
+          "uuid": "111",
+          "requestTime": "2019-10-303T06:07:06",
+          "sourceSystem": "SingleWindow",
+          "username": "SingleWindow",
+          "Data": {
+              "transId": "ffa9a523-c132-49c1-9664-3f017d973721",
+              "bankLogin": "kz.rbk.verify.test",
+              "roleCode": "basic",
+              "ctn": "7474190595",
+              "fio": null,
+              "iin": null,
+              "udv": null,
+              "guarantor": null,
+              "wloc": {
+                  "city_name": "Алматы",
+                  "street_name": "Коктем - 2",
+                  "house_num": "22"
+              },
+              "hloc": {
+                  "city_name": "Алматы",
+                  "street_name": "Коктем - 2",
+                  "house_num": "22"
+              },
+              "compareHome": null,
+              "compareImei": null,
+              "compareContactGroups": null,
+              "general_params": "IIN, ACTIVITY, BEE_FCGROUP, BEE_LIFETIME, BEE_ACCTYPE, BEE_CGROUP, BEE_LIFEPHONE, BEE_CBLOCK, BEE_AVREC, BEE_PPT, BEE_SOURCE"
+          }
+      }
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

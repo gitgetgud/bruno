@@ -1,0 +1,72 @@
+meta {
+  name: Получение активных категории по лояльности
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/cashback/cashback_analytics/get_active_categories/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/cashback/cashback_analytics/get_active_categories/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "category": "string",
+            "percent": "string",
+            "mcc": "string",
+            "is_turned": false
+          },
+          {
+            "category": "string",
+            "percent": "string",
+            "mcc": "string",
+            "is_turned": false
+          }
+        ]
+      '''
+    }
+  }
+}

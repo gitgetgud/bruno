@@ -1,0 +1,121 @@
+meta {
+  name: Get Message
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/notifications/custmsg/?pagenum=0&pagesize=1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  pagenum: 0
+  pagesize: 1
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/custmsg/?pagenum=0&pagesize=1
+    method: GET
+    mode: none
+    params:query: {
+      pagenum: 0
+      pagesize: 1
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Bearer <token>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Validation Error
+  
+  request: {
+    url: {{baseUrl}}/notifications/custmsg/?pagenum=0&pagesize=1
+    method: GET
+    mode: none
+    params:query: {
+      pagenum: 0
+      pagesize: 1
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Bearer <token>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 422
+      text: Unprocessable Entity (WebDAV) (RFC 4918)
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "detail": [
+            {
+              "loc": [
+                "string",
+                2136
+              ],
+              "msg": "string",
+              "type": "string"
+            },
+            {
+              "loc": [
+                3462,
+                "string"
+              ],
+              "msg": "string",
+              "type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

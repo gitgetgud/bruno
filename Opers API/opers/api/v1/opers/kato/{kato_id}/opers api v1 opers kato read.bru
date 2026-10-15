@@ -1,0 +1,66 @@
+meta {
+  name: opers api v1 opers kato read
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/kato/:kato_id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  kato_id: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/kato/:kato_id/
+    method: GET
+    mode: none
+    params:path: {
+      kato_id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "ibso_id": "string",
+          "kato_id": "string",
+          "country": "str",
+          "type": "string",
+          "name": "string",
+          "area": "string"
+        }
+      '''
+    }
+  }
+}

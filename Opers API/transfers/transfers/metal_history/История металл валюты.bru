@@ -1,0 +1,76 @@
+meta {
+  name: История металл валюты
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/transfers/transfers/metal_history/?page=80&size=80&from_date=1988-09-03&to_date=1988-09-03
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  size: 80
+  from_date: 1988-09-03
+  to_date: 1988-09-03
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/transfers/metal_history/?page=80&size=80&from_date=1988-09-03&to_date=1988-09-03
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      size: 80
+      from_date: 1988-09-03
+      to_date: 1988-09-03
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "date": "2020-02-18",
+            "amount": 7945.5903785547525,
+            "id": 3984
+          },
+          {
+            "date": "1994-02-24",
+            "amount": 4140.810831332234,
+            "id": 5605
+          }
+        ]
+      '''
+    }
+  }
+}

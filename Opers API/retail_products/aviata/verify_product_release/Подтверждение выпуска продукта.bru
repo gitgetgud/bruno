@@ -1,0 +1,81 @@
+meta {
+  name: Подтверждение выпуска продукта
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/retail_products/aviata/verify_product_release/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "datetime": "1986-08-03T09:46:01.551Z",
+    "application_uuid": "040dbdd2-1def-1316-72ec-ce991d6588a8",
+    "passcode": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/retail_products/aviata/verify_product_release/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "datetime": "1986-08-03T09:46:01.551Z",
+        "application_uuid": "040dbdd2-1def-1316-72ec-ce991d6588a8",
+        "passcode": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "application_uuid": "37150628-9b33-cc53-10d1-170a00c99f56",
+          "offer": {
+            "id": 9116,
+            "term": 2931,
+            "rate": "string",
+            "amount": "string",
+            "product_type": "string"
+          },
+          "maturity_date": "1962-02-19",
+          "agreement_number": "string",
+          "datetime": "1988-07-25T03:17:20.015Z"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,74 @@
+meta {
+  name: получение истории за период
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/cashback/cashback_analytics/get_history/?page=80&date_begin=1988-09-03&date_end=1988-09-03&rbs=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  date_begin: 1988-09-03
+  date_end: 1988-09-03
+  rbs: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/cashback/cashback_analytics/get_history/?page=80&date_begin=1988-09-03&date_end=1988-09-03&rbs=string
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      date_begin: 1988-09-03
+      date_end: 1988-09-03
+      rbs: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "transaction_date": "string",
+            "mcc": "string"
+          },
+          {
+            "transaction_date": "string",
+            "mcc": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

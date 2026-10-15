@@ -1,0 +1,63 @@
+meta {
+  name: rbk pay payments generate invoice
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/payments/generate_invoice/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "payment_uuid": "f516b1bf-8de0-ab5a-2a8c-d9803e9ab0e7"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Получение квитанции по платежам
+}
+
+example {
+  name: FILE
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/generate_invoice/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "payment_uuid": "f516b1bf-8de0-ab5a-2a8c-d9803e9ab0e7"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

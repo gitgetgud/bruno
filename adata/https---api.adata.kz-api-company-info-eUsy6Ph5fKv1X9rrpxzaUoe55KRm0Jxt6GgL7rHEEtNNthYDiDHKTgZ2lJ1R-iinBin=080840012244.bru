@@ -1,0 +1,58 @@
+meta {
+  name: https://api.adata.kz/api/company/info/eUsy6Ph5fKv1X9rrpxzaUoe55KRm0Jxt6GgL7rHEEtNNthYDiDHKTgZ2lJ1R?iinBin=080840012244
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://api.adata.kz/api/company/info/eUsy6Ph5fKv1X9rrpxzaUoe55KRm0Jxt6GgL7rHEEtNNthYDiDHKTgZ2lJ1R?iinBin=080840012244
+  body: none
+  auth: inherit
+}
+
+params:query {
+  iinBin: 080840012244
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: https://api.adata.kz/api/company/info/eUsy6Ph5fKv1X9rrpxzaUoe55KRm0Jxt6GgL7rHEEtNNthYDiDHKTgZ2lJ1R?iinBin=080840012244
+  
+  request: {
+    url: https://api.adata.kz/api/company/info/eUsy6Ph5fKv1X9rrpxzaUoe55KRm0Jxt6GgL7rHEEtNNthYDiDHKTgZ2lJ1R?iinBin=080840012244
+    method: GET
+    mode: none
+    params:query: {
+      iinBin: 080840012244
+    }
+  }
+  
+  response: {
+    headers: {
+      Date: Thu, 02 Mar 2023 11:55:09 GMT
+      Content-Type: application/json
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      Cache-Control: no-cache, private
+      Strict-Transport-Security: max-age=15724800; includeSubDomains
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "success": true,
+            "token": "0002462523"
+        }
+      '''
+    }
+  }
+}

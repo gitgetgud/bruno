@@ -1,0 +1,33 @@
+meta {
+  name: solva.addSolvaFeeDebtList
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/solva/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SolvaUser
+  password: Solva2022
+}
+
+body:json {
+  {
+  "Request": {
+  "uuid": "432423423",
+  "serviceCode": "solva.addSolvaFeeDebtList",
+  "sourceSystem": "Solva",
+  "username": "SolvaUser",
+  "requestTime": "yyyy-mm-dd hh24:mi:ss",
+  "Data": {}
+  }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

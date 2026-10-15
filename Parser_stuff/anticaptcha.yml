@@ -1,0 +1,30 @@
+info:
+  name: anticaptcha
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: http://api.anti-captcha.com/createTask
+  body:
+    type: json
+    data: |-
+      {
+          "clientKey":"122641a55bf2932e7ee3f248c442c805",
+          "task":
+              {
+                  "type":"RecaptchaV3TaskProxyless",
+                  "websiteURL":"https://aisoip.adilet.gov.kz/debtors",
+                  "websiteKey":"6LdPj8YZAAAAAF94C16Pd93KT8a_TCy-XihB4CBL",
+                  "minScore": 0.9,
+                  "pageAction": "findErd",
+                  "isEnterprise": false
+              }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

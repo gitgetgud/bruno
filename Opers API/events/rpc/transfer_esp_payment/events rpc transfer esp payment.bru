@@ -1,0 +1,120 @@
+meta {
+  name: events rpc transfer esp payment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/rpc/transfer_esp_payment/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "stringstring",
+    "payment_month": "string",
+    "payment_amount": "string",
+    "from_iban": "string",
+    "from_iban_currency": "string",
+    "currency": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Pay for esp
+}
+
+example {
+  name: Returns document_ref_id of operation
+  
+  request: {
+    url: {{baseUrl}}/events/rpc/transfer_esp_payment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring",
+        "payment_month": "string",
+        "payment_amount": "string",
+        "from_iban": "string",
+        "from_iban_currency": "string",
+        "currency": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "document_ref_id": "string"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: not valid
+  
+  request: {
+    url: {{baseUrl}}/events/rpc/transfer_esp_payment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring",
+        "payment_month": "string",
+        "payment_amount": "string",
+        "from_iban": "string",
+        "from_iban_currency": "string",
+        "currency": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 400
+      text: Bad Request
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

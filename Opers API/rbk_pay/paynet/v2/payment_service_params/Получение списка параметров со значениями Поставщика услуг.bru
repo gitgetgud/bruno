@@ -1,0 +1,85 @@
+meta {
+  name: Получение списка параметров со значениями Поставщика услуг
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/rbk_pay/paynet/v2/payment_service_params/?page=80&service_id=string&service_type=third_party&values_obj_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  service_id: string
+  service_type: third_party
+  values_obj_id: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/paynet/v2/payment_service_params/?page=80&service_id=string&service_type=third_party&values_obj_id=string
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      service_id: string
+      service_type: third_party
+      values_obj_id: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "params": [
+            {
+              "name": "string",
+              "id": 9125,
+              "mask": "string",
+              "keyboard": "NUMPAD",
+              "value": "",
+              "is_editable": true
+            },
+            {
+              "name": "string",
+              "id": 1805,
+              "mask": "string",
+              "keyboard": "NUMPAD",
+              "value": "",
+              "is_editable": true
+            }
+          ],
+          "amount_for_pay": "0.00"
+        }
+      '''
+    }
+  }
+}

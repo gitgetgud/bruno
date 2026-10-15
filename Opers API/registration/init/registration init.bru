@@ -1,0 +1,81 @@
+meta {
+  name: registration init
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/init/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "stringstring",
+    "phone": "string",
+    "should_open_card": false,
+    "should_open_account": false,
+    "USAcitizenshipOrTaxResidence": false,
+    "delivery_address": "",
+    "division": "",
+    "product": "STANDARD"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Application id
+  
+  request: {
+    url: {{baseUrl}}/registration/init/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring",
+        "phone": "string",
+        "should_open_card": false,
+        "should_open_account": false,
+        "USAcitizenshipOrTaxResidence": false,
+        "delivery_address": "",
+        "division": "",
+        "product": "STANDARD"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "5f57eec6-1998-282d-c4ab-6a7ad45a8fc7"
+        }
+      '''
+    }
+  }
+}

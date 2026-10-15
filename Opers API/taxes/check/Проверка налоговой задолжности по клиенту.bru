@@ -1,0 +1,91 @@
+meta {
+  name: Проверка налоговой задолжности по клиенту
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/taxes/check/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "code": "str",
+    "iin": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/taxes/check/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "code": "str",
+        "iin": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "check_uuid": "f01aee1c-bf35-4e4f-5a87-634eb208751d",
+          "client_id": "string",
+          "check_iin": "string",
+          "tax_type": "string",
+          "has_error": false,
+          "debt_info": {
+            "debts": [
+              {
+                "char_code": "string",
+                "ugd_name_ru": "string",
+                "ugd_name_kz": "string",
+                "poenaArrear": "string",
+                "taxArrear": "string"
+              },
+              {
+                "char_code": "string",
+                "ugd_name_ru": "string",
+                "ugd_name_kz": "string",
+                "poenaArrear": "string",
+                "taxArrear": "string"
+              }
+            ]
+          }
+        }
+      '''
+    }
+  }
+}

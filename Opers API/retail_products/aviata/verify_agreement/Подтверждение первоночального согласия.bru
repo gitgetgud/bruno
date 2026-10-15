@@ -1,0 +1,87 @@
+meta {
+  name: Подтверждение первоночального согласия
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/retail_products/aviata/verify_agreement/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "datetime": "1986-08-03T09:46:01.551Z",
+    "application_uuid": "040dbdd2-1def-1316-72ec-ce991d6588a8",
+    "passcode": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/retail_products/aviata/verify_agreement/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "datetime": "1986-08-03T09:46:01.551Z",
+        "application_uuid": "040dbdd2-1def-1316-72ec-ce991d6588a8",
+        "passcode": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "is_requested_approved": true,
+          "available_offers": [
+            {
+              "id": 1578,
+              "term": 24,
+              "rate": "string",
+              "amount": "string",
+              "product_type": "string"
+            },
+            {
+              "id": 7156,
+              "term": 4092,
+              "rate": "string",
+              "amount": "string",
+              "product_type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

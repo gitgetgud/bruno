@@ -1,0 +1,50 @@
+meta {
+  name: transfers card-templates update
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{baseUrl}}/transfers/card-templates/:id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/card-templates/:id/
+    method: PUT
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

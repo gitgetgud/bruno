@@ -1,0 +1,50 @@
+meta {
+  name: rbk pay fines resend sms
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/fines/:id/resend_sms/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/fines/:id/resend_sms/
+    method: POST
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

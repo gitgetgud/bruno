@@ -1,0 +1,29 @@
+meta {
+  name: culs_payments
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://open.egov.kz/proxy2/culs_payments?token=1af98c4aed474b6199ea44db15ee303c
+  body: xml
+  auth: inherit
+}
+
+params:query {
+  token: 1af98c4aed474b6199ea44db15ee303c
+}
+
+body:xml {
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+  <sign:Request xmlns:sign="http://xmlns.kztc-cits/sign" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sign:IIN_BIN>201040000013</sign:IIN_BIN>
+  </sign:Request>
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}

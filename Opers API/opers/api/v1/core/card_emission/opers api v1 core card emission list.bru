@@ -1,0 +1,141 @@
+meta {
+  name: opers api v1 core card emission list
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/card_emission/?iin=string&at_the_branch=string&search=string&ordering=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  iin: string
+  at_the_branch: string
+  search: string
+  ordering: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/card_emission/?iin=string&at_the_branch=string&search=string&ordering=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      iin: string
+      at_the_branch: string
+      search: string
+      ordering: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 5071,
+          "results": [
+            {
+              "status_name": "string",
+              "id": "f8eec49c-5965-95b6-7aa5-465521466bca",
+              "created": "2024-04-30T20:25:24.648Z",
+              "modified": "2004-04-05T09:08:13.584Z",
+              "readable_id": "r",
+              "status": 2,
+              "modified_operationist": "string",
+              "client_id": "string",
+              "client_id_w4": "string",
+              "search_id": "string",
+              "account_product_code": "string",
+              "card_product_code": "string",
+              "iin": "string",
+              "rbs_number": "string",
+              "iban": "string",
+              "phone": "string",
+              "currency": "string",
+              "product": "string",
+              "plastic": "string",
+              "commission": "string",
+              "should_deliver": false,
+              "delivery_address": "string",
+              "card_number": "string",
+              "division": "string",
+              "failed_reason": "string",
+              "with_priority_pass": true,
+              "with_sms_inform": true,
+              "with_additional_card": true,
+              "product_category": "string",
+              "is_multi": false,
+              "is_existing_account": false,
+              "fio": "string"
+            },
+            {
+              "status_name": "string",
+              "id": "1e7af80d-d08c-6db6-de94-ba20336f2de2",
+              "created": "2020-10-03T10:35:13.029Z",
+              "modified": "1981-12-07T17:22:52.003Z",
+              "readable_id": "n39C7Y",
+              "status": 4,
+              "modified_operationist": "string",
+              "client_id": "string",
+              "client_id_w4": "string",
+              "search_id": "string",
+              "account_product_code": "string",
+              "card_product_code": "string",
+              "iin": "string",
+              "rbs_number": "string",
+              "iban": "string",
+              "phone": "string",
+              "currency": "string",
+              "product": "string",
+              "plastic": "string",
+              "commission": "string",
+              "should_deliver": false,
+              "delivery_address": "string",
+              "card_number": "string",
+              "division": "string",
+              "failed_reason": "string",
+              "with_priority_pass": true,
+              "with_sms_inform": true,
+              "with_additional_card": false,
+              "product_category": "string",
+              "is_multi": false,
+              "is_existing_account": true,
+              "fio": "string"
+            }
+          ],
+          "next": "http://KPONwWKniyGYFRizJJOWbDFaARiRnbRfy.ruymJHJRvEGH7nY-.Uzf+MGtvkcWXPh+OZlPTqsu8,46",
+          "previous": "https://DYCABeynCsPnUoYiaW.dniyF2JLF90hpAzhXRvgDMtT"
+        }
+      '''
+    }
+  }
+}

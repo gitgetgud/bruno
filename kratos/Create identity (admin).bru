@@ -1,0 +1,15 @@
+meta {
+  name: Create identity (admin)
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:4434/admin/identities
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,33 @@
+meta {
+  name: smp clients
+  type: http
+  seq: 42
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "smp.GetClients",
+          "uuid": "111111",
+          "sourceSystem": "singleWindow",
+          "username": "singleWindow",
+          "requestTime": "2021-10-13 09:17:51.664130",
+          "Data": {}
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

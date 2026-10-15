@@ -1,0 +1,38 @@
+meta {
+  name: Вызов отдельного сервиса (document-manager: carbone)
+  type: http
+  seq: 6
+}
+
+post {
+  url: https://dev-bcc-gf-gateway-green-front.apps.dev-env.bcc.kz/document-manager/file/upload/carbone
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "fileId": 1316329,
+      "contractNumber": 1000000000,
+      "numberOfPages": "1",
+      "carboneUrl": "printForm/generate-form/raw",
+      "carbonePayload": {
+          "template": "soglasiye_uchastnika_zp_project.docx",
+          "options": {
+              "convertTo": "pdf",
+              "extension": "docx"
+          },
+          "data": {
+              "firstName": "Имя",
+              "lastName": "Фамилия",
+              "currentDate": "Дата"
+          },
+          "procDefId": "",
+          "procDefKey": ""
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

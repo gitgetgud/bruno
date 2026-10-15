@@ -1,0 +1,77 @@
+meta {
+  name: Список instant заявок
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/instant/applications/?start_date=&end_date=
+  body: none
+  auth: inherit
+}
+
+params:query {
+  start_date: 
+  end_date: 
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/instant/applications/?start_date=&end_date=
+    method: GET
+    mode: none
+    params:query: {
+      start_date: 
+      end_date: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "123b2f88-0a4d-324a-504d-5acb126977cb",
+          "created": "2012-01-16T10:01:17.624Z",
+          "modified": "1959-11-06T17:47:09.671Z",
+          "opers_id": "string",
+          "opers_username": "string",
+          "opers_full_name": "string",
+          "hermes_id": "string",
+          "card_institution_id": "string",
+          "rbk_card_branch": "string",
+          "delivery": "string",
+          "card_prod": "string",
+          "department_code": "string",
+          "status": "string",
+          "count": "st",
+          "count_err": "st"
+        }
+      '''
+    }
+  }
+}

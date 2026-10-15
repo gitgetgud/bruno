@@ -1,0 +1,76 @@
+meta {
+  name: card card product list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/card/card_product/?account_product_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  account_product_id: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/card_product/?account_product_id=string
+    method: GET
+    mode: none
+    params:query: {
+      account_product_id: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "card_product_id": "string",
+            "card_product": "string",
+            "card_product_code": "string",
+            "id": 778,
+            "fi_code": "string",
+            "account_product_id": "string"
+          },
+          {
+            "card_product_id": "str",
+            "card_product": "string",
+            "card_product_code": "string",
+            "id": 7493,
+            "fi_code": "string",
+            "account_product_id": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

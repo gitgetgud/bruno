@@ -1,0 +1,86 @@
+meta {
+  name: stories banners list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/stories/banners_list/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Список рекламных баннеров
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/stories/banners_list/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "text": "string",
+            "id": 3017,
+            "image": "http://nDDIfi.sutjEToepAjEAZ5k",
+            "link": "string",
+            "priority": -1128642711,
+            "is_enable": false,
+            "for_adult": true,
+            "for_junior": false,
+            "language": "kk"
+          },
+          {
+            "text": "string",
+            "id": 1947,
+            "image": "https://qtRfvjDw.wgxiWANupvOy",
+            "link": "string",
+            "priority": 520410161,
+            "is_enable": false,
+            "for_adult": false,
+            "for_junior": true,
+            "language": "en"
+          }
+        ]
+      '''
+    }
+  }
+}

@@ -1,0 +1,133 @@
+meta {
+  name: transfers card-templates create
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/transfers/card-templates/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "bank": {
+      "name": "string",
+      "six_digits": [
+        "strin",
+        "string"
+      ],
+      "long_name": "string",
+      "bik": "string"
+    },
+    "client_id": "string",
+    "pan_id": "string",
+    "card_holder_name": "string",
+    "last_four_digits": "str",
+    "alias": "string",
+    "bank_name": "string",
+    "bank_code": "string",
+    "first_six_digits": "st",
+    "is_tayyab": false,
+    "ps_type": 1,
+    "expiry_month": "string",
+    "expiry_year": "string",
+    "is_from": false
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/card-templates/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "bank": {
+          "name": "string",
+          "six_digits": [
+            "strin",
+            "string"
+          ],
+          "long_name": "string",
+          "bik": "string"
+        },
+        "client_id": "string",
+        "pan_id": "string",
+        "card_holder_name": "string",
+        "last_four_digits": "str",
+        "alias": "string",
+        "bank_name": "string",
+        "bank_code": "string",
+        "first_six_digits": "st",
+        "is_tayyab": false,
+        "ps_type": 1,
+        "expiry_month": "string",
+        "expiry_year": "string",
+        "is_from": false
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "bank": {
+            "name": "string",
+            "six_digits": [
+              "stri",
+              "strin"
+            ],
+            "id": 3614,
+            "long_name": "string",
+            "bik": "string",
+            "icon_image": "http://d.wpgl9xiQUoxBxVyXed5PL-lVQrK"
+          },
+          "client_id": "string",
+          "pan_id": "string",
+          "card_holder_name": "string",
+          "last_four_digits": "st",
+          "alias": "string",
+          "bank_name": "string",
+          "bank_code": "string",
+          "id": 3916,
+          "first_six_digits": "strin",
+          "is_tayyab": false,
+          "ps_type": 0,
+          "expiry_month": "string",
+          "expiry_year": "string",
+          "is_from": true
+        }
+      '''
+    }
+  }
+}

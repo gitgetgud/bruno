@@ -1,0 +1,58 @@
+meta {
+  name: services api v1 services get services by category id
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/services/api/v1/services/by-category/:category_id/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+params:path {
+  category_id: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/services/api/v1/services/by-category/:category_id/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    params:path: {
+      category_id: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

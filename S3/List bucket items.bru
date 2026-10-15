@@ -1,0 +1,82 @@
+meta {
+  name: List bucket items
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{S3_HOST}}/{{bucket}}
+  body: none
+  auth: awsv4
+}
+
+auth:awsv4 {
+  accessKeyId: {{accessKey}}
+  secretAccessKey: {{secretKey}}
+  sessionToken: 
+  service: s3
+  region: us-east-1
+  profileName: 
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: List bucket items
+  
+  request: {
+    url: {{S3_HOST}}/{{bucket}}
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Accept-Ranges: bytes
+      Content-Length: 596
+      Content-Security-Policy: block-all-mixed-content
+      Content-Type: application/xml
+      Server: MinIO
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      Vary: Origin
+      Vary: Accept-Encoding
+      X-Amz-Request-Id: 16F551BFB0413553
+      X-Content-Type-Options: nosniff
+      X-Xss-Protection: 1; mode=block
+      Date: Sat, 04 Jun 2022 04:52:01 GMT
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: xml
+      content: '''
+        <?xml version="1.0" encoding="UTF-8"?>
+        <ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+            <Name>testbucket</Name>
+            <Prefix></Prefix>
+            <Marker></Marker>
+            <MaxKeys>1000</MaxKeys>
+            <Delimiter></Delimiter>
+            <IsTruncated>false</IsTruncated>
+            <Contents>
+                <Key>wallhaven-5w81x5.jpg</Key>
+                <LastModified>2022-06-04T04:51:48.414Z</LastModified>
+                <ETag>&#34;8109259ae7d02d59cc23402bb6f7b3be&#34;</ETag>
+                <Size>1597878</Size>
+                <Owner>
+                    <ID>02d6176db174dc93cb1b899f7c6078f08654445fe8cf1b6ce98d8855f66bdbf4</ID>
+                    <DisplayName>minio</DisplayName>
+                </Owner>
+                <StorageClass>STANDARD</StorageClass>
+            </Contents>
+        </ListBucketResult>
+      '''
+    }
+  }
+}

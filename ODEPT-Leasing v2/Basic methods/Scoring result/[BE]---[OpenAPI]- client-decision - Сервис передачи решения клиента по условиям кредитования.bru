@@ -1,0 +1,33 @@
+meta {
+  name: [BE]<->[OpenAPI]: client-decision - Сервис передачи решения клиента по условиям кредитования
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/scoring/client-decision
+  body: json
+  auth: bearer
+}
+
+params:path {
+  sme-leasing-uuid: {{online_auto_leasing_id}}
+}
+
+headers {
+  X-User-ID: +77777777777
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+body:json {
+  {
+    "decision": "CONFIRMED"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

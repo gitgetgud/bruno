@@ -1,0 +1,41 @@
+meta {
+  name: wildfly.GetCardOperations
+  type: http
+  seq: 14
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+headers {
+  ~: 
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "wildfly.GetStatement",
+          "uuid": "fb58dd66-e638-48c8-83c5-d4f68a27c930",
+          "requestTime": "2019-10-303T06:07:06",
+          "sourceSystem": "singleWindow",
+          "username": "singleWindow",
+          "Data": {
+              "dateBegin": "2021-01-10",
+              "dateEnd": "2021-08-20",
+              "iban": "KZ648210239870200356"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

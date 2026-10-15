@@ -1,0 +1,95 @@
+meta {
+  name: Проведение платежа по Касса24
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/paynet/create_kassa24/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "phone": "string",
+    "iin": "stringstring",
+    "from_iban": "string",
+    "kbe": "s",
+    "knp": "string",
+    "operation_description": "string",
+    "pay_purpose": "string",
+    "amount": "string",
+    "service_id": "string",
+    "parameters": [
+      "string",
+      "string"
+    ],
+    "commission": "string",
+    "addings": {},
+    "request_uuid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/paynet/create_kassa24/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "phone": "string",
+        "iin": "stringstring",
+        "from_iban": "string",
+        "kbe": "s",
+        "knp": "string",
+        "operation_description": "string",
+        "pay_purpose": "string",
+        "amount": "string",
+        "service_id": "string",
+        "parameters": [
+          "string",
+          "string"
+        ],
+        "commission": "string",
+        "addings": {},
+        "request_uuid": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {}
+      '''
+    }
+  }
+}

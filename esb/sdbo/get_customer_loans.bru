@@ -1,0 +1,35 @@
+meta {
+  name: get_customer_loans
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ESB_URL}}/sdbo/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboUser
+  password: s6L8EHOUuwhgHf6NyRyo
+}
+
+body:json {
+  {
+  	"version": "TL 1.0",
+  	"type": "GetOperations",
+  	"id": "6F9619FF-8B86-D011-B42D-00CF4FC964FF",
+  	"dateTime": "2017-11-28T23:37:11.894",
+  	"source": "DBO_INFIN",
+  	"body": [ {
+  			"iban": "KZ4582113SV710000012",
+  			"dateBegin": "2019-05-01",
+  			"dateEnd": "2019-08-20"
+  	} ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

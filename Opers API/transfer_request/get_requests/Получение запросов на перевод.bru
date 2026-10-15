@@ -1,0 +1,96 @@
+meta {
+  name: Получение запросов на перевод
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/transfer_request/get_requests/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfer_request/get_requests/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "from_client_id": "string",
+            "amount": "string",
+            "to_client_id": "string",
+            "id": "4f49ce15-a48e-6c20-8be4-cb09af7e6c93",
+            "created": "1962-12-04T22:48:26.459Z",
+            "modified": "1954-07-08T08:23:28.218Z",
+            "status": 2,
+            "request_type": 1,
+            "to_iban": "string",
+            "first_name": "string",
+            "last_name": "string",
+            "phone": "string",
+            "beneficiary_phone": "string",
+            "avatar": "string",
+            "first_name_sender": "string",
+            "last_name_sender": "string"
+          },
+          {
+            "from_client_id": "string",
+            "amount": "string",
+            "to_client_id": "string",
+            "id": "21d3eec8-a1af-3105-a247-d3c76a1ef4ae",
+            "created": "2002-11-19T03:31:19.191Z",
+            "modified": "2024-12-11T20:23:55.578Z",
+            "status": 1,
+            "request_type": 1,
+            "to_iban": "string",
+            "first_name": "string",
+            "last_name": "string",
+            "phone": "string",
+            "beneficiary_phone": "string",
+            "avatar": "string",
+            "first_name_sender": "string",
+            "last_name_sender": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

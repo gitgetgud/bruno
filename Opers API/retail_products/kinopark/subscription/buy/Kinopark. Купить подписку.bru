@@ -1,0 +1,85 @@
+meta {
+  name: Kinopark. Купить подписку
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/retail_products/kinopark/subscription/buy/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "subscription_id": 7959,
+    "phone": "string",
+    "from_iban": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/retail_products/kinopark/subscription/buy/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "subscription_id": 7959,
+        "phone": "string",
+        "from_iban": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": 6384,
+          "status": "string",
+          "client_id": "string",
+          "subscription_id": 9140,
+          "amount": "string",
+          "initial_visits": 415,
+          "available_visits_count": 9412,
+          "due_date": "1996-11-05T04:50:20.581Z",
+          "subscription": {
+            "id": 593,
+            "name": "string",
+            "description": "string",
+            "price": "string",
+            "visits_count": 3391
+          }
+        }
+      '''
+    }
+  }
+}

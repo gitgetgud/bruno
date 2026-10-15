@@ -1,0 +1,91 @@
+meta {
+  name: card plastic emission create
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/card/plastic_emission/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "rbs_number": "string",
+    "institution": "string",
+    "order_department": "string",
+    "pinset": "string",
+    "card_expiry": "string",
+    "phone": "string",
+    "plastic": "string",
+    "card_number_mask": "string",
+    "division": "string",
+    "delivery_address": "string",
+    "at_the_branch": false
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Создание заявки на выпуск пластика
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/plastic_emission/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "rbs_number": "string",
+        "institution": "string",
+        "order_department": "string",
+        "pinset": "string",
+        "card_expiry": "string",
+        "phone": "string",
+        "plastic": "string",
+        "card_number_mask": "string",
+        "division": "string",
+        "delivery_address": "string",
+        "at_the_branch": false
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "application_uuid": "string"
+        }
+      '''
+    }
+  }
+}

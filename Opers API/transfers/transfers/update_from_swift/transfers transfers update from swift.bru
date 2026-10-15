@@ -1,0 +1,149 @@
+meta {
+  name: transfers transfers update from swift
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{baseUrl}}/transfers/transfers/update_from_swift/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "id": "string",
+    "iin": "string",
+    "currency": "string",
+    "amount": "string",
+    "client_id": "0",
+    "status_details": "string",
+    "hermes_id": "",
+    "beneficiary_account": "string",
+    "beneficiary_name": "string",
+    "beneficiary_address": "string",
+    "beneficiary_place": "string",
+    "beneficiary_code": "string",
+    "from_iban": "",
+    "commission_type": 0,
+    "to_iban": "",
+    "country": "",
+    "payment_purpose_code": "string",
+    "payment_purpose_description": "strin",
+    "swift_bank": "string",
+    "correspondent_swift_bank": "string",
+    "correspondent_account": "string",
+    "document_details": {},
+    "phone": "string",
+    "from_sdbo": true,
+    "device_type": "string",
+    "app_version": "string",
+    "is_incoming": false
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Update transfer status from swift.
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/transfers/update_from_swift/
+    method: PUT
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "id": "string",
+        "iin": "string",
+        "currency": "string",
+        "amount": "string",
+        "client_id": "0",
+        "status_details": "string",
+        "hermes_id": "",
+        "beneficiary_account": "string",
+        "beneficiary_name": "string",
+        "beneficiary_address": "string",
+        "beneficiary_place": "string",
+        "beneficiary_code": "string",
+        "from_iban": "",
+        "commission_type": 0,
+        "to_iban": "",
+        "country": "",
+        "payment_purpose_code": "string",
+        "payment_purpose_description": "strin",
+        "swift_bank": "string",
+        "correspondent_swift_bank": "string",
+        "correspondent_account": "string",
+        "document_details": {},
+        "phone": "string",
+        "from_sdbo": true,
+        "device_type": "string",
+        "app_version": "string",
+        "is_incoming": false
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "string",
+          "iin": "string",
+          "currency": "string",
+          "amount": "string",
+          "client_id": "0",
+          "status_details": "string",
+          "hermes_id": "",
+          "beneficiary_account": "string",
+          "beneficiary_name": "string",
+          "beneficiary_address": "string",
+          "beneficiary_place": "string",
+          "beneficiary_code": "string",
+          "from_iban": "",
+          "commission_type": 0,
+          "to_iban": "",
+          "country": "",
+          "payment_purpose_code": "string",
+          "payment_purpose_description": "strin",
+          "swift_bank": "string",
+          "correspondent_swift_bank": "string",
+          "correspondent_account": "string",
+          "document_details": {},
+          "phone": "string",
+          "from_sdbo": true,
+          "device_type": "string",
+          "app_version": "string",
+          "is_incoming": false
+        }
+      '''
+    }
+  }
+}

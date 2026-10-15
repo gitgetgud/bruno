@@ -1,0 +1,108 @@
+meta {
+  name: Получение списка истории переводов VIP/Premium клиентов
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/vip_transfer/?vip_client__client_id=string&transfer__status=string&vip_client__fio__icontains=string&vip_client__iin=string&vip_client__client_type=string&created__gte=1988-09-03&created__lte=1988-09-03&page=80&vip_client__fio=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  vip_client__client_id: string
+  transfer__status: string
+  vip_client__fio__icontains: string
+  vip_client__iin: string
+  vip_client__client_type: string
+  created__gte: 1988-09-03
+  created__lte: 1988-09-03
+  page: 80
+  vip_client__fio: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Эндпоинт для получения истории переводов с фильтрацией по `client_id`, `status`, `fio`, `iin`, типу клиента и диапазону дат.
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/vip_transfer/?vip_client__client_id=string&transfer__status=string&vip_client__fio__icontains=string&vip_client__iin=string&vip_client__client_type=string&created__gte=1988-09-03&created__lte=1988-09-03&page=80&vip_client__fio=string
+    method: GET
+    mode: none
+    params:query: {
+      vip_client__client_id: string
+      transfer__status: string
+      vip_client__fio__icontains: string
+      vip_client__iin: string
+      vip_client__client_type: string
+      created__gte: 1988-09-03
+      created__lte: 1988-09-03
+      page: 80
+      vip_client__fio: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "id": "7918dd87-f9e1-90ea-8ebb-e2a9490e4292",
+            "created": "string",
+            "total_amount": "string",
+            "transfer_id": "string",
+            "iin": "string",
+            "fio": "string",
+            "client_id": "string",
+            "status": "string",
+            "transfer_type": "string",
+            "amount": "string",
+            "currency": "string",
+            "comments": "string"
+          },
+          {
+            "id": "c2be5830-d3ea-991d-9f6a-0974d41c86cb",
+            "created": "string",
+            "total_amount": "string",
+            "transfer_id": "string",
+            "iin": "string",
+            "fio": "string",
+            "client_id": "string",
+            "status": "string",
+            "transfer_type": "string",
+            "amount": "string",
+            "currency": "string",
+            "comments": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

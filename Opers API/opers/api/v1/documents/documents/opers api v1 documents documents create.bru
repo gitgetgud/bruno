@@ -1,0 +1,84 @@
+meta {
+  name: opers api v1 documents documents create
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/documents/documents/
+  body: multipartForm
+  auth: inherit
+}
+
+headers {
+  Content-Type: multipart/form-data
+  Accept: application/json
+}
+
+body:multipart-form {
+  iin: st
+  document_type: string
+  file: @file()
+  comment: string
+  is_expired: false
+  issued_date: 1952-11-04T11:13:51.046Z
+  expired_date: 2014-04-14T14:55:07.770Z
+  document_number: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/documents/documents/
+    method: POST
+    mode: multipartForm
+    headers: {
+      Content-Type: multipart/form-data
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:multipart-form: {
+      iin: st
+      document_type: string
+      file: @file()
+      comment: string
+      is_expired: false
+      issued_date: 1952-11-04T11:13:51.046Z
+      expired_date: 2014-04-14T14:55:07.770Z
+      document_number: string
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "string",
+          "document_type": "string",
+          "file": "https://UX.qmGXG,APSBeN5SL9R4BotkZoqS7yl72QBAsaGOt0KmY3++MlZRczSlETDnp4bbjd0cCKl",
+          "comment": "string",
+          "is_expired": false,
+          "issued_date": "1976-05-15T12:28:48.323Z",
+          "expired_date": "2003-02-22T15:45:05.708Z",
+          "document_number": "string"
+        }
+      '''
+    }
+  }
+}

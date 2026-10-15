@@ -1,0 +1,66 @@
+meta {
+  name: opers api v1 core filenet upload doc content
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/filenet/upload_doc_content/
+  body: multipartForm
+  auth: inherit
+}
+
+headers {
+  Content-Type: multipart/form-data
+  Accept: application/json
+}
+
+body:multipart-form {
+  file: @file()
+  file_id: c11a7066-3ae3-aa8c-9f9e-c682de08b75a
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/filenet/upload_doc_content/
+    method: POST
+    mode: multipartForm
+    headers: {
+      Content-Type: multipart/form-data
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:multipart-form: {
+      file: @file()
+      file_id: c11a7066-3ae3-aa8c-9f9e-c682de08b75a
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "file_id": "d5906664-01ba-1dc3-47c9-c6b0b0ccfd41",
+          "file": "http://CSzLwsameq.aixfGaPEhGvKnHqcqd8FsrwNHyIBueJ2ihfu-yM81RRWxgPukJBYt3lueg-"
+        }
+      '''
+    }
+  }
+}

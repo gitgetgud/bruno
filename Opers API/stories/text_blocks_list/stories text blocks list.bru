@@ -1,0 +1,71 @@
+meta {
+  name: stories text blocks list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/stories/text_blocks_list/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Список текстовых блоков
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/stories/text_blocks_list/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "text": "string",
+          "id": 8081,
+          "is_stable": false,
+          "is_enable": false,
+          "for_adult": false,
+          "for_junior": false,
+          "language": "ru"
+        }
+      '''
+    }
+  }
+}

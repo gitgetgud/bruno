@@ -1,0 +1,28 @@
+meta {
+  name: Authenticate dev
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{keycloak_url}}/auth/realms/{{realm}}/protocol/openid-connect/token
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  grant_type: client_credentials
+  client_id: {{client_id}}
+  client_secret: {{client_secret}}
+}
+
+script:post-response {
+  var resp = res.getBody();
+  
+  bru.setEnvVar("access_token", resp.access_token);
+  
+}
+
+settings {
+  encodeUrl: true
+}

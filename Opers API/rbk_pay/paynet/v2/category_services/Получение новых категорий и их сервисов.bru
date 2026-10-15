@@ -1,0 +1,2039 @@
+meta {
+  name: Получение новых категорий и их сервисов
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/rbk_pay/paynet/v2/category_services/?page=80&region_id=2
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  region_id: 2
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/paynet/v2/category_services/?page=80&region_id=2
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      region_id: 2
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "locnames": {
+            "id": 5603,
+            "localized": true,
+            "name_ru": "string",
+            "name_kz": "string",
+            "name_en": "string"
+          },
+          "subcategories": [
+            {
+              "locnames": {
+                "id": 3306,
+                "localized": false,
+                "name_ru": "string",
+                "name_kz": "string",
+                "name_en": "string"
+              },
+              "name": "string",
+              "alias": "string",
+              "id": 4217,
+              "services": [
+                {
+                  "name": {
+                    "id": 6073,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "payment_service_parameters": [
+                    {
+                      "name": {
+                        "id": 2838,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "description": {
+                        "id": 7289,
+                        "localized": false,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "entries": [
+                        {
+                          "value": {
+                            "id": 2820,
+                            "localized": false,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 6656
+                        },
+                        {
+                          "value": {
+                            "id": 5517,
+                            "localized": false,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 959
+                        }
+                      ],
+                      "paynet_id": "string",
+                      "id": 4798,
+                      "alias": "string",
+                      "order": "string",
+                      "user_sample": "string",
+                      "mask": "string",
+                      "checker_template": "string",
+                      "data_type": "string",
+                      "length": "string",
+                      "is_uid": false,
+                      "is_for_user": true,
+                      "is_visible": false,
+                      "is_for_payment": false,
+                      "is_for_subscription": true,
+                      "hint": "string",
+                      "keyboard": "EMAIL"
+                    },
+                    {
+                      "name": {
+                        "id": 15,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "description": {
+                        "id": 2548,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "entries": [
+                        {
+                          "value": {
+                            "id": 5225,
+                            "localized": true,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 2619
+                        },
+                        {
+                          "value": {
+                            "id": 2151,
+                            "localized": true,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 2053
+                        }
+                      ],
+                      "paynet_id": "string",
+                      "id": 7948,
+                      "alias": "string",
+                      "order": "string",
+                      "user_sample": "string",
+                      "mask": "string",
+                      "checker_template": "string",
+                      "data_type": "string",
+                      "length": "string",
+                      "is_uid": false,
+                      "is_for_user": true,
+                      "is_visible": false,
+                      "is_for_payment": false,
+                      "is_for_subscription": false,
+                      "hint": "string",
+                      "keyboard": "DATE"
+                    }
+                  ],
+                  "supplier": {
+                    "locnames": {
+                      "id": 6187,
+                      "localized": false,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "paynet_id": "string",
+                    "name": "string",
+                    "alias": "string",
+                    "id": 5295,
+                    "priority": 1937551729
+                  },
+                  "payment_service_category": {
+                    "locnames": {
+                      "id": 2949,
+                      "localized": true,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "paynet_id": "string",
+                    "name": "string",
+                    "alias": "string",
+                    "id": 9672,
+                    "priority": 925330947
+                  },
+                  "kassa_service_parameters": [
+                    {
+                      "name": {
+                        "id": 1597,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "id": 8759,
+                      "mask": "string",
+                      "reg_exp": "string",
+                      "mask_edit": "string",
+                      "options": {},
+                      "sum": "string",
+                      "check": "string",
+                      "hidden": "string",
+                      "value": "string",
+                      "optional": "string",
+                      "print": "string",
+                      "request_pay_status": "string",
+                      "label": "string",
+                      "hint": "string",
+                      "keyboard": "NUMPAD"
+                    },
+                    {
+                      "name": {
+                        "id": 3380,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "id": 1820,
+                      "mask": "string",
+                      "reg_exp": "string",
+                      "mask_edit": "string",
+                      "options": {},
+                      "sum": "string",
+                      "check": "string",
+                      "hidden": "string",
+                      "value": "string",
+                      "optional": "string",
+                      "print": "string",
+                      "request_pay_status": "string",
+                      "label": "string",
+                      "hint": "string",
+                      "keyboard": "NUMPAD"
+                    }
+                  ],
+                  "provider": {
+                    "params": [
+                      {
+                        "name": "string",
+                        "id": 4153,
+                        "mask": "string",
+                        "keyboard": "NUMPAD",
+                        "priority": 1634063512
+                      },
+                      {
+                        "name": "string",
+                        "id": 4544,
+                        "mask": "string",
+                        "keyboard": "DEFAULT",
+                        "priority": -783281721
+                      }
+                    ],
+                    "name": "string",
+                    "iban": "string",
+                    "bin": "string",
+                    "knp": "string",
+                    "kbe": "string",
+                    "id": "7cafa864-b923-25cd-1dca-c8f389b047dd",
+                    "name_kz": "string",
+                    "name_en": "string",
+                    "bank_income_iban": "string",
+                    "code": "string",
+                    "disclaimer": "string",
+                    "mandatory_description": "string",
+                    "created_at": "2007-02-24T00:58:01.015Z",
+                    "min_commission_amount": "string",
+                    "min_allowed_payment_amount": "string",
+                    "commission_percentage": "string",
+                    "is_paid_by_provider": true,
+                    "category": 7814
+                  },
+                  "third_party_provider": {
+                    "provider_type": 0,
+                    "parameters": [
+                      {
+                        "name": {
+                          "id": 1691,
+                          "localized": true,
+                          "name_ru": "string",
+                          "name_kz": "string",
+                          "name_en": "string"
+                        },
+                        "name_localized": 2649,
+                        "mask": "string",
+                        "keyboard": "MOBILE_PHONE"
+                      },
+                      {
+                        "name": {
+                          "id": 8558,
+                          "localized": true,
+                          "name_ru": "string",
+                          "name_kz": "string",
+                          "name_en": "string"
+                        },
+                        "name_localized": 1317,
+                        "mask": "string",
+                        "keyboard": "EMAIL"
+                      }
+                    ],
+                    "android_version": "string",
+                    "ios_version": "string",
+                    "provider_uuid": "50c0b333-1671-4534-8bef-224de77f30ba"
+                  },
+                  "id": 6340,
+                  "provider_id": "string",
+                  "min_sum": "string",
+                  "max_sum": "string",
+                  "paynet_id": "string",
+                  "kassa_id": 669635992,
+                  "alias": "string",
+                  "is_invoiceable": true,
+                  "is_tax_service": true,
+                  "is_penalty_service": false,
+                  "is_allowed_for_get_balance": true,
+                  "is_consolidated": false,
+                  "should_notify": true,
+                  "on_demand_amount": true,
+                  "fee": "string",
+                  "percent_fee": "string",
+                  "min_fee": "string",
+                  "pos_terminal_id": "string",
+                  "merchant_id": "string",
+                  "purpose": "string",
+                  "knp": "string",
+                  "trans_account": "string",
+                  "priority": 2136240518,
+                  "type_interface": "string",
+                  "is_enable": false,
+                  "icon_image": "http://xjsQep.fbiolV0IwfxR1jhh8lfxod.Mi,G9eZMGvv+2Su-kyXF800pmnREgVgUQWggLU+A",
+                  "hint": "string",
+                  "cashback": "string",
+                  "logo": "string",
+                  "code": "string",
+                  "description": "string",
+                  "tags": [
+                    "string",
+                    "string"
+                  ],
+                  "alternative_title": "string",
+                  "last_switch": "2023-12-01T08:06:48.539Z",
+                  "paynet_base_id": 81493459,
+                  "bcc_code": "string",
+                  "service_category": 7408,
+                  "regions": [
+                    2724,
+                    3555
+                  ],
+                  "kassa_commission": [
+                    8020,
+                    7845
+                  ]
+                },
+                {
+                  "name": {
+                    "id": 6433,
+                    "localized": true,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "payment_service_parameters": [
+                    {
+                      "name": {
+                        "id": 7809,
+                        "localized": false,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "description": {
+                        "id": 267,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "entries": [
+                        {
+                          "value": {
+                            "id": 9898,
+                            "localized": false,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 1641
+                        },
+                        {
+                          "value": {
+                            "id": 1597,
+                            "localized": true,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 913
+                        }
+                      ],
+                      "paynet_id": "string",
+                      "id": 4883,
+                      "alias": "string",
+                      "order": "string",
+                      "user_sample": "string",
+                      "mask": "string",
+                      "checker_template": "string",
+                      "data_type": "string",
+                      "length": "string",
+                      "is_uid": false,
+                      "is_for_user": false,
+                      "is_visible": true,
+                      "is_for_payment": true,
+                      "is_for_subscription": true,
+                      "hint": "string",
+                      "keyboard": "NUMPAD"
+                    },
+                    {
+                      "name": {
+                        "id": 7328,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "description": {
+                        "id": 7859,
+                        "localized": false,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "entries": [
+                        {
+                          "value": {
+                            "id": 9597,
+                            "localized": true,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 431
+                        },
+                        {
+                          "value": {
+                            "id": 1703,
+                            "localized": true,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "s",
+                          "id": 2196
+                        }
+                      ],
+                      "paynet_id": "string",
+                      "id": 2334,
+                      "alias": "string",
+                      "order": "string",
+                      "user_sample": "string",
+                      "mask": "string",
+                      "checker_template": "string",
+                      "data_type": "string",
+                      "length": "string",
+                      "is_uid": false,
+                      "is_for_user": true,
+                      "is_visible": true,
+                      "is_for_payment": true,
+                      "is_for_subscription": true,
+                      "hint": "string",
+                      "keyboard": "EMAIL"
+                    }
+                  ],
+                  "supplier": {
+                    "locnames": {
+                      "id": 6521,
+                      "localized": false,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "paynet_id": "string",
+                    "name": "string",
+                    "alias": "string",
+                    "id": 9976,
+                    "priority": 23099139
+                  },
+                  "payment_service_category": {
+                    "locnames": {
+                      "id": 7492,
+                      "localized": false,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "paynet_id": "string",
+                    "name": "string",
+                    "alias": "string",
+                    "id": 2460,
+                    "priority": 1670399372
+                  },
+                  "kassa_service_parameters": [
+                    {
+                      "name": {
+                        "id": 300,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "id": 1560,
+                      "mask": "string",
+                      "reg_exp": "string",
+                      "mask_edit": "string",
+                      "options": {},
+                      "sum": "string",
+                      "check": "string",
+                      "hidden": "string",
+                      "value": "string",
+                      "optional": "string",
+                      "print": "string",
+                      "request_pay_status": "string",
+                      "label": "string",
+                      "hint": "string",
+                      "keyboard": "DEFAULT"
+                    },
+                    {
+                      "name": {
+                        "id": 1004,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "id": 4605,
+                      "mask": "string",
+                      "reg_exp": "string",
+                      "mask_edit": "string",
+                      "options": {},
+                      "sum": "string",
+                      "check": "string",
+                      "hidden": "string",
+                      "value": "string",
+                      "optional": "string",
+                      "print": "string",
+                      "request_pay_status": "string",
+                      "label": "string",
+                      "hint": "string",
+                      "keyboard": "DATE"
+                    }
+                  ],
+                  "provider": {
+                    "params": [
+                      {
+                        "name": "string",
+                        "id": 4616,
+                        "mask": "string",
+                        "keyboard": "HOME_PHONE",
+                        "priority": 1191599301
+                      },
+                      {
+                        "name": "string",
+                        "id": 4021,
+                        "mask": "string",
+                        "keyboard": "NUMPAD",
+                        "priority": -1853813640
+                      }
+                    ],
+                    "name": "string",
+                    "iban": "string",
+                    "bin": "string",
+                    "knp": "string",
+                    "kbe": "string",
+                    "id": "8980a298-0c80-669a-87e6-35b5292df646",
+                    "name_kz": "string",
+                    "name_en": "string",
+                    "bank_income_iban": "string",
+                    "code": "string",
+                    "disclaimer": "string",
+                    "mandatory_description": "string",
+                    "created_at": "1978-07-28T21:12:32.921Z",
+                    "min_commission_amount": "string",
+                    "min_allowed_payment_amount": "string",
+                    "commission_percentage": "string",
+                    "is_paid_by_provider": false,
+                    "category": 1583
+                  },
+                  "third_party_provider": {
+                    "provider_type": 0,
+                    "parameters": [
+                      {
+                        "name": {
+                          "id": 5685,
+                          "localized": true,
+                          "name_ru": "string",
+                          "name_kz": "string",
+                          "name_en": "string"
+                        },
+                        "name_localized": 7614,
+                        "mask": "string",
+                        "keyboard": "HOME_PHONE"
+                      },
+                      {
+                        "name": {
+                          "id": 8206,
+                          "localized": true,
+                          "name_ru": "string",
+                          "name_kz": "string",
+                          "name_en": "string"
+                        },
+                        "name_localized": 2618,
+                        "mask": "string",
+                        "keyboard": "DATE"
+                      }
+                    ],
+                    "android_version": "string",
+                    "ios_version": "string",
+                    "provider_uuid": "9e35b925-6547-d783-bad2-e073919342d8"
+                  },
+                  "id": 381,
+                  "provider_id": "string",
+                  "min_sum": "string",
+                  "max_sum": "string",
+                  "paynet_id": "string",
+                  "kassa_id": 1173558126,
+                  "alias": "string",
+                  "is_invoiceable": false,
+                  "is_tax_service": true,
+                  "is_penalty_service": false,
+                  "is_allowed_for_get_balance": true,
+                  "is_consolidated": false,
+                  "should_notify": false,
+                  "on_demand_amount": true,
+                  "fee": "string",
+                  "percent_fee": "string",
+                  "min_fee": "string",
+                  "pos_terminal_id": "string",
+                  "merchant_id": "string",
+                  "purpose": "string",
+                  "knp": "string",
+                  "trans_account": "string",
+                  "priority": 1627291399,
+                  "type_interface": "string",
+                  "is_enable": true,
+                  "icon_image": "https://bpVEaISQKLkfwhOVulwVVoykNnCQ.frjlSkynBE3WS2elg.nnz+3z-K3aXneiaWETMZHAvhOkGKsK8MAjcx0X",
+                  "hint": "string",
+                  "cashback": "string",
+                  "logo": "string",
+                  "code": "string",
+                  "description": "string",
+                  "tags": [
+                    "string",
+                    "string"
+                  ],
+                  "alternative_title": "string",
+                  "last_switch": "1962-09-11T04:00:21.333Z",
+                  "paynet_base_id": -1087443347,
+                  "bcc_code": "string",
+                  "service_category": 8802,
+                  "regions": [
+                    1902,
+                    2785
+                  ],
+                  "kassa_commission": [
+                    327,
+                    3353
+                  ]
+                }
+              ],
+              "priority": 527908022,
+              "is_enable": false,
+              "cashback": "string",
+              "icon_image": "https://NoLHjpKDZgzkrbEprmxXnlX.mvqmBwvrnqgt3x.LCWNuffMxOg9DioNs7Rp61X-iqUUqBYpDNHOtedBwbHBcfhUPc",
+              "icon_redesign": "https://CyySdXCl.heazPDDXHQJ4plFCM,BHJloJq",
+              "code": "string",
+              "is_junior": true,
+              "is_common": false,
+              "fraud_limit_amount": -526923003,
+              "parent": 4084,
+              "ibso_category": 6592
+            },
+            {
+              "locnames": {
+                "id": 1874,
+                "localized": false,
+                "name_ru": "string",
+                "name_kz": "string",
+                "name_en": "string"
+              },
+              "name": "string",
+              "alias": "string",
+              "id": 5463,
+              "services": [
+                {
+                  "name": {
+                    "id": 8129,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "payment_service_parameters": [
+                    {
+                      "name": {
+                        "id": 7776,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "description": {
+                        "id": 4989,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "entries": [
+                        {
+                          "value": {
+                            "id": 5849,
+                            "localized": true,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 2722
+                        },
+                        {
+                          "value": {
+                            "id": 4727,
+                            "localized": true,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 8370
+                        }
+                      ],
+                      "paynet_id": "string",
+                      "id": 1444,
+                      "alias": "string",
+                      "order": "string",
+                      "user_sample": "string",
+                      "mask": "string",
+                      "checker_template": "string",
+                      "data_type": "string",
+                      "length": "string",
+                      "is_uid": false,
+                      "is_for_user": false,
+                      "is_visible": true,
+                      "is_for_payment": false,
+                      "is_for_subscription": true,
+                      "hint": "string",
+                      "keyboard": "IIN"
+                    },
+                    {
+                      "name": {
+                        "id": 5281,
+                        "localized": false,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "description": {
+                        "id": 494,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "entries": [
+                        {
+                          "value": {
+                            "id": 5474,
+                            "localized": true,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 1557
+                        },
+                        {
+                          "value": {
+                            "id": 4570,
+                            "localized": true,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 8977
+                        }
+                      ],
+                      "paynet_id": "string",
+                      "id": 5303,
+                      "alias": "string",
+                      "order": "string",
+                      "user_sample": "string",
+                      "mask": "string",
+                      "checker_template": "string",
+                      "data_type": "string",
+                      "length": "string",
+                      "is_uid": true,
+                      "is_for_user": false,
+                      "is_visible": true,
+                      "is_for_payment": true,
+                      "is_for_subscription": true,
+                      "hint": "string",
+                      "keyboard": "HOME_PHONE"
+                    }
+                  ],
+                  "supplier": {
+                    "locnames": {
+                      "id": 7774,
+                      "localized": false,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "paynet_id": "string",
+                    "name": "string",
+                    "alias": "string",
+                    "id": 6637,
+                    "priority": 2117310426
+                  },
+                  "payment_service_category": {
+                    "locnames": {
+                      "id": 4046,
+                      "localized": false,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "paynet_id": "string",
+                    "name": "string",
+                    "alias": "string",
+                    "id": 2690,
+                    "priority": 1253941624
+                  },
+                  "kassa_service_parameters": [
+                    {
+                      "name": {
+                        "id": 4096,
+                        "localized": false,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "id": 6515,
+                      "mask": "string",
+                      "reg_exp": "string",
+                      "mask_edit": "string",
+                      "options": {},
+                      "sum": "string",
+                      "check": "string",
+                      "hidden": "string",
+                      "value": "string",
+                      "optional": "string",
+                      "print": "string",
+                      "request_pay_status": "string",
+                      "label": "string",
+                      "hint": "string",
+                      "keyboard": "EMAIL"
+                    },
+                    {
+                      "name": {
+                        "id": 5970,
+                        "localized": false,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "id": 420,
+                      "mask": "string",
+                      "reg_exp": "string",
+                      "mask_edit": "string",
+                      "options": {},
+                      "sum": "string",
+                      "check": "string",
+                      "hidden": "string",
+                      "value": "string",
+                      "optional": "string",
+                      "print": "string",
+                      "request_pay_status": "string",
+                      "label": "string",
+                      "hint": "string",
+                      "keyboard": "EMAIL"
+                    }
+                  ],
+                  "provider": {
+                    "params": [
+                      {
+                        "name": "string",
+                        "id": 4025,
+                        "mask": "string",
+                        "keyboard": "EMAIL",
+                        "priority": 1459999564
+                      },
+                      {
+                        "name": "string",
+                        "id": 6719,
+                        "mask": "string",
+                        "keyboard": "EMAIL",
+                        "priority": 904237834
+                      }
+                    ],
+                    "name": "string",
+                    "iban": "string",
+                    "bin": "string",
+                    "knp": "string",
+                    "kbe": "stri",
+                    "id": "6c22bf8b-a398-abfc-4fb9-f87e293a199f",
+                    "name_kz": "string",
+                    "name_en": "string",
+                    "bank_income_iban": "string",
+                    "code": "string",
+                    "disclaimer": "string",
+                    "mandatory_description": "string",
+                    "created_at": "1957-03-08T05:51:28.233Z",
+                    "min_commission_amount": "string",
+                    "min_allowed_payment_amount": "string",
+                    "commission_percentage": "string",
+                    "is_paid_by_provider": true,
+                    "category": 1524
+                  },
+                  "third_party_provider": {
+                    "provider_type": 0,
+                    "parameters": [
+                      {
+                        "name": {
+                          "id": 8944,
+                          "localized": false,
+                          "name_ru": "string",
+                          "name_kz": "string",
+                          "name_en": "string"
+                        },
+                        "name_localized": 2109,
+                        "mask": "string",
+                        "keyboard": "DEFAULT"
+                      },
+                      {
+                        "name": {
+                          "id": 8037,
+                          "localized": false,
+                          "name_ru": "string",
+                          "name_kz": "string",
+                          "name_en": "string"
+                        },
+                        "name_localized": 8158,
+                        "mask": "string",
+                        "keyboard": "HOME_PHONE"
+                      }
+                    ],
+                    "android_version": "string",
+                    "ios_version": "string",
+                    "provider_uuid": "ee080649-5331-c4f9-86e5-db01a5254567"
+                  },
+                  "id": 8667,
+                  "provider_id": "string",
+                  "min_sum": "string",
+                  "max_sum": "string",
+                  "paynet_id": "string",
+                  "kassa_id": 2046694735,
+                  "alias": "string",
+                  "is_invoiceable": false,
+                  "is_tax_service": false,
+                  "is_penalty_service": false,
+                  "is_allowed_for_get_balance": false,
+                  "is_consolidated": true,
+                  "should_notify": false,
+                  "on_demand_amount": false,
+                  "fee": "string",
+                  "percent_fee": "string",
+                  "min_fee": "string",
+                  "pos_terminal_id": "string",
+                  "merchant_id": "string",
+                  "purpose": "string",
+                  "knp": "string",
+                  "trans_account": "string",
+                  "priority": 187113707,
+                  "type_interface": "string",
+                  "is_enable": true,
+                  "icon_image": "http://IOgqkglCNWSVdWpDOZQxDPGqgxzeF.ruabgHBpyfB0VV",
+                  "hint": "string",
+                  "cashback": "string",
+                  "logo": "string",
+                  "code": "string",
+                  "description": "string",
+                  "tags": [
+                    "string",
+                    "string"
+                  ],
+                  "alternative_title": "string",
+                  "last_switch": "1960-05-13T22:42:18.568Z",
+                  "paynet_base_id": 581679346,
+                  "bcc_code": "string",
+                  "service_category": 939,
+                  "regions": [
+                    7656,
+                    809
+                  ],
+                  "kassa_commission": [
+                    3743,
+                    7158
+                  ]
+                },
+                {
+                  "name": {
+                    "id": 9220,
+                    "localized": true,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "payment_service_parameters": [
+                    {
+                      "name": {
+                        "id": 2982,
+                        "localized": false,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "description": {
+                        "id": 3726,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "entries": [
+                        {
+                          "value": {
+                            "id": 8230,
+                            "localized": false,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 8743
+                        },
+                        {
+                          "value": {
+                            "id": 8305,
+                            "localized": false,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "strin",
+                          "id": 1572
+                        }
+                      ],
+                      "paynet_id": "string",
+                      "id": 3434,
+                      "alias": "string",
+                      "order": "string",
+                      "user_sample": "string",
+                      "mask": "string",
+                      "checker_template": "string",
+                      "data_type": "string",
+                      "length": "string",
+                      "is_uid": true,
+                      "is_for_user": false,
+                      "is_visible": true,
+                      "is_for_payment": true,
+                      "is_for_subscription": true,
+                      "hint": "string",
+                      "keyboard": "EMAIL"
+                    },
+                    {
+                      "name": {
+                        "id": 2911,
+                        "localized": false,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "description": {
+                        "id": 6280,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "entries": [
+                        {
+                          "value": {
+                            "id": 4394,
+                            "localized": false,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 7949
+                        },
+                        {
+                          "value": {
+                            "id": 5512,
+                            "localized": true,
+                            "name_ru": "string",
+                            "name_kz": "string",
+                            "name_en": "string"
+                          },
+                          "paynet_id": "string",
+                          "id": 6307
+                        }
+                      ],
+                      "paynet_id": "string",
+                      "id": 1947,
+                      "alias": "string",
+                      "order": "string",
+                      "user_sample": "string",
+                      "mask": "string",
+                      "checker_template": "string",
+                      "data_type": "string",
+                      "length": "string",
+                      "is_uid": false,
+                      "is_for_user": true,
+                      "is_visible": true,
+                      "is_for_payment": false,
+                      "is_for_subscription": false,
+                      "hint": "string",
+                      "keyboard": "DEFAULT"
+                    }
+                  ],
+                  "supplier": {
+                    "locnames": {
+                      "id": 7235,
+                      "localized": false,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "paynet_id": "string",
+                    "name": "string",
+                    "alias": "string",
+                    "id": 684,
+                    "priority": 1710914610
+                  },
+                  "payment_service_category": {
+                    "locnames": {
+                      "id": 4495,
+                      "localized": false,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "paynet_id": "string",
+                    "name": "string",
+                    "alias": "string",
+                    "id": 1213,
+                    "priority": 1251873542
+                  },
+                  "kassa_service_parameters": [
+                    {
+                      "name": {
+                        "id": 6415,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "id": 2992,
+                      "mask": "string",
+                      "reg_exp": "string",
+                      "mask_edit": "string",
+                      "options": {},
+                      "sum": "string",
+                      "check": "string",
+                      "hidden": "string",
+                      "value": "string",
+                      "optional": "string",
+                      "print": "string",
+                      "request_pay_status": "string",
+                      "label": "string",
+                      "hint": "string",
+                      "keyboard": "IIN"
+                    },
+                    {
+                      "name": {
+                        "id": 9561,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "id": 3633,
+                      "mask": "string",
+                      "reg_exp": "string",
+                      "mask_edit": "string",
+                      "options": {},
+                      "sum": "string",
+                      "check": "string",
+                      "hidden": "string",
+                      "value": "string",
+                      "optional": "string",
+                      "print": "string",
+                      "request_pay_status": "string",
+                      "label": "string",
+                      "hint": "string",
+                      "keyboard": "DEFAULT"
+                    }
+                  ],
+                  "provider": {
+                    "params": [
+                      {
+                        "name": "string",
+                        "id": 1583,
+                        "mask": "string",
+                        "keyboard": "MOBILE_PHONE",
+                        "priority": -1189688507
+                      },
+                      {
+                        "name": "string",
+                        "id": 5531,
+                        "mask": "string",
+                        "keyboard": "MOBILE_PHONE",
+                        "priority": 808000711
+                      }
+                    ],
+                    "name": "string",
+                    "iban": "string",
+                    "bin": "string",
+                    "knp": "stri",
+                    "kbe": "string",
+                    "id": "c4e190d2-b2e8-b5e6-7e4e-a9c70e77e3d1",
+                    "name_kz": "string",
+                    "name_en": "string",
+                    "bank_income_iban": "string",
+                    "code": "string",
+                    "disclaimer": "string",
+                    "mandatory_description": "string",
+                    "created_at": "1958-05-30T15:39:34.346Z",
+                    "min_commission_amount": "string",
+                    "min_allowed_payment_amount": "string",
+                    "commission_percentage": "string",
+                    "is_paid_by_provider": false,
+                    "category": 7920
+                  },
+                  "third_party_provider": {
+                    "provider_type": 0,
+                    "parameters": [
+                      {
+                        "name": {
+                          "id": 504,
+                          "localized": false,
+                          "name_ru": "string",
+                          "name_kz": "string",
+                          "name_en": "string"
+                        },
+                        "name_localized": 8992,
+                        "mask": "string",
+                        "keyboard": "DATE"
+                      },
+                      {
+                        "name": {
+                          "id": 1864,
+                          "localized": false,
+                          "name_ru": "string",
+                          "name_kz": "string",
+                          "name_en": "string"
+                        },
+                        "name_localized": 8113,
+                        "mask": "string",
+                        "keyboard": "MOBILE_PHONE"
+                      }
+                    ],
+                    "android_version": "string",
+                    "ios_version": "string",
+                    "provider_uuid": "5444cc46-c787-c66b-d864-e973b6d0e126"
+                  },
+                  "id": 5190,
+                  "provider_id": "string",
+                  "min_sum": "string",
+                  "max_sum": "string",
+                  "paynet_id": "string",
+                  "kassa_id": 1990176129,
+                  "alias": "string",
+                  "is_invoiceable": true,
+                  "is_tax_service": false,
+                  "is_penalty_service": true,
+                  "is_allowed_for_get_balance": true,
+                  "is_consolidated": false,
+                  "should_notify": false,
+                  "on_demand_amount": false,
+                  "fee": "string",
+                  "percent_fee": "string",
+                  "min_fee": "string",
+                  "pos_terminal_id": "string",
+                  "merchant_id": "string",
+                  "purpose": "string",
+                  "knp": "string",
+                  "trans_account": "string",
+                  "priority": 732218392,
+                  "type_interface": "string",
+                  "is_enable": false,
+                  "icon_image": "https://wEcGiImrFpqjZSqsaOrvOQZVJhTsWQm.vwDb+qlbNZTARPIO9gGpPIUP1qZEhSpQxxk7Sq5Q,q+k,JOiU2mETt4C6gt",
+                  "hint": "string",
+                  "cashback": "string",
+                  "logo": "string",
+                  "code": "string",
+                  "description": "string",
+                  "tags": [
+                    "string",
+                    "string"
+                  ],
+                  "alternative_title": "string",
+                  "last_switch": "1964-07-08T18:44:20.675Z",
+                  "paynet_base_id": -2072884453,
+                  "bcc_code": "string",
+                  "service_category": 5903,
+                  "regions": [
+                    7549,
+                    7110
+                  ],
+                  "kassa_commission": [
+                    1087,
+                    9439
+                  ]
+                }
+              ],
+              "priority": 1191869865,
+              "is_enable": true,
+              "cashback": "string",
+              "icon_image": "https://s.jhf.mZgLvZp38zss7d43c2StZoQZObUW4woN5Xnpnpf8EBfBUfEkvRGh",
+              "icon_redesign": "http://MwValhYAXzPsCrbo.iygS,",
+              "code": "string",
+              "is_junior": true,
+              "is_common": true,
+              "fraud_limit_amount": -765156092,
+              "parent": 1537,
+              "ibso_category": 8184
+            }
+          ],
+          "name": "string",
+          "alias": "string",
+          "id": 8819,
+          "services": [
+            {
+              "name": {
+                "id": 7467,
+                "localized": true,
+                "name_ru": "string",
+                "name_kz": "string",
+                "name_en": "string"
+              },
+              "payment_service_parameters": [
+                {
+                  "name": {
+                    "id": 7433,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "description": {
+                    "id": 6937,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "entries": [
+                    {
+                      "value": {
+                        "id": 3363,
+                        "localized": false,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "paynet_id": "string",
+                      "id": 5463
+                    },
+                    {
+                      "value": {
+                        "id": 7879,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "paynet_id": "strin",
+                      "id": 6697
+                    }
+                  ],
+                  "paynet_id": "string",
+                  "id": 5925,
+                  "alias": "string",
+                  "order": "string",
+                  "user_sample": "string",
+                  "mask": "string",
+                  "checker_template": "string",
+                  "data_type": "string",
+                  "length": "string",
+                  "is_uid": false,
+                  "is_for_user": true,
+                  "is_visible": false,
+                  "is_for_payment": true,
+                  "is_for_subscription": false,
+                  "hint": "string",
+                  "keyboard": "DATE"
+                },
+                {
+                  "name": {
+                    "id": 3157,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "description": {
+                    "id": 750,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "entries": [
+                    {
+                      "value": {
+                        "id": 6091,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "paynet_id": "string",
+                      "id": 8055
+                    },
+                    {
+                      "value": {
+                        "id": 4475,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "paynet_id": "string",
+                      "id": 6456
+                    }
+                  ],
+                  "paynet_id": "string",
+                  "id": 3204,
+                  "alias": "string",
+                  "order": "string",
+                  "user_sample": "string",
+                  "mask": "string",
+                  "checker_template": "string",
+                  "data_type": "string",
+                  "length": "string",
+                  "is_uid": false,
+                  "is_for_user": false,
+                  "is_visible": true,
+                  "is_for_payment": true,
+                  "is_for_subscription": true,
+                  "hint": "string",
+                  "keyboard": "HOME_PHONE"
+                }
+              ],
+              "supplier": {
+                "locnames": {
+                  "id": 9995,
+                  "localized": false,
+                  "name_ru": "string",
+                  "name_kz": "string",
+                  "name_en": "string"
+                },
+                "paynet_id": "string",
+                "name": "string",
+                "alias": "string",
+                "id": 1341,
+                "priority": 1240309035
+              },
+              "payment_service_category": {
+                "locnames": {
+                  "id": 6313,
+                  "localized": false,
+                  "name_ru": "string",
+                  "name_kz": "string",
+                  "name_en": "string"
+                },
+                "paynet_id": "string",
+                "name": "string",
+                "alias": "string",
+                "id": 4046,
+                "priority": 858960782
+              },
+              "kassa_service_parameters": [
+                {
+                  "name": {
+                    "id": 8555,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "id": 6972,
+                  "mask": "string",
+                  "reg_exp": "string",
+                  "mask_edit": "string",
+                  "options": {},
+                  "sum": "string",
+                  "check": "string",
+                  "hidden": "string",
+                  "value": "string",
+                  "optional": "string",
+                  "print": "string",
+                  "request_pay_status": "string",
+                  "label": "string",
+                  "hint": "string",
+                  "keyboard": "NUMPAD"
+                },
+                {
+                  "name": {
+                    "id": 4155,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "id": 6085,
+                  "mask": "string",
+                  "reg_exp": "string",
+                  "mask_edit": "string",
+                  "options": {},
+                  "sum": "string",
+                  "check": "string",
+                  "hidden": "string",
+                  "value": "string",
+                  "optional": "string",
+                  "print": "string",
+                  "request_pay_status": "string",
+                  "label": "string",
+                  "hint": "string",
+                  "keyboard": "NUMPAD"
+                }
+              ],
+              "provider": {
+                "params": [
+                  {
+                    "name": "string",
+                    "id": 4709,
+                    "mask": "string",
+                    "keyboard": "IIN",
+                    "priority": -840298088
+                  },
+                  {
+                    "name": "string",
+                    "id": 2783,
+                    "mask": "string",
+                    "keyboard": "HOME_PHONE",
+                    "priority": 244133455
+                  }
+                ],
+                "name": "string",
+                "iban": "string",
+                "bin": "string",
+                "knp": "string",
+                "kbe": "string",
+                "id": "19f83af0-480a-d872-bb34-ea56a9cbd5b2",
+                "name_kz": "string",
+                "name_en": "string",
+                "bank_income_iban": "string",
+                "code": "string",
+                "disclaimer": "string",
+                "mandatory_description": "string",
+                "created_at": "2005-12-12T09:38:23.230Z",
+                "min_commission_amount": "string",
+                "min_allowed_payment_amount": "string",
+                "commission_percentage": "string",
+                "is_paid_by_provider": true,
+                "category": 425
+              },
+              "third_party_provider": {
+                "provider_type": 1,
+                "parameters": [
+                  {
+                    "name": {
+                      "id": 6546,
+                      "localized": true,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "name_localized": 271,
+                    "mask": "string",
+                    "keyboard": "EMAIL"
+                  },
+                  {
+                    "name": {
+                      "id": 2434,
+                      "localized": false,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "name_localized": 5816,
+                    "mask": "string",
+                    "keyboard": "DATE"
+                  }
+                ],
+                "android_version": "string",
+                "ios_version": "string",
+                "provider_uuid": "7d465c5b-f374-2282-4752-9cba60c7ab72"
+              },
+              "id": 4249,
+              "provider_id": "string",
+              "min_sum": "string",
+              "max_sum": "string",
+              "paynet_id": "string",
+              "kassa_id": 16229167,
+              "alias": "string",
+              "is_invoiceable": true,
+              "is_tax_service": true,
+              "is_penalty_service": false,
+              "is_allowed_for_get_balance": true,
+              "is_consolidated": false,
+              "should_notify": false,
+              "on_demand_amount": false,
+              "fee": "string",
+              "percent_fee": "string",
+              "min_fee": "string",
+              "pos_terminal_id": "string",
+              "merchant_id": "string",
+              "purpose": "string",
+              "knp": "string",
+              "trans_account": "string",
+              "priority": 299135465,
+              "type_interface": "string",
+              "is_enable": false,
+              "icon_image": "http://PmIJyR.kxjUPK06ZsxYhpdzENmwpa1ArySG1xr",
+              "hint": "string",
+              "cashback": "string",
+              "logo": "string",
+              "code": "string",
+              "description": "string",
+              "tags": [
+                "string",
+                "string"
+              ],
+              "alternative_title": "string",
+              "last_switch": "1960-08-29T01:40:42.657Z",
+              "paynet_base_id": 923454247,
+              "bcc_code": "string",
+              "service_category": 1486,
+              "regions": [
+                1325,
+                6725
+              ],
+              "kassa_commission": [
+                7727,
+                4828
+              ]
+            },
+            {
+              "name": {
+                "id": 5415,
+                "localized": true,
+                "name_ru": "string",
+                "name_kz": "string",
+                "name_en": "string"
+              },
+              "payment_service_parameters": [
+                {
+                  "name": {
+                    "id": 6551,
+                    "localized": true,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "description": {
+                    "id": 9810,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "entries": [
+                    {
+                      "value": {
+                        "id": 7724,
+                        "localized": false,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "paynet_id": "string",
+                      "id": 3189
+                    },
+                    {
+                      "value": {
+                        "id": 1443,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "paynet_id": "string",
+                      "id": 1865
+                    }
+                  ],
+                  "paynet_id": "string",
+                  "id": 7113,
+                  "alias": "string",
+                  "order": "string",
+                  "user_sample": "string",
+                  "mask": "string",
+                  "checker_template": "string",
+                  "data_type": "string",
+                  "length": "string",
+                  "is_uid": false,
+                  "is_for_user": false,
+                  "is_visible": true,
+                  "is_for_payment": true,
+                  "is_for_subscription": true,
+                  "hint": "string",
+                  "keyboard": "IIN"
+                },
+                {
+                  "name": {
+                    "id": 9179,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "description": {
+                    "id": 9213,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "entries": [
+                    {
+                      "value": {
+                        "id": 5798,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "paynet_id": "string",
+                      "id": 2212
+                    },
+                    {
+                      "value": {
+                        "id": 1704,
+                        "localized": true,
+                        "name_ru": "string",
+                        "name_kz": "string",
+                        "name_en": "string"
+                      },
+                      "paynet_id": "string",
+                      "id": 9965
+                    }
+                  ],
+                  "paynet_id": "string",
+                  "id": 4594,
+                  "alias": "string",
+                  "order": "string",
+                  "user_sample": "string",
+                  "mask": "string",
+                  "checker_template": "string",
+                  "data_type": "string",
+                  "length": "string",
+                  "is_uid": true,
+                  "is_for_user": false,
+                  "is_visible": false,
+                  "is_for_payment": true,
+                  "is_for_subscription": true,
+                  "hint": "string",
+                  "keyboard": "IIN"
+                }
+              ],
+              "supplier": {
+                "locnames": {
+                  "id": 1976,
+                  "localized": true,
+                  "name_ru": "string",
+                  "name_kz": "string",
+                  "name_en": "string"
+                },
+                "paynet_id": "string",
+                "name": "string",
+                "alias": "string",
+                "id": 7662,
+                "priority": 84292760
+              },
+              "payment_service_category": {
+                "locnames": {
+                  "id": 928,
+                  "localized": true,
+                  "name_ru": "string",
+                  "name_kz": "string",
+                  "name_en": "string"
+                },
+                "paynet_id": "string",
+                "name": "string",
+                "alias": "string",
+                "id": 7199,
+                "priority": 905018661
+              },
+              "kassa_service_parameters": [
+                {
+                  "name": {
+                    "id": 6473,
+                    "localized": false,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "id": 7370,
+                  "mask": "string",
+                  "reg_exp": "string",
+                  "mask_edit": "string",
+                  "options": {},
+                  "sum": "string",
+                  "check": "string",
+                  "hidden": "string",
+                  "value": "string",
+                  "optional": "string",
+                  "print": "string",
+                  "request_pay_status": "string",
+                  "label": "string",
+                  "hint": "string",
+                  "keyboard": "MOBILE_PHONE"
+                },
+                {
+                  "name": {
+                    "id": 4340,
+                    "localized": true,
+                    "name_ru": "string",
+                    "name_kz": "string",
+                    "name_en": "string"
+                  },
+                  "id": 843,
+                  "mask": "string",
+                  "reg_exp": "string",
+                  "mask_edit": "string",
+                  "options": {},
+                  "sum": "string",
+                  "check": "string",
+                  "hidden": "string",
+                  "value": "string",
+                  "optional": "string",
+                  "print": "string",
+                  "request_pay_status": "string",
+                  "label": "string",
+                  "hint": "string",
+                  "keyboard": "NUMPAD"
+                }
+              ],
+              "provider": {
+                "params": [
+                  {
+                    "name": "string",
+                    "id": 8945,
+                    "mask": "string",
+                    "keyboard": "DEFAULT",
+                    "priority": -1241724962
+                  },
+                  {
+                    "name": "string",
+                    "id": 7446,
+                    "mask": "string",
+                    "keyboard": "MOBILE_PHONE",
+                    "priority": -996892646
+                  }
+                ],
+                "name": "string",
+                "iban": "string",
+                "bin": "string",
+                "knp": "string",
+                "kbe": "string",
+                "id": "c70d4406-45e6-d78e-5d32-c3a668042a87",
+                "name_kz": "string",
+                "name_en": "string",
+                "bank_income_iban": "string",
+                "code": "string",
+                "disclaimer": "string",
+                "mandatory_description": "string",
+                "created_at": "1959-08-29T17:38:42.944Z",
+                "min_commission_amount": "string",
+                "min_allowed_payment_amount": "string",
+                "commission_percentage": "string",
+                "is_paid_by_provider": true,
+                "category": 1430
+              },
+              "third_party_provider": {
+                "provider_type": 1,
+                "parameters": [
+                  {
+                    "name": {
+                      "id": 1240,
+                      "localized": true,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "name_localized": 240,
+                    "mask": "string",
+                    "keyboard": "DATE"
+                  },
+                  {
+                    "name": {
+                      "id": 7295,
+                      "localized": false,
+                      "name_ru": "string",
+                      "name_kz": "string",
+                      "name_en": "string"
+                    },
+                    "name_localized": 682,
+                    "mask": "string",
+                    "keyboard": "EMAIL"
+                  }
+                ],
+                "android_version": "string",
+                "ios_version": "string",
+                "provider_uuid": "b84cdbd8-8cea-9804-3184-b40e370daf34"
+              },
+              "id": 8494,
+              "provider_id": "string",
+              "min_sum": "string",
+              "max_sum": "string",
+              "paynet_id": "string",
+              "kassa_id": 1763870271,
+              "alias": "string",
+              "is_invoiceable": true,
+              "is_tax_service": true,
+              "is_penalty_service": true,
+              "is_allowed_for_get_balance": true,
+              "is_consolidated": false,
+              "should_notify": true,
+              "on_demand_amount": false,
+              "fee": "string",
+              "percent_fee": "string",
+              "min_fee": "string",
+              "pos_terminal_id": "string",
+              "merchant_id": "string",
+              "purpose": "string",
+              "knp": "string",
+              "trans_account": "string",
+              "priority": 1130757723,
+              "type_interface": "string",
+              "is_enable": false,
+              "icon_image": "http://DVhBhKtkdAkLXwImTrwHqcFyq.kqdotyAHpV-1n84joWkSnEhiK-iWvgQWmkuVfQN1k8xAjPjWwE-GVXT4e8PNuQqdGjHm0Zstoh",
+              "hint": "string",
+              "cashback": "string",
+              "logo": "string",
+              "code": "string",
+              "description": "string",
+              "tags": [
+                "string",
+                "st"
+              ],
+              "alternative_title": "string",
+              "last_switch": "1974-02-21T15:54:42.368Z",
+              "paynet_base_id": 1605097209,
+              "bcc_code": "string",
+              "service_category": 6576,
+              "regions": [
+                1103,
+                7426
+              ],
+              "kassa_commission": [
+                3385,
+                5030
+              ]
+            }
+          ],
+          "priority": 452425007,
+          "is_enable": true,
+          "cashback": "string",
+          "icon_image": "http://RrhukgVCUNiHSeTOyKFPUVfKCl.dkifXIWsuP26GNxfjeX5+vwyfC8JZyD2QGcoHwb4Wpj,R50Htb",
+          "icon_redesign": "https://wuVnDhnEycIClgLkxoMhkmh.alyUKxf4-KS7WOWqeS",
+          "code": "string",
+          "is_junior": true,
+          "is_common": false,
+          "fraud_limit_amount": -1407057950,
+          "parent": 8023,
+          "ibso_category": 4958
+        }
+      '''
+    }
+  }
+}

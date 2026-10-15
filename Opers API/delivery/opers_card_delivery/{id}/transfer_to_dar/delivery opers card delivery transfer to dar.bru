@@ -1,0 +1,73 @@
+meta {
+  name: delivery opers card delivery transfer to dar
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/delivery/opers_card_delivery/:id/transfer_to_dar/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 80
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {}
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Confirms that client got a card by DAR logistics.
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/delivery/opers_card_delivery/:id/transfer_to_dar/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {}
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {}
+      '''
+    }
+  }
+}

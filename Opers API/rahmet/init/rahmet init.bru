@@ -1,0 +1,89 @@
+meta {
+  name: rahmet init
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rahmet/init/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "stringstring",
+    "phone": "string",
+    "register_date": "1989-03-11",
+    "first_transaction_date": "2007-07-21",
+    "transaction_3_month": 2915,
+    "transaction_12_month": 7408,
+    "is_transaction_chocotravel_12_month": false,
+    "is_transaction_aviata_12_month": false,
+    "ip_address": "str",
+    "fingerprint": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Заявка от Рахмета
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rahmet/init/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring",
+        "phone": "string",
+        "register_date": "1989-03-11",
+        "first_transaction_date": "2007-07-21",
+        "transaction_3_month": 2915,
+        "transaction_12_month": 7408,
+        "is_transaction_chocotravel_12_month": false,
+        "is_transaction_aviata_12_month": false,
+        "ip_address": "str",
+        "fingerprint": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "23c4cf49-7e65-6bda-c65f-e3d49feea26a"
+        }
+      '''
+    }
+  }
+}

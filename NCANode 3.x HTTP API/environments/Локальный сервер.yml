@@ -1,0 +1,4 @@
+name: Локальный сервер
+variables:
+  - name: baseUrl
+    value: http://localhost:14579

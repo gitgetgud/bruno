@@ -1,0 +1,109 @@
+meta {
+  name: Получение платежа для подписания
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{openapi_base_url}}/bcc/production/v1/business-account-management/transfers/base64
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-client-token: {{bccbiz_access_token}}
+}
+
+auth:bearer {
+  token: {{openapi_access_token}}
+}
+
+body:json {
+  {
+      "documentIds": [
+          {{paymentID}}
+      ]
+  }
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+      var jsonData = res.getBody();
+      pm.collectionVariables.set("documentsBase64", jsonData.documentsBase64)
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Получение платежа для подписания
+  
+  request: {
+    url: {{openapi_base_url}}/bcc/production/v1/business-account-management/transfers/base64
+    method: POST
+    mode: json
+    headers: {
+      x-client-token: {{bccbiz_access_token}}
+    }
+  
+    body:json: {
+      {
+          "documentIds": [
+              15394763
+          ]
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Tue, 03 Feb 2026 05:49:54 GMT
+      X-Global-Transaction-ID: 95dd62ed69818c826a36b4b4
+      vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+      x-traceparent-id: 00-69818c82d2d3d3340fa6237a5bde4429-c91e0f1d4034ab5e-00
+      x-xss-protection: 0
+      expires: 0
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      X-Frame-Options: deny
+      Content-Security-Policy: default-src 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+      X-Permitted-Cross-Domain-Policies: none
+      Referrer-Policy: no-referrer
+      Clear-Site-Data: "cache", "cookies", "storage"
+      Cross-Origin-Embedder-Policy: require-corp
+      Cross-Origin-Opener-Policy: same-origin
+      Cross-Origin-Resource-Policy: same-origin
+      Permissions-Policy: accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      Cache-Control: no-store, max-age=0
+      Pragma: cookieName=cookieValue; Path=/; Secure; HttpOnly; SameSite=Strict
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST
+      X-RateLimit-Limit: name=rate-limit,100;
+      X-RateLimit-Remaining: name=rate-limit,83;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "documentsBase64": "Df+BAgEC/4IAAf+AAABDfwMBARZEYXRhQ29udmVyc2lvbnNSZXF1ZXN0Af+AAAECAQpEb2N1bWVudElEAQQAAQxEYXRhYmFzZU5hbWUBDAAAABD/ggABAfwB1c+WAQNrenQA"
+        }
+      '''
+    }
+  }
+}

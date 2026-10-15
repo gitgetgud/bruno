@@ -1,0 +1,330 @@
+meta {
+  name: Account url
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{KEYCLOAK_BASE_URL}}/auth/realms/{{REALM_NAME}}/account/
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Account url
+  
+  request: {
+    url: {{KEYCLOAK_BASE_URL}}/auth/realms/{{REALM_NAME}}/account/
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Cache-Control: no-cache
+      X-XSS-Protection: 1; mode=block
+      X-Frame-Options: SAMEORIGIN
+      Referrer-Policy: no-referrer
+      Content-Security-Policy: frame-src 'self'; frame-ancestors 'self'; object-src 'none';
+      Date: Fri, 03 Jun 2022 23:46:23 GMT
+      Connection: keep-alive
+      X-Robots-Tag: none
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      X-Content-Type-Options: nosniff
+      Transfer-Encoding: chunked
+      Content-Type: text/html;charset=utf-8
+      Content-Language: en
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: html
+      content: '''
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>Keycloak Account Management</title>
+                <meta charset="UTF-8">
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <meta name="robots" content="noindex, nofollow">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <script>
+                    var developmentMode = false;
+                    var reactRuntime = 'react.production.min.js';
+                    var reactDOMRuntime = 'react-dom.production.min.js';
+                    var reactRouterRuntime = 'react-router-dom.min.js';
+                    var authUrl = 'http://localhost:8080/auth/';
+                    var baseUrl = 'http://localhost:8080/auth/realms/imageboardauth/account/';
+                    var realm = 'imageboardauth';
+                    var resourceUrl = '/auth/resources/wjkpw/account/keycloak.v2';
+                    var isReactLoading = false;
+        
+                    var brandImg = resourceUrl + '/public/logo.svg';
+        
+                    var brandUrl = './';
+        
+                    var features = {
+                        isRegistrationEmailAsUsername : false,
+                        isEditUserNameAllowed : true,
+                        isInternationalizationEnabled : false,
+                        isLinkedAccountsEnabled : false,
+                        isEventsEnabled : false,
+                        isMyResourcesEnabled : false,
+                        isTotpConfigured : false,
+                        deleteAccountAllowed : false
+                    }
+        
+                    var availableLocales = [];
+        
+        
+                        var locale = 'en';
+                        var l18nMsg = JSON.parse('{"cancel":"Cancel","role_view-events":"View events","irreversibleAction":"This action is irreversible","role_offline-access":"Offline access","authenticatorSMSMessage":"Keycloak will send the Verification code to your phone as the two-factor authentication.","notHaveAnyResource":"You don%27t have any resources","credentialCreatedAt":"Created","updatePasswordMessageTitle":"Make sure you choose a strong password","role_view-users":"View users","invalidPasswordMinLengthMessage":"Invalid password: minimum length {{param_0}}.","error-username-invalid-character":"%27{{param_0}}%27 contains invalid character.","infoMessage":"By clicking %27Remove Access%27, you will remove granted permissions of this application. This application will no longer use your information.","permissionRequestion":"Permission Requestion","invalidRoute":"{{param_0}} is not a valid route.","authenticatorSubTitle":"Set Up Two-Factor Authentication","chooseYourCountry":"Choose your country","givenName":"Given name","locality":"City or Locality","federatedIdentitiesHtmlTitle":"Federated Identities","identityProviderAlreadyLinkedMessage":"Federated identity returned by {{param_0}} is already linked to another user.","totpType":"Type","two-factor":"Two-Factor Authentication","signedInDevicesExplanation":"Sign out any device that is unfamiliar.","editAccountHtmlTitle":"Edit Account","applicationsPageTitle":"Applications","authenticatorCode":"One-time code","doSave":"Save","authenticatorSubMessage":"To enhance the security of your account, enable at least one of the available two-factor authentication methods.","locale_cs":"Čeština","accessPermissions":"Access Permissions","doSignOut":"Sign Out","icon":"Icon","phoneScopeConsentText":"Phone number","error-user-attribute-required":"Please specify %27{{param_0}}%27.","staleCodeAccountMessage":"The page expired. Please try one more time.","locale_ca":"Català","locale_pt-BR":"Português (Brasil)","error-empty":"Please specify value of %27{{param_0}}%27.","error-invalid-blank":"Please specify value of %27{{param_0}}%27.","signedOutSession":"Signed out {{param_0}}/{{param_1}}","totp.totp":"Time-based","close":"Close","policy":"Privacy policy","role_manage-events":"Manage events","applicationInUse":"In-use app only","signOutAllDevicesWarning":"This action will sign out all the devices that have signed in to your account, including the current device you are using.","unShareSuccess":"Resource successfully un-shared.","loadingMessage":"Account Console loading ...","website":"Web page","address":"Address","thirdPartyApp":"Third-party","role_manage-account":"Manage account","lastAccess":"Last Access","updateReadOnlyAttributesRejectedMessage":"Update of read-only attribute rejected","invalidPasswordExistingMessage":"Invalid existing password.","expiresAt":"Expires at","authenticatorBackupCodesTitle":"Backup Codes","emailVerified":"Email verified","emailScopeConsentText":"Email address","invalidUserMessage":"Invalid user","scanBarCode":"Want to scan the barcode?","client_security-admin-console":"Security Admin Console","currentPage":"Current Page","personalInfoIntroMessage":"Manage your basic information","sharetheResource":"Share the resource","actionNotDefined":"No Action defined","locale_es":"Español","authenticatorDefaultStatus":"Default","myPermissions":"My Permissions","addPeople":"Add people to share your resource with","myResources":"My Resources","identityProvider":"Identity Provider","invalidPasswordBlacklistedMessage":"Invalid password: password is blacklisted.","signingInSubMessage":"Configure ways to sign in.","passwordConfirm":"Confirmation","resourceAlreadyShared":"Resource is already shared with this user.","webauthn-display-name":"Security Key","samlRoleListScopeConsentText":"My Roles","authenticatorActionSetup":"Set up","locale_en":"English","error-invalid-value":"%27{{param_0}}%27 has invalid value.","add":"Add","waitingforApproval":"Waiting for approval","readOnlyUserMessage":"You can%27t update your account as it is read-only.","totpInterval":"Interval","basic-authentication":"Basic Authentication","unShareAllConfirm":"Are you sure you want to completely remove all shares?","profileScopeConsentText":"User profile","deletingImplies":"Deleting your account implies:","locale_de":"Deutsch","accountPasswordUpdatedMessage":"Your password has been updated.","password-display-name":"Password","zoneinfo":"Time zone","generateNewBackupCodes":"Generate New Backup Codes","error-invalid-number":"%27{{param_0}}%27 is invalid number.","nextPage":"Next","changePasswordHtmlTitle":"Change Password","federatedIdentityRemovingLastProviderMessage":"You can%27t remove last federated identity as you don%27t have a password.","remove":"Remove","totp.hotp":"Counter-based","activeFilters":"Active filters","client":"Client","error-invalid-uri":"%27{{param_0}}%27 is invalid URL.","peopleAccessResource":"People with access to this resource","owner":"Owner","locale_fr":"Français","shareSuccess":"Resource successfully shared.","authenticatorMobileMessage":"Use mobile Authenticator to get Verification codes as the two-factor authentication.","mobile":"Mobile","permission":"Permission","termsOfService":"Terms of service","configureAuthenticators":"Configured Authenticators","accountLogHtmlTitle":"Account Log","successTotpMessage":"Mobile authenticator configured.","role_view-realm":"View realm","baseUrl":"URL","authenticatorMobileSetupTitle":"Mobile Authenticator Setup","removeButton":"Remove access","backupCodesTips-1":"Each backup code can be used once.","backupCodesTips-2":"These codes were generated on","deleteAccountWarning":"This is irreversible. All your data will be permanently destroyed, and irretrievable.","backupCodesTips-3":"When you generate new backup codes, the current codes will not work anymore.","successTotpRemovedMessage":"Mobile authenticator removed.","username":"Username","locale_it":"Italiano","backTo":"Back to {{param_0}}","applicationType":"Application Type","authenticatorBackupCodesMessage":"Get your 8-digit backup codes","identityProviderNotFoundMessage":"Specified identity provider not found.","personalSubMessage":"Manage this basic information: your first name, last name and email","locale_ja":"日本語","authenticatorFinishSetUpTitle":"Your Two-Factor Authentication","invalidPasswordGenericMessage":"Invalid password: new password doesn%27t match password policies.","doApprove":"Approve","lastAccessedOn":"Last accessed on","addTeam":"Add team to share your resource with","action":"Action","resourcesSharedWithMe":"Resources shared with me","locale_hu":"Magyar","authenticatorMobileTitle":"Mobile Authenticator","otp-display-name":"Authenticator Application","ip":"IP","additionalGrants":"Additional Grants","sessionsHtmlTitle":"Sessions","authorizedProviderMessage":"Authorized Providers linked with your account","role_manage-consent":"Manage consents","notMatchPasswordMessage":"Passwords don%27t match.","error-number-out-of-range-too-small":"%27{{param_0}}%27 must have minimal value of {{param_1}}.","pageNotFound":"Page Not Found","role_view-consent":"View consents","invalidPasswordRegexPatternMessage":"Invalid password: fails to match regex pattern(s).","clients":"Clients","deleteAccountSummary":"Deleting your account will erase all your data and log you out immediately.","refreshPage":"Refresh the page","clickHereForDetails":"Click here for details.","doCancel":"Cancel","currentSession":"Current Session","thirdpartyApps":"Third-Party applications","accountTemporarilyDisabledMessage":"Account is temporarily disabled, contact your administrator or try again later.","doLogOutAllSessions":"Log out all sessions","error-invalid-uri-fragment":"%27{{param_0}}%27 is invalid URL fragment.","anyAction":"Any action","share":"Share","authenticator":"Authenticator","signOutWarning":"Sign out the session?","signingIn":"Signing In","doDownload":"Download","webauthn-help-text":"Use your security key to sign in.","updateSuccess":"Resource successfully updated.","actionRequiresIDP":"This action requires redirection to your identity provider.","accountSecurityTitle":"Account Security","unShare":"Unshare all","scopes":"Scopes","postal_code":"Zip or Postal code","addressScopeConsentText":"Address","offlineAccessScopeConsentText":"Offline Access","consentDenied":"Consent denied.","signOutAllDevices":"Sign Out All Devices","invalidPasswordNotEmailMessage":"Invalid password: must not be equal to the email.","startedAt":"Started at","device-activity":"Device Activity","role_admin":"Admin","identityProviderRedirectErrorMessage":"Failed to redirect to identity provider.","authenticatorChangePhone":"Change Phone Number","doRemove":"Remove","accountUpdatedMessage":"Your account has been updated.","shareWithOthers":"Share with others","requestsWaitingApproval":"Your requests waiting approval","doAdd":"Add","userDefined":"User Defined","ipAddress":"IP Address","availableRoles":"Available Roles","accountManagementTitle":"Keycloak Account Management","locale_lt":"Lietuvių","removeModalTitle":"Remove Access","birthday":"Birthdate","invalidPasswordConfirmMessage":"Password confirmation doesn%27t match.","doFinish":"Finish","resourceIsNotBeingShared":"The resource is not being shared","missingEmailMessage":"Please specify email.","error-invalid-date":"%27{{param_0}}%27 is invalid date.","errasingData":"Erasing all your data","backtoAuthenticatorPage":"Back to Authenticator Page","doDeny":"Deny","and":" and {{param_0}} other users","client_realm-management":"Realm Management","systemDefined":"System Defined","internalApp":"Internal","accessGrantedOn":"Access granted on","fullAccess":"Full Access","role_view-clients":"View clients","requestor":"Requestor","currentPassword":"Current Password","totpAlgorithm":"Algorithm","role_view-applications":"View applications","locale_nl":"Nederlands","approveAll":"Approve all","error-pattern-no-match":"%27{{param_0}}%27 doesn%27t match required format.","invalidPasswordMinLowerCaseCharsMessage":"Invalid password: must contain at least {{param_0}} lower case characters.","application":"Application","locale_no":"Norsk","applicationDetails":"Application Details","internalApps":"Internal applications","deviceActivityHtmlTitle":"Device Activity","doLogIn":"Log In","locale_zh-CN":"中文简体","resourceNotShared":"This resource is not shared.","authenticatorSMSTitle":"SMS Code","password":"My Password","setUpNew":"Set up {{param_0}}","backupcodesIntroMessage":"If you lose access to your phone, you can still log into your account through backup codes. Keep them somewhere safe and accessible.","edit":"Edit","successGrantRevokedMessage":"Grant revoked successfully.","invalidTotpMessage":"Invalid authenticator code.","allApps":"All applications","linkedEmpty":"No Linked Providers","error-invalid-length-too-short":"%27{{param_0}}%27 must have minimal length of {{param_1}}.","locale_pl":"Polski","perPage":"per page","client_broker":"Broker","peopleSharingThisResource":"People sharing this resource","authenticatorStatusMessage":"Two-factor authentication is currently","client_admin-cli":"Admin CLI","openshift.scope.user_full":"Full Access","doCopy":"Copy","realmName":"Realm","totpDigits":"Digits","invalidPasswordMinDigitsMessage":"Invalid password: must contain at least {{param_0}} numerical digits.","shares":"share(s)","authenticatorFinishSetUpMessage":"Each time you sign in to your Keycloak account, you will be asked to provide a two-factor authentication code.","missingFirstNameMessage":"Please specify first name.","locale_sv":"Svenska","role_view-identity-providers":"View identity providers","email":"Email","applicationName":"Name","webauthn-passwordless-help-text":"Use your security key for passwordless sign in.","identityProviderMessage":"To link your account with identity providers you have configured","currentDevice":"Current Device","sendVerficationCode":"Send Verification Code","error-number-out-of-range":"%27{{param_0}}%27 must be a number between {{param_1}} and {{param_2}}.","forbidden":"Forbidden","clientNotFoundMessage":"Client not found.","started":"Started","locale_sk":"Slovenčina","authenticatorTitle":"Authenticator","grantedPersonalInfo":"Granted Personal Info","people":"people","openshift.scope.list-projects":"List projects","enterYourVerficationCode":"Enter your verification code","locale_ru":"Русский","removeAccess":"Remove Access","appResults":"Results","noResourcesSharedWithYou":"There are no resources shared with you","removeCred":"Remove {{param_0}}","country":"Country","totpCounter":"Counter","linkedAccountsIntroMessage":"Manage logins through third-party accounts.","error-invalid-length-too-long":"%27{{param_0}}%27 must have maximal length of {{param_2}}.","continue":"Continue","role_manage-account-links":"Manage account links","invalidRequestMessage":"Invalid Request","password-help-text":"Log in by entering your password.","details":"Details","updatePasswordTitle":"Update Password","totpDeviceName":"Device Name","resourceName":"Resource Name","emailExistsMessage":"Email already exists.","unlinkedEmpty":"No Unlinked Providers","client_account":"Account","passwordNew":"New Password","invalidFederatedIdentityActionMessage":"Invalid or missing action.","firstName":"First name","locale_tr":"Türkçe","phoneNumber":"Phone number","firstPage":"First Page","name":"Name","notBeingShared":"This resource is not being shared.","resourceSharedWith":"Resource is shared with {{param_0}}","region":"State, Province, or Region","offlineAccess":"Offline Access","role_manage-identity-providers":"Manage identity providers","notSetUp":"{{param_0}} is not set up.","expires":"Expires","role_manage-clients":"Manage clients","description":"Description","revoke":"Revoke Grant","update":"Update","totpScanBarcode":"Scan barcode?","otp-help-text":"Enter a verification code from authenticator application.","federatedIdentity":"Federated Identity","anyPermission":"Any Permission","error-invalid-uri-scheme":"%27{{param_0}}%27 has invalid URL scheme.","removeAccessMessage":"You will need to grant access again, if you want to use this app account.","street":"Street","openshift.scope.user_check-access":"User access information","recentlyUsedDevices":"Recently Used Devices","doRemoveSharing":"Remove Sharing","webauthn-passwordless-display-name":"Security Key","accountDisabledMessage":"Account is disabled, contact your administrator.","fullName":"{{param_0}} {{param_1}}","resourceIntroMessage":"Share your resources among team members","updatePasswordMessage":"A strong password contains a mix of numbers, letters, and symbols. It is hard to guess, does not resemble a real word, and is only used for this account.","role_manage-users":"Manage users","unlinkedLoginProviders":"Unlinked Login Providers","authenticatorMobileFinishSetUpMessage":"The authenticator has been bound to your phone.","invalidPasswordMinUpperCaseCharsMessage":"Invalid password: must contain at least {{param_0}} upper case characters.","applications":"Applications","recentlyUsedDevicesExplanation":"Devices used in the last month, but not currently logged in.","totpUnableToScan":"Unable to scan?","accountSecurityIntroMessage":"Control your password and account access","selectLocale":"Select a locale","role_realm-admin":"Realm Admin","requiredFields":"Required fields","permissions":"Permissions","doPrint":"Print","role_read-token":"Read token","invalidPasswordHistoryMessage":"Invalid password: must not be equal to any of last {{param_0}} passwords.","needMyApproval":"Need my approval","personalSubTitle":"Your Personal Info","sharedwith":"Shared with","noAccessMessage":"Access not allowed","unknownOperatingSystem":"Unknown Operating System","sessions":"Sessions","linkedAccountsHtmlTitle":"Linked Accounts","authenticatorBackupCodesFinishSetUpMessage":"12 backup codes were generated at this time. Each one can be used once.","totpStep3DeviceName":"Provide a Device Name to help you manage your OTP devices.","totpStep3":"Enter the one-time code provided by the application and click Save to finish the setup.","totpStep1":"Install one of the following applications on your mobile:","totpStep2":"Open the application and scan the barcode:","error-number-out-of-range-too-big":"%27{{param_0}}%27 must have maximal value of {{param_2}}.","allFieldsRequired":"All fields required","removeModalMessage":"This will remove the currently granted access permission for {{param_0}}. You will need to grant access again if you want to use this app.","lastName":"Last name","invalidEmailMessage":"Invalid email address.","previousPage":"Previous","gender":"Gender","filterByName":"Filter By Name ...","log":"Log","rolesScopeConsentText":"User roles","needAccessRights":"You do not have access rights to this request.  Contact your administrator.","selectPermission":"Select Permission","doSignIn":"Sign In","unknown":"Unknown","role_manage-realm":"Manage realm","invalidPasswordNotUsernameMessage":"Invalid password: must not be equal to the username.","event":"Event","inResource":"in","passwordless":"Passwordless","stopUsingCred":"Stop using {{param_0}}?","missingTotpDeviceNameMessage":"Please specify device name.","offlineToken":"Offline Token","sharedwithMe":"Shared with Me","identityProviderRemovedMessage":"Identity provider removed successfully.","usernameExistsMessage":"Username already exists.","date":"Date","doDelete":"Delete","role_create-realm":"Create realm","role_manage-applications":"Manage applications","applicationsHtmlTitle":"Applications","userNotFound":"No user found with name or email {{param_0}}","loggingOutImmediately":"Logging you out immediately","error-invalid-email":"Invalid email address.","doRevoke":"Revoke","authenticatorBackupCodesSetupTitle":"Backup Codes Setup","accountUnusable":"Any subsequent use of the application will not be possible with this account","familyName":"Family name","enterBarCode":"Enter the one-time code","authorizedProvider":"Authorized Provider","role_view-profile":"View profile","deleteAccount":"Delete Account","group":"Group","resourceNoPermissionsGrantingAccess":"No permissions granting access to this resource","missingTotpMessage":"Please specify authenticator code.","authenticatorSMSCodeSetupTitle":"SMS Code Setup","resource":"Resource","smscodeIntroMessage":"Enter your phone number and a verification code will be sent to your phone.","mobileSetupStep3":"Enter the one-time code provided by the application and click Save to finish the setup.","mobileSetupStep2":"Open the application and scan the barcode:","socialLogin":"Social Login","done":"Done","mobileSetupStep1":"Install an authenticator application on your phone. The applications listed here are supported.","doRemoveRequest":"Remove Request","notInUse":"Not in use","gssDelegationCredential":"GSS Delegation Credential","missingIdentityProviderMessage":"Identity provider not specified.","personalInfoHtmlTitle":"Personal Info","grantedPermissions":"Granted Permissions","resourceManagedPolicies":"Permissions granting access to this resource","unknownUser":"Anonymous","doLink":"Link","openshift.scope.user_info":"User information","invalidPasswordMaxLengthMessage":"Invalid password: maximum length {{param_0}}.","backToApplication":"&laquo; Back to application","clearAllFilter":"Clear all filters","link":"Link Account","accountManagementWelcomeMessage":"Welcome to Keycloak Account Management","signedInDevices":"Signed In Devices","readOnlyPasswordMessage":"You can%27t update your password as your account is read-only.","enterYourPhoneNumber":"Enter your phone number","confirmButton":"Confirm","missingPasswordMessage":"Please specify password.","authenticatorSMSFinishSetUpMessage":"Text messages are sent to","error-user-attribute-read-only":"The field {{param_0}} is read only.","havePermissionRequestsWaitingForApproval":"You have {{param_0}} permission request(s) waiting for approval.","applicationsIntroMessage":"Track and manage your app permission to access your account","error-invalid-length":"%27{{param_0}}%27 must have a length between {{param_1}} and {{param_2}}.","missingLastNameMessage":"Please specify last name.","linkedLoginProviders":"Linked Login Providers","inUse":"In use","client_account-console":"Account Console","role_uma_authorization":"Obtain permissions","permissionRequests":"Permission requests","totpManualStep2":"Open the application and enter the key:","totpManualStep3":"Use the following configuration values if the application allows setting them:","missingUsernameMessage":"Please specify username.","resources":"Resources","unLink":"Unlink Account","myResourcesSub":"My resources","readOnlyUsernameMessage":"You can%27t update your username as it is read-only.","invalidPasswordMinSpecialCharsMessage":"Invalid password: must contain at least {{param_0}} special characters.","linkedAccountsTitle":"Linked Accounts","passwordLastUpdateMessage":"Your password was updated at","approve":"Approve","phoneNumberVerified":"Phone number verified","successRemovedMessage":"{{param_0}} was removed.","federatedIdentityLinkNotActiveMessage":"This identity is not active anymore.","error-person-name-invalid-character":"%27{{param_0}}%27 contains invalid character.","user":"User","account":"Account"}');
+                </script>
+                <link rel="icon" href="/auth/resources/wjkpw/account/keycloak.v2/public/favicon.ico" type="image/x-icon"/>
+                <script src="http://localhost:8080/auth/js/keycloak.js"></script>
+                <script type="text/javascript" src="/auth/resources/wjkpw/account/keycloak.v2/welcome-page-scripts.js"></script>
+                <script>
+                    var content = [
+          {
+            "id": "personal-info",
+            "path": "personal-info",
+            "icon": "pf-icon-user",
+            "label": "personalInfoHtmlTitle",
+            "descriptionLabel": "personalInfoIntroMessage",
+            "modulePath": "/content/account-page/AccountPage.js",
+            "componentName": "AccountPage"
+          },
+          {
+            "id": "security",
+            "icon": "pf-icon-security",
+            "label": "accountSecurityTitle",
+            "descriptionLabel": "accountSecurityIntroMessage",
+            "content": [
+              {
+                "id": "signingin",
+                "path": "security/signingin",
+                "label": "signingIn",
+                "modulePath": "/content/signingin-page/SigningInPage.js",
+                "componentName": "SigningInPage"
+              },
+              {
+                "id": "device-activity",
+                "path": "security/device-activity",
+                "label": "device-activity",
+                "modulePath": "/content/device-activity-page/DeviceActivityPage.js",
+                "componentName": "DeviceActivityPage"
+              },
+              {
+                "id": "linked-accounts",
+                "path": "security/linked-accounts",
+                "label": "linkedAccountsHtmlTitle",
+                "modulePath": "/content/linked-accounts-page/LinkedAccountsPage.js",
+                "componentName": "LinkedAccountsPage",
+                "hidden": "!features.isLinkedAccountsEnabled"
+              }
+            ]
+          },
+          {
+            "id": "applications",
+            "icon": "pf-icon-applications",
+            "path": "applications",
+            "label": "applications",
+            "descriptionLabel": "applicationsIntroMessage",
+            "modulePath": "/content/applications-page/ApplicationsPage.js",
+            "componentName": "ApplicationsPage"
+          },
+          {
+            "id": "resources",
+            "icon": "pf-icon-repository",
+            "path": "resources",
+            "label": "resources",
+            "descriptionLabel": "resourceIntroMessage",
+            "modulePath": "/content/my-resources-page/MyResourcesPage.js",
+            "componentName": "MyResourcesPage",
+            "hidden": "!features.isMyResourcesEnabled"
+          }
+        ]
+                </script>
+                <link rel="stylesheet" type="text/css" href="/auth/resources/wjkpw/common/keycloak/web_modules/@patternfly/react-core/dist/styles/base.css"/>
+                <link rel="stylesheet" type="text/css" href="/auth/resources/wjkpw/common/keycloak/web_modules/@patternfly/react-core/dist/styles/app.css"/>
+                <link href="/auth/resources/wjkpw/account/keycloak.v2/public/layout.css" rel="stylesheet"/>
+            </head>
+            <body>
+                <script>
+                    var keycloak = Keycloak({
+                        authServerUrl: authUrl,
+                        realm: realm,
+                        clientId: 'account-console'
+                    });
+                    keycloak.init({onLoad: 'check-sso', pkceMethod: 'S256', promiseType: 'native'}).then((authenticated) => {
+                        isReactLoading = true;
+                        toggleReact();
+                        if (!keycloak.authenticated) {
+                            document.getElementById("landingSignInButton").style.display='inline';
+                            document.getElementById("landingSignInLink").style.display='inline';
+                        } else {
+                            document.getElementById("landingSignOutButton").style.display='inline';
+                            document.getElementById("landingSignOutLink").style.display='inline';
+                            document.getElementById("landingLoggedInUser").innerHTML = loggedInUserName('Anonymous', '{0} {1}');
+                        }
+        
+                        loadjs("/Main.js");
+                    }).catch(() => {
+                        alert('failed to initialize keycloak');
+                    });
+                </script>
+                <div id="main_react_container" style="display:none;height:100%"></div>
+                <div id="spinner_screen" style="display:block; height:100%">
+                    <div style="width: 320px; height: 328px; text-align: center; position: absolute; top:0;	bottom: 0; left: 0;	right: 0; margin: auto;">
+                        <img src="/auth/resources/wjkpw/account/keycloak.v2/public/logo.svg" alt="Logo" class="brand">
+                        <p>Account Console loading ...</p>
+                        <div >
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                                <path d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#5DBCD2" stroke="none" transform="rotate(16.3145 50 51)">
+                                    <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 51;360 50 51"></animateTransform>
+                                </path>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="welcomeScreen" style="display:none;height:100%">
+                <div class="pf-c-page" id="page-layout-default-nav">
+                    <header role="banner" class="pf-c-page__header">
+                        <div class="pf-c-page__header-brand">
+                            <a id="landingLogo" class="pf-c-page__header-brand-link" href="./">
+                                <img class="pf-c-brand brand" src="/auth/resources/wjkpw/account/keycloak.v2/public/logo.svg" alt="Logo">
+                  
+                            </a>
+                        </div>
+                        <div class="pf-c-page__header-tools">
+                            <div class="pf-c-page__header-tools-group pf-m-icons">
+                                <button id="landingSignInButton" tabindex="0" style="display:none" onclick="keycloak.login();" class="pf-c-button pf-m-primary" type="button">Sign In</button>
+                                <button id="landingSignOutButton" tabindex="0" style="display:none" onclick="keycloak.logout();" class="pf-c-button pf-m-primary" type="button">Sign Out</button>
+                            </div>
+                            <!-- Kebab for mobile -->
+                            <div class="pf-c-page__header-tools-group">
+                                <div id="landingMobileKebab" class="pf-c-dropdown pf-m-mobile" onclick="toggleMobileDropdown();">
+                                    <!-- pf-m-expanded -->
+                                    <button aria-label="Actions" tabindex="0" id="landingMobileKebabButton" class="pf-c-dropdown__toggle pf-m-plain" type="button" aria-expanded="true" aria-haspopup="true">
+                                        <svg fill="currentColor" height="1em" width="1em" viewBox="0 0 192 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;">
+                                            <path d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z" transform=""></path>
+                                        </svg>
+                                    </button>
+                                    <ul id="landingMobileDropdown" aria-labelledby="landingMobileKebabButton" class="pf-c-dropdown__menu pf-m-align-right" role="menu" style="display:none">
+                                        <li id="landingSignInLink" role="none" style="display:none">
+                                            <a onclick="keycloak.login();" role="menuitem" tabindex="0" aria-disabled="false" class="pf-c-dropdown__menu-item">Log In</a>
+                                        </li>
+                                        <li id="landingSignOutLink" role="none" style="display:none">
+                                            <a onclick="keycloak.logout();" role="menuitem" tabindex="0" aria-disabled="false" class="pf-c-dropdown__menu-item">Sign Out</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span id="landingLoggedInUser"></span>
+                        </div>
+                        <!-- end header tools -->
+              
+                    </header>
+                    <main role="main" class="pf-c-page__main">
+                        <section class="pf-c-page__main-section pf-m-light">
+                            <div class="pf-c-content" id="landingWelcomeMessage">
+                                <h1>Welcome to Keycloak Account Management</h1>
+                            </div>
+                        </section>
+                        <section class="pf-c-page__main-section">
+                            <div class="pf-l-gallery pf-m-gutter">
+                                <div class="pf-l-gallery__item pf-c-card" id="landing-personal-info">
+                                    <div>
+                                        <div class="pf-c-card__header pf-c-content">
+                                            <h2>
+                                                <i class="pf-icon pf-icon-user"></i>&nbsp;
+                                Personal Info
+                                            </h2>
+                                            <p>Manage your basic information</p>
+                                        </div>
+                                        <div class="pf-c-card__body pf-c-content">
+                                            <a id="landing-personal-info" onclick="toggleReact(); window.location.hash = 'personal-info'">Personal Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pf-l-gallery__item pf-c-card" id="landing-security">
+                                    <div>
+                                        <div class="pf-c-card__header pf-c-content">
+                                            <h2>
+                                                <i class="pf-icon pf-icon-security"></i>&nbsp;
+                                Account Security
+                                            </h2>
+                                            <p>Control your password and account access</p>
+                                        </div>
+                                        <div class="pf-c-card__body pf-c-content">
+                                            <div id="landing-signingin">
+                                                <a onclick="toggleReact(); window.location.hash='security/signingin'">Signing In</a>
+                                            </div>
+                                            <div id="landing-device-activity">
+                                                <a onclick="toggleReact(); window.location.hash='security/device-activity'">Device Activity</a>
+                                            </div>
+                                            <div id="landing-linked-accounts">
+                                                <a onclick="toggleReact(); window.location.hash='security/linked-accounts'">Linked Accounts</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pf-l-gallery__item pf-c-card" id="landing-applications">
+                                    <div>
+                                        <div class="pf-c-card__header pf-c-content">
+                                            <h2>
+                                                <i class="pf-icon pf-icon-applications"></i>&nbsp;
+                                Applications
+                                            </h2>
+                                            <p>Track and manage your app permission to access your account</p>
+                                        </div>
+                                        <div class="pf-c-card__body pf-c-content">
+                                            <a id="landing-applications" onclick="toggleReact(); window.location.hash = 'applications'">Applications</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pf-l-gallery__item pf-c-card" id="landing-resources">
+                                    <div>
+                                        <div class="pf-c-card__header pf-c-content">
+                                            <h2>
+                                                <i class="pf-icon pf-icon-repository"></i>&nbsp;
+                                Resources
+                                            </h2>
+                                            <p>Share your resources among team members</p>
+                                        </div>
+                                        <div class="pf-c-card__body pf-c-content">
+                                            <a id="landing-resources" onclick="toggleReact(); window.location.hash = 'resources'">Resources</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+            <script>
+              const removeHidden = (content) => {
+                content.forEach(c => {
+                  if (c.hidden && eval(c.hidden)) {
+                    document.getElementById('landing-' + c.id).remove();
+                  }
+                  if (c.content) removeHidden(c.content);
+                });
+              }
+              removeHidden(content);
+            </script>
+        </body>
+        </html>
+      '''
+    }
+  }
+}

@@ -1,0 +1,5 @@
+name: test
+variables:
+  - name: baseUrl
+    value: https://test-dbp-cbdc-crypto-service-dbp-core-domain.apps.dbp-dev.bcc.kz
+    description: ""

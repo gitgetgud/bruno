@@ -1,0 +1,143 @@
+meta {
+  name: Ibso Messages
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/notifications/ibso_messages/
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "customer_id": "string",
+    "message_id": "string",
+    "data": "string",
+    "phone": "string",
+    "initiator": "",
+    "message_type": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/ibso_messages/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "customer_id": "string",
+        "message_id": "string",
+        "data": "string",
+        "phone": "string",
+        "initiator": "",
+        "message_type": ""
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Validation Error
+  
+  request: {
+    url: {{baseUrl}}/notifications/ibso_messages/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "customer_id": "string",
+        "message_id": "string",
+        "data": "string",
+        "phone": "string",
+        "initiator": "",
+        "message_type": ""
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 422
+      text: Unprocessable Entity (WebDAV) (RFC 4918)
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "detail": [
+            {
+              "loc": [
+                "string",
+                2136
+              ],
+              "msg": "string",
+              "type": "string"
+            },
+            {
+              "loc": [
+                3462,
+                "string"
+              ],
+              "msg": "string",
+              "type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

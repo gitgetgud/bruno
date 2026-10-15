@@ -1,0 +1,29 @@
+meta {
+  name: tax_debt_request
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://open.egov.kz/proxy2/tax_debt_agreement?token=1af98c4aed474b6199ea44db15ee303c
+  body: xml
+  auth: inherit
+}
+
+params:query {
+  token: 1af98c4aed474b6199ea44db15ee303c
+}
+
+body:xml {
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+  <sign:request xmlns:sign="http://xmlns.kztc-cits/sign">
+  <sign:iinBin>201040000013</sign:iinBin>
+  </sign:request>
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}

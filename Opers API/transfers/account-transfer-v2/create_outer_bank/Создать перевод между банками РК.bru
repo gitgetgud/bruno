@@ -1,0 +1,129 @@
+meta {
+  name: Создать перевод между банками РК
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/account-transfer-v2/create_outer_bank/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "phone": "string",
+    "from_iban": "st",
+    "debit_currency": "string",
+    "credit_currency": "string",
+    "debit_amount": "string",
+    "credit_amount": "string",
+    "amount": "string",
+    "currency": "string",
+    "knp": "string",
+    "beneficiary_iban": "string",
+    "beneficiary_bank_bic": "str",
+    "beneficiary_iin": "string",
+    "beneficiary_fio": "string",
+    "kbe": "string",
+    "commission_amount": "string",
+    "commission_currency": "string",
+    "paypurp": "string",
+    "additional_info": {
+      "sender_product": {
+        "id": 4513,
+        "type": "string",
+        "name": "string",
+        "number": "string"
+      },
+      "receiver_product": {
+        "id": 5256,
+        "type": "string",
+        "name": "string",
+        "number": "string"
+      }
+    },
+    "beneficiary_country_code": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/account-transfer-v2/create_outer_bank/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "phone": "string",
+        "from_iban": "st",
+        "debit_currency": "string",
+        "credit_currency": "string",
+        "debit_amount": "string",
+        "credit_amount": "string",
+        "amount": "string",
+        "currency": "string",
+        "knp": "string",
+        "beneficiary_iban": "string",
+        "beneficiary_bank_bic": "str",
+        "beneficiary_iin": "string",
+        "beneficiary_fio": "string",
+        "kbe": "string",
+        "commission_amount": "string",
+        "commission_currency": "string",
+        "paypurp": "string",
+        "additional_info": {
+          "sender_product": {
+            "id": 4513,
+            "type": "string",
+            "name": "string",
+            "number": "string"
+          },
+          "receiver_product": {
+            "id": 5256,
+            "type": "string",
+            "name": "string",
+            "number": "string"
+          }
+        },
+        "beneficiary_country_code": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "23c4cf49-7e65-6bda-c65f-e3d49feea26a"
+        }
+      '''
+    }
+  }
+}

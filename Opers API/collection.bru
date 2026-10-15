@@ -1,0 +1,25 @@
+meta {
+  name: Opers API
+}
+
+auth {
+  mode: basic
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+vars:pre-request {
+  baseUrl: http://localhost:8000
+  basicAuthUsername: 
+  basicAuthPassword: 
+}
+
+docs {
+  Opers project API doc
+  
+  Contact Support:
+   Email: m.kabdrash@gmail.com
+}

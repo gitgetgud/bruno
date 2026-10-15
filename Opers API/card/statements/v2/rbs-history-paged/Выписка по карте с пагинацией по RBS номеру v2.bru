@@ -1,0 +1,131 @@
+meta {
+  name: Выписка по карте с пагинацией по RBS номеру v2
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/card/statements/v2/rbs-history-paged/?date_begin=1988-09-03&date_end=1988-09-03&rbs_number=string&page=1&size=20&refill=false&type_filter=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  date_begin: 1988-09-03
+  date_end: 1988-09-03
+  rbs_number: string
+  page: 1
+  size: 20
+  refill: false
+  type_filter: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/statements/v2/rbs-history-paged/?date_begin=1988-09-03&date_end=1988-09-03&rbs_number=string&page=1&size=20&refill=false&type_filter=string
+    method: GET
+    mode: none
+    params:query: {
+      date_begin: 1988-09-03
+      date_end: 1988-09-03
+      rbs_number: string
+      page: 1
+      size: 20
+      refill: false
+      type_filter: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "records": [
+            {
+              "id": "string",
+              "operation_date": "1964-05-27T01:31:22.839Z",
+              "cashback": "string",
+              "fee_amount": "string",
+              "fee_currency": "string",
+              "request_category": "string",
+              "iban": "string",
+              "payer": "string",
+              "service_class": "string",
+              "icon_path": "string",
+              "sender_name": "string",
+              "with_refund": false,
+              "tran_id": "string",
+              "tx_id": "string",
+              "smp_refundable": true,
+              "operation_datetime": "string",
+              "amount": "0",
+              "amount_currency": "0",
+              "amount_curr": "",
+              "operation_currency": "",
+              "operation_type": "string",
+              "receiver_name": "",
+              "additional_description": "string",
+              "doc_tag": "",
+              "transaction_type": "",
+              "comment": ""
+            },
+            {
+              "id": "string",
+              "operation_date": "2021-06-18T11:29:54.594Z",
+              "cashback": "string",
+              "fee_amount": "string",
+              "fee_currency": "string",
+              "request_category": "string",
+              "iban": "string",
+              "payer": "string",
+              "service_class": "string",
+              "icon_path": "string",
+              "sender_name": "string",
+              "with_refund": true,
+              "tran_id": "string",
+              "tx_id": "string",
+              "smp_refundable": true,
+              "operation_datetime": "string",
+              "amount": "0",
+              "amount_currency": "0",
+              "amount_curr": "",
+              "operation_currency": "",
+              "operation_type": "string",
+              "receiver_name": "",
+              "additional_description": "string",
+              "doc_tag": "",
+              "transaction_type": "",
+              "comment": ""
+            }
+          ],
+          "has_next": true
+        }
+      '''
+    }
+  }
+}

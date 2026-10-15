@@ -1,0 +1,539 @@
+meta {
+  name: example Copy
+  type: http
+  seq: 5
+}
+
+get {
+  url: https://m.krisha.kz/valuation/ajax-search?flat_building=1&flat_floor=2&flat_renovation=4&flat_toilet=2&house_floor_num=4&house_year=1972&live_furniture=3&live_rooms=1&live_square=33&map_geo_text=%D0%91%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D1%8B%D0%BA%D1%81%D0%BA%D0%B8%D0%B9+%D1%80-%D0%BD&map_house_num=179%D0%B0&map_lat=43.22714&map_lon=76.904789&map_street=%D0%90%D1%83%D1%8D%D0%B7%D0%BE%D0%B2%D0%B0
+  body: none
+  auth: inherit
+}
+
+params:query {
+  flat_building: 1
+  flat_floor: 2
+  flat_renovation: 4
+  flat_toilet: 2
+  house_floor_num: 4
+  house_year: 1972
+  live_furniture: 3
+  live_rooms: 1
+  live_square: 33
+  map_geo_text: %D0%91%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D1%8B%D0%BA%D1%81%D0%BA%D0%B8%D0%B9+%D1%80-%D0%BD
+  map_house_num: 179%D0%B0
+  map_lat: 43.22714
+  map_lon: 76.904789
+  map_street: %D0%90%D1%83%D1%8D%D0%B7%D0%BE%D0%B2%D0%B0
+}
+
+headers {
+  User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0
+  Accept: application/json, text/plain, */*
+  Accept-Language: en-US,en;q=0.5
+  Accept-Encoding: gzip, deflate, br
+  X-Requested-With: XMLHttpRequest
+  DNT: 1
+  Connection: keep-alive
+  Referer: https://m.krisha.kz/webview/valuation
+  Cookie: krssid=r47lpicvh26a0jbe1sru598vu8; krishauid=91a26aacffc707e679850c95fcbbeb02efae68db; ssaid=860133a0-6307-11ed-bafa-b73951f2b32e; _ga=GA1.2.860133a0-6307-11ed-bafa-b73951f2b32e; tutorial=%7B%22advPage%22%3A%22viewed%22%7D; kr_cdn_host=//alaps-kz.kcdn.online; __tld__=null
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: https://m.krisha.kz/valuation/ajax-search?flat_building=1&flat_floor=2&flat_renovation=4&flat_toilet=2&house_floor_num=4&house_year=1972&live_furniture=3&live_rooms=1&live_square=33&map_geo_text=%D0%91%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D1%8B%D0%BA%D1%81
+  
+  request: {
+    url: https://m.krisha.kz/valuation/ajax-search?flat_building=1&flat_floor=2&flat_renovation=4&flat_toilet=2&house_floor_num=4&house_year=1972&live_furniture=3&live_rooms=1&live_square=33&map_geo_text=%D0%91%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D1%8B%D0%BA%D1%81%D0%BA%D0%B8%D0%B9+%D1%80-%D0%BD&map_house_num=179%D0%B0&map_lat=43.22714&map_lon=76.904789&map_street=%D0%90%D1%83%D1%8D%D0%B7%D0%BE%D0%B2%D0%B0
+    method: GET
+    mode: none
+    params:query: {
+      flat_building: 1
+      flat_floor: 2
+      flat_renovation: 4
+      flat_toilet: 2
+      house_floor_num: 4
+      house_year: 1972
+      live_furniture: 3
+      live_rooms: 1
+      live_square: 33
+      map_geo_text: %D0%91%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D1%8B%D0%BA%D1%81%D0%BA%D0%B8%D0%B9+%D1%80-%D0%BD
+      map_house_num: 179%D0%B0
+      map_lat: 43.22714
+      map_lon: 76.904789
+      map_street: %D0%90%D1%83%D1%8D%D0%B7%D0%BE%D0%B2%D0%B0
+    }
+  
+    headers: {
+      User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0
+      Accept: application/json, text/plain, */*
+      Accept-Language: en-US,en;q=0.5
+      Accept-Encoding: gzip, deflate, br
+      X-Requested-With: XMLHttpRequest
+      DNT: 1
+      Connection: keep-alive
+      Referer: https://m.krisha.kz/webview/valuation
+      Cookie: krssid=r47lpicvh26a0jbe1sru598vu8; krishauid=91a26aacffc707e679850c95fcbbeb02efae68db; ssaid=860133a0-6307-11ed-bafa-b73951f2b32e; _ga=GA1.2.860133a0-6307-11ed-bafa-b73951f2b32e; tutorial=%7B%22advPage%22%3A%22viewed%22%7D; kr_cdn_host=//alaps-kz.kcdn.online; __tld__=null
+      Sec-Fetch-Dest: empty
+      Sec-Fetch-Mode: cors
+      Sec-Fetch-Site: same-origin
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx
+      Date: Sun, 13 Nov 2022 05:24:44 GMT
+      Content-Type: application/json; charset=UTF-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      Expires: Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control: no-store, no-cache, must-revalidate
+      Pragma: no-cache
+      x-xss-protection: 1; report=https://m.krisha.kz/status/xssReport
+      X-Pod: mono-mobile-5bb5857cd5-txw9d
+      X-Frame-Options: SAMEORIGIN
+      X-Frame-Options: SAMEORIGIN
+      X-Bug-Bounty: Please report bugs and vulnerabilities to bugs@kolesa.kz
+      Content-Security-Policy: frame-ancestors 'self' http://webvisor.com https://webvisor.com
+      Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Content-Encoding: br
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "result": {
+                "price": 17318667,
+                "squarePrice": 524808,
+                "similarPriceMin": 16.5,
+                "similarPriceMax": 24.9,
+                "confidence": "0%"
+            },
+            "similars": [
+                {
+                    "id": 678597018,
+                    "tempId": 678597018,
+                    "storage": "live",
+                    "uuid": "3ef140be-dbf8-4316-8cb9-34667e5ac9e8",
+                    "url": "/a/show/678597018",
+                    "title": "1-комнатная квартира, 31 м², 3/4 этаж",
+                    "titleWithPrice": "1-комнатная квартира, 31 м², 3/4 этаж за 24.5&nbsp;млн&nbsp;<span class=\"currency-sign offer__currency\">〒</span>",
+                    "address": "Утепова 12 — Утепова Гагарина",
+                    "fullAddress": "Алматы, Бостандыкский р-н, Утепова 12 — Утепова Гагарина",
+                    "price": "24&nbsp;500&nbsp;000&nbsp;<span class=\"currency-sign offer__currency\">〒</span>",
+                    "priceM2": 790322,
+                    "priceM2Text": null,
+                    "daysInLive": 10,
+                    "description": "панельный дом, 1971 г.п., состояние: хорошее, потолки 2.7м., санузел совмещенный, интернет проводной, Продам уютную светлую квартиру в отличном районе города, в шаговой доступности Атакент, казН…",
+                    "color": "green",
+                    "isFlatLayout": false,
+                    "isHouseLayout": false,
+                    "isLayout": false,
+                    "category": {
+                        "id": 1,
+                        "name": "sell.flat",
+                        "label": "Продажа квартир",
+                        "isDisabled": false
+                    },
+                    "owner": {
+                        "isPro": false,
+                        "isComplex": false,
+                        "isBuilder": false,
+                        "isOwner": true,
+                        "title": "Хозяин",
+                        "label": {
+                            "title": "Хозяин недвижимости",
+                            "name": "owner",
+                            "color": "yellow"
+                        },
+                        "isChecked": false,
+                        "isCurrentUser": false
+                    },
+                    "nbPhotos": 16,
+                    "photo": {
+                        "title": "Продажа квартир в Алматы: 1-комнатная квартира, 31 м², 3/4 этаж, Утепова 12 — Утепова Гагарина за 24.5 млн 〒",
+                        "alt": "1-комнатная квартира, 31 м², 3/4 этаж, Утепова 12 — Утепова Гагарина за 24.5 млн 〒 в Алматы, Бостандыкский р-н",
+                        "1x": "https://alaps-photos-kr.kcdn.kz/webp/3e/3ef140be-dbf8-4316-8cb9-34667e5ac9e8/1-280x175.jpg",
+                        "1.5x": "https://alaps-photos-kr.kcdn.kz/webp/3e/3ef140be-dbf8-4316-8cb9-34667e5ac9e8/1-448x280.jpg",
+                        "2x": "https://alaps-photos-kr.kcdn.kz/webp/3e/3ef140be-dbf8-4316-8cb9-34667e5ac9e8/1-560x350.jpg",
+                        "3x": "https://alaps-photos-kr.kcdn.kz/webp/3e/3ef140be-dbf8-4316-8cb9-34667e5ac9e8/1-750x470.jpg",
+                        "mainId": 1,
+                        "isModerated": true
+                    },
+                    "expiresAtText": "",
+                    "deletedAtText": "Будет удалено 13 ноября 2024 г.",
+                    "expiresWarning": "",
+                    "isExpiresSoon": false,
+                    "hiddenReason": {
+                        "reason": "",
+                        "comment": ""
+                    },
+                    "isEditable": false,
+                    "isRemovable": false,
+                    "isOwner": false,
+                    "addedAt": "2022-11-13",
+                    "createdAt": "2022-09-05",
+                    "hasAutoRe": false,
+                    "hasAutoUp": false,
+                    "hasPackages": true,
+                    "services": [
+                        {
+                            "name": "hot"
+                        },
+                        {
+                            "name": "up"
+                        },
+                        {
+                            "name": "week-sale"
+                        }
+                    ],
+                    "contactsInfo": {
+                        "phonePreview": "+7 702 ",
+                        "phonesNb": 1
+                    },
+                    "isAgent": false,
+                    "hasPhoto": true
+                },
+                {
+                    "id": 680146814,
+                    "tempId": 680146814,
+                    "storage": "live",
+                    "uuid": "85f88d91-19e3-4467-821b-2298d6118466",
+                    "url": "/a/show/680146814",
+                    "title": "1-комнатная квартира, 32 м², 1/4 этаж",
+                    "titleWithPrice": "1-комнатная квартира, 32 м², 1/4 этаж за 22&nbsp;млн&nbsp;<span class=\"currency-sign offer__currency\">〒</span>",
+                    "address": "Ауэзова 145 — Сатпаева",
+                    "fullAddress": "Алматы, Бостандыкский р-н, Ауэзова 145 — Сатпаева",
+                    "price": "22&nbsp;000&nbsp;000&nbsp;<span class=\"currency-sign offer__currency\">〒</span>",
+                    "priceM2": 687500,
+                    "priceM2Text": null,
+                    "daysInLive": 6,
+                    "description": "кирпичный дом, 1974 г.п., потолки 2.7м., санузел совмещенный",
+                    "color": null,
+                    "isFlatLayout": false,
+                    "isHouseLayout": false,
+                    "isLayout": false,
+                    "category": {
+                        "id": 1,
+                        "name": "sell.flat",
+                        "label": "Продажа квартир",
+                        "isDisabled": false
+                    },
+                    "owner": {
+                        "isPro": true,
+                        "isComplex": false,
+                        "isBuilder": false,
+                        "isOwner": false,
+                        "title": "Халжигитов Медеу, компания «МеDina LuX»",
+                        "label": {
+                            "title": "Специалист",
+                            "name": "identified-specialist",
+                            "color": "transparent"
+                        },
+                        "isChecked": true,
+                        "isCurrentUser": false
+                    },
+                    "nbPhotos": 0,
+                    "photo": {
+                        "title": "Продажа квартир в Алматы: 1-комнатная квартира, 32 м², 1/4 этаж, Ауэзова 145 — Сатпаева за 22 млн 〒",
+                        "alt": "1-комнатная квартира, 32 м², 1/4 этаж, Ауэзова 145 — Сатпаева за 22 млн 〒 в Алматы, Бостандыкский р-н",
+                        "1x": "//m.krisha.kz/static/mobile/images/nophoto/flat/280x175.png",
+                        "1.5x": "//m.krisha.kz/static/mobile/images/nophoto/flat/448x280.png",
+                        "2x": "//m.krisha.kz/static/mobile/images/nophoto/flat/560x350.png",
+                        "3x": "//m.krisha.kz/static/mobile/images/nophoto/flat/750x470.png",
+                        "mainId": null,
+                        "isModerated": false
+                    },
+                    "expiresAtText": "Будет перенесено в архив через <b>1&nbsp;день</b>",
+                    "deletedAtText": "Будет удалено 7 ноября 2024 г.",
+                    "expiresWarning": "Это объявление будет перенесено в архив через <b>1 день</b>. Чтобы этого не случилось, продлите его.",
+                    "isExpiresSoon": true,
+                    "hiddenReason": {
+                        "reason": "",
+                        "comment": ""
+                    },
+                    "isEditable": false,
+                    "isRemovable": false,
+                    "isOwner": false,
+                    "addedAt": "2022-11-07",
+                    "createdAt": "2022-11-07",
+                    "hasAutoRe": false,
+                    "hasAutoUp": false,
+                    "hasPackages": false,
+                    "services": [],
+                    "contactsInfo": {
+                        "phonePreview": "+7 705 ",
+                        "phonesNb": 2
+                    },
+                    "isAgent": false,
+                    "hasPhoto": false
+                },
+                {
+                    "id": 679573363,
+                    "tempId": 679573363,
+                    "storage": "live",
+                    "uuid": "cf829916-996f-41c1-9087-10cd722d11c6",
+                    "url": "/a/show/679573363",
+                    "title": "1-комнатная квартира, 29 м², 2/4 этаж",
+                    "titleWithPrice": "1-комнатная квартира, 29 м², 2/4 этаж за 24&nbsp;млн&nbsp;<span class=\"currency-sign offer__currency\">〒</span>",
+                    "address": "Жарокова 211 — Тимирязева",
+                    "fullAddress": "Алматы, Бостандыкский р-н, Жарокова 211 — Тимирязева",
+                    "price": "24&nbsp;000&nbsp;000&nbsp;<span class=\"currency-sign offer__currency\">〒</span>",
+                    "priceM2": 827586,
+                    "priceM2Text": null,
+                    "daysInLive": 30,
+                    "description": "кирпичный дом, 1975 г.п., состояние: хорошее, жил. площадь 29 м², кухня 12 м², потолки 2.9м., Срочно срочно очень Квартира тёплая. Ремонт свежий Все новое строит Очень хороший район",
+                    "color": null,
+                    "isFlatLayout": false,
+                    "isHouseLayout": false,
+                    "isLayout": false,
+                    "category": {
+                        "id": 1,
+                        "name": "sell.flat",
+                        "label": "Продажа квартир",
+                        "isDisabled": false
+                    },
+                    "owner": {
+                        "isPro": false,
+                        "isComplex": false,
+                        "isBuilder": false,
+                        "isOwner": true,
+                        "title": "Хозяин",
+                        "label": {
+                            "title": "Хозяин недвижимости",
+                            "name": "owner",
+                            "color": "yellow"
+                        },
+                        "isChecked": false,
+                        "isCurrentUser": false
+                    },
+                    "nbPhotos": 6,
+                    "photo": {
+                        "title": "Продажа квартир в Алматы: 1-комнатная квартира, 29 м², 2/4 этаж, Жарокова 211 — Тимирязева за 24 млн 〒",
+                        "alt": "1-комнатная квартира, 29 м², 2/4 этаж, Жарокова 211 — Тимирязева за 24 млн 〒 в Алматы, Бостандыкский р-н",
+                        "1x": "https://alaps-photos-kr.kcdn.kz/webp/cf/cf829916-996f-41c1-9087-10cd722d11c6/1-280x175.jpg",
+                        "1.5x": "https://alaps-photos-kr.kcdn.kz/webp/cf/cf829916-996f-41c1-9087-10cd722d11c6/1-448x280.jpg",
+                        "2x": "https://alaps-photos-kr.kcdn.kz/webp/cf/cf829916-996f-41c1-9087-10cd722d11c6/1-560x350.jpg",
+                        "3x": "https://alaps-photos-kr.kcdn.kz/webp/cf/cf829916-996f-41c1-9087-10cd722d11c6/1-750x470.jpg",
+                        "mainId": 1,
+                        "isModerated": true
+                    },
+                    "expiresAtText": "Будет перенесено в архив через <b>4&nbsp;дня</b>",
+                    "deletedAtText": "Будет удалено 10 ноября 2024 г.",
+                    "expiresWarning": "Это объявление будет перенесено в архив через <b>4 дня</b>. Чтобы этого не случилось, продлите его.",
+                    "isExpiresSoon": false,
+                    "hiddenReason": {
+                        "reason": "",
+                        "comment": ""
+                    },
+                    "isEditable": false,
+                    "isRemovable": false,
+                    "isOwner": false,
+                    "addedAt": "2022-11-10",
+                    "createdAt": "2022-10-13",
+                    "hasAutoRe": false,
+                    "hasAutoUp": false,
+                    "hasPackages": false,
+                    "services": [],
+                    "contactsInfo": {
+                        "phonePreview": "+7 778 ",
+                        "phonesNb": 1
+                    },
+                    "isAgent": false,
+                    "hasPhoto": true
+                },
+                {
+                    "id": 680285969,
+                    "tempId": 680285969,
+                    "storage": "live",
+                    "uuid": "ffa14719-94d0-400b-a782-e607f538ecc3",
+                    "url": "/a/show/680285969",
+                    "title": "1-комнатная квартира, 30 м², 4/4 этаж",
+                    "titleWithPrice": "1-комнатная квартира, 30 м², 4/4 этаж за 23&nbsp;млн&nbsp;<span class=\"currency-sign offer__currency\">〒</span>",
+                    "address": "Жарокова 93 — Курмангазы",
+                    "fullAddress": "Алматы, Алмалинский р-н, Жарокова 93 — Курмангазы",
+                    "price": "23&nbsp;000&nbsp;000&nbsp;<span class=\"currency-sign offer__currency\">〒</span>",
+                    "priceM2": 766666,
+                    "priceM2Text": null,
+                    "daysInLive": 1,
+                    "description": "панельный дом, 1970 г.п., потолки 2.7м., Продам уютную полноценную однокомнатную квартиру. Надежный дом в хорошем месте. Рядом детские сады и школы. В 5 минут ходьбы до станции метро Алатау. Чист…",
+                    "color": null,
+                    "isFlatLayout": false,
+                    "isHouseLayout": false,
+                    "isLayout": false,
+                    "category": {
+                        "id": 1,
+                        "name": "sell.flat",
+                        "label": "Продажа квартир",
+                        "isDisabled": false
+                    },
+                    "owner": {
+                        "isPro": false,
+                        "isComplex": false,
+                        "isBuilder": false,
+                        "isOwner": true,
+                        "title": "Хозяин",
+                        "label": {
+                            "title": "Хозяин недвижимости",
+                            "name": "owner",
+                            "color": "yellow"
+                        },
+                        "isChecked": false,
+                        "isCurrentUser": false
+                    },
+                    "nbPhotos": 6,
+                    "photo": {
+                        "title": "Продажа квартир в Алматы: 1-комнатная квартира, 30 м², 4/4 этаж, Жарокова 93 — Курмангазы за 23 млн 〒",
+                        "alt": "1-комнатная квартира, 30 м², 4/4 этаж, Жарокова 93 — Курмангазы за 23 млн 〒 в Алматы, Алмалинский р-н",
+                        "1x": "https://alaps-photos-kr.kcdn.kz/webp/ff/ffa14719-94d0-400b-a782-e607f538ecc3/1-280x175.jpg",
+                        "1.5x": "https://alaps-photos-kr.kcdn.kz/webp/ff/ffa14719-94d0-400b-a782-e607f538ecc3/1-448x280.jpg",
+                        "2x": "https://alaps-photos-kr.kcdn.kz/webp/ff/ffa14719-94d0-400b-a782-e607f538ecc3/1-560x350.jpg",
+                        "3x": "https://alaps-photos-kr.kcdn.kz/webp/ff/ffa14719-94d0-400b-a782-e607f538ecc3/1-750x470.jpg",
+                        "mainId": 1,
+                        "isModerated": true
+                    },
+                    "expiresAtText": "Будет перенесено в архив через <b>6&nbsp;дней</b>",
+                    "deletedAtText": "Будет удалено 12 ноября 2024 г.",
+                    "expiresWarning": "Это объявление будет перенесено в архив через <b>6 дней</b>. Чтобы этого не случилось, продлите его.",
+                    "isExpiresSoon": false,
+                    "hiddenReason": {
+                        "reason": "",
+                        "comment": ""
+                    },
+                    "isEditable": false,
+                    "isRemovable": false,
+                    "isOwner": false,
+                    "addedAt": "2022-11-12",
+                    "createdAt": "2022-11-12",
+                    "hasAutoRe": false,
+                    "hasAutoUp": false,
+                    "hasPackages": false,
+                    "services": [],
+                    "contactsInfo": {
+                        "phonePreview": "+7 775 ",
+                        "phonesNb": 1
+                    },
+                    "isAgent": false,
+                    "hasPhoto": true
+                },
+                {
+                    "id": 677270341,
+                    "tempId": 677270341,
+                    "storage": "live",
+                    "uuid": "daf1450e-efca-4c58-b06c-618f689ce589",
+                    "url": "/a/show/677270341",
+                    "title": "1-комнатная квартира, 31 м², 2/4 этаж",
+                    "titleWithPrice": "1-комнатная квартира, 31 м², 2/4 этаж за 24&nbsp;млн&nbsp;<span class=\"currency-sign offer__currency\">〒</span>",
+                    "address": "мкр Коктем-1",
+                    "fullAddress": "Алматы, Бостандыкский р-н, мкр Коктем-1",
+                    "price": "24&nbsp;000&nbsp;000&nbsp;<span class=\"currency-sign offer__currency\">〒</span>",
+                    "priceM2": 774193,
+                    "priceM2Text": null,
+                    "daysInLive": 51,
+                    "description": "панельный дом, 1970 г.п., состояние: хорошее, жил. площадь 18 м², кухня 6 м², потолки 2.6м., санузел совмещенный, телефон: есть возможность подключения, интернет проводной, частично, Светлая, теплая…",
+                    "color": null,
+                    "isFlatLayout": false,
+                    "isHouseLayout": false,
+                    "isLayout": false,
+                    "category": {
+                        "id": 1,
+                        "name": "sell.flat",
+                        "label": "Продажа квартир",
+                        "isDisabled": false
+                    },
+                    "owner": {
+                        "isPro": true,
+                        "isComplex": false,
+                        "isBuilder": false,
+                        "isOwner": false,
+                        "title": "АРКАДА",
+                        "label": {
+                            "title": "Компания",
+                            "name": "identified-company",
+                            "color": "transparent"
+                        },
+                        "isChecked": true,
+                        "isCurrentUser": false
+                    },
+                    "nbPhotos": 10,
+                    "photo": {
+                        "title": "Продажа квартир в Алматы: 1-комнатная квартира, 31 м², 2/4 этаж, мкр Коктем-1 за 24 млн 〒",
+                        "alt": "1-комнатная квартира, 31 м², 2/4 этаж, мкр Коктем-1 за 24 млн 〒 в Алматы, Бостандыкский р-н",
+                        "1x": "https://alaps-photos-kr.kcdn.kz/webp/da/daf1450e-efca-4c58-b06c-618f689ce589/1-280x175.jpg",
+                        "1.5x": "https://alaps-photos-kr.kcdn.kz/webp/da/daf1450e-efca-4c58-b06c-618f689ce589/1-448x280.jpg",
+                        "2x": "https://alaps-photos-kr.kcdn.kz/webp/da/daf1450e-efca-4c58-b06c-618f689ce589/1-560x350.jpg",
+                        "3x": "https://alaps-photos-kr.kcdn.kz/webp/da/daf1450e-efca-4c58-b06c-618f689ce589/1-750x470.jpg",
+                        "mainId": 1,
+                        "isModerated": true
+                    },
+                    "expiresAtText": "Будет продлено через <b>4&nbsp;дня</b>",
+                    "deletedAtText": "Будет удалено 10 ноября 2024 г.",
+                    "expiresWarning": "Будет продлено через <b>4&nbsp;дня</b>",
+                    "isExpiresSoon": false,
+                    "hiddenReason": {
+                        "reason": "",
+                        "comment": ""
+                    },
+                    "isEditable": false,
+                    "isRemovable": false,
+                    "isOwner": false,
+                    "addedAt": "2022-11-10",
+                    "createdAt": "2022-07-09",
+                    "hasAutoRe": true,
+                    "hasAutoUp": false,
+                    "hasPackages": false,
+                    "services": [],
+                    "contactsInfo": {
+                        "phonePreview": "+7 707 ",
+                        "phonesNb": 2
+                    },
+                    "isAgent": false,
+                    "hasPhoto": true
+                }
+            ],
+            "isAgentAllowed": true,
+            "analyticsData": {
+                "price": "17318667",
+                "upper_bound": "24900000",
+                "lower_bound": "16452734",
+                "confidence": "",
+                "square_price": "524808",
+                "similar_adverts": "678597018,680146814,679573363,680285969,677270341,676339033",
+                "search_radius": "2000",
+                "shown_adverts": "678597018,680146814,679573363,680285969,677270341",
+                "live_rooms": "1",
+                "flat_building": "1",
+                "flat_floor": "2",
+                "live_square": "33",
+                "flat_renovation": "4",
+                "flat_toilet": "2",
+                "live_furniture": "3",
+                "map_street": "Ауэзова",
+                "map_house_num": "179а",
+                "map_lon": "76.904789",
+                "map_lat": "43.22714",
+                "house_floor_num": "4",
+                "house_year": "1972",
+                "map_geo_text": "Казахстан — Алматы — Бостандыкский р-н",
+                "map_geo_id": "2",
+                "city": "алматы",
+                "date": "2022-11-13"
+            }
+        }
+      '''
+    }
+  }
+}

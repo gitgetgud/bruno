@@ -1,0 +1,79 @@
+meta {
+  name: Получить данные для Акта ревизии денег
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/safe_room_revision/revision/:id/get_audit_report_data/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/:id/get_audit_report_data/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "branch_description": "string",
+          "chairman_of_the_commission": "string",
+          "other_auditors": "string",
+          "chairman_of_the_commission_without_position": "string",
+          "other_auditors_without_position": "string",
+          "chairman_of_the_commission_without_position_with_initials": "string",
+          "other_auditors_without_position_with_initials": "string",
+          "other_auditors_without_position_with_initials_with_sign_placeholder": "string",
+          "present_on_revision": "string",
+          "current_date": "string",
+          "rasporyazhenie_date": "string",
+          "rasporyazhenie_number": "string",
+          "city_name": "string",
+          "revision_date": "string",
+          "actual_report_data": "string",
+          "key_plombirator_from_to_changed_data": "string",
+          "next_first_working_date": "string",
+          "inventory_book_remark": "string",
+          "vnd_nbrk_remark": "string"
+        }
+      '''
+    }
+  }
+}

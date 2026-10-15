@@ -1,0 +1,67 @@
+meta {
+  name: Kinopark. Получения активной подписки
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/retail_products/kinopark/subscription/my_active/
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/retail_products/kinopark/subscription/my_active/
+    method: GET
+    mode: none
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": 6384,
+          "status": "string",
+          "client_id": "string",
+          "subscription_id": 9140,
+          "amount": "string",
+          "initial_visits": 415,
+          "available_visits_count": 9412,
+          "due_date": "1996-11-05T04:50:20.581Z",
+          "subscription": {
+            "id": 593,
+            "name": "string",
+            "description": "string",
+            "price": "string",
+            "visits_count": 3391
+          }
+        }
+      '''
+    }
+  }
+}

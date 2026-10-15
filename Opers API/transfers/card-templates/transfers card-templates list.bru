@@ -1,0 +1,119 @@
+meta {
+  name: transfers card-templates list
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/transfers/card-templates/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/card-templates/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 5513,
+          "results": [
+            {
+              "bank": {
+                "name": "string",
+                "six_digits": [
+                  "string",
+                  "strin"
+                ],
+                "id": 9767,
+                "long_name": "string",
+                "bik": "string",
+                "icon_image": "https://SmZuAYUM.ppw-,6lubkC"
+              },
+              "ps_type": "string",
+              "client_id": "string",
+              "pan_id": "string",
+              "card_holder_name": "string",
+              "last_four_digits": "s",
+              "alias": "string",
+              "bank_name": "string",
+              "bank_code": "string",
+              "id": 9147,
+              "first_six_digits": "strin",
+              "is_tayyab": false,
+              "expiry_month": "string",
+              "expiry_year": "string",
+              "is_from": false
+            },
+            {
+              "bank": {
+                "name": "string",
+                "six_digits": [
+                  "strin",
+                  "strin"
+                ],
+                "id": 8345,
+                "long_name": "string",
+                "bik": "string",
+                "icon_image": "http://ghoJMiLCPxG.cafzQ1vc12Hk.tNs7NMXkB9FAT0XHA"
+              },
+              "ps_type": "string",
+              "client_id": "string",
+              "pan_id": "string",
+              "card_holder_name": "string",
+              "last_four_digits": "st",
+              "alias": "string",
+              "bank_name": "string",
+              "bank_code": "string",
+              "id": 502,
+              "first_six_digits": "str",
+              "is_tayyab": true,
+              "expiry_month": "string",
+              "expiry_year": "string",
+              "is_from": true
+            }
+          ],
+          "next": "http://lArxJkOMAJAMIjDvEtqZKzZMb.ieExF78S--4+yFiD,3KLlYOrsNdALv71W+YYFoJtu2b7",
+          "previous": "https://NRCSfZdfyUBiNsWMoTZKyxxPNkb.xoqqxLh7ii8MLXHCfiyOjjsSbJKmqjQtWwa"
+        }
+      '''
+    }
+  }
+}

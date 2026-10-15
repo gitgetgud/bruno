@@ -1,0 +1,101 @@
+meta {
+  name: Ввести фактическое наличие денег и ценностей
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/safe_room_revision/revision/:id/enter_actual_report_data/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "data": [
+      {
+        "currency": "string",
+        "amount": "string",
+        "bal_acc": "string",
+        "iban": "string"
+      },
+      {
+        "currency": "string",
+        "amount": "string",
+        "bal_acc": "string",
+        "iban": "string"
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/:id/enter_actual_report_data/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "data": [
+          {
+            "currency": "string",
+            "amount": "string",
+            "bal_acc": "string",
+            "iban": "string"
+          },
+          {
+            "currency": "string",
+            "amount": "string",
+            "bal_acc": "string",
+            "iban": "string"
+          }
+        ]
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "string"
+        }
+      '''
+    }
+  }
+}

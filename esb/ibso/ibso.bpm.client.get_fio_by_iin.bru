@@ -1,0 +1,54 @@
+meta {
+  name: ibso.bpm.client.get_fio_by_iin
+  type: http
+  seq: 37
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+headers {
+  : 
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.Transfer",
+          "uuid": "3505c24a-9523-4594-85b2-60adca269fc3",
+          "requestTime": "2019-10-31T13:51:45+00:00",
+          "sourceSystem": "singleWindow",
+          "username": "singleWindow",
+          "Data": {
+              "operationType": "3034",
+              "fromIban": "KZ698210439870276595",
+              "currency": "KZT",
+              "amount": "1000",
+              "knp": "119",
+              "debitCurrency": "KZT",
+              "debitAmount": "1000",
+              "creditAmount": "1000",
+              "cmsAmount": "350",
+              "cmsCurrency": "KZT",
+              "paypurp": "просто так",
+              "benAccount": "KZ896010012005148337",
+              "benBankBik": "HSBKKZKX",
+              "kbe": "19",
+              "benTaxCode": "123456789012",
+              "benName": "Макеев Николай"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,39 @@
+meta {
+  name: arcmoveAcc
+  type: http
+  seq: 44
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/typi/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: TypiUser
+  password: uKbGt1YLz8104h8DltS3
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.OpenRko",
+          "uuid": "42f6ef06-a008-4470-865c-9c97516209ad",
+          "sourceSystem": "Typi",
+          "username": "Typi",
+          "requestTime": "2022-01-17 11:50:22.388613",
+          "Data": {
+              "clientId": "64512796792",
+              "currency": "KZT",
+              "departCode": "001-004-001",
+              "intendFor": "RKO_CARD",
+              "iban": "KZ808210439870397938"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

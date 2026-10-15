@@ -1,0 +1,118 @@
+meta {
+  name: rbk pay payments v2v v2v qr
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/payments/v2v/v2v_qr/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "status": "string",
+    "currency": "string",
+    "referenceId": "7cd5c694-1400-e03c-bdff-a838eb5668b4",
+    "customerId": "string",
+    "amount": "string",
+    "rrn": "string",
+    "intRef": "string",
+    "paymentId": "string",
+    "qrCodeType": "string",
+    "cardId": "string",
+    "createdAt": "1978-10-12T03:43:21.703Z",
+    "merchant": {
+      "merchantId": "string",
+      "merchantName": "string",
+      "merchantMCC": "strin"
+    },
+    "qrCodeSourceType": "string",
+    "refundId": "string",
+    "linkReceipt": "string",
+    "refundTotalAmount": "string",
+    "lastRefundAmount": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Сохранение переводов по номеру телефона
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/v2v/v2v_qr/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "status": "string",
+        "currency": "string",
+        "referenceId": "7cd5c694-1400-e03c-bdff-a838eb5668b4",
+        "customerId": "string",
+        "amount": "string",
+        "rrn": "string",
+        "intRef": "string",
+        "paymentId": "string",
+        "qrCodeType": "string",
+        "cardId": "string",
+        "createdAt": "1978-10-12T03:43:21.703Z",
+        "merchant": {
+          "merchantId": "string",
+          "merchantName": "string",
+          "merchantMCC": "strin"
+        },
+        "qrCodeSourceType": "string",
+        "refundId": "string",
+        "linkReceipt": "string",
+        "refundTotalAmount": "string",
+        "lastRefundAmount": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "client_id": "string",
+          "amount": "string",
+          "currency": "string",
+          "phone": "string",
+          "from_iban": "string",
+          "iin": "string",
+          "id": "5c443770-703e-4a7a-a89a-681045eec766",
+          "status": 9
+        }
+      '''
+    }
+  }
+}

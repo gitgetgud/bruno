@@ -1,0 +1,39 @@
+meta {
+  name: sw.ibso.DepositsGetInfo
+  type: http
+  seq: 30
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+headers {
+  : 
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.DepositsGetInfo",
+          "uuid": "3505c24a-9523-4594-85b2-60adca269fz2",
+          "requestTime": "2019-10-31T13:51:45+00:00",
+          "sourceSystem": "singleWindow",
+          "username": "singleWindow",
+          "Data": {
+              "customerId": "4371708945"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

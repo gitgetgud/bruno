@@ -1,0 +1,99 @@
+meta {
+  name: transfers koronapay-transfer stats
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/transfers/koronapay-transfer/stats/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Золотая Корона
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/koronapay-transfer/stats/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 2491,
+          "results": [
+            {
+              "beneficiary_country": 2420,
+              "beneficiary_city": 8226,
+              "phone_number": "st",
+              "from_iban": "string",
+              "beneficiary_last_name": "string",
+              "beneficiary_first_name": "string",
+              "beneficiary_phone_number": "string",
+              "iin": "string",
+              "from_currency": "XAU",
+              "to_currency": "RUB",
+              "to_amount": "string",
+              "beneficiary_middle_name": "string",
+              "beneficiary_is_resident": true
+            },
+            {
+              "beneficiary_country": 9320,
+              "beneficiary_city": 6078,
+              "phone_number": "string",
+              "from_iban": "string",
+              "beneficiary_last_name": "string",
+              "beneficiary_first_name": "string",
+              "beneficiary_phone_number": "string",
+              "iin": "string",
+              "from_currency": "CNY",
+              "to_currency": "EUR",
+              "to_amount": "string",
+              "beneficiary_middle_name": "string",
+              "beneficiary_is_resident": true
+            }
+          ],
+          "next": "http://KEM.zcpvoIVcp8xtCukVN2EsGWUppHPIgFFAPHWX4YrCZKoLtgh.fM+Vgio",
+          "previous": "http://orLeNxGHQgkQ.bpelaKmb2CAIhBHra+vPe6oCRQ2"
+        }
+      '''
+    }
+  }
+}

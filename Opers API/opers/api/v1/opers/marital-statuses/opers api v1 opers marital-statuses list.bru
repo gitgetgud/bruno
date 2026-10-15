@@ -1,0 +1,73 @@
+meta {
+  name: opers api v1 opers marital-statuses list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/marital-statuses/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/marital-statuses/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 6910,
+          "results": [
+            {
+              "code": "string",
+              "description": "string"
+            },
+            {
+              "code": "string",
+              "description": "string"
+            }
+          ],
+          "next": "https://fXXKIiGECHUhIflFCPorzJVU.bhyqulJ",
+          "previous": "http://XIqWExZOseSgGifENqVqn.nlcZYgN3V5zgIefY,bLZ6k-x9aGlew4QEOFkbEPhTTbfLZAeN7LsqpbBu"
+        }
+      '''
+    }
+  }
+}

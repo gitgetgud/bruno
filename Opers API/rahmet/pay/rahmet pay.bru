@@ -1,0 +1,77 @@
+meta {
+  name: rahmet pay
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rahmet/pay/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "taxCode": "stringstring",
+    "fromIban": "string",
+    "amount": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Customer pay endpoint
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rahmet/pay/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "taxCode": "stringstring",
+        "fromIban": "string",
+        "amount": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "taxCode": "stringstring",
+          "fromIban": "string",
+          "amount": "string"
+        }
+      '''
+    }
+  }
+}

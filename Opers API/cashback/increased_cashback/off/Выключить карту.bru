@@ -1,0 +1,73 @@
+meta {
+  name: Выключить карту
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/cashback/increased_cashback/off/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "212919212919",
+    "rbs_number": "string",
+    "card_type": "CLASSIC",
+    "institution": "string",
+    "order_dprt": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/cashback/increased_cashback/off/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "212919212919",
+        "rbs_number": "string",
+        "card_type": "CLASSIC",
+        "institution": "string",
+        "order_dprt": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {}
+      '''
+    }
+  }
+}

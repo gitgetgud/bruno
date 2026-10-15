@@ -1,0 +1,42 @@
+meta {
+  name: Обновление курса обмена из excel документа
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/exchange/rates/update_from_excel/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "body": [
+      {
+        "value": "string",
+        "rate": "string",
+        "baseCurrency": "str",
+        "currency": "s",
+        "date_begin": "2020-09-14T23:20:55.640Z",
+        "rateType": "string"
+      },
+      {
+        "value": "string",
+        "rate": "string",
+        "baseCurrency": "string",
+        "currency": "str",
+        "date_begin": "1994-11-17T21:38:05.145Z",
+        "rateType": "string"
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

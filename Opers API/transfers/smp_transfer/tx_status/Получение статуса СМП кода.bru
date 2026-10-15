@@ -1,0 +1,76 @@
+meta {
+  name: Получение статуса СМП кода
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/smp_transfer/tx_status/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "tx_ids": [
+      "string",
+      "string"
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/smp_transfer/tx_status/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "tx_ids": [
+          "string",
+          "string"
+        ]
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "tx_ids": [
+            "string",
+            "string"
+          ]
+        }
+      '''
+    }
+  }
+}

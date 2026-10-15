@@ -1,0 +1,99 @@
+meta {
+  name: events instant cards create
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/events/instant_cards/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "first_name": "string",
+    "last_name": "string",
+    "patronymic": "string",
+    "phone": "string",
+    "iin": "strin",
+    "region_kato": "string",
+    "street": "string",
+    "house": "string",
+    "flat": "string",
+    "delivery_address": "string",
+    "division": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/instant_cards/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "first_name": "string",
+        "last_name": "string",
+        "patronymic": "string",
+        "phone": "string",
+        "iin": "strin",
+        "region_kato": "string",
+        "street": "string",
+        "house": "string",
+        "flat": "string",
+        "delivery_address": "string",
+        "division": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "first_name": "string",
+          "last_name": "string",
+          "patronymic": "string",
+          "phone": "string",
+          "iin": "stri",
+          "region_kato": "string",
+          "street": "string",
+          "house": "st",
+          "flat": "string",
+          "delivery_address": "string",
+          "division": "string",
+          "identity_front": "http://BzCZvPZxAriCmSi.dtanzLHKMSHkFfgd-qNEIdKOs",
+          "identity_back": "http://RXWWaPgPAZXfSIWLgaOlETIoFjCVKD.lpHMjtZYXnVSDzTz8mfm.O0kIYxe"
+        }
+      '''
+    }
+  }
+}

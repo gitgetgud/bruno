@@ -1,0 +1,176 @@
+meta {
+  name: [FE]<->[BE]: leasing/cities - Сервис получения списка городов для анкеты лизинга
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://test.centermarket.kz/bank/bcc/leasing/v1/cities
+  body: none
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Cookie: cm_sid={{cm_sid}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: [FE]<->[BE]: leasing/cities - Сервис получения списка городов для анкеты лизинга
+  
+  request: {
+    url: https://test.centermarket.kz/bank/bcc/leasing/v1/cities
+    method: GET
+    mode: none
+    headers: {
+      accept: application/json
+      Cookie: cm_sid=djQubG9jYWwuLWRnT0lOdm9ZN2FScXZJTU5helFkNUU4MkNkelR5ZVkzWGMwbmtBeGFTUjhEYlIwMFV1a0Fqc2pTS0Q5VG9QUVJzdUpmWEFBNXhXem9QNmJzbWhXX0dhOFlna1Zrd1JLNHpFcFE5TzRrRXRyY3Y5VEtLRFZuRVFvcXFFenBJZHRkVXk2QjlHeXVBRUtoMVJwdWJVTkl1T1VJbkdHSUk3V2tfVzFqZ3ZCVUt1cGg4MllKdlF5aEkxNU9NZTduaUxMTnBDbjVOZmxpck9UTUY2UzZYOTFTLUpiNnE0ZEJyRTNKQ1h6RzdreFhfNkpXblRQVTMwUlcycnZZOHdHLUVQNXkwV09rSTg2Q1ZRcXpEVl9jZTFscDlnU25sZnpnQXJ3ZWZhbTN1SnFGRkRScFV4SXd1azhPVlY1XzJ0bUNzOUdnZE9PaExRZzlmOEk3R3dkVkVTTUVONWNwVldsT2o4d3lETVh4ZHRZRmZseGk4cnV6UnJJLVNDeC10UVRNQjZ3NkxJSWhvWDBvVW5PVDNqQVpWaDNfTFRqV05kSmlLUVk3RGNiTk1xd2V1czVGNVdXQUZqUjRfd2R2RC0wb2V2S01TMEdBa3hjdXp3N0x1Yw==
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx/1.25.5
+      Date: Mon, 02 Mar 2026 06:52:26 GMT
+      Content-Type: application/json
+      Content-Length: 747
+      Connection: keep-alive
+      content-encoding: gzip
+      vary: Origin
+      vary: Accept-Encoding
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Content-Security-Policy: frame-ancestors 'self' *.bcc.kz *.centermarket.kz *.bcchub.kz
+      X-Content-Type-Options: nosniff
+      X-Permitted-Cross-Domain-Policies: none
+      Permissions-Policy: geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()
+      X-XSS-Protection: 1; mode=block
+      Referrer-Policy: no-referrer-when-downgrade
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "success": true,
+            "data": [
+                {
+                    "code": "ATB",
+                    "name": "Актобе",
+                    "address": "МОЛДАГУЛОВОЙ пр-кт, дом 30 корп Г"
+                },
+                {
+                    "code": "KOS",
+                    "name": "Костанай",
+                    "address": "ТАРАНА ул, дом 39"
+                },
+                {
+                    "code": "KAR",
+                    "name": "Караганда",
+                    "address": "АЛИХАНОВА ул, 5"
+                },
+                {
+                    "code": "ALM",
+                    "name": "Алматы",
+                    "address": "ПАНФИЛОВА ул, дом 98"
+                },
+                {
+                    "code": "UST",
+                    "name": "Усть-каменогорск",
+                    "address": "М.ГОРЬКОГО ул, дом 19"
+                },
+                {
+                    "code": "SMK",
+                    "name": "Шымкент",
+                    "address": "БАЙТУРСЫНОВА ул, дом 20А"
+                },
+                {
+                    "code": "TLD",
+                    "name": "Талдыкорган",
+                    "address": "АБЫЛАЙХАНА ул, дом  стр 185"
+                },
+                {
+                    "code": "AOF",
+                    "name": "Отеген батыра",
+                    "address": "БАТТАЛХАНОВА ул, дом 17"
+                },
+                {
+                    "code": "AKT",
+                    "name": "Актау",
+                    "address": "26 мкр, дом 16 корп 1"
+                },
+                {
+                    "code": "URL",
+                    "name": "Уральск",
+                    "address": "МУХИТА ул, дом 27"
+                },
+                {
+                    "code": "FTO",
+                    "name": "Сарыагаш",
+                    "address": "ИСМАИЛОВА ул, дом Б"
+                },
+                {
+                    "code": "ATR",
+                    "name": "Атырау",
+                    "address": "КУЛМАНОВА ул, дом 117Б"
+                },
+                {
+                    "code": "GZK",
+                    "name": "Жезказган",
+                    "address": "ПР-Т МИРА, 26 \"А\""
+                },
+                {
+                    "code": "PVL",
+                    "name": "Павлодар",
+                    "address": "АКАДЕМИКА САТПАЕВА ул, дом 156"
+                },
+                {
+                    "code": "AST",
+                    "name": "Астана",
+                    "address": "БАУЫРЖАН МОМЫШУЛЫ пр-кт, дом 2"
+                },
+                {
+                    "code": "TRZ",
+                    "name": "Тараз",
+                    "address": "КАЗЫБЕК БИ ул, дом 182"
+                },
+                {
+                    "code": "MFC",
+                    "name": "МФЦА",
+                    "address": ""
+                },
+                {
+                    "code": "SMP",
+                    "name": "Семей",
+                    "address": "АБАЯ КУНАНБАЕВА ул, дом 99 В"
+                },
+                {
+                    "code": "PTR",
+                    "name": "Петропавловск",
+                    "address": "АЛТЫНСАРИНА ул, дом 166"
+                },
+                {
+                    "code": "KZO",
+                    "name": "Кызылорда",
+                    "address": "БАЙТУРСЫНОВА ул, дом  стр 54"
+                },
+                {
+                    "code": "KOK",
+                    "name": "Кокшетау",
+                    "address": "АБАЯ ул, дом 142"
+                }
+            ]
+        }
+      '''
+    }
+  }
+}

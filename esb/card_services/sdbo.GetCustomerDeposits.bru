@@ -1,0 +1,35 @@
+meta {
+  name: sdbo.GetCustomerDeposits
+  type: http
+  seq: 15
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdbo/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboUser
+  password: s6L8EHOUuwhgHf6NyRyo
+}
+
+body:json {
+  {
+      "version": "TL 1.0",
+      "type": "GetCustomerDeposits",
+      "id": "123321123321",
+      "dateTime": "2017-11-28T23:37:11.894",
+      "source": "DBO_INFIN",
+      "body": [
+          {
+              "customerId": "0023EY"
+          }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

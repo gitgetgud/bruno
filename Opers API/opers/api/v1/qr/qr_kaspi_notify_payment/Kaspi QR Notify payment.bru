@@ -1,0 +1,46 @@
+meta {
+  name: Kaspi QR Notify payment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/qr/qr_kaspi_notify_payment/
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Обрабатывает уведомления о платежах Kaspi QR.
+}
+
+example {
+  name: None
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/qr/qr_kaspi_notify_payment/
+    method: POST
+    mode: none
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 204
+      text: No Content
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

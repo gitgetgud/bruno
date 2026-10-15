@@ -1,0 +1,101 @@
+meta {
+  name: opers api v1 opers transfers read
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/transfers/:id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  View for transfer money for client
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/transfers/:id/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "client_id": "string",
+          "amount": "string",
+          "id": "10332e13-60c9-a4d9-32eb-77d184b78d80",
+          "iin": "string",
+          "created": "1980-12-07T20:30:15.979Z",
+          "from_iban": "string",
+          "currency": {
+            "code": "st",
+            "num": "st",
+            "description": "string"
+          },
+          "to_iban": "string",
+          "status": "string",
+          "transfer_type": "string",
+          "account_transfer_extension": {
+            "transfer": "322bded3-7117-83e5-cff5-6ca06fdcb91e",
+            "id": 5143,
+            "created": "2011-01-28T09:43:00.161Z",
+            "modified": "1952-05-11T16:47:32.215Z",
+            "knp": "string",
+            "paypurp": "string",
+            "kbe": "string",
+            "beneficiary_iin": "string",
+            "beneficiary_fio": "string",
+            "beneficiary_country_code": "string",
+            "commission_amount": "string",
+            "commission_currency": "string",
+            "beneficiary_bank_bic": "string",
+            "correspond_iban": "string",
+            "beneficiary_phone": "string",
+            "data": {},
+            "tx_id": "string",
+            "client_type": "string",
+            "overall_amount": "string"
+          },
+          "bank": "string",
+          "exchange_type": "DEFAULT"
+        }
+      '''
+    }
+  }
+}

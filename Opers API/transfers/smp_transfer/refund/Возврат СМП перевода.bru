@@ -1,0 +1,73 @@
+meta {
+  name: Возврат СМП перевода
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/smp_transfer/refund/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "amount": "string",
+    "tx_id": "string",
+    "from_iban": "stri",
+    "from_npck": false
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/smp_transfer/refund/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "amount": "string",
+        "tx_id": "string",
+        "from_iban": "stri",
+        "from_npck": false
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "string"
+        }
+      '''
+    }
+  }
+}

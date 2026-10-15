@@ -1,0 +1,79 @@
+meta {
+  name: rbk pay fines payment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/fines/payment/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "phone": "string",
+    "iin": "stringstring",
+    "penalty_iin": "stringstring",
+    "from_iban": "string",
+    "avOriginalId": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/fines/payment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "phone": "string",
+        "iin": "stringstring",
+        "penalty_iin": "stringstring",
+        "from_iban": "string",
+        "avOriginalId": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "phone": "string",
+          "iin": "stringstring",
+          "penalty_iin": "stringstring",
+          "from_iban": "string",
+          "avOriginalId": "string"
+        }
+      '''
+    }
+  }
+}

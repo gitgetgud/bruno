@@ -1,0 +1,79 @@
+meta {
+  name: opers service public email sender submit application
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers_service/public/email_sender/submit_application/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "sender_email": "string",
+    "company_name": "string",
+    "fio": "string",
+    "phone": "string",
+    "description": "string",
+    "captcha_response": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Оставить заявку
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers_service/public/email_sender/submit_application/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "sender_email": "string",
+        "company_name": "string",
+        "fio": "string",
+        "phone": "string",
+        "description": "string",
+        "captcha_response": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {}
+      '''
+    }
+  }
+}

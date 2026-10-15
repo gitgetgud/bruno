@@ -1,0 +1,69 @@
+meta {
+  name: Отправка СМС родителю
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/junior_banking/parent_sms/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "registration_uuid": "8e068812-438f-fd51-ad6d-a276dcf5837a",
+    "phone_parent": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/junior_banking/parent_sms/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "registration_uuid": "8e068812-438f-fd51-ad6d-a276dcf5837a",
+        "phone_parent": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "registration_uuid": "b8735fa4-fce6-c5c6-dafa-330ab8a852df"
+        }
+      '''
+    }
+  }
+}

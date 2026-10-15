@@ -1,0 +1,307 @@
+meta {
+  name: transfers templates list
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/transfers/templates/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/templates/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 7756,
+          "results": [
+            {
+              "transfer": {
+                "amount": "string",
+                "currency": "string",
+                "upt": {
+                  "beneficiary_country_code": "string",
+                  "beneficiary_name": "string",
+                  "beneficiary_surname": "string",
+                  "id": 2970,
+                  "ref_number": "string",
+                  "upt_transfer_id": "string",
+                  "kbe": "string",
+                  "beneficiary_number": "string",
+                  "beneficiary_number_code": "string",
+                  "country": "string"
+                },
+                "koronapay": {
+                  "koronapay_oid": "string",
+                  "beneficiary_country": {
+                    "code": "str",
+                    "name": "string",
+                    "id": 5690
+                  },
+                  "beneficiary_city": {
+                    "name": "string",
+                    "id": 7105,
+                    "currencies": "string"
+                  },
+                  "to_amount": "string",
+                  "beneficiary_last_name": "string",
+                  "beneficiary_first_name": "string",
+                  "beneficiary_phone_number": "string",
+                  "to_currency": "XAU",
+                  "total_fee_amount": "string",
+                  "beneficiary_middle_name": "string",
+                  "beneficiary_is_resident": false
+                },
+                "account_transfer_extension": {
+                  "id": 5016,
+                  "knp": "string",
+                  "kbe": "string",
+                  "paypurp": "string",
+                  "beneficiary_iin": "string",
+                  "beneficiary_fio": "string",
+                  "beneficiary_country_code": "string",
+                  "commission_amount": "string",
+                  "commission_currency": "string",
+                  "beneficiary_bank_bic": "string",
+                  "correspond_iban": "string",
+                  "beneficiary_phone": "string",
+                  "data": {}
+                },
+                "id": "1661277e-f950-b3e2-ad4a-eca71b6eda7d",
+                "transfer_type": "A2A_IN",
+                "from_iban": "string",
+                "to_iban": "string",
+                "commission": "string",
+                "data": {}
+              },
+              "currency_exchange": {
+                "iin": "stri",
+                "to_iban": "string",
+                "from_iban": "string",
+                "credit_amount": "string",
+                "debit_amount": "string",
+                "client_id": "stri",
+                "credit_currency": "string",
+                "debit_currency": "string",
+                "id": "b7eac2ef-d96e-2aad-d083-3ee7ca21b015",
+                "created": "1953-07-06T05:21:32.042Z",
+                "modified": "2000-08-03T03:50:29.400Z",
+                "status": 11,
+                "phone": "string",
+                "rate": "string",
+                "document_ref_id": "string",
+                "modified_operationist": "string",
+                "is_rate_provided": false,
+                "is_custom_rate_provided": true,
+                "is_created_by_client": true,
+                "failed_reason": "string",
+                "data": {},
+                "opers_username": "string"
+              },
+              "card2card": {
+                "type": "string",
+                "rbs_number": "string",
+                "card_template": {
+                  "bank": {
+                    "name": "string",
+                    "six_digits": [
+                      "string",
+                      "strin"
+                    ],
+                    "id": 6300,
+                    "long_name": "string",
+                    "bik": "string",
+                    "icon_image": "http://OUyQwTvZTkQGAkrmE.drNw,O7YYLP6o7V-C9yfe"
+                  },
+                  "client_id": "string",
+                  "pan_id": "string",
+                  "card_holder_name": "string",
+                  "last_four_digits": "s",
+                  "alias": "string",
+                  "bank_name": "string",
+                  "bank_code": "string",
+                  "id": 6489,
+                  "first_six_digits": "st",
+                  "is_tayyab": false,
+                  "ps_type": 1,
+                  "expiry_month": "string",
+                  "expiry_year": "string",
+                  "is_from": true
+                }
+              },
+              "id": 1810,
+              "created": "2024-06-29T18:42:54.413Z",
+              "modified": "2011-01-23T03:11:07.756Z",
+              "client_id": "stri",
+              "alias": "string",
+              "is_enable": true
+            },
+            {
+              "transfer": {
+                "amount": "string",
+                "currency": "string",
+                "upt": {
+                  "beneficiary_country_code": "stri",
+                  "beneficiary_name": "string",
+                  "beneficiary_surname": "string",
+                  "id": 8147,
+                  "ref_number": "string",
+                  "upt_transfer_id": "string",
+                  "kbe": "string",
+                  "beneficiary_number": "string",
+                  "beneficiary_number_code": "string",
+                  "country": "string"
+                },
+                "koronapay": {
+                  "koronapay_oid": "string",
+                  "beneficiary_country": {
+                    "code": "str",
+                    "name": "string",
+                    "id": 397
+                  },
+                  "beneficiary_city": {
+                    "name": "string",
+                    "id": 3202,
+                    "currencies": "string"
+                  },
+                  "to_amount": "string",
+                  "beneficiary_last_name": "string",
+                  "beneficiary_first_name": "string",
+                  "beneficiary_phone_number": "string",
+                  "to_currency": "CNY",
+                  "total_fee_amount": "string",
+                  "beneficiary_middle_name": "string",
+                  "beneficiary_is_resident": true
+                },
+                "account_transfer_extension": {
+                  "id": 8732,
+                  "knp": "string",
+                  "kbe": "string",
+                  "paypurp": "string",
+                  "beneficiary_iin": "str",
+                  "beneficiary_fio": "string",
+                  "beneficiary_country_code": "string",
+                  "commission_amount": "string",
+                  "commission_currency": "strin",
+                  "beneficiary_bank_bic": "string",
+                  "correspond_iban": "string",
+                  "beneficiary_phone": "string",
+                  "data": {}
+                },
+                "id": "c1f90133-7500-da96-f877-10b5c3b2ba4b",
+                "transfer_type": "SWIFT_IN",
+                "from_iban": "string",
+                "to_iban": "string",
+                "commission": "string",
+                "data": {}
+              },
+              "currency_exchange": {
+                "iin": "strin",
+                "to_iban": "str",
+                "from_iban": "string",
+                "credit_amount": "string",
+                "debit_amount": "string",
+                "client_id": "string",
+                "credit_currency": "string",
+                "debit_currency": "string",
+                "id": "b06111ec-4ad6-017d-35ae-79cb3fbaff40",
+                "created": "1957-01-21T09:08:45.698Z",
+                "modified": "1948-12-28T03:15:51.520Z",
+                "status": 9,
+                "phone": "string",
+                "rate": "string",
+                "document_ref_id": "string",
+                "modified_operationist": "string",
+                "is_rate_provided": true,
+                "is_custom_rate_provided": true,
+                "is_created_by_client": true,
+                "failed_reason": "string",
+                "data": {},
+                "opers_username": "string"
+              },
+              "card2card": {
+                "type": "string",
+                "rbs_number": "stri",
+                "card_template": {
+                  "bank": {
+                    "name": "string",
+                    "six_digits": [
+                      "st",
+                      "stri"
+                    ],
+                    "id": 9199,
+                    "long_name": "string",
+                    "bik": "string",
+                    "icon_image": "http://aRNLqfTXJWQI.hqxgf"
+                  },
+                  "client_id": "string",
+                  "pan_id": "string",
+                  "card_holder_name": "string",
+                  "last_four_digits": "s",
+                  "alias": "string",
+                  "bank_name": "string",
+                  "bank_code": "string",
+                  "id": 9352,
+                  "first_six_digits": "stri",
+                  "is_tayyab": true,
+                  "ps_type": 1,
+                  "expiry_month": "string",
+                  "expiry_year": "string",
+                  "is_from": true
+                }
+              },
+              "id": 6413,
+              "created": "1981-08-24T06:00:33.785Z",
+              "modified": "1947-10-08T01:18:37.659Z",
+              "client_id": "string",
+              "alias": "string",
+              "is_enable": false
+            }
+          ],
+          "next": "https://EniYLpGpEOCioecjDdvFFzoayBJc.huPfml9DNg.ZBhlAyL7ibf1",
+          "previous": "https://aWWoqlS.cmwB-yg6c4OsPQmcA+T2ELy"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,72 @@
+meta {
+  name: registration aliveness
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/aliveness/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "stringstring"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  By specifying iin, this endpoint return result
+  if registration application is still alife.
+}
+
+example {
+  name: Is application exist
+  
+  request: {
+    url: {{baseUrl}}/registration/aliveness/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "result": false
+        }
+      '''
+    }
+  }
+}

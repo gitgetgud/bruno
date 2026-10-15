@@ -1,0 +1,88 @@
+meta {
+  name: opers api v1 core instant create instant card
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/instant/create_instant_card/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "sign": "string",
+    "vz_cl": "string",
+    "rbk_card_branch": "string",
+    "delivery": "string",
+    "card_prod": "string",
+    "count": "string",
+    "pin": "string",
+    "department_code": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/instant/create_instant_card/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "sign": "string",
+        "vz_cl": "string",
+        "rbk_card_branch": "string",
+        "delivery": "string",
+        "card_prod": "string",
+        "count": "string",
+        "pin": "string",
+        "department_code": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "sign": "string",
+          "vz_cl": "string",
+          "rbk_card_branch": "string",
+          "delivery": "string",
+          "card_prod": "string",
+          "count": "string",
+          "pin": "string",
+          "department_code": "string"
+        }
+      '''
+    }
+  }
+}

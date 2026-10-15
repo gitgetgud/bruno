@@ -1,0 +1,52 @@
+meta {
+  name: Фото клиента(уд. лич) по коду egov
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/client-info/client_card_id/?page=80&code=
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  code: 
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/client-info/client_card_id/?page=80&code=
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      code: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

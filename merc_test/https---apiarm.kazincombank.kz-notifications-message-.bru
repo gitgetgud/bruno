@@ -1,0 +1,63 @@
+meta {
+  name: https://apiarm.kazincombank.kz/notifications/message/
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://apiarm.kazincombank.kz/notifications/message/
+  body: json
+  auth: basic
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: {{esb_user_test}}
+  password: {{esb_password_test}}
+}
+
+body:json {
+  {
+    "hooks": ["balance"],
+    "data": "string",
+    "message_type": "INFO",
+    "customer_id": "{{customer_id}}",
+    "push_only": false,
+    "status": 0,
+    "title_en": "string",
+    "title_ru": "string",
+    "title_kz": "string",
+    "data_en": "string",
+    "data_ru": "string",
+    "data_kz": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Generated from cURL: curl -X 'POST' \
+    'https://apiarm.kazincombank.kz/notifications/message/' \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "hooks": [],
+    "data": "string",
+    "message_type": "INFO",
+    "customer_id": "string",
+    "push_only": false,
+    "status": 0,
+    "title_en": "string",
+    "title_ru": "string",
+    "title_kz": "string",
+    "data_en": "string",
+    "data_ru": "string",
+    "data_kz": "string"
+  }'
+}

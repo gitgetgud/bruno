@@ -1,0 +1,125 @@
+meta {
+  name: Push Excel
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/notifications/push_from_excel
+  body: multipartForm
+  auth: inherit
+}
+
+headers {
+  Content-Type: multipart/form-data
+  Accept: application/json
+}
+
+body:multipart-form {
+  upload_file: @file()
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  # Table example
+  | customer_id | push message |
+  |-------------|--------------|
+  | customer_id | push message |
+  | customer_id | push message |
+  | customer_id | push message |
+  | customer_id | push message |
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/push_from_excel
+    method: POST
+    mode: multipartForm
+    headers: {
+      Content-Type: multipart/form-data
+      Accept: application/json
+    }
+  
+    body:multipart-form: {
+      upload_file: @file()
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Validation Error
+  
+  request: {
+    url: {{baseUrl}}/notifications/push_from_excel
+    method: POST
+    mode: multipartForm
+    headers: {
+      Content-Type: multipart/form-data
+      Accept: application/json
+    }
+  
+    body:multipart-form: {
+      upload_file: @file()
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 422
+      text: Unprocessable Entity (WebDAV) (RFC 4918)
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "detail": [
+            {
+              "loc": [
+                "string",
+                2136
+              ],
+              "msg": "string",
+              "type": "string"
+            },
+            {
+              "loc": [
+                3462,
+                "string"
+              ],
+              "msg": "string",
+              "type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

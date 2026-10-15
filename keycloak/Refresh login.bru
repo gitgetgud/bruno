@@ -1,0 +1,21 @@
+meta {
+  name: Refresh login
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{KEYCLOAK_BASE_URL}}/auth/realms/{{REALM_NAME}}/protocol/openid-connect/token
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  refresh_token: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJkNDg3MjhkNS1kNzUwLTQ1ODEtOWY3OC04OGI2NGIxZTE3OGQifQ.eyJleHAiOjE2NTY2OTAyMDQsImlhdCI6MTY1NjY4ODQwNCwianRpIjoiY2ZkYjIwMDAtMDNkNS00MDIwLTljYjQtNTA0NzQzZTE1MDI3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2ltYWdlYm9hcmRhdXRoIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2ltYWdlYm9hcmRhdXRoIiwic3ViIjoiNDNmZTA0YTUtNTA4Zi00NDhmLWFlNGMtMmU1YjhmNTVmOGUxIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImJvYXJkY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6IjM0NWIxYTE0LTZjMTItNDhhNC1iMDc2LTUyZDRhNjY2NzI0NCIsInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjM0NWIxYTE0LTZjMTItNDhhNC1iMDc2LTUyZDRhNjY2NzI0NCJ9.rDt10vaZLC7xs2N10_Ys8RKBsxL65Tb3iwTypohVlJk
+  client_id: {{CLIENT_ID}}
+  grant_type: refresh_token
+}
+
+settings {
+  encodeUrl: true
+}

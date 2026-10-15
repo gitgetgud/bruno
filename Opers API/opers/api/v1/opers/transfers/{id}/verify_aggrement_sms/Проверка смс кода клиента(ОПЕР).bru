@@ -1,0 +1,89 @@
+meta {
+  name: Проверка смс кода клиента(ОПЕР)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/opers/transfers/:id/verify_aggrement_sms/?id=87320af2-737c-9461-b3c8-f6ac9d0d69ea&is_sms_required=false
+  body: json
+  auth: inherit
+}
+
+params:query {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+  is_sms_required: false
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "sms_code": "stri"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  View for transfer money for client
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/transfers/:id/verify_aggrement_sms/?id=87320af2-737c-9461-b3c8-f6ac9d0d69ea&is_sms_required=false
+    method: POST
+    mode: json
+    params:query: {
+      id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+      is_sms_required: false
+    }
+  
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "sms_code": "stri"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "sms_code": "stri"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,81 @@
+meta {
+  name: goszakup address
+  type: http
+  seq: 5
+}
+
+get {
+  url: https://ows.goszakup.gov.kz/v2/subject/biin/591224300478/address
+  body: none
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer de1af70069094865bc62bca10956be43
+  Cookie: _csrf=tsQUTMDY5gj3-7knyAF3s-xyULQFQEOw
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: goszakup address
+  
+  request: {
+    url: https://ows.goszakup.gov.kz/v2/subject/biin/210940015618/address
+    method: GET
+    mode: none
+    headers: {
+      Content-Type: application/json
+      Authorization: Bearer de1af70069094865bc62bca10956be43
+      Cookie: _csrf=tsQUTMDY5gj3-7knyAF3s-xyULQFQEOw
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx
+      Date: Fri, 07 Apr 2023 09:13:54 GMT
+      Content-Type: application/json; charset=UTF-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      Vary: Accept
+      Set-Cookie: _csrf=8A9syULZd7I1ItiGdw5jv5oxPP2DCMGl; path=/; HttpOnly
+      X-Frame-Options: DENY
+      X-Content-Type-Options: nosniff
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "total": 1,
+            "limit": 50,
+            "next_page": "",
+            "items": [
+                {
+                    "id": 567138,
+                    "pid": 610969,
+                    "index_date": "2023-04-07 10:40:03",
+                    "date_create": "2023-04-07 10:32:25",
+                    "edit_date": "2023-04-07 10:32:25",
+                    "country_code": 398,
+                    "kato_code": "",
+                    "ref_source_code": 2,
+                    "address_type": 1,
+                    "address": "Петропавловск, ул. имени Жамбыла, дом 150",
+                    "phone": ""
+                }
+            ]
+        }
+      '''
+    }
+  }
+}

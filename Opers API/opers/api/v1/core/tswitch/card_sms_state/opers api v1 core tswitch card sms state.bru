@@ -1,0 +1,86 @@
+meta {
+  name: opers api v1 core tswitch card sms state
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/tswitch/card_sms_state/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "institution": "string",
+    "order_department": "string",
+    "client_id": "string",
+    "rbs_number": "string",
+    "action": "OFF_SMS1",
+    "comment": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Changes card sms ON/OFF
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/tswitch/card_sms_state/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "institution": "string",
+        "order_department": "string",
+        "client_id": "string",
+        "rbs_number": "string",
+        "action": "OFF_SMS1",
+        "comment": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "institution": "string",
+          "order_department": "string",
+          "client_id": "string",
+          "rbs_number": "string",
+          "action": "OFF_SMS1",
+          "comment": "string"
+        }
+      '''
+    }
+  }
+}

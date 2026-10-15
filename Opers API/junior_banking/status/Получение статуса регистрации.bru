@@ -1,0 +1,66 @@
+meta {
+  name: Получение статуса регистрации
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/junior_banking/status/?page=80&registration_uuid=87320af2-737c-9461-b3c8-f6ac9d0d69ea
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  registration_uuid: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/junior_banking/status/?page=80&registration_uuid=87320af2-737c-9461-b3c8-f6ac9d0d69ea
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      registration_uuid: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "registration_uuid": "string",
+          "status": 9337,
+          "login": "str",
+          "password": "string"
+        }
+      '''
+    }
+  }
+}

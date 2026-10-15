@@ -1,0 +1,78 @@
+meta {
+  name: registration identity
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/:id/identity/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "identity_data": {}
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/registration/:id/identity/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "identity_data": {}
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "identity_front": "http://COrVfnRPJtleAgpRoaSPy.oxlrKJBDesnKxVIWBElv.+s2z9Yrj",
+          "identity_back": "http://EegGBIvodlEWueimaXgBml.ygcZR2b-xDO.Ic9N4SL-.RJEP2kqLEtXDkN",
+          "identity_data": {},
+          "identity_mini": "https://KkuvpexHvCNnoVmPUmqFAvnLiYXP.ogDbQUktuq2N2sB2byoi1bD1LLYDCBKU"
+        }
+      '''
+    }
+  }
+}

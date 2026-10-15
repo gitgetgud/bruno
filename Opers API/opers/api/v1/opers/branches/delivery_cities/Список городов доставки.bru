@@ -1,0 +1,84 @@
+meta {
+  name: Список городов доставки
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/branches/delivery_cities/?page=80&dar_delivery=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  dar_delivery: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/branches/delivery_cities/?page=80&dar_delivery=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      dar_delivery: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "code": "stri",
+            "city": {
+              "id": 561,
+              "localized": true,
+              "name_ru": "string",
+              "name_kz": "string",
+              "name_en": "string"
+            },
+            "description": "string"
+          },
+          {
+            "code": "string",
+            "city": {
+              "id": 130,
+              "localized": true,
+              "name_ru": "string",
+              "name_kz": "string",
+              "name_en": "string"
+            },
+            "description": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

@@ -1,0 +1,132 @@
+meta {
+  name: events card-index display
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/card-index/display/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "stringstring",
+    "iban": "stringstringstring"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Returns card index from IBSO
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/card-index/display/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring",
+        "iban": "stringstringstring"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "hermes_id": "string",
+          "dep_city": "string",
+          "card_sum": "string",
+          "oper_day": "1969-05-17",
+          "element_card": [
+            {
+              "elements": {
+                "date_card": "1953-05-21",
+                "sum_card": "string",
+                "nazn_card": "string",
+                "recl_card": "string"
+              }
+            },
+            {
+              "elements": {
+                "date_card": "1980-02-11",
+                "sum_card": "string",
+                "nazn_card": "string",
+                "recl_card": "string"
+              }
+            }
+          ],
+          "element_liab": [
+            {
+              "elements": [
+                {
+                  "date_liab": "1953-09-07",
+                  "sum_liab": "string",
+                  "osn_liab": "string",
+                  "com_liab": "string",
+                  "name_liab": "string"
+                },
+                {
+                  "date_liab": "1951-07-11",
+                  "sum_liab": "string",
+                  "osn_liab": "string",
+                  "com_liab": "string",
+                  "name_liab": "string"
+                }
+              ]
+            },
+            {
+              "elements": [
+                {
+                  "date_liab": "2021-06-13",
+                  "sum_liab": "string",
+                  "osn_liab": "string",
+                  "com_liab": "string",
+                  "name_liab": "string"
+                },
+                {
+                  "date_liab": "2000-07-07",
+                  "sum_liab": "string",
+                  "osn_liab": "string",
+                  "com_liab": "string",
+                  "name_liab": "string"
+                }
+              ]
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

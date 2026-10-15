@@ -1,0 +1,71 @@
+meta {
+  name: Создание оплаты услуг егов/цон
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/egov/init_payment/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "order_number": "string",
+    "paynet_service_id": 5186
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/egov/init_payment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "order_number": "string",
+        "paynet_service_id": 5186
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "amount": "string",
+          "id": "8e1f8dbe-ab49-7909-826e-648d09742fee",
+          "payment_data": "string"
+        }
+      '''
+    }
+  }
+}

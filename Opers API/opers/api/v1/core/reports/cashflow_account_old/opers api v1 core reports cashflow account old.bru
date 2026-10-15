@@ -1,0 +1,115 @@
+meta {
+  name: opers api v1 core reports cashflow account old
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/reports/cashflow_account_old/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "string",
+    "registration_apartment": "string",
+    "registration_street": "string",
+    "surname": "string",
+    "name_first_letter": "string",
+    "idcard_issue_date": "string",
+    "idcard_issued_by": "string",
+    "idcard_number": "string",
+    "city_otd_ru": "string",
+    "available_balance": "string",
+    "blocked_amount": "string",
+    "credit_limit": "string",
+    "start": "1962-10-03",
+    "end": "1977-08-28",
+    "default_currency": "string",
+    "iban": "string",
+    "account_id": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/reports/cashflow_account_old/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "registration_apartment": "string",
+        "registration_street": "string",
+        "surname": "string",
+        "name_first_letter": "string",
+        "idcard_issue_date": "string",
+        "idcard_issued_by": "string",
+        "idcard_number": "string",
+        "city_otd_ru": "string",
+        "available_balance": "string",
+        "blocked_amount": "string",
+        "credit_limit": "string",
+        "start": "1962-10-03",
+        "end": "1977-08-28",
+        "default_currency": "string",
+        "iban": "string",
+        "account_id": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "string",
+          "registration_apartment": "string",
+          "registration_street": "string",
+          "surname": "string",
+          "name_first_letter": "string",
+          "idcard_issue_date": "string",
+          "idcard_issued_by": "string",
+          "idcard_number": "string",
+          "city_otd_ru": "string",
+          "available_balance": "string",
+          "blocked_amount": "string",
+          "credit_limit": "string",
+          "start": "1962-10-03",
+          "end": "1977-08-28",
+          "default_currency": "string",
+          "iban": "string",
+          "account_id": "string"
+        }
+      '''
+    }
+  }
+}

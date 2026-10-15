@@ -1,0 +1,136 @@
+meta {
+  name: Статус платежа
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{openapi_base_url}}/bcc/production/v1/business-account-management/transfers/status?id={{paymentID}}&isKZT=true
+  body: none
+  auth: bearer
+}
+
+params:query {
+  id: {{paymentID}}
+  isKZT: true
+}
+
+headers {
+  x-client-token: {{bccbiz_access_token}}
+}
+
+auth:bearer {
+  token: {{openapi_access_token}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: 200 OK
+  
+  request: {
+    url: {{openapi_base_url}}/bcc/production/v1/business-account-management/transfers/status?id={{paymentID}}&isKZT=true
+    method: GET
+    mode: none
+    params:query: {
+      id: {{paymentID}}
+      isKZT: true
+    }
+  
+    headers: {
+      x-client-token: {{bccbiz_access_token}}
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Tue, 03 Feb 2026 06:06:36 GMT
+      X-Global-Transaction-ID: 95dd62ed6981906c41b5a587
+      vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+      x-traceparent-id: 00-6981906cab561984334eb1ee6a4a8367-116e6276ab8d2c55-00
+      x-xss-protection: 0
+      expires: 0
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      X-Frame-Options: deny
+      Content-Security-Policy: default-src 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+      X-Permitted-Cross-Domain-Policies: none
+      Referrer-Policy: no-referrer
+      Clear-Site-Data: "cache", "cookies", "storage"
+      Cross-Origin-Embedder-Policy: require-corp
+      Cross-Origin-Opener-Policy: same-origin
+      Cross-Origin-Resource-Policy: same-origin
+      Permissions-Policy: accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      Cache-Control: no-store, max-age=0
+      Pragma: cookieName=cookieValue; Path=/; Secure; HttpOnly; SameSite=Strict
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: GET
+      X-RateLimit-Limit: name=rate-limit,100;
+      X-RateLimit-Remaining: name=rate-limit,95;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "doc_date": "2026-02-03 00:00:00.0000",
+            "value_date": "2026-02-03 00:00:00.0000",
+            "commission_account": "KZ628562203146438789",
+            "amount": 1000,
+            "currency": "KZT",
+            "knp": "852",
+            "sender": {
+                "in": "991040006615",
+                "name": "О ataООО\"tnrtn an ",
+                "account": "KZ628562203146438789",
+                "code": "17",
+                "bik": "KCJBKZKX   ",
+                "bank": "",
+                "isThirdPartyPayment": false,
+                "country": "KZ",
+                "intermediary": null,
+                "isLegalEntity": null
+            },
+            "receiver": {
+                "in": "131240009772",
+                "name": "ТОО \"Мобизон\"",
+                "account": "KZ69722S000000745112",
+                "code": "17",
+                "bik": "CASPKZKA",
+                "bank": "CASPKZKA",
+                "isThirdPartyPayment": false,
+                "country": "",
+                "intermediary": null,
+                "isLegalEntity": true
+            },
+            "signatureA": "Яомяття И.У.",
+            "signatureB": "Не предусмотрен",
+            "narrative": "оплата по заказу №098331",
+            "type": "EXTERNAL",
+            "client_code": "08950992",
+            "division": "AG1",
+            "customerId": 993721,
+            "is_urgent": false,
+            "signatureScheme": 0,
+            "errorText": "",
+            "stateId": 5,
+            "state": "BANK_ACCEPTED",
+            "stateName": "В обработке"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,102 @@
+meta {
+  name: events cards cvc and card
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/cards/cvc_and_card/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "card_id": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Returns CVC and card metainfo
+  
+  request: {
+    url: {{baseUrl}}/events/cards/cvc_and_card/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "card_id": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "cvc": "string",
+          "contract_number": "string"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: CardNotFoundException
+  
+  request: {
+    url: {{baseUrl}}/events/cards/cvc_and_card/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "card_id": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 400
+      text: Bad Request
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

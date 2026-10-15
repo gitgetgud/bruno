@@ -1,0 +1,212 @@
+meta {
+  name: draft
+  type: http
+  seq: 31
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "tswitch",
+          "uuid": "c3f7f93e-d9f4-436a-ab7e-2e7ea9c60c6d",
+          "sourceSystem": "singleWindow",
+          "username": "singleWindow",
+          "requestTime": "2022-04-21 13:29:27.860466",
+          "Data": {
+              "Application": {
+                  "RegNumber": "21/04/2022-13:29:27---78a53e43-3146-4f7d-95cf-33132a4dfbb2",
+                  "Institution": "1004",
+                  "OrderDprt": "44",
+                  "ObjectType": "Contract",
+                  "ActionType": "Add",
+                  "ResultDtls": {
+                      "Parm": [
+                          {
+                              "ParmCode": "AcceptRq",
+                              "Value": "Y"
+                          },
+                          {
+                              "ParmCode": "Response",
+                              "Value": "Y"
+                          }
+                      ]
+                  },
+                  "ObjectFor": {
+                      "ClientIDT": {
+                          "ClientInfo": {
+                              "ClientNumber": "61769598983",
+                              "ShortName": "&lt;&lt;&lt;NONE&gt;&gt;&gt;"
+                          }
+                      }
+                  },
+                  "Data": {
+                      "Contract": {
+                          "Product": {
+                              "ProductCode1": "STND_MCT_21"
+                          }
+                      }
+                  },
+                  "SubApplList": {
+                      "Application": [
+                          {
+                              "RegNumber": "21/04/2022-13:29:27---5ec98a94-b900-4b9d-8614-97b03ae56bcf",
+                              "ObjectType": "Contract",
+                              "ActionType": "Add",
+                              "Data": {
+                                  "Contract": {
+                                      "Product": {
+                                          "ProductCode1": "STND_MCK_21"
+                                      }
+                                  }
+                              },
+                              "SubApplList": {
+                                  "Application": [
+                                      {
+                                          "RegNumber": "21/04/2022-13:29:27---af2b2f52-20c1-4613-b592-d04c03a8ef73",
+                                          "ObjectType": "Contract",
+                                          "ActionType": "Add",
+                                          "Data": {
+                                              "Contract": {
+                                                  "ContractIDT": {
+                                                      "RBSNumber": "RBS-00536039"
+                                                  },
+                                                  "Product": {
+                                                      "ProductCode1": "GL_M_PW_EPIN"
+                                                  },
+                                                  "PlasticInfo": {
+                                                      "FirstName": "ADILET",
+                                                      "LastName": "MOLDABEKOV"
+                                                  }
+                                              }
+                                          },
+                                          "SubApplList": {
+                                              "Application": {
+                                                  "RegNumber": "21/04/2022-13:29:27---effaa82b-d070-4588-8ce4-dad6b4342461",
+                                                  "ObjectType": "Card",
+                                                  "ActionType": "Add",
+                                                  "Data": {
+                                                      "ProduceCard": {
+                                                          "DeliveryDprt": "44"
+                                                      }
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  ]
+                              }
+                          },
+                          {
+                              "RegNumber": "21/04/2022-13:29:27---8cb722f0-a91a-4be0-a25c-f8d388c22bd7",
+                              "ObjectType": "Contract",
+                              "ActionType": "Add",
+                              "Data": {
+                                  "Contract": {
+                                      "Product": {
+                                          "ProductCode1": "STND_MCU_21"
+                                      }
+                                  }
+                              },
+                              "SubApplList": {
+                                  "Application": [
+                                      {
+                                          "RegNumber": "21/04/2022-13:29:27---39b03622-d8ec-4ac5-a9d6-b47a64c0ec9d",
+                                          "ObjectType": "Contract",
+                                          "ActionType": "Add",
+                                          "Data": {
+                                              "Contract": {
+                                                  "ContractIDT": {
+                                                      "Relation": "FREE_RELATION"
+                                                  },
+                                                  "Product": {
+                                                      "ProductCode1": "GL_M_PW_EPIN"
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  ]
+                              }
+                          },
+                          {
+                              "RegNumber": "21/04/2022-13:29:27---7fbd5979-2c03-420a-a5d5-0647f210bd0",
+                              "ObjectType": "Contract",
+                              "ActionType": "Add",
+                              "Data": {
+                                  "Contract": {
+                                      "Product": {
+                                          "ProductCode1": "STND_MCE_21"
+                                      }
+                                  }
+                              },
+                              "SubApplList": {
+                                  "Application": [
+                                      {
+                                          "RegNumber": "21/04/2022-13:29:27---f6fc6a33-d7a1-4f81-a64f-8fd1221b08d",
+                                          "ObjectType": "Contract",
+                                          "ActionType": "Add",
+                                          "Data": {
+                                              "Contract": {
+                                                  "ContractIDT": {
+                                                      "Relation": "FREE_RELATION"
+                                                  },
+                                                  "Product": {
+                                                      "ProductCode1": "GL_M_PW_EPIN"
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  ]
+                              }
+                          },
+                          {
+                              "RegNumber": "21/04/2022-13:29:27---ab9a951b-6b24-485c-bc4a-5218af807bc",
+                              "ObjectType": "Contract",
+                              "ActionType": "Add",
+                              "Data": {
+                                  "Contract": {
+                                      "Product": {
+                                          "ProductCode1": "STND_MCR_21"
+                                      }
+                                  }
+                              },
+                              "SubApplList": {
+                                  "Application": [
+                                      {
+                                          "RegNumber": "21/04/2022-13:29:27---417cb804-19dc-4f04-9b9b-eaa6b33bd06",
+                                          "ObjectType": "Contract",
+                                          "ActionType": "Add",
+                                          "Data": {
+                                              "Contract": {
+                                                  "ContractIDT": {
+                                                      "Relation": "FREE_RELATION"
+                                                  },
+                                                  "Product": {
+                                                      "ProductCode1": "GL_M_PW_EPIN"
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  ]
+                              }
+                          }
+                      ]
+                  }
+              }
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

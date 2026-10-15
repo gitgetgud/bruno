@@ -1,0 +1,35 @@
+meta {
+  name: wildfly.getLimit
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/tayyab/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: TayyabUser
+  password: Onnhalr3pLSKghrH76sk
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "wildfly.GetLimit",
+          "uuid": "befa4ac5-d199-4f9e-b5a3-51978a8961de",
+          "sourceSystem": "Tayyab",
+          "username": "Tayyab",
+          "requestTime": "2021-09-01 20:30:04.645512",
+          "Data": {
+              "id": "5475719"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

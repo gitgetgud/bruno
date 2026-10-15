@@ -1,0 +1,33 @@
+meta {
+  name: provider payment
+  type: http
+  seq: 7
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/tayyab/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: TayyabUser
+  password: Onnhalr3pLSKghrH76sk
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "paynet.GetSuppliers",
+          "uuid": "3505c24a-9523-4594-85b2-60adca269fc1",
+          "requestTime": "2019-10-31T13:51:45+00:00",
+          "sourceSystem": "Tayyab",
+          "username": "Tayyab",
+          "Data": {}
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

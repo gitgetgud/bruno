@@ -1,0 +1,92 @@
+meta {
+  name: Достижения Junior клиента
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/junior_banking/achievements/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/junior_banking/achievements/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "achievement": {
+              "id": 7964,
+              "achievement_text": "string",
+              "name": "string",
+              "image": "http://hCWesTKdGeKIehoUnKM.axKSp9xCUBDXIWa.OV+79P-ArxU9gqf4,G1VZpbepZhM0JpEAhmptG6d",
+              "mini_image": "http://vhPYJVjYgFUqWihXKGFQUoBIYtCsSq.dorra8,mlTprRQxU7GlDbuYCm7YVb8KU+QZkg5r0MehEvYgvU4BUAecj",
+              "video": "http://peytRbDpxXHxYjzntMdsleabbgOHBBwy.cjEj3vpCSiyW8lrhwNbp4C8rZJCVcSkmIxgAgXSqwpEQe",
+              "achievement_type": "ENOUGH_INNER_TRANSFERS"
+            },
+            "current_achievement": "string",
+            "needed_achievement": "string",
+            "achievement_available": "string",
+            "current_progress": "string",
+            "is_reached": false
+          },
+          {
+            "achievement": {
+              "id": 3984,
+              "achievement_text": "string",
+              "name": "string",
+              "image": "https://qItiWMx.zmqcC+ExC+zuwgzOgnt",
+              "mini_image": "https://Lovu.dibFRJskwx2wRJJ0eP4333NxWIRULV",
+              "video": "https://WgkKTFxJmXfxtYOdvMog.dltxpYfs89UadD1Z2YLnqNA4hzR7xBVLal46VPWG7fz",
+              "achievement_type": "KEEPER_BREAK_DATE"
+            },
+            "current_achievement": "string",
+            "needed_achievement": "string",
+            "achievement_available": "string",
+            "current_progress": "string",
+            "is_reached": true
+          }
+        ]
+      '''
+    }
+  }
+}

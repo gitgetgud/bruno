@@ -1,0 +1,30 @@
+meta {
+  name: test sms sender
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/arm/notifications/send
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: NotificationCenterUser
+  password: NotificationCenterUser
+}
+
+body:json {
+  {
+    "customer_id": "97343316106",
+    "phone": "+77769702012",
+    "message": "SMS send from backend",
+    "message_id": "b6714957",
+    "data": "SMS send from backend"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

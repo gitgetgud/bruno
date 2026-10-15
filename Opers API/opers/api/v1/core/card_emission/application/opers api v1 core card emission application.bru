@@ -1,0 +1,121 @@
+meta {
+  name: opers api v1 core card emission application
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/card_emission/application/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "card_account_option": "string",
+    "currency": "string",
+    "emission_urgency": "string",
+    "full_name": "string",
+    "identity_card_number": "string",
+    "identity_card_type": "string",
+    "phone_number": "string",
+    "pin_pocket_option": "string",
+    "sms_inform_option": "string",
+    "tax_code": "st",
+    "current_date": "string",
+    "opers_name": "string",
+    "uuid": "string",
+    "attached_iban": "",
+    "code_word": "",
+    "plastic_type": "string",
+    "product_type": "STANDART",
+    "with_priority_pass": false,
+    "with_additional_card": false
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/card_emission/application/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "card_account_option": "string",
+        "currency": "string",
+        "emission_urgency": "string",
+        "full_name": "string",
+        "identity_card_number": "string",
+        "identity_card_type": "string",
+        "phone_number": "string",
+        "pin_pocket_option": "string",
+        "sms_inform_option": "string",
+        "tax_code": "st",
+        "current_date": "string",
+        "opers_name": "string",
+        "uuid": "string",
+        "attached_iban": "",
+        "code_word": "",
+        "plastic_type": "string",
+        "product_type": "STANDART",
+        "with_priority_pass": false,
+        "with_additional_card": false
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "card_account_option": "string",
+          "currency": "string",
+          "emission_urgency": "string",
+          "full_name": "string",
+          "identity_card_number": "string",
+          "identity_card_type": "string",
+          "phone_number": "string",
+          "pin_pocket_option": "string",
+          "sms_inform_option": "string",
+          "tax_code": "st",
+          "current_date": "string",
+          "opers_name": "string",
+          "uuid": "string",
+          "attached_iban": "",
+          "code_word": "",
+          "plastic_type": "string",
+          "product_type": "STANDART",
+          "with_priority_pass": false,
+          "with_additional_card": false
+        }
+      '''
+    }
+  }
+}

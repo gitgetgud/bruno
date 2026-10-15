@@ -1,0 +1,27 @@
+meta {
+  name: [BE]<->[OpenAPI]: retry - Сервис повторной попытки обработки заявки
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/:sme-leasing-uuid/retry
+  body: none
+  auth: bearer
+}
+
+params:path {
+  sme-leasing-uuid: {{online_auto_leasing_id}}
+}
+
+headers {
+  X-User-ID: +77777777777
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+settings {
+  encodeUrl: true
+}

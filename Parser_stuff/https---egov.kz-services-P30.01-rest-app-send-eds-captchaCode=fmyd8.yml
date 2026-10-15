@@ -1,0 +1,57 @@
+info:
+  name: https://egov.kz/services/P30.01/rest/app/send-eds?captchaCode=fmyd8
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: https://egov.kz/services/P30.01/rest/app/send-eds?captchaCode=fmyd8
+  headers:
+    - name: sdfsdf
+      value: sadfsdf
+    - name: Connection
+      value: keep-alive
+    - name: Content-Length
+      value: "15"
+    - name: User-Agent
+      value: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
+    - name: Content-type
+      value: application/json;charset=UTF-8
+    - name: Accept
+      value: "*/*"
+    - name: Origin
+      value: https://egov.kz
+    - name: Sec-Fetch-Site
+      value: same-origin
+    - name: Sec-Fetch-Mode
+      value: cors
+    - name: Sec-Fetch-Dest
+      value: empty
+    - name: Referer
+      value: https://egov.kz/services/P30.01/
+    - name: Accept-Encoding
+      value: gzip, deflate, br
+    - name: Accept-Language
+      value: en-US,en;q=0.9
+    - name: Cookie
+      value: LTT=1610773400934; LTT=1610773395314; LTT=1610773394962; egov-client-type=PORTAL; cookiesession1=678B76BA45678989234ABCDEFGHIA12D; has_js=1; _zero_cc=z6002738988757; egovLang=ru; _ym_uid=1610773387359591625; _ym_d=1610773387; _ym_visorc=w; _ga=GA1.2.455918739.1610773388; _gid=GA1.2.767740681.1610773388; _gat_gtag_UA_30759057_1=1; _ym_isad=2; SSO=6ed5a35f-0753-4be2-b3a7-1a87ba2b269b; SSESSf0d09e6725a5b1994b1b0ab11a8d594d=XQ2la3kjG4mXKTGfJnYCDg5wan975SEHHvNm-KcNggY; _zero_ss=6002738a042a4.1610773387.1610773391.2; egov-client-type=PORTAL; LTT=1610773390080; locale=ru; sign.certType=file; sign.file=null
+    - name: ""
+      value: ""
+      disabled: true
+  params:
+    - name: captchaCode
+      value: fmyd8
+      type: query
+  body:
+    type: json
+    data: |-
+      {
+          "xml":"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><ns2pep:request xmlns:ns2pep=\"http://3001_v2.reports.egp.gbdul.tamur.kz\" xmlns:ns3=\"http://www.w3.org/2000/09/xmldsig#\"><ns2pep:requestNumber>10100474525645</ns2pep:requestNumber><ns2pep:declarantId>141040028436</ns2pep:declarantId><ns2pep:requestDate>2021-01-16T11:03:20.942+06:00</ns2pep:requestDate><ns2pep:requestSystemId>PORTAL</ns2pep:requestSystemId><ns2pep:businessData><ns2pep:BIN>201240013776</ns2pep:BIN><ns2pep:Requestor><ns2pep:Organization><BIN>141040028436</BIN><NameRu>\u0422\u043e\u0432\u0430\u0440\u0438\u0449\u0435\u0441\u0442\u0432\u043e \u0441 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u043d\u043e\u0439 \u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0441\u0442\u044c\u044e \"\u0423\u0447\u0451\u0442.\u0411\u0443\u0445\u0433\u0430\u043b\u0442\u0435\u0440\u0438\u044f\"</NameRu><NameKz>\"\u0423\u0447\u0451\u0442.\u0411\u0443\u0445\u0433\u0430\u043b\u0442\u0435\u0440\u0438\u044f\" \u0436\u0430\u0443\u0430\u043f\u043a\u0435\u0440\u0448\u0456\u043b\u0456\u0433\u0456 \u0448\u0435\u043a\u0442\u0435\u0443\u043b\u0456 \u0441\u0435\u0440\u0456\u043a\u0442\u0435\u0441\u0442\u0456\u0433\u0456</NameKz></ns2pep:Organization><ns2pep:Legal>false</ns2pep:Legal></ns2pep:Requestor></ns2pep:businessData><ds:Signature xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\n<ds:SignedInfo>\n<ds:CanonicalizationMethod Algorithm=\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315\"/>\n<ds:SignatureMethod Algorithm=\"http://www.w3.org/2001/04/xmldsig-more#gost34310-gost34311\"/>\n<ds:Reference URI=\"\">\n<ds:Transforms>\n<ds:Transform Algorithm=\"http://www.w3.org/2000/09/xmldsig#enveloped-signature\"/>\n<ds:Transform Algorithm=\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments\"/>\n</ds:Transforms>\n<ds:DigestMethod Algorithm=\"http://www.w3.org/2001/04/xmldsig-more#gost34311\"/>\n<ds:DigestValue>R4eU3vQXby9MkyrhM9AQojEdWctO6cplMy909T5oM2Q=</ds:DigestValue>\n</ds:Reference>\n</ds:SignedInfo>\n<ds:SignatureValue>\nN0/9XyiEzkf9TILjyr/gzNRIypnuHtCwGpHccEt4N3hxDq20H5H47Cf63TBEYCyBar0h7qlgvT9E\nDnsHDc1y1A==\n</ds:SignatureValue>\n<ds:KeyInfo>\n<ds:X509Data>\n<ds:X509Certificate>\nMIIE1TCCBH+gAwIBAgIUVaAmSDDHEBmCl64Q00s4IB8PFLgwDQYJKoMOAwoBAQECBQAwUzELMAkG\nA1UEBhMCS1oxRDBCBgNVBAMMO9Kw0JvQotCi0KvSmiDQmtCj05jQm9CQ0J3QlNCr0KDQo9Co0Ksg\n0J7QoNCi0JDQm9Cr0pogKEdPU1QpMB4XDTIwMDIyNjEzNDYzM1oXDTIxMDIyNTEzNDYzM1owggF/\nMSowKAYDVQQDDCHQpdCe0JTQltCQ0JzQmtCj0JvQntCSINCi0JjQnNCj0KAxHzAdBgNVBAQMFtCl\n0J7QlNCW0JDQnNCa0KPQm9Ce0JIxGDAWBgNVBAUTD0lJTjgwMTIwNzMwMDc4OTELMAkGA1UEBhMC\nS1oxFTATBgNVBAcMDNCQ0JvQnNCQ0KLQqzEVMBMGA1UECAwM0JDQm9Cc0JDQotCrMYGAMH4GA1UE\nCgx30KLQntCS0JDQoNCY0KnQldCh0KLQktCeINChINCe0JPQoNCQ0J3QmNCn0JXQndCd0J7QmSDQ\nntCi0JLQldCi0KHQotCS0JXQndCd0J7QodCi0KzQriAi0KPQp9CB0KIu0JHQo9Cl0JPQkNCb0KLQ\nldCg0JjQryIxGDAWBgNVBAsMD0JJTjE0MTA0MDAyODQzNjEfMB0GA1UEKgwW0J3Qo9Cg0JDQpdCj\n0J3QntCS0JjQpzEdMBsGCSqGSIb3DQEJARYOVElNVVJAVUNIRVQuS1owbDAlBgkqgw4DCgEBAQEw\nGAYKKoMOAwoBAQEBAQYKKoMOAwoBAwEBAANDAARAbUvxNAkkS2b42V3jRU547LAmzB+fc2JIDdMt\nwDpQk4pGwLPVUlqCS+Pct7dbKVO4zIo9Cla3WyotOJ3qNykN3KOCAeswggHnMA4GA1UdDwEB/wQE\nAwIGwDAoBgNVHSUEITAfBggrBgEFBQcDBAYIKoMOAwMEAQIGCSqDDgMDBAECATAPBgNVHSMECDAG\ngARbanPpMB0GA1UdDgQWBBR5/repgtq/9EzUWy/6VOUzKpWU4DBeBgNVHSAEVzBVMFMGByqDDgMD\nAgEwSDAhBggrBgEFBQcCARYVaHR0cDovL3BraS5nb3Yua3ovY3BzMCMGCCsGAQUFBwICMBcMFWh0\ndHA6Ly9wa2kuZ292Lmt6L2NwczBYBgNVHR8EUTBPME2gS6BJhiJodHRwOi8vY3JsLnBraS5nb3Yu\na3ovbmNhX2dvc3QuY3JshiNodHRwOi8vY3JsMS5wa2kuZ292Lmt6L25jYV9nb3N0LmNybDBcBgNV\nHS4EVTBTMFGgT6BNhiRodHRwOi8vY3JsLnBraS5nb3Yua3ovbmNhX2RfZ29zdC5jcmyGJWh0dHA6\nLy9jcmwxLnBraS5nb3Yua3ovbmNhX2RfZ29zdC5jcmwwYwYIKwYBBQUHAQEEVzBVMC8GCCsGAQUF\nBzAChiNodHRwOi8vcGtpLmdvdi5rei9jZXJ0L25jYV9nb3N0LmNlcjAiBggrBgEFBQcwAYYWaHR0\ncDovL29jc3AucGtpLmdvdi5rejANBgkqgw4DCgEBAQIFAANBAFNyCnVdooNe4kBJKTRBTi9q1p3d\nS343r+mH9RWZftRMLi7ZBIe7XEiTuFVNUNMaCWVh5X03sMEJYyIwZaZqCJs=\n</ds:X509Certificate>\n</ds:X509Data>\n</ds:KeyInfo>\n</ds:Signature></ns2pep:request>"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

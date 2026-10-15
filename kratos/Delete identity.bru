@@ -1,0 +1,15 @@
+meta {
+  name: Delete identity
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://localhost:4434/admin/identities/{id}
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

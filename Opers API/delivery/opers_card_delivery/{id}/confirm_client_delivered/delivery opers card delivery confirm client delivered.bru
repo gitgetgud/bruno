@@ -1,0 +1,73 @@
+meta {
+  name: delivery opers card delivery confirm client delivered
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/delivery/opers_card_delivery/:id/confirm_client_delivered/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 80
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {}
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Confirms that opers got a card
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/delivery/opers_card_delivery/:id/confirm_client_delivered/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {}
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {}
+      '''
+    }
+  }
+}

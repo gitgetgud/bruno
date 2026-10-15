@@ -1,0 +1,42 @@
+meta {
+  name: wallet google identity card
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/wallet/google/identity_card/
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/wallet/google/identity_card/
+    method: POST
+    mode: none
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

@@ -1,0 +1,33 @@
+meta {
+  name: Create user
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{KEYCLOAK_BASE_URL}}/auth/admin/realms/{{REALM_NAME}}/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "af",
+    "email": "af@af.af",
+    "firstName": "Name",
+    "lastName": "Surname",
+    "enabled": "True",
+    "emailVerified": "True",
+    "realmRoles": ["default"],
+    "credentials":[{
+      "type": "password",
+      "value": "F1rstB1t",
+      "temporary": "False"
+    }],
+    "attributes":{}
+  }
+}
+
+settings {
+  encodeUrl: true
+}

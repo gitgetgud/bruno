@@ -1,0 +1,204 @@
+meta {
+  name: Получение информации о Поставщике услуг v3
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/rbk_pay/paynet/v3/payment_service/?page=80&service_id=string&service_type=third_party&values_obj_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  service_id: string
+  service_type: third_party
+  values_obj_id: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/paynet/v3/payment_service/?page=80&service_id=string&service_type=third_party&values_obj_id=string
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      service_id: string
+      service_type: third_party
+      values_obj_id: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "provider": {
+            "params": [
+              {
+                "name": "string",
+                "id": 5378,
+                "mask": "string",
+                "keyboard": "EMAIL",
+                "priority": 1120129351
+              },
+              {
+                "name": "string",
+                "id": 2160,
+                "mask": "string",
+                "keyboard": "NUMPAD",
+                "priority": 634526866
+              }
+            ],
+            "name": "string",
+            "iban": "string",
+            "bin": "string",
+            "knp": "strin",
+            "kbe": "string",
+            "id": "f4718b90-2d84-7194-96c2-fbbf822a3428",
+            "name_kz": "string",
+            "name_en": "string",
+            "bank_income_iban": "string",
+            "code": "string",
+            "disclaimer": "string",
+            "mandatory_description": "string",
+            "created_at": "1950-12-16T23:31:49.822Z",
+            "min_commission_amount": "string",
+            "min_allowed_payment_amount": "string",
+            "commission_percentage": "string",
+            "is_paid_by_provider": true,
+            "category": 6494
+          },
+          "id": 949,
+          "name": "string",
+          "payment_service_parameters": {
+            "paynet_id": "string",
+            "id": 7040,
+            "name": "string",
+            "alias": "string",
+            "order": "string",
+            "user_sample": "string",
+            "mask": "string",
+            "checker_template": "string",
+            "data_type": "string",
+            "length": "string",
+            "is_uid": true,
+            "is_for_user": false,
+            "is_visible": false,
+            "is_for_payment": true,
+            "is_for_subscription": false,
+            "entries": {
+              "paynet_id": "string",
+              "value": "string"
+            },
+            "hint": "string",
+            "keyboard": "EMAIL",
+            "description": "string"
+          },
+          "supplier": {
+            "id": 4766,
+            "name": "string"
+          },
+          "payment_service_category": {
+            "id": 8181,
+            "name": "string"
+          },
+          "kassa_service_parameters": {
+            "id": 3670,
+            "name": "string",
+            "mask": "string",
+            "reg_exp": "string",
+            "mask_edit": "string",
+            "options": {},
+            "sum": "string",
+            "check": "string",
+            "hidden": "string",
+            "value": "string",
+            "optional": "string",
+            "print": "string",
+            "request_pay_status": "string",
+            "label": "string",
+            "hint": "string",
+            "keyboard": "MOBILE_PHONE"
+          },
+          "provider_id": "string",
+          "third_party_provider": {
+            "provider_type": 0,
+            "android_version": "string",
+            "ios_version": "string",
+            "provider_uuid": "68b23e4a-86bd-d478-61af-a49adb27cbac",
+            "parameters": {
+              "name": "string",
+              "mask": "string",
+              "keyboard": "DEFAULT"
+            }
+          },
+          "min_sum": "string",
+          "max_sum": "string",
+          "paynet_id": "string",
+          "kassa_id": 343213901,
+          "alias": "string",
+          "is_invoiceable": false,
+          "is_tax_service": true,
+          "is_penalty_service": true,
+          "is_allowed_for_get_balance": false,
+          "is_consolidated": true,
+          "should_notify": true,
+          "on_demand_amount": false,
+          "fee": "string",
+          "percent_fee": "string",
+          "min_fee": "string",
+          "pos_terminal_id": "string",
+          "merchant_id": "string",
+          "purpose": "string",
+          "knp": "string",
+          "trans_account": "string",
+          "type_interface": "string",
+          "icon_image": "https://IENgaMIfmIOEcpPCZoxwXEvn.knMFSTj222JTMX",
+          "hint": "string",
+          "cashback": "string",
+          "logo": "string",
+          "code": "string",
+          "description": "string",
+          "tags": [
+            "string",
+            "string"
+          ],
+          "alternative_title": "string",
+          "paynet_base_id": -2103883924,
+          "bcc_code": "string",
+          "kassa_commission": [
+            5444,
+            4875
+          ]
+        }
+      '''
+    }
+  }
+}

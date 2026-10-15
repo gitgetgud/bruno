@@ -1,0 +1,46 @@
+meta {
+  name: opers media documents external_.+ list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/media/documents/external/.+
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Checks permission and read file
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/media/documents/external/.+
+    method: GET
+    mode: none
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

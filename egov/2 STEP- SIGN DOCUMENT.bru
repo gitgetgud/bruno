@@ -1,0 +1,87 @@
+meta {
+  name: 2 STEP: SIGN DOCUMENT
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://127.0.0.1:14579
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "version": "1.0",
+      "method": "XML.sign",
+      "params": {
+          "checkCrl": "false",
+          "checkOcsp": "false",
+          "p12": "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",
+          "password": "ESgw76ygrT",
+          "xml": "<request xmlns:ns2pep=\"http://www.w3.org/2000/09/xmldsig#\" xmlns=\"http://3005_v2.reports.egp.gbdul.tamur.kz\"><requestNumber>10100544810778</requestNumber><declarantId>141040028436</declarantId><businessData><BIN>080540008929</BIN><Requestor><Organization><BIN>141040028436</BIN><OrganizationNameRu>Товарищество с ограниченной ответственностью \"Учёт.Бухгалтерия\"</OrganizationNameRu><OrganizationNameKz>\"Учёт.Бухгалтерия\" жауапкершілігі шектеулі серіктестігі</OrganizationNameKz></Organization></Requestor></businessData></request>",
+          "createTsp": false,
+          "useTsaPolicy": "TSA_GOST_POLICY"
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}
+
+example {
+  name: http://127.0.0.1:14579
+  
+  request: {
+    url: http://127.0.0.1:14579
+    method: POST
+    mode: json
+    body:json: {
+      {
+          "version": "1.0",
+          "method": "XML.sign",
+          "params": {
+              "checkCrl": "false",
+              "checkOcsp": "false",
+              "p12": "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",
+              "password": "ESgw76ygrT",
+              "xml": "<request xmlns:ns2pep=\"http://www.w3.org/2000/09/xmldsig#\" xmlns=\"http://3005_v2.reports.egp.gbdul.tamur.kz\"><requestNumber>10100541665540</requestNumber><declarantId>141040028436</declarantId><businessData><BIN>090640004684</BIN><Requestor><Organization><BIN>141040028436</BIN><OrganizationNameRu>Товарищество с ограниченной ответственностью \"Учёт.Бухгалтерия\"</OrganizationNameRu><OrganizationNameKz>\"Учёт.Бухгалтерия\" жауапкершілігі шектеулі серіктестігі</OrganizationNameKz></Organization></Requestor></businessData></request>",
+              "createTsp": false,
+              "useTsaPolicy": "TSA_GOST_POLICY"
+          }
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      X-powered-by: NCANode v2.0.1
+      Date: Wed, 27 Oct 2021 11:18:34 GMT
+      Content-type: application/json; charset=UTF-8
+      Content-length: 4140
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "result": {
+                "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><request xmlns=\"http://3005_v2.reports.egp.gbdul.tamur.kz\" xmlns:ns2pep=\"http://www.w3.org/2000/09/xmldsig#\"><requestNumber>10100541665540</requestNumber><declarantId>141040028436</declarantId><businessData><BIN>090640004684</BIN><Requestor><Organization><BIN>141040028436</BIN><OrganizationNameRu>Товарищество с ограниченной ответственностью \"Учёт.Бухгалтерия\"</OrganizationNameRu><OrganizationNameKz>\"Учёт.Бухгалтерия\" жауапкершілігі шектеулі серіктестігі</OrganizationNameKz></Organization></Requestor></businessData><ds:Signature xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\n<ds:SignedInfo>\n<ds:CanonicalizationMethod Algorithm=\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315\"/>\n<ds:SignatureMethod Algorithm=\"http://www.w3.org/2001/04/xmldsig-more#gost34310-gost34311\"/>\n<ds:Reference URI=\"\">\n<ds:Transforms>\n<ds:Transform Algorithm=\"http://www.w3.org/2000/09/xmldsig#enveloped-signature\"/>\n<ds:Transform Algorithm=\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments\"/>\n</ds:Transforms>\n<ds:DigestMethod Algorithm=\"http://www.w3.org/2001/04/xmldsig-more#gost34311\"/>\n<ds:DigestValue>0p2lf+VrO8cpJuaeScFEw84842z1pKrVjCju8SNtU9o=</ds:DigestValue>\n</ds:Reference>\n</ds:SignedInfo>\n<ds:SignatureValue>\nRmA6ja6Tb1/tRZAbquaV1m1sz18ZjI1OTn+DYHGR1Z/b+W5eBoAqPIwferyq+0vglLagyX3jgQeM\n3MTK8aIkqw==\n</ds:SignatureValue>\n<ds:KeyInfo>\n<ds:X509Data>\n<ds:X509Certificate>\nMIIEpzCCBFGgAwIBAgIUTMJ2pY5X6m/1BgzyHHGmdHGWJGQwDQYJKoMOAwoBAQECBQAwUzELMAkG\nA1UEBhMCS1oxRDBCBgNVBAMMO9Kw0JvQotCi0KvSmiDQmtCj05jQm9CQ0J3QlNCr0KDQo9Co0Ksg\n0J7QoNCi0JDQm9Cr0pogKEdPU1QpMB4XDTIxMDIyMDA4MDcyOFoXDTIyMDIyMDA4MDcyOFowggFR\nMSowKAYDVQQDDCHQpdCe0JTQltCQ0JzQmtCj0JvQntCSINCi0JjQnNCj0KAxHzAdBgNVBAQMFtCl\n0J7QlNCW0JDQnNCa0KPQm9Ce0JIxGDAWBgNVBAUTD0lJTjgwMTIwNzMwMDc4OTELMAkGA1UEBhMC\nS1oxgYAwfgYDVQQKDHfQotCe0JLQkNCg0JjQqdCV0KHQotCS0J4g0KEg0J7Qk9Cg0JDQndCY0KfQ\nldCd0J3QntCZINCe0KLQktCV0KLQodCi0JLQldCd0J3QntCh0KLQrNCuICLQo9Cn0IHQoi7QkdCj\n0KXQk9CQ0JvQotCV0KDQmNCvIjEYMBYGA1UECwwPQklOMTQxMDQwMDI4NDM2MR8wHQYDVQQqDBbQ\nndCj0KDQkNCl0KPQndCe0JLQmNCnMR0wGwYJKoZIhvcNAQkBFg5USU1VUkBVQ0hFVC5LWjBsMCUG\nCSqDDgMKAQEBATAYBgoqgw4DCgEBAQEBBgoqgw4DCgEDAQEAA0MABEBx5Rkk5FhDxwkHbDL12RAR\nBZ4oQWFkxKE9MkJMvJXBm0u+gfBdv5wgdnua2iLUtbq7IX/KHJPz9+REliKLt3F2o4IB6zCCAecw\nDgYDVR0PAQH/BAQDAgbAMCgGA1UdJQQhMB8GCCsGAQUFBwMEBggqgw4DAwQBAgYJKoMOAwMEAQIB\nMA8GA1UdIwQIMAaABFtqc+kwHQYDVR0OBBYEFOlf49bEYvmGJWZuz8gwduHPMnnlMF4GA1UdIARX\nMFUwUwYHKoMOAwMCATBIMCEGCCsGAQUFBwIBFhVodHRwOi8vcGtpLmdvdi5rei9jcHMwIwYIKwYB\nBQUHAgIwFwwVaHR0cDovL3BraS5nb3Yua3ovY3BzMFgGA1UdHwRRME8wTaBLoEmGImh0dHA6Ly9j\ncmwucGtpLmdvdi5rei9uY2FfZ29zdC5jcmyGI2h0dHA6Ly9jcmwxLnBraS5nb3Yua3ovbmNhX2dv\nc3QuY3JsMFwGA1UdLgRVMFMwUaBPoE2GJGh0dHA6Ly9jcmwucGtpLmdvdi5rei9uY2FfZF9nb3N0\nLmNybIYlaHR0cDovL2NybDEucGtpLmdvdi5rei9uY2FfZF9nb3N0LmNybDBjBggrBgEFBQcBAQRX\nMFUwLwYIKwYBBQUHMAKGI2h0dHA6Ly9wa2kuZ292Lmt6L2NlcnQvbmNhX2dvc3QuY2VyMCIGCCsG\nAQUFBzABhhZodHRwOi8vb2NzcC5wa2kuZ292Lmt6MA0GCSqDDgMKAQEBAgUAA0EAKbBBBpWoMFTl\ntt7FApwCpSSA2kg62zscTUyNLs8EcjObcRLmhbvGCzCyay1EEBiON4AmJfGEJ9Gawpk81/zUpQ==\n</ds:X509Certificate>\n</ds:X509Data>\n</ds:KeyInfo>\n</ds:Signature></request>",
+                "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><request xmlns=\"http://3005_v2.reports.egp.gbdul.tamur.kz\" xmlns:ns2pep=\"http://www.w3.org/2000/09/xmldsig#\"><requestNumber>10100541665540</requestNumber><declarantId>141040028436</declarantId><businessData><BIN>090640004684</BIN><Requestor><Organization><BIN>141040028436</BIN><OrganizationNameRu>Товарищество с ограниченной ответственностью \"Учёт.Бухгалтерия\"</OrganizationNameRu><OrganizationNameKz>\"Учёт.Бухгалтерия\" жауапкершілігі шектеулі серіктестігі</OrganizationNameKz></Organization></Requestor></businessData></request>"
+            },
+            "message": "",
+            "status": 0
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,64 @@
+meta {
+  name: Получить дату и время доступные для бронирования
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/booking/booking/get_available_booking_datetime/?page=80&branch_id=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  branch_id: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/booking/booking/get_available_booking_datetime/?page=80&branch_id=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      branch_id: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "start_datetime": "2006-02-07T02:30:25.925Z",
+          "end_datetime": "1959-05-08T09:28:21.913Z"
+        }
+      '''
+    }
+  }
+}

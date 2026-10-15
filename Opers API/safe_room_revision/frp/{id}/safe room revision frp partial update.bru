@@ -1,0 +1,99 @@
+meta {
+  name: safe room revision frp partial update
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/safe_room_revision/frp/:id/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 80
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "first_name": "string",
+    "last_name": "string",
+    "middle_name": "string",
+    "email": "q3UWkV7pmaQQb60@hQppQrQknNVgrztcdCdBnRsE.xznn",
+    "client_id": "string",
+    "position_name": "string",
+    "additional_data": "string",
+    "plombirator_number": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/frp/:id/
+    method: PATCH
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "first_name": "string",
+        "last_name": "string",
+        "middle_name": "string",
+        "email": "q3UWkV7pmaQQb60@hQppQrQknNVgrztcdCdBnRsE.xznn",
+        "client_id": "string",
+        "position_name": "string",
+        "additional_data": "string",
+        "plombirator_number": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "first_name": "string",
+          "last_name": "string",
+          "id": 9709,
+          "created": "1957-07-26T01:22:26.844Z",
+          "modified": "1952-03-24T23:32:34.655Z",
+          "middle_name": "string",
+          "email": "QBrxw@OMyMvBsVJKTTgufeNE.aof",
+          "client_id": "string",
+          "position_name": "string",
+          "additional_data": "string",
+          "plombirator_number": "string"
+        }
+      '''
+    }
+  }
+}

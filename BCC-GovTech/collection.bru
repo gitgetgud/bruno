@@ -1,0 +1,28 @@
+meta {
+  name: BCC-GovTech
+}
+
+auth {
+  mode: oauth2
+}
+
+auth:oauth2 {
+  grant_type: client_credentials
+  access_token_url: https://dbp-test.bcc.kz/auth/realms/bank/protocol/openid-connect/token
+  refresh_token_url: 
+  client_id: dbp-modules-centermarket
+  client_secret: hPRTO8gWkQBHv5fN0ToaVmwzzbx9YFhw
+  scope: 
+  credentials_placement: body
+  credentials_id: 
+  token_source: access_token
+  token_placement: header
+  token_header_prefix: 
+  auto_fetch_token: true
+  auto_refresh_token: false
+}
+
+vars:pre-request {
+  gov_tech_base_url: 
+  test_gov_tech_base_url: 
+}

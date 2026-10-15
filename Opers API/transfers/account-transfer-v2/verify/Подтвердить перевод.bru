@@ -1,0 +1,67 @@
+meta {
+  name: Подтвердить перевод
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/account-transfer-v2/verify/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "verification_id": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/account-transfer-v2/verify/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "verification_id": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "23c4cf49-7e65-6bda-c65f-e3d49feea26a"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,42 @@
+meta {
+  name: 1 STEP: GET DOCUMENT
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://egov.kz/services/P30.05/rest/app/xml
+  body: json
+  auth: inherit
+}
+
+headers {
+  Connection: keep-alive
+  sec-ch-ua: "Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"
+  Accept: application/json, text/plain, */*
+  Content-Type: application/json;charset=UTF-8
+  sec-ch-ua-mobile: ?0
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+  sec-ch-ua-platform: "Windows"
+  Origin: https://egov.kz
+  Sec-Fetch-Site: same-origin
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Dest: empty
+  Referer: https://egov.kz/services/P30.05/
+  Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+  Cookie: _zero_ss=618a5644d6419.1636456005.1636456010.2;SSESSf0d09e6725a5b1994b1b0ab11a8d594d=GMdlvHz7OMgv-GKoaEmMABYL3MsuvKOSw9DNN2MIbPU;SSO=4006eba4-f4a8-479f-9201-ea5767970454;_gid=GA1.2.517375502.1636456006;cookiesession1=678B76BFUVWXZAHIJKLMNOPQRSTVB97D;_ym_visorc=w;_ym_isad=2;_ym_uid=1636456005779626184;_ga=GA1.2.481261747.1636456006;_zero_cc=3e1286509d6753;egovLang=ru;_ym_d=1636456005;has_js=1;_gat_gtag_UA_30759057_1=1;egov-client-type=PORTAL;
+}
+
+body:json {
+  {
+      "declarantUin": "141040028436",
+      "bin": "080540008929"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}

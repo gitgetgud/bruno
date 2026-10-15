@@ -1,0 +1,54 @@
+meta {
+  name: nonce
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8080/proxy/telemetry
+  body: none
+  auth: inherit
+}
+
+headers {
+  X-Fingerprint: mobile/d763b941d029108d/Android/36/4.282.1/937
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: nonce
+  
+  request: {
+    url: http://localhost:8080/proxy/telemetry
+    method: GET
+    mode: none
+    headers: {
+      X-Fingerprint: mobile/d763b941d029108d/Android/36/4.282.1/937
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+      Date: Wed, 01 Apr 2026 06:59:56 GMT
+      Content-Length: 84
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "telemetry_id": "8c27d1fb8ab521a9a87c96d8af4bcdf6bc63a855e4501306cbd6160c99edfaeb"
+        }
+      '''
+    }
+  }
+}

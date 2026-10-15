@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Colvir Adapter",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

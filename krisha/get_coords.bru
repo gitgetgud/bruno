@@ -1,0 +1,112 @@
+meta {
+  name: get_coords
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://enterprise.api-maps.yandex.ru/services/search//v2/?callback=id_166831239378645102267&text=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%2C%20%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B%2C%20%D0%96%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%B2%D0%B0%20%D0%B4%2044&format=json&rspn=0&lang=ru_RU&token=1ec7b621550eed590f0a03371e502bdc&type=geo&properties=addressdetails&geocoder_sco=latlong&origin=jsapi2Geocoder&apikey=74c63257-6b31-44f8-9def-5768c734d1a5
+  body: none
+  auth: inherit
+}
+
+params:query {
+  callback: id_166831239378645102267
+  text: %D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%2C%20%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B%2C%20%D0%96%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%B2%D0%B0%20%D0%B4%2044
+  format: json
+  rspn: 0
+  lang: ru_RU
+  token: 1ec7b621550eed590f0a03371e502bdc
+  type: geo
+  properties: addressdetails
+  geocoder_sco: latlong
+  origin: jsapi2Geocoder
+  apikey: 74c63257-6b31-44f8-9def-5768c734d1a5
+}
+
+headers {
+  User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0
+  Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+  Accept-Language: en-US,en;q=0.5
+  Accept-Encoding: gzip, deflate, br
+  DNT: 1
+  Connection: keep-alive
+  Cookie: _yasc=hIbOOEMhVCc4vz4A/5EeySARiTLdvLnO2Yraekumb7/nqdnKxHq290U6dR2kSA==; i=q+OHWl3Koka6o9V4ucmk52U1s9Q2KWB1sLDS5W8xGktxVRO6Qjw3AGit7UQwrTVwsGqqJcsZDi322IO0gWDsgG4gemc=
+  Upgrade-Insecure-Requests: 1
+  Sec-Fetch-Dest: document
+  Sec-Fetch-Mode: navigate
+  Sec-Fetch-Site: none
+  Sec-Fetch-User: ?1
+  If-None-Match: W/"94b-y3/gPN6Uj8Qc53/x38hMLnfL8vI"
+  TE: trailers
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: get_coords
+  
+  request: {
+    url: https://enterprise.api-maps.yandex.ru/services/search//v2/?callback=id_166831239378645102267&text=%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%2C%20%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B%2C%20%D0%96%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%B2%D0%B0%20%D0%B4%2044&format=json&rspn=0&lang=ru_RU&token=1ec7b621550eed590f0a03371e502bdc&type=geo&properties=addressdetails&geocoder_sco=latlong&origin=jsapi2Geocoder&apikey=74c63257-6b31-44f8-9def-5768c734d1a5
+    method: GET
+    mode: none
+    params:query: {
+      callback: id_166831239378645102267
+      text: %D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%2C%20%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B%2C%20%D0%96%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%B2%D0%B0%20%D0%B4%2044
+      format: json
+      rspn: 0
+      lang: ru_RU
+      token: 1ec7b621550eed590f0a03371e502bdc
+      type: geo
+      properties: addressdetails
+      geocoder_sco: latlong
+      origin: jsapi2Geocoder
+      apikey: 74c63257-6b31-44f8-9def-5768c734d1a5
+    }
+  
+    headers: {
+      User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+      Accept-Language: en-US,en;q=0.5
+      Accept-Encoding: gzip, deflate, br
+      DNT: 1
+      Connection: keep-alive
+      Cookie: _yasc=hIbOOEMhVCc4vz4A/5EeySARiTLdvLnO2Yraekumb7/nqdnKxHq290U6dR2kSA==; i=q+OHWl3Koka6o9V4ucmk52U1s9Q2KWB1sLDS5W8xGktxVRO6Qjw3AGit7UQwrTVwsGqqJcsZDi322IO0gWDsgG4gemc=
+      Upgrade-Insecure-Requests: 1
+      Sec-Fetch-Dest: document
+      Sec-Fetch-Mode: navigate
+      Sec-Fetch-Site: none
+      Sec-Fetch-User: ?1
+      If-None-Match: W/"94b-y3/gPN6Uj8Qc53/x38hMLnfL8vI"
+      TE: trailers
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Encoding: gzip
+      Content-Type: text/javascript; charset=utf-8
+      Date: Sun, 13 Nov 2022 04:17:50 GMT
+      ETag: W/"94b-dIR6TLt+X4iyrwXm/+VbmY4pKJg"
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding
+      X-Content-Type-Options: nosniff
+      X-Content-Type-Options: nosniff
+      X-XSS-Protection: 1; mode=block
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+        /**/id_166831239378645102267({"status":"success","data":{"type":"FeatureCollection","properties":{"ResponseMetaData":{"SearchResponse":{"found":1,"context":"ZAAAAAgAEAAaKAoSCQAAAAAAkHZAEQAAAAAAoGZAEhIJAAAAAAAA8L8RAAAAAAAA8L8iAQAoyAE4AED+//////////8BSAFiCm1heGFkdj0yMDBqAnJ1nQHNzEw9oAEAqAEA6gEA8gEA+AEAggI40JrQsNC30LDRhdGB0YLQsNC9LCDQkNC70LzQsNGC0YssINCW0LDRgNC+0LrQvtCy0LAg0LQgNDSKAgCSAgCaAgA=","display":"single","boundedBy":[[76.894144,43.241918],[76.902355,43.24792]],"Point":{"type":"Point","coordinates":[76.8982495,43.24491907]},"SourceMetaDataList":{"GeocoderResponseMetaData":{"request":"казахстан, алматы, жарокова, д 44","results":10,"found":1}}},"SearchRequest":{"request":"Казахстан, Алматы, Жарокова д 44","skip":0,"results":10,"boundedBy":[[37.048427,55.43644866],[38.175903,56.04690174]]}}},"features":[{"type":"Feature","properties":{"id":"1","name":"улица Жарокова, 41","description":"Алматы, Казахстан","boundedBy":[[76.894144,43.241918],[76.902355,43.24792]],"URIMetaData":{"URIs":[{"uri":"ymapsbm1://geo?data=CgoyMDMyNDk4NDU2EkHSmtCw0LfQsNKb0YHRgtCw0L0sINCQ0LvQvNCw0YLRiywg0JbQsNGA0L7QutC+0LIg0LrTqdGI0LXRgdGWLCA0MSIKDejLmUIVzPosQg=="}],"URI":{"uri":"ymapsbm1://geo?data=CgoyMDMyNDk4NDU2EkHSmtCw0LfQsNKb0YHRgtCw0L0sINCQ0LvQvNCw0YLRiywg0JbQsNGA0L7QutC+0LIg0LrTqdGI0LXRgdGWLCA0MSIKDejLmUIVzPosQg=="}},"GeocoderMetaData":{"precision":"near","text":"Казахстан, Алматы, улица Жарокова, 41","kind":"house","Address":{"country_code":"KZ","formatted":"Казахстан, Алматы, улица Жарокова, 41","Components":[{"kind":"country","name":"Казахстан"},{"kind":"province","name":"Алматы"},{"kind":"locality","name":"Алматы"},{"kind":"street","name":"улица Жарокова"},{"kind":"house","name":"41"}]},"AddressDetails":{"Country":{"AddressLine":"Казахстан, Алматы, улица Жарокова, 41","CountryNameCode":"KZ","CountryName":"Казахстан","AdministrativeArea":{"AdministrativeAreaName":"Алматы","Locality":{"LocalityName":"Алматы","Thoroughfare":{"ThoroughfareName":"улица Жарокова","Premise":{"PremiseNumber":"41"}}}}}}}},"geometries":[{"type":"Point","coordinates":[76.89825,43.244919]}],"geometry":{"type":"Point","coordinates":[76.89825,43.244919]}}]}});
+      '''
+    }
+  }
+}

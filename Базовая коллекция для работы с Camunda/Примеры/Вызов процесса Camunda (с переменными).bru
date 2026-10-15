@@ -1,0 +1,24 @@
+meta {
+  name: Вызов процесса Camunda (с переменными)
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://dev-bcc-kz-green-front.apps.dev-env.bcc.kz/process/start
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "processDefinitionKey": "camunda_course_main",
+      "variables": {
+          "iin": "Введите Ваш ИИН"
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,19 @@
+info:
+  name: otp_login
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: https://otp.kz/api/v1/login/get_token?bin=041040003241
+  params:
+    - name: bin
+      value: "041040003241"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

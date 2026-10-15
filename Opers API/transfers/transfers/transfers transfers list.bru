@@ -1,0 +1,215 @@
+meta {
+  name: transfers transfers list
+  type: http
+  seq: 23
+}
+
+get {
+  url: {{baseUrl}}/transfers/transfers/?page=80&size=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  size: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/transfers/?page=80&size=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      size: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 4444,
+          "results": [
+            {
+              "client_id": "string",
+              "amount": "string",
+              "currency": "string",
+              "upt": {
+                "beneficiary_country_code": "string",
+                "beneficiary_name": "string",
+                "beneficiary_surname": "string",
+                "id": 7942,
+                "ref_number": "string",
+                "upt_transfer_id": "string",
+                "kbe": "string",
+                "beneficiary_number": "string",
+                "beneficiary_number_code": "string",
+                "country": "string"
+              },
+              "koronapay": {
+                "koronapay_oid": "string",
+                "beneficiary_country": {
+                  "code": "st",
+                  "name": "stri",
+                  "id": 7248
+                },
+                "beneficiary_city": {
+                  "name": "string",
+                  "id": 2247,
+                  "currencies": "string"
+                },
+                "to_amount": "string",
+                "beneficiary_last_name": "string",
+                "beneficiary_first_name": "string",
+                "beneficiary_phone_number": "string",
+                "to_currency": "RUB",
+                "total_fee_amount": "string",
+                "beneficiary_middle_name": "string",
+                "beneficiary_is_resident": false
+              },
+              "account_transfer_extension": {
+                "id": 5099,
+                "knp": "string",
+                "kbe": "string",
+                "paypurp": "string",
+                "beneficiary_iin": "string",
+                "beneficiary_fio": "string",
+                "beneficiary_country_code": "string",
+                "commission_amount": "string",
+                "commission_currency": "string",
+                "beneficiary_bank_bic": "string",
+                "correspond_iban": "string",
+                "beneficiary_phone": "string",
+                "data": {}
+              },
+              "id": "2475d2fe-3be2-2aee-4c19-f6d5debcc490",
+              "invoice_id": -803215104,
+              "transfer_type": "A2A_IN",
+              "phone": "string",
+              "iin": "string",
+              "from_iban": "string",
+              "to_iban": "string",
+              "comment": "string",
+              "credit_amount": "string",
+              "debit_amount": "string",
+              "credit_currency": "USD",
+              "debit_currency": "CNY",
+              "commission": "string",
+              "status": 0,
+              "status_display": "string",
+              "ibso_folder_id": "string",
+              "ibso_document_ref_id": "string",
+              "ibso_err_code": "string",
+              "created": "2022-11-06T01:31:32.637Z",
+              "modified": "1954-05-07T10:33:33.810Z",
+              "ibso_err_message": "string"
+            },
+            {
+              "client_id": "string",
+              "amount": "string",
+              "currency": "string",
+              "upt": {
+                "beneficiary_country_code": "s",
+                "beneficiary_name": "string",
+                "beneficiary_surname": "string",
+                "id": 4706,
+                "ref_number": "string",
+                "upt_transfer_id": "string",
+                "kbe": "string",
+                "beneficiary_number": "string",
+                "beneficiary_number_code": "string",
+                "country": "string"
+              },
+              "koronapay": {
+                "koronapay_oid": "string",
+                "beneficiary_country": {
+                  "code": "s",
+                  "name": "string",
+                  "id": 8907
+                },
+                "beneficiary_city": {
+                  "name": "string",
+                  "id": 3381,
+                  "currencies": "string"
+                },
+                "to_amount": "string",
+                "beneficiary_last_name": "string",
+                "beneficiary_first_name": "string",
+                "beneficiary_phone_number": "string",
+                "to_currency": "RUB",
+                "total_fee_amount": "string",
+                "beneficiary_middle_name": "string",
+                "beneficiary_is_resident": true
+              },
+              "account_transfer_extension": {
+                "id": 6964,
+                "knp": "string",
+                "kbe": "string",
+                "paypurp": "string",
+                "beneficiary_iin": "strin",
+                "beneficiary_fio": "string",
+                "beneficiary_country_code": "string",
+                "commission_amount": "string",
+                "commission_currency": "string",
+                "beneficiary_bank_bic": "string",
+                "correspond_iban": "string",
+                "beneficiary_phone": "string",
+                "data": {}
+              },
+              "id": "80f1f496-8dbc-61aa-46da-2188cfca6abd",
+              "invoice_id": 934412645,
+              "transfer_type": "A2A_IN_PERS_DEPO_REF",
+              "phone": "string",
+              "iin": "string",
+              "from_iban": "string",
+              "to_iban": "string",
+              "comment": "string",
+              "credit_amount": "string",
+              "debit_amount": "string",
+              "credit_currency": "USD",
+              "debit_currency": "GBP",
+              "commission": "string",
+              "status": 7,
+              "status_display": "string",
+              "ibso_folder_id": "string",
+              "ibso_document_ref_id": "string",
+              "ibso_err_code": "string",
+              "created": "2025-04-17T22:10:47.794Z",
+              "modified": "2013-08-25T15:08:07.557Z",
+              "ibso_err_message": "string"
+            }
+          ],
+          "next": "http://VLWwID.ppygn7mQuIeubeE-Y1sNrm.",
+          "previous": "http://wKrseVaQanSezgZNUVDqaSDx.nvGEsOJjEFheE6kB6RS9yChGJTsIffFBQ9FJm9I8Ao.x.ri-+FsBGL3KTSJabO,wJ49o"
+        }
+      '''
+    }
+  }
+}

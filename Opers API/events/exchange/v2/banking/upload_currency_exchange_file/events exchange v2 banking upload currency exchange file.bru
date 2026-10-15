@@ -1,0 +1,69 @@
+meta {
+  name: events exchange v2 banking upload currency exchange file
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/exchange/v2/banking/upload_currency_exchange_file/
+  body: multipartForm
+  auth: inherit
+}
+
+headers {
+  Content-Type: multipart/form-data
+  Accept: application/json
+}
+
+body:multipart-form {
+  currency_opers_exchange: bcd65825-61c9-4e37-c239-5586fcdf045c
+  file: @file()
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/exchange/v2/banking/upload_currency_exchange_file/
+    method: POST
+    mode: multipartForm
+    headers: {
+      Content-Type: multipart/form-data
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:multipart-form: {
+      currency_opers_exchange: bcd65825-61c9-4e37-c239-5586fcdf045c
+      file: @file()
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "currency_opers_exchange": "c8620012-ec5f-1723-2deb-1d84dfcecaea",
+          "id": "549446bf-d966-bb48-fe2c-573d8ce95f43",
+          "created": "2019-12-11T15:03:33.111Z",
+          "modified": "1950-02-11T15:45:25.665Z",
+          "file": "http://CCDQeYVWKKTQQgruHnxxvD.yqqYwVhpKh49gh"
+        }
+      '''
+    }
+  }
+}

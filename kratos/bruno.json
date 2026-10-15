@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "kratos",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

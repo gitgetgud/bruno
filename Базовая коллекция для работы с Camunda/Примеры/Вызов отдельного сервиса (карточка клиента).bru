@@ -1,0 +1,33 @@
+meta {
+  name: Вызов отдельного сервиса (карточка клиента)
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://dev-bcc-gf-gateway-green-front.apps.dev-env.bcc.kz/client-info/api/clientinfo/extended
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "type": "SYNC",
+      "body": {
+          "loadClientsList": {
+              "clientsListQuery": {
+                  "equals": [
+                      {
+                          "attr":"clientIin",
+                          "value":"Введите Ваш ИИН"
+                      }
+                  ]
+              }
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

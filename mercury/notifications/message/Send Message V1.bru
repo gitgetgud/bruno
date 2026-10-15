@@ -1,0 +1,187 @@
+meta {
+  name: Send Message V1
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/notifications/message/
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "data": "string",
+    "customer_id": "string",
+    "hooks": [
+      "string",
+      "string"
+    ],
+    "message_type": "INFO",
+    "push_only": false,
+    "status": 7954,
+    "title_en": "string",
+    "title_ru": "string",
+    "title_kz": "string",
+    "data_en": "string",
+    "data_ru": "string",
+    "data_kz": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Send message
+  Fields:
+  - data: str
+  - customer_id: str
+  - message_type: Optional[str]
+  - push_only: Optional[bool] = False
+  - status: Optional[int] = None
+  - hooks: Optional[list] = None
+  - title_en: Optional[str] = None
+  - title_ru: Optional[str] = None
+  - title_kz: Optional[str] = None
+  - data_en: Optional[str] = None
+  - data_ru: Optional[str] = None
+  - data_kz: Optional[str] = None
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/message/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "data": "string",
+        "customer_id": "string",
+        "hooks": [
+          "string",
+          "string"
+        ],
+        "message_type": "INFO",
+        "push_only": false,
+        "status": 7954,
+        "title_en": "string",
+        "title_ru": "string",
+        "title_kz": "string",
+        "data_en": "string",
+        "data_ru": "string",
+        "data_kz": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Validation Error
+  
+  request: {
+    url: {{baseUrl}}/notifications/message/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "data": "string",
+        "customer_id": "string",
+        "hooks": [
+          "string",
+          "string"
+        ],
+        "message_type": "INFO",
+        "push_only": false,
+        "status": 7954,
+        "title_en": "string",
+        "title_ru": "string",
+        "title_kz": "string",
+        "data_en": "string",
+        "data_ru": "string",
+        "data_kz": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 422
+      text: Unprocessable Entity (WebDAV) (RFC 4918)
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "detail": [
+            {
+              "loc": [
+                "string",
+                2136
+              ],
+              "msg": "string",
+              "type": "string"
+            },
+            {
+              "loc": [
+                3462,
+                "string"
+              ],
+              "msg": "string",
+              "type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

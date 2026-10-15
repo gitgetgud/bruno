@@ -1,0 +1,73 @@
+meta {
+  name: Справочник Карты. Карточные филиалы
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/instant/branches/
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/instant/branches/
+    method: GET
+    mode: none
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "hermes_id": "string",
+          "elements": {
+            "element": [
+              {
+                "id": "string",
+                "short_name": "string",
+                "financial_institution_code": "string",
+                "full_name": "string",
+                "department": "string",
+                "code": ""
+              },
+              {
+                "id": "string",
+                "short_name": "string",
+                "financial_institution_code": "string",
+                "full_name": "string",
+                "department": "string",
+                "code": ""
+              }
+            ]
+          }
+        }
+      '''
+    }
+  }
+}

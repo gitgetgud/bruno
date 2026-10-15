@@ -1,0 +1,71 @@
+meta {
+  name: transfers account-transfer-v2 daily limit
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/account-transfer-v2/daily_limit/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "amount": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Получение суточного лимита
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/account-transfer-v2/daily_limit/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "amount": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "amount": "string"
+        }
+      '''
+    }
+  }
+}

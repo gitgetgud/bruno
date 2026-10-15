@@ -1,0 +1,42 @@
+meta {
+  name: sdbo.AddIndividual
+  type: http
+  seq: 7
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdbo/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboUser
+  password: s6L8EHOUuwhgHf6NyRyo
+}
+
+body:json {
+  {
+      "version": "TL 1.0",
+      "type": "ActivateOrDisableUsage",
+      "id": "123321123321",
+      "dateTime": "2017-11-28T23:37:11.894",
+      "source": "DBO_INFIN",
+      "body": [
+          {
+              "divisionInstitute": "1004",
+              "divisionCode": "44",
+              "rbsNumber": "RBS-00347215",
+              "action": "AddIndividual",
+              "Code": "ATM_PERS2",
+              "Period": {"Unit": "Day", "Value": "1"},
+              "ActivityPeriod": {"Activation": "Activate"},
+              "GlobalTemplateCode": "ATM_PERS"
+          }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,91 @@
+meta {
+  name: safe room revision frp list
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/safe_room_revision/frp/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/frp/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 8844,
+          "results": [
+            {
+              "first_name": "string",
+              "last_name": "string",
+              "id": 8680,
+              "created": "2007-10-19T02:48:20.109Z",
+              "modified": "1999-02-23T23:25:57.552Z",
+              "middle_name": "string",
+              "email": "i0t8GqgNPHlnh@XKDfVVPbWJxTmuwuirdEstdTNfpP.oe",
+              "client_id": "string",
+              "position_name": "string",
+              "additional_data": "string",
+              "plombirator_number": "string"
+            },
+            {
+              "first_name": "string",
+              "last_name": "string",
+              "id": 7752,
+              "created": "1971-04-10T20:37:59.867Z",
+              "modified": "2004-04-29T00:49:28.592Z",
+              "middle_name": "string",
+              "email": "p8gaQMLB@BJKTchMDbENdnFtRRyqAVNguhGWOF.pvi",
+              "client_id": "string",
+              "position_name": "string",
+              "additional_data": "string",
+              "plombirator_number": "string"
+            }
+          ],
+          "next": "https://bmfhclPfQhdIrBngrvixPxwbAx.dftrg-Bc3-2Xkxwpcc7B-WyLvCiDsOTlqVb4MpRibe.u447+v-GBCbQSLSsSrn69Y",
+          "previous": "https://kHkBjRdEHLNwFSpqQcrcwAEzPPvc.nmliIgPp7JbE0c.zBJxL"
+        }
+      '''
+    }
+  }
+}

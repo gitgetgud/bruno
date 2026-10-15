@@ -1,0 +1,85 @@
+meta {
+  name: Процесс по оцениваю менеджера
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/qr/employee_review/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "firstName": "string",
+    "lastName": "string",
+    "position": "string",
+    "branchNameKz": "string",
+    "branchNameRu": "string",
+    "email": "sEk-j-9S@joVXgQOFGSykNIZpIbA.ge",
+    "identificationNumber": "string",
+    "client_iin": "string",
+    "client_name": "string",
+    "rating": 2,
+    "incoming_number": "string",
+    "middleName": "string",
+    "service_type": "string",
+    "comment": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/qr/employee_review/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "firstName": "string",
+        "lastName": "string",
+        "position": "string",
+        "branchNameKz": "string",
+        "branchNameRu": "string",
+        "email": "sEk-j-9S@joVXgQOFGSykNIZpIbA.ge",
+        "identificationNumber": "string",
+        "client_iin": "string",
+        "client_name": "string",
+        "rating": 2,
+        "incoming_number": "string",
+        "middleName": "string",
+        "service_type": "string",
+        "comment": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

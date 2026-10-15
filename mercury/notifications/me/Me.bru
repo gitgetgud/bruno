@@ -1,0 +1,69 @@
+meta {
+  name: Me
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/notifications/me
+  body: none
+  auth: oauth2
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:oauth2 {
+  grant_type: password
+  access_token_url: /notifications/login
+  refresh_token_url: 
+  username: 
+  password: 
+  client_id: 
+  client_secret: 
+  scope: 
+  credentials_placement: basic_auth_header
+  credentials_id: 
+  token_source: access_token
+  token_placement: url
+  token_query_key: 
+  auto_fetch_token: true
+  auto_refresh_token: false
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/me
+    method: GET
+    mode: none
+    headers: {
+      Accept: application/json
+      Authorization: <token>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}

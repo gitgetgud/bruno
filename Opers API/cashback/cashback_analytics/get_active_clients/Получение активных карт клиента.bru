@@ -1,0 +1,76 @@
+meta {
+  name: Получение активных карт клиента
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/cashback/cashback_analytics/get_active_clients/?page=80&client_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  client_id: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/cashback/cashback_analytics/get_active_clients/?page=80&client_id=string
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      client_id: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "rbs_number": "string",
+            "is_turned": false,
+            "is_turned_by_deposit": true,
+            "is_turned_by_card": false,
+            "card_type": "string"
+          },
+          {
+            "rbs_number": "string",
+            "is_turned": true,
+            "is_turned_by_deposit": true,
+            "is_turned_by_card": false,
+            "card_type": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

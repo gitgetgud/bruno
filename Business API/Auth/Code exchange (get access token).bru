@@ -1,0 +1,102 @@
+meta {
+  name: Code exchange (get access token)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{openapi_base_url}}/bcc/production/v1/auth-client/token
+  body: formUrlEncoded
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{openapi_access_token}}
+}
+
+body:form-urlencoded {
+  grant_type: authorization_code
+  code: e1637547-0084-421c-803f-fa9ea04306fc.08b92411-a4bc-4094-8991-819a35ed0ff2.e5929225-41e0-4ca1-8854-8093ef22cbc4
+  redirect_uri: http://localhost:3000/callback
+}
+
+script:post-response {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+      var jsonData = res.getBody();
+      bru.setEnvVar("bccbiz_access_token", jsonData.access_token, "secret")
+      bru.setEnvVar("bccbiz_refresh_token", jsonData.refresh_token, "secret")
+  });
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Code exchange (get access token)
+  
+  request: {
+    url: {{openapi_base_url}}/bcc/production/v1/auth-client/token
+    method: POST
+    mode: formUrlEncoded
+    body:form-urlencoded: {
+      grant_type: authorization_code
+      code: e1637547-0084-421c-803f-fa9ea04306fc.08b92411-a4bc-4094-8991-819a35ed0ff2.e5929225-41e0-4ca1-8854-8093ef22cbc4
+      redirect_uri: http://localhost:3000/callback
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Tue, 10 Feb 2026 23:27:44 GMT
+      X-Global-Transaction-ID: 95dd62ed698bbef044330ac5
+      x-xss-protection: 1; mode=block
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      X-Frame-Options: deny
+      Content-Security-Policy: default-src 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+      X-Permitted-Cross-Domain-Policies: none
+      Referrer-Policy: no-referrer
+      Clear-Site-Data: "cache", "cookies", "storage"
+      Cross-Origin-Embedder-Policy: require-corp
+      Cross-Origin-Opener-Policy: same-origin
+      Cross-Origin-Resource-Policy: same-origin
+      Permissions-Policy: accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      Cache-Control: no-store, max-age=0
+      Pragma: cookieName=cookieValue; Path=/; Secure; HttpOnly; SameSite=Strict
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST
+      Set-Cookie: b268d6bb13f15763830a36767175661d=2186ed1e5f3e74479bcb9e9ffd9c40f9; path=/; HttpOnly
+      X-RateLimit-Limit: name=rate-limit,100;
+      X-RateLimit-Remaining: name=rate-limit,98;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxczA1UGsyT1JEZ1Qwb2IyTFkwbWlIb29sdXJvSzE2RFRSLUU0RDVmLXhJIn0.eyJleHAiOjE3NzA3ODQwNjQsImlhdCI6MTc3MDc2NjA2NCwiYXV0aF90aW1lIjoxNzcwNzY2MDM0LCJqdGkiOiI2ZTUwY2ZiOS02NTYyLTQ2NTAtODZlZC0yMjViYWIwNTFmOTIiLCJpc3MiOiJodHRwczovL2RicC1yYy5iY2Mua3ovYXV0aC9yZWFsbXMvYmFuayIsImF1ZCI6WyJkYnAtbW9kdWxlLXRyYW5zZmVycy1renQiLCJkYnAtY2hhbm5lbHMtYnVzaW5lc3Mtd2ViIiwiZGJwLW1vZHVsZXMtcGVyc29uYWwtYXJlYSIsImRicC1tb2R1bGVzLWJ1c2luZXNzLWRlcG9zaXQiLCJkYnAtbW9kdWxlcy1kaWdpdGFsLXNpZ25hdHVyZSIsImRicC1tb2R1bGVzLXJlY29nbml0aW9uIiwiYWNjb3VudCJdLCJzdWIiOiI3YTJjNjJhYi1hODlkLTQyYzEtYWNlNC0wN2ZlNWM3ZWY4ZjYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJvYXBpLWNoYW5uZWxzLWViMGNlOWM5LWZhYTItNDQyZS04NzIzLTdiNTFiZGU3NjI4MSIsInNlc3Npb25fc3RhdGUiOiIwOGI5MjQxMS1hNGJjLTQwOTQtODk5MS04MTlhMzVlZDBmZjIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiY2xpZW50cy5idXNpbmVzcyIsIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1iYW5rIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJkYnAtbW9kdWxlLXRyYW5zZmVycy1renQiOnsicm9sZXMiOlsiZXhlY3V0ZSJdfSwiZGJwLWNoYW5uZWxzLWJ1c2luZXNzLXdlYiI6eyJyb2xlcyI6WyJjbGllbnRzIl19LCJkYnAtbW9kdWxlcy1wZXJzb25hbC1hcmVhIjp7InJvbGVzIjpbImNsaWVudHMiLCJzdGF0ZW1lbnRfZGF0YSIsIm1hbmFnZXJfcmV2b2tlZCIsImtleV9zdG9yZSIsImtleV9kYXRhIiwiaGFzaCJdfSwiZGJwLW1vZHVsZXMtYnVzaW5lc3MtZGVwb3NpdCI6eyJyb2xlcyI6WyJpbmRpdnBjbiJdfSwiZGJwLW1vZHVsZXMtZGlnaXRhbC1zaWduYXR1cmUiOnsicm9sZXMiOlsidmlldyIsInNpZ24iXX0sImRicC1tb2R1bGVzLXJlY29nbml0aW9uIjp7InJvbGVzIjpbImFkbWluIiwidXNlciIsImV4ZWN1dGUiLCJ1c2VyQXV0b0xvYW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgb2ZmbGluZV9hY2Nlc3Mgb2FwaS5idXNpbmVzcy5hY2NvdW50LmFwaSBwcm9maWxlIG9wZW5pZCIsInNpZCI6IjA4YjkyNDExLWE0YmMtNDA5NC04OTkxLTgxOWEzNWVkMGZmMiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJvdmlkZXJfaGVhZGVycyI6e30sInByZWZlcnJlZF91c2VybmFtZSI6Ijc3MTQ0NDY2NjUiLCJwcm92aWRlcl9yZXNwb25zZSI6eyJhY2Nlc3NfdG9rZW4iOiI2NDQ4NjQ1NjU1MzM2QzUzNjM1NzZDNDY2MTZDNTI0RjU0NTY1Njc3NjI0NTU2NzU2NTZEMzE0QzUzNDczNTUzNTMzMzY0NEI1NTQ4NjQzMiIsInJlZnJlc2hfdG9rZW4iOiI1NzZENjQ2RjY1NkU0MjcyNjIzMzRFNkQ1NDQ4NTI0RDY1NDY0MjQ0NTI0NjcwNUE1NTMzNEE0OTYyNTY1QTM0NjM0NTUyN0E1QTQ3NjgzMiIsInVzZXJfaW5mbyI6eyJpZCI6MTQzODcwMywibGFzdG5hbWUiOiLQr9C-0LzRj9GC0YLRjyIsImZpcnN0bmFtZSI6ItCY0LjQuNGC0L0iLCJtaWRkbGVuYW1lIjoi0KPQvtGD0L_Qv9Cy0L3QvdGB0YHRgyIsImZpcnN0c2lnbmF0dXJlIjp0cnVlLCJzZWNvbmRzaWduYXR1cmUiOmZhbHNlLCJpaW4iOiI4MzAzMTUzMDE4NDYiLCJjbGljb2RlZmwiOiIxMTU1OTQ3OCIsInVzZXJuYW1lIjoiNzcxNDQ0NjY2NSIsIm9yZ2FuaXphdGlvbiI6eyJjdXN0b21lck5hbWUiOiLQniBhdGHQntCe0J5cInRucnRuIGFuICIsImN1c3RvbWVySWQiOjk5MzcyMSwiaWRuIjoiOTkxMDQwMDA2NjE1IiwiYXBwcm92YWxUeXBlIjoiMCIsImNsaUNvZGUiOiIwODk1MDk5MiIsImNsaWVudFR5cGUiOiJjb3Jwb3JhdGUifX19fQ.jFPcc7m6G_757b2hQD3eMrrIYRaPJicumceFPEqt8SEqORbO65GC9rjzEvzQspQzlBX5MhGaF04XJEWSETCgakRDLQwQmY-7yqfmWKPkgyacW5__Yz_suQ4MWxo1hK7dY_2_1w6ej6Uv9gkxI1KI_UaAxhzUCkL-rHYV_bMNcfnfsfMF0zwoCdtEm_QKI3IdgJoAJWEt3fFrk9K_sOHMmuGTNAT6JRk0mxA6EYRoUnrcqJUkucExLveKxoDYQr9U4w8duy8rCti0tM4YIwBxISW8lnM-ZhpPmvDvVW5DhPJIP5xE7InFOyXpLAT18-iFLHxtiYVJb066f1xyEJyXSg",
+            "expires_in": 18000,
+            "refresh_expires_in": 0,
+            "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhZGQwNmE1ZS1kYmIwLTRhOWMtYjhjOS01OWI1ZWI4YzEyY2MifQ.eyJpYXQiOjE3NzA3NjYwNjQsImp0aSI6ImY0NTE1MTNlLWFkMTAtNDdlYi04Mjk2LWM2ZDBlYTgyNDViYyIsImlzcyI6Imh0dHBzOi8vZGJwLXJjLmJjYy5rei9hdXRoL3JlYWxtcy9iYW5rIiwiYXVkIjoiaHR0cHM6Ly9kYnAtcmMuYmNjLmt6L2F1dGgvcmVhbG1zL2JhbmsiLCJzdWIiOiI3YTJjNjJhYi1hODlkLTQyYzEtYWNlNC0wN2ZlNWM3ZWY4ZjYiLCJ0eXAiOiJPZmZsaW5lIiwiYXpwIjoib2FwaS1jaGFubmVscy1lYjBjZTljOS1mYWEyLTQ0MmUtODcyMy03YjUxYmRlNzYyODEiLCJzZXNzaW9uX3N0YXRlIjoiMDhiOTI0MTEtYTRiYy00MDk0LTg5OTEtODE5YTM1ZWQwZmYyIiwic2NvcGUiOiJlbWFpbCBvZmZsaW5lX2FjY2VzcyBvYXBpLmJ1c2luZXNzLmFjY291bnQuYXBpIHByb2ZpbGUgb3BlbmlkIiwic2lkIjoiMDhiOTI0MTEtYTRiYy00MDk0LTg5OTEtODE5YTM1ZWQwZmYyIn0.ybLgtwu4E6Y1X7MZSbUx4yG2AqpQkobOFxidrbD8LTg",
+            "token_type": "Bearer",
+            "not-before-policy": 0,
+            "session_state": "08b92411-a4bc-4094-8991-819a35ed0ff2",
+            "scope": "email offline_access oapi.business.account.api profile openid"
+        }
+      '''
+    }
+  }
+}

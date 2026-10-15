@@ -1,0 +1,78 @@
+meta {
+  name: [FE]<->[Be]: scoring-result - Сервис получения информации о статусе/результате скоринга
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://test.centermarket.kz/bank/bcc/leasing/v1/application/{{online_auto_leasing_id}}/scoring-result
+  body: none
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Cookie: cm_sid={{cm_sid}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: [FE]<->[Be]: scoring-result - Сервис получения информации о статусе/результате скоринга
+  
+  request: {
+    url: https://test.centermarket.kz/bank/bcc/leasing/v1/application/{{online_auto_leasing_id}}/scoring-result
+    method: GET
+    mode: none
+    headers: {
+      accept: application/json
+      Cookie: cm_sid={{cm_sid}}
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx/1.25.5
+      Date: Wed, 11 Mar 2026 11:56:20 GMT
+      Content-Type: application/json
+      Content-Length: 140
+      Connection: keep-alive
+      content-encoding: gzip
+      vary: Origin
+      vary: Accept-Encoding
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Content-Security-Policy: frame-ancestors 'self' *.bcc.kz *.centermarket.kz *.bcchub.kz
+      X-Content-Type-Options: nosniff
+      X-Permitted-Cross-Domain-Policies: none
+      Permissions-Policy: geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()
+      X-XSS-Protection: 1; mode=block
+      Referrer-Policy: no-referrer-when-downgrade
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "success": true,
+            "data": {
+                "alternativeInfo": {
+                    "amount": 23.8,
+                    "rate": 23.8,
+                    "term": 37
+                },
+                "creditInfo": null,
+                "decision": "ALTERNATIVE"
+            }
+        }
+      '''
+    }
+  }
+}

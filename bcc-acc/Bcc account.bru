@@ -1,0 +1,82 @@
+meta {
+  name: Bcc account
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://dev.centermarket.kz/bank/bcc/oapi/bcc-bam/api/v1/accounts
+  body: none
+  auth: inherit
+}
+
+headers {
+  Cookie: {{cm_sid_dev}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Bcc account
+  
+  request: {
+    url: https://dev.centermarket.kz/bank/bcc/oapi/bcc-bam/api/v1/accounts
+    method: GET
+    mode: none
+    headers: {
+      Cookie: {{cm_sid_dev}}
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx/1.25.5
+      Date: Thu, 26 Feb 2026 09:16:01 GMT
+      Content-Type: application/json
+      Content-Length: 399
+      Connection: keep-alive
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Content-Security-Policy: frame-ancestors 'self' *.bcc.kz *.centermarket.kz *.bcchub.kz
+      X-Content-Type-Options: nosniff
+      X-Permitted-Cross-Domain-Policies: none
+      Permissions-Policy: geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()
+      X-XSS-Protection: 1; mode=block
+      Referrer-Policy: no-referrer-when-downgrade
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "success": true,
+            "data": [
+                {
+                    "id": 1529559,
+                    "iban": "KZ628562203146438789",
+                    "description": "Товарищество с ограниченной ответственностью \"Amanat Draft\"",
+                    "name": "О ataООО\"tnrtn an ",
+                    "currency": "KZT",
+                    "status": "OPENED",
+                    "division": "AG1",
+                    "type": "CURR",
+                    "balance": {
+                        "amount": "18664921.18",
+                        "blocked_amount": "0"
+                    },
+                    "client_code": "08950992",
+                    "is_main": false
+                }
+            ]
+        }
+      '''
+    }
+  }
+}

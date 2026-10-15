@@ -1,0 +1,69 @@
+meta {
+  name: Загрузить файл для отправки transfer_innerbank
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/account-transfer/upload_transfer_file/
+  body: multipartForm
+  auth: inherit
+}
+
+headers {
+  Content-Type: multipart/form-data
+  Accept: application/json
+}
+
+body:multipart-form {
+  file: @file()
+  transfer: c48d89f3-4116-2066-0cbe-470c2b819ff5
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/account-transfer/upload_transfer_file/
+    method: POST
+    mode: multipartForm
+    headers: {
+      Content-Type: multipart/form-data
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:multipart-form: {
+      file: @file()
+      transfer: c48d89f3-4116-2066-0cbe-470c2b819ff5
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "transfer": "570b1650-2fa7-4867-a65a-f819266faff2",
+          "id": 5906,
+          "created": "2007-10-08T14:02:28.051Z",
+          "modified": "1946-07-06T10:09:17.322Z",
+          "file": "http://JF.evtN2T47dXqhVPKhTKMFCrUpJMEIt-,oRN4BC+r+3K5lCxVOpPteSgUXfaPDx6GEyfeLIoulj"
+        }
+      '''
+    }
+  }
+}

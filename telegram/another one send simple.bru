@@ -1,0 +1,27 @@
+meta {
+  name: another one send simple
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://api.telegram.org/bot{{bot_token}}/sendMessage
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "chat_id": "-4633210591",
+      "text": "Some text",
+      "disable_notification": false
+  }
+}
+
+settings {
+  encodeUrl: true
+}

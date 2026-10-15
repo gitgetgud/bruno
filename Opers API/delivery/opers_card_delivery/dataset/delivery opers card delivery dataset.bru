@@ -1,0 +1,90 @@
+meta {
+  name: delivery opers card delivery dataset
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/delivery/opers_card_delivery/dataset/?created__gte=string&created__lte=string&system=string&is_priority_card=string&is_dar_application=string&iin=string&embossing_first_name=string&embossing_last_name=string&division=string&search=string&ordering=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  created__gte: string
+  created__lte: string
+  system: string
+  is_priority_card: string
+  is_dar_application: string
+  iin: string
+  embossing_first_name: string
+  embossing_last_name: string
+  division: string
+  search: string
+  ordering: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Exports data from table filtered by branch
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/delivery/opers_card_delivery/dataset/?created__gte=string&created__lte=string&system=string&is_priority_card=string&is_dar_application=string&iin=string&embossing_first_name=string&embossing_last_name=string&division=string&search=string&ordering=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      created__gte: string
+      created__lte: string
+      system: string
+      is_priority_card: string
+      is_dar_application: string
+      iin: string
+      embossing_first_name: string
+      embossing_last_name: string
+      division: string
+      search: string
+      ordering: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 5672,
+          "results": [],
+          "next": "https://QssBDaJjXSlW.fqmMXfCR8qLP",
+          "previous": "https://dTF.wkUB+M9wjfwqJ4pbntHu1OoRXhNs0ONBbnX1ywn"
+        }
+      '''
+    }
+  }
+}

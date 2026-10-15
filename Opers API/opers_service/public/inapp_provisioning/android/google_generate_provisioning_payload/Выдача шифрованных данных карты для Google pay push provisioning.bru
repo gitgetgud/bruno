@@ -1,0 +1,77 @@
+meta {
+  name: Выдача шифрованных данных карты для Google pay push provisioning
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers_service/public/inapp_provisioning/android/google_generate_provisioning_payload/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "rbs": "string",
+    "exp": "string",
+    "name": "string",
+    "client_wallet_account_id": "string",
+    "client_device_id": "stri",
+    "brand": "MASTERCARD"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers_service/public/inapp_provisioning/android/google_generate_provisioning_payload/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "rbs": "string",
+        "exp": "string",
+        "name": "string",
+        "client_wallet_account_id": "string",
+        "client_device_id": "stri",
+        "brand": "MASTERCARD"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "token": "st"
+        }
+      '''
+    }
+  }
+}

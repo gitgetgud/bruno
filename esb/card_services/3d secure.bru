@@ -1,0 +1,63 @@
+meta {
+  name: 3d secure
+  type: http
+  seq: 13
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "uuid": "f79abc11-942b-47fe-8510-a2340ac218d3",
+          "serviceCode": "tswitch.3DSecure",
+          "sourceSystem": "SingleWindow",
+          "username": "SingleWindow",
+          "requestTime": "2021-08-20 17:18:00",
+          "Data": {
+              "Application": {
+                  "RegNumber": "jfsgksdlgjk",
+                  "Institution": "1002",
+                  "OrderDprt": "21",
+                  "ObjectType": "ContractAuthMethod",
+                  "ActionType": "Disable",
+                  "ObjectFor": {
+                      "ContractIDT": {
+                          "RBSNumber": "RBS-00377079",
+                          "Client": {
+                              "ClientInfo": {
+                                  "ClientNumber": "8242854038"
+                              }
+                          }
+                      }
+                  },
+                  "Data": {
+                      "AuthMethod": {
+                          "Name": "3D Secure Enrollment",
+                          "Code": "TDS_ENROLL",
+                          "AuthParamsList": {
+                              "AuthParameter": {
+                                  "Code": "F_ENROLLED",
+                                  "Value": "No"
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

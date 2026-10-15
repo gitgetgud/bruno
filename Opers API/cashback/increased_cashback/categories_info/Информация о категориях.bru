@@ -1,0 +1,134 @@
+meta {
+  name: Информация о категориях
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/cashback/increased_cashback/categories_info/?page=80&region_id=1
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  region_id: 1
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/cashback/increased_cashback/categories_info/?page=80&region_id=1
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      region_id: 1
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "categories": [
+            {
+              "category": "string",
+              "percent": "string",
+              "category_icons": [
+                {
+                  "id": 6664,
+                  "name": "string",
+                  "image_path": "string",
+                  "title": "string",
+                  "url": "string",
+                  "category_percent": "string",
+                  "category_name": "string"
+                },
+                {
+                  "id": 8092,
+                  "name": "string",
+                  "image_path": "string",
+                  "title": "string",
+                  "url": "string",
+                  "category_percent": "string",
+                  "category_name": "string"
+                }
+              ],
+              "percent_junior": "string"
+            },
+            {
+              "category": "string",
+              "percent": "string",
+              "category_icons": [
+                {
+                  "id": 9579,
+                  "name": "string",
+                  "image_path": "string",
+                  "title": "string",
+                  "url": "string",
+                  "category_percent": "string",
+                  "category_name": "string"
+                },
+                {
+                  "id": 9899,
+                  "name": "string",
+                  "image_path": "string",
+                  "title": "string",
+                  "url": "string",
+                  "category_percent": "string",
+                  "category_name": "string"
+                }
+              ],
+              "percent_junior": "string"
+            }
+          ],
+          "random_icons": [
+            {
+              "id": 489,
+              "name": "string",
+              "image_path": "string",
+              "title": "string",
+              "url": "string",
+              "category_percent": "string",
+              "category_name": "string"
+            },
+            {
+              "id": 4714,
+              "name": "string",
+              "image_path": "string",
+              "title": "string",
+              "url": "string",
+              "category_percent": "string",
+              "category_name": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

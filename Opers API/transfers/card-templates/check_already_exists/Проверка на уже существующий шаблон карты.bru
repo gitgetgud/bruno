@@ -1,0 +1,99 @@
+meta {
+  name: Проверка на уже существующий шаблон карты
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/card-templates/check_already_exists/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "first_six_digits": "string",
+    "last_four_digits": "string",
+    "is_from": false,
+    "expiry_month": "string",
+    "expiry_year": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/card-templates/check_already_exists/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "first_six_digits": "string",
+        "last_four_digits": "string",
+        "is_from": false,
+        "expiry_month": "string",
+        "expiry_year": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "bank": {
+            "name": "string",
+            "six_digits": [
+              "stri",
+              "strin"
+            ],
+            "id": 3614,
+            "long_name": "string",
+            "bik": "string",
+            "icon_image": "http://d.wpgl9xiQUoxBxVyXed5PL-lVQrK"
+          },
+          "client_id": "string",
+          "pan_id": "string",
+          "card_holder_name": "string",
+          "last_four_digits": "st",
+          "alias": "string",
+          "bank_name": "string",
+          "bank_code": "string",
+          "id": 3916,
+          "first_six_digits": "strin",
+          "is_tayyab": false,
+          "ps_type": 0,
+          "expiry_month": "string",
+          "expiry_year": "string",
+          "is_from": true
+        }
+      '''
+    }
+  }
+}

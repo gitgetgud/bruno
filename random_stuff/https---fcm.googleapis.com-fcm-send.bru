@@ -1,0 +1,30 @@
+meta {
+  name: https://fcm.googleapis.com/fcm/send
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://fcm.googleapis.com/fcm/send
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: key=AAAAxF7wqCU:APA91bH6RyW6sNk-SYF7iPKKdYLWOOhBQKmJarvD166_WiCaR-tu3K8268pu2EkxEv1VHav58bscTg-_nF_XZ_QDA6VjefK62a_90s4nG2DelVG20mLAJMn0mUHnYEI7BfT1i8rt5aIU
+}
+
+body:json {
+  {
+      "notification": {
+          "title": "Sending push via postman",
+          "body": "New Message"
+      },
+      "to": "d4KlJn2DSLW1H5fYAXh1bB:APA91bHR7mrBodZnYAmPTKjq72KvwiFu-h6Cgdo-mTNC0jq6Bs3GvnFHaIMLPv8FDh96js4wxWwJAC3erh_KDzo_zHCYYEgOE77h-zqGClfljxU64QYmvUZhNtR3ALPao_u-YxgnOTL2",
+      "priority": "high"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

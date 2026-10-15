@@ -1,0 +1,23 @@
+meta {
+  name: Revoke refresh token
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{openapi_base_url}}/bcc/production/v1/auth-client/revoke
+  body: formUrlEncoded
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{openapi_access_token}}
+}
+
+body:form-urlencoded {
+  token: {{bccbiz_refresh_token}}
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,74 @@
+meta {
+  name: events card-index get report
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/card-index/get_report/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "stringstring",
+    "iban": "stringstringstring"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Getting report of card index from IBSO
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/card-index/get_report/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring",
+        "iban": "stringstringstring"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "stringstring",
+          "iban": "stringstringstring"
+        }
+      '''
+    }
+  }
+}

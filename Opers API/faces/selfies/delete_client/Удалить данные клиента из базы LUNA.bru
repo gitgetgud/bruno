@@ -1,0 +1,61 @@
+meta {
+  name: Удалить данные клиента из базы LUNA
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{baseUrl}}/faces/selfies/delete_client/?iin=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  iin: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/faces/selfies/delete_client/?iin=string
+    method: DELETE
+    mode: none
+    params:query: {
+      iin: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 202
+      text: Accepted
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "string"
+        }
+      '''
+    }
+  }
+}

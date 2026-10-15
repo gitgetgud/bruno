@@ -1,0 +1,52 @@
+meta {
+  name: Получить информацию о клиенте  по ID
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/transfers/why-happen/get_user_info_by_client_id_wh/?page=80&client_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  client_id: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/why-happen/get_user_info_by_client_id_wh/?page=80&client_id=string
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      client_id: string
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

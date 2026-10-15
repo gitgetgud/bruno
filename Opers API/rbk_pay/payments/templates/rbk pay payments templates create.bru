@@ -1,0 +1,97 @@
+meta {
+  name: rbk pay payments templates create
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/payments/templates/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "provider_id": "string",
+    "provider_name": "string",
+    "category_id": "string",
+    "category_name": "string",
+    "name": "string",
+    "parameters": [
+      "string",
+      "string"
+    ],
+    "main_parametr": "string",
+    "from_iban": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/templates/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "provider_id": "string",
+        "provider_name": "string",
+        "category_id": "string",
+        "category_name": "string",
+        "name": "string",
+        "parameters": [
+          "string",
+          "string"
+        ],
+        "main_parametr": "string",
+        "from_iban": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "provider_id": "string",
+          "provider_name": "string",
+          "category_id": "string",
+          "category_name": "string",
+          "name": "string",
+          "parameters": [
+            "string",
+            "string"
+          ],
+          "main_parametr": "string",
+          "from_iban": "string"
+        }
+      '''
+    }
+  }
+}

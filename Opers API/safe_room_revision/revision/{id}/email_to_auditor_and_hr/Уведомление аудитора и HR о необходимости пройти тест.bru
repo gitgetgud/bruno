@@ -1,0 +1,67 @@
+meta {
+  name: Уведомление аудитора и HR о необходимости пройти тест
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/safe_room_revision/revision/:id/email_to_auditor_and_hr/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "auditor_id": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: OK
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/:id/email_to_auditor_and_hr/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "auditor_id": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

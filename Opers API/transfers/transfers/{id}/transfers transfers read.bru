@@ -1,0 +1,132 @@
+meta {
+  name: transfers transfers read
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/transfers/transfers/:id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/transfers/:id/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "client_id": "string",
+          "amount": "string",
+          "currency": "string",
+          "upt": {
+            "beneficiary_country_code": "string",
+            "beneficiary_name": "string",
+            "beneficiary_surname": "string",
+            "id": 1840,
+            "ref_number": "string",
+            "upt_transfer_id": "string",
+            "kbe": "string",
+            "beneficiary_number": "string",
+            "beneficiary_number_code": "string",
+            "country": "string"
+          },
+          "koronapay": {
+            "koronapay_oid": "string",
+            "beneficiary_country": {
+              "code": "str",
+              "name": "string",
+              "id": 2111
+            },
+            "beneficiary_city": {
+              "name": "string",
+              "id": 323,
+              "currencies": "string"
+            },
+            "to_amount": "string",
+            "beneficiary_last_name": "string",
+            "beneficiary_first_name": "string",
+            "beneficiary_phone_number": "string",
+            "to_currency": "USD",
+            "total_fee_amount": "string",
+            "beneficiary_middle_name": "string",
+            "beneficiary_is_resident": false
+          },
+          "account_transfer_extension": {
+            "id": 5363,
+            "knp": "string",
+            "kbe": "string",
+            "paypurp": "string",
+            "beneficiary_iin": "string",
+            "beneficiary_fio": "string",
+            "beneficiary_country_code": "string",
+            "commission_amount": "string",
+            "commission_currency": "str",
+            "beneficiary_bank_bic": "string",
+            "correspond_iban": "string",
+            "beneficiary_phone": "string",
+            "data": {}
+          },
+          "id": "d370745c-c80d-52ca-ee0f-2035b3f2422c",
+          "invoice_id": 1319310569,
+          "transfer_type": "UPT",
+          "phone": "string",
+          "iin": "string",
+          "from_iban": "string",
+          "to_iban": "string",
+          "comment": "string",
+          "credit_amount": "string",
+          "debit_amount": "string",
+          "credit_currency": "XAU",
+          "debit_currency": "RUB",
+          "commission": "string",
+          "status": 6,
+          "status_display": "string",
+          "ibso_folder_id": "string",
+          "ibso_document_ref_id": "string",
+          "ibso_err_code": "string",
+          "created": "1984-05-20T14:52:06.752Z",
+          "modified": "2000-11-03T01:59:20.183Z",
+          "ibso_err_message": "string"
+        }
+      '''
+    }
+  }
+}

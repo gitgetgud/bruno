@@ -1,0 +1,83 @@
+meta {
+  name: Создание справки о наличии счета
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/reports/create_account_document/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "document_type": "ACCOUNT_EXIST",
+    "language": "RUS",
+    "first_name": "string",
+    "last_name": "string",
+    "iin": "string",
+    "account_number": "string",
+    "account_currency": "string",
+    "middle_name": "",
+    "account_sum": "string",
+    "with_statement": false,
+    "from_date": "1983-12-09",
+    "to_date": "1952-06-15",
+    "account_type": "CARD"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: FILE
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/reports/create_account_document/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "document_type": "ACCOUNT_EXIST",
+        "language": "RUS",
+        "first_name": "string",
+        "last_name": "string",
+        "iin": "string",
+        "account_number": "string",
+        "account_currency": "string",
+        "middle_name": "",
+        "account_sum": "string",
+        "with_statement": false,
+        "from_date": "1983-12-09",
+        "to_date": "1952-06-15",
+        "account_type": "CARD"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

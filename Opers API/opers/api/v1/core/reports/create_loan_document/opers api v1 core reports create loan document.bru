@@ -1,0 +1,67 @@
+meta {
+  name: opers api v1 core reports create loan document
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/reports/create_loan_document/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "language": "ENG",
+    "document_type": "ABSENCE",
+    "contract_num": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Создание справки о ссудной задолженности
+}
+
+example {
+  name: FILE
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/reports/create_loan_document/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "language": "ENG",
+        "document_type": "ABSENCE",
+        "contract_num": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

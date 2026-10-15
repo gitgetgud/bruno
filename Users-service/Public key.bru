@@ -1,0 +1,26 @@
+meta {
+  name: Public key
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://{{ARM_HOST}}/proxy/users-service/api/auth/public_key
+  body: none
+  auth: inherit
+}
+
+headers {
+  X-Fingerprint: {{X-Fingerprint}}
+  Accept-Language: {{Accept-Language}}
+  User-Agent: {{User-Agent}}
+}
+
+script:post-response {
+  var jsonData = res.getBody()
+  bru.setEnvVar("PUBLIC_KEY", jsonData.public_key)
+}
+
+settings {
+  encodeUrl: true
+}

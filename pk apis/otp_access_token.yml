@@ -1,0 +1,54 @@
+info:
+  name: otp_access_token
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: https://otp.kz/api/v1/login/access-token
+  body:
+    type: json
+    data: |-
+      {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><token>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiaW4iOiIwNDEwNDAwMDMyNDEifQ.LjXJCpPqPX1J2lXGMOTaJK-_xpPtsbQ04igh-ts92S4<ds:Signature xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\n<ds:SignedInfo>\n<ds:CanonicalizationMethod Algorithm=\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315\"/>\n<ds:SignatureMethod Algorithm=\"http://www.w3.org/2001/04/xmldsig-more#rsa-sha256\"/>\n<ds:Reference URI=\"\">\n<ds:Transforms>\n<ds:Transform Algorithm=\"http://www.w3.org/2000/09/xmldsig#enveloped-signature\"/>\n<ds:Transform Algorithm=\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments\"/>\n</ds:Transforms>\n<ds:DigestMethod Algorithm=\"http://www.w3.org/2001/04/xmlenc#sha256\"/>\n<ds:DigestValue>fB4XLd7R+gHPJlj5vCk7MOIpwvf8IlTxtbfWOro34as=</ds:DigestValue>\n</ds:Reference>\n</ds:SignedInfo>\n<ds:SignatureValue>\nYQJsbpb5tif+GttL/eaW1xvGKOf/DkOy9iB6I2vQ/ZSjRltGwr6SITpDrIFVI9C0o/iGq88brqIZ\nVs/99xOT75qppiphos5XYs6HH7pgVq09xgCZzq317+P5CFxgIiJSl5r0sGN9PM3M4ctFhT+VI83H\nyfzW9KhAKYv57SB0JgZRQbVZFBBz2S3eULjxf+4VqUb1VkdBACCyBkbcvUk2M1amfee8Wfpk16oy\ndPtFPbuAhmU5A2cAdj9ta8pwd4ECgryHAS6P/89pF89k/C49uqV8+6Up/8bvAXOmxJEuhw8Jp4Sa\n/kvdFMowM/wdgIBQiJXFaXcJVDnPpAHhoQkYig==\n</ds:SignatureValue>\n<ds:KeyInfo>\n<ds:X509Data>\n<ds:X509Certificate>\nMIIHLTCCBRWgAwIBAgIUEXHJvUHw4KoTTUhkvTrYRtvjp7MwDQYJKoZIhvcNAQELBQAwUjELMAkG\nA1UEBhMCS1oxQzBBBgNVBAMMOtKw0JvQotCi0KvSmiDQmtCj05jQm9CQ0J3QlNCr0KDQo9Co0Ksg\n0J7QoNCi0JDQm9Cr0pogKFJTQSkwHhcNMjAxMDI2MDg0MzEwWhcNMjExMDI2MDg0MzEwWjCCAVgx\nKDAmBgNVBAMMH9CY0KjQnNCj0KXQkNCc0JHQldCi0J7QkiDQkNCv0J0xITAfBgNVBAQMGNCY0KjQ\nnNCj0KXQkNCc0JHQldCi0J7QkjEYMBYGA1UEBRMPSUlOOTEwNzA1MzAwMDEyMQswCQYDVQQGEwJL\nWjGBjjCBiwYDVQQKDIGD0KLQntCS0JDQoNCY0KnQldCh0KLQktCeINChINCe0JPQoNCQ0J3QmNCn\n0JXQndCd0J7QmSDQntCi0JLQldCi0KHQotCS0JXQndCd0J7QodCi0KzQriAi0JDQl9CY0K8g0JjQ\nndCi0JXQoNCa0J7QnNCc0KPQndCY0JrQkNCm0JjQmCIxGDAWBgNVBAsMD0JJTjA0MTA0MDAwMzI0\nMTEbMBkGA1UEKgwS0JzQkNCg0JDQotCe0JLQmNCnMRowGAYJKoZIhvcNAQkBFgtBWUFOQEFJQy5L\nWjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAIhdLWAgvvZqyzggERRfYg/oGJIfgV8y\nSPqRnu0capD28cX8VtuB8FNMTyO85+lADJoJvw0/9f8bArfmnscXgo1xny7WugAHhMfRWdNIHoEA\nbRydNxLbmgVux2AB4JrY4H90ac2W4ViB4r06az7qW2f8RiATjrjKDlryXzLagJB2jNQqC1VjJRyV\npkKN0A9sLW6i8ni9FW22YSAwih0AhQ9+F3+jhApyyh4e7Z+wfR4tiWDl1FtFEEP3ynlWhibYfTbV\nrEYVGPfRYA36MwNx9jRbqVLoH5464ezgQlcjRaNE/Gkx9o9fu2HRYTJJKnTG+wQcPjFFON5EsedH\nJ9wCEqkCAwEAAaOCAfEwggHtMA4GA1UdDwEB/wQEAwIFoDAzBgNVHSUELDAqBggrBgEFBQcDAgYI\nKoMOAwMEAQIGCSqDDgMDBAECBQYJKoMOAwMEAwIBMA8GA1UdIwQIMAaABFtqdBEwHQYDVR0OBBYE\nFF8RiRO34oXgDo7tJenOhHTXLXk5MF4GA1UdIARXMFUwUwYHKoMOAwMCAjBIMCEGCCsGAQUFBwIB\nFhVodHRwOi8vcGtpLmdvdi5rei9jcHMwIwYIKwYBBQUHAgIwFwwVaHR0cDovL3BraS5nb3Yua3ov\nY3BzMFYGA1UdHwRPME0wS6BJoEeGIWh0dHA6Ly9jcmwucGtpLmdvdi5rei9uY2FfcnNhLmNybIYi\naHR0cDovL2NybDEucGtpLmdvdi5rei9uY2FfcnNhLmNybDBaBgNVHS4EUzBRME+gTaBLhiNodHRw\nOi8vY3JsLnBraS5nb3Yua3ovbmNhX2RfcnNhLmNybIYkaHR0cDovL2NybDEucGtpLmdvdi5rei9u\nY2FfZF9yc2EuY3JsMGIGCCsGAQUFBwEBBFYwVDAuBggrBgEFBQcwAoYiaHR0cDovL3BraS5nb3Yu\na3ovY2VydC9uY2FfcnNhLmNlcjAiBggrBgEFBQcwAYYWaHR0cDovL29jc3AucGtpLmdvdi5rejAN\nBgkqhkiG9w0BAQsFAAOCAgEAYjldedn32bC/5yieYW2f9oKQ+/XZjS6MDIcYJi4kS0Y9iZYe5YyY\nw1qil8puVWKh0bMOph4lhaNx6RW+kUWRKj3dN9NUftMxLDoNNO0iEZ9wfJLxw3XKDd2VystH4wnE\neFiFCtV/BNUiStgo/q9wILLnNG57LuEkg2srdeM7QNO6svCavcasPCFbF3oIQDJPU9WmeLoVFqkZ\n1vp8YtBRH5+koiPbf/IM9FANZRNK438b8WWvip3R0rG151L56vwS48uy8GG2m+6glGLzxLYogZ/f\nT+3zpEKQgX5k9q6HdD9SSapHrp9tRwoQ3EdcLD+oRA39lgTdQNpMp7XYeZL9GEvxarxXJp5rFaDu\ncUSifkfGVtF7tjpVzABFwYvWDuMa5gz+O/43DY+dt8Lb2+sa9Mg1GKQIZequCOY3R9dLzMtsHlAy\nHs34PsH/f5ssA2ImJE6F1sG9ybDX4LpXeWnudUc1NkgAoIdPcWSh3enQ6TyFE8cWgnQM6iP/Zrlv\nIrGXddbEH+xkfS/OOjEl0lmSXCh9ri/uaf6OTH7prYyeFIfIgJIUfiHJ8t1VuNtD1Sojm7EeySWT\nZjECwXIJ1z9Y6LVY8p/FPma24XxUA5KzhqBG+WmOVgGXaCQEYAhYwmWuTgFjztnKhfKjrFmu8ZpZ\nQjgXtCSLNwVK9A0MSrtUVQo=\n</ds:X509Certificate>\n</ds:X509Data>\n</ds:KeyInfo>\n</ds:Signature></token>"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: otp_access_token
+    request:
+      url: https://otp.kz/api/v1/login/access-token
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><token>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiaW4iOiIwNDEwNDAwMDMyNDEifQ.LjXJCpPqPX1J2lXGMOTaJK-_xpPtsbQ04igh-ts92S4<ds:Signature xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\n<ds:SignedInfo>\n<ds:CanonicalizationMethod Algorithm=\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315\"/>\n<ds:SignatureMethod Algorithm=\"http://www.w3.org/2001/04/xmldsig-more#rsa-sha256\"/>\n<ds:Reference URI=\"\">\n<ds:Transforms>\n<ds:Transform Algorithm=\"http://www.w3.org/2000/09/xmldsig#enveloped-signature\"/>\n<ds:Transform Algorithm=\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments\"/>\n</ds:Transforms>\n<ds:DigestMethod Algorithm=\"http://www.w3.org/2001/04/xmlenc#sha256\"/>\n<ds:DigestValue>fB4XLd7R+gHPJlj5vCk7MOIpwvf8IlTxtbfWOro34as=</ds:DigestValue>\n</ds:Reference>\n</ds:SignedInfo>\n<ds:SignatureValue>\nYQJsbpb5tif+GttL/eaW1xvGKOf/DkOy9iB6I2vQ/ZSjRltGwr6SITpDrIFVI9C0o/iGq88brqIZ\nVs/99xOT75qppiphos5XYs6HH7pgVq09xgCZzq317+P5CFxgIiJSl5r0sGN9PM3M4ctFhT+VI83H\nyfzW9KhAKYv57SB0JgZRQbVZFBBz2S3eULjxf+4VqUb1VkdBACCyBkbcvUk2M1amfee8Wfpk16oy\ndPtFPbuAhmU5A2cAdj9ta8pwd4ECgryHAS6P/89pF89k/C49uqV8+6Up/8bvAXOmxJEuhw8Jp4Sa\n/kvdFMowM/wdgIBQiJXFaXcJVDnPpAHhoQkYig==\n</ds:SignatureValue>\n<ds:KeyInfo>\n<ds:X509Data>\n<ds:X509Certificate>\nMIIHLTCCBRWgAwIBAgIUEXHJvUHw4KoTTUhkvTrYRtvjp7MwDQYJKoZIhvcNAQELBQAwUjELMAkG\nA1UEBhMCS1oxQzBBBgNVBAMMOtKw0JvQotCi0KvSmiDQmtCj05jQm9CQ0J3QlNCr0KDQo9Co0Ksg\n0J7QoNCi0JDQm9Cr0pogKFJTQSkwHhcNMjAxMDI2MDg0MzEwWhcNMjExMDI2MDg0MzEwWjCCAVgx\nKDAmBgNVBAMMH9CY0KjQnNCj0KXQkNCc0JHQldCi0J7QkiDQkNCv0J0xITAfBgNVBAQMGNCY0KjQ\nnNCj0KXQkNCc0JHQldCi0J7QkjEYMBYGA1UEBRMPSUlOOTEwNzA1MzAwMDEyMQswCQYDVQQGEwJL\nWjGBjjCBiwYDVQQKDIGD0KLQntCS0JDQoNCY0KnQldCh0KLQktCeINChINCe0JPQoNCQ0J3QmNCn\n0JXQndCd0J7QmSDQntCi0JLQldCi0KHQotCS0JXQndCd0J7QodCi0KzQriAi0JDQl9CY0K8g0JjQ\nndCi0JXQoNCa0J7QnNCc0KPQndCY0JrQkNCm0JjQmCIxGDAWBgNVBAsMD0JJTjA0MTA0MDAwMzI0\nMTEbMBkGA1UEKgwS0JzQkNCg0JDQotCe0JLQmNCnMRowGAYJKoZIhvcNAQkBFgtBWUFOQEFJQy5L\nWjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAIhdLWAgvvZqyzggERRfYg/oGJIfgV8y\nSPqRnu0capD28cX8VtuB8FNMTyO85+lADJoJvw0/9f8bArfmnscXgo1xny7WugAHhMfRWdNIHoEA\nbRydNxLbmgVux2AB4JrY4H90ac2W4ViB4r06az7qW2f8RiATjrjKDlryXzLagJB2jNQqC1VjJRyV\npkKN0A9sLW6i8ni9FW22YSAwih0AhQ9+F3+jhApyyh4e7Z+wfR4tiWDl1FtFEEP3ynlWhibYfTbV\nrEYVGPfRYA36MwNx9jRbqVLoH5464ezgQlcjRaNE/Gkx9o9fu2HRYTJJKnTG+wQcPjFFON5EsedH\nJ9wCEqkCAwEAAaOCAfEwggHtMA4GA1UdDwEB/wQEAwIFoDAzBgNVHSUELDAqBggrBgEFBQcDAgYI\nKoMOAwMEAQIGCSqDDgMDBAECBQYJKoMOAwMEAwIBMA8GA1UdIwQIMAaABFtqdBEwHQYDVR0OBBYE\nFF8RiRO34oXgDo7tJenOhHTXLXk5MF4GA1UdIARXMFUwUwYHKoMOAwMCAjBIMCEGCCsGAQUFBwIB\nFhVodHRwOi8vcGtpLmdvdi5rei9jcHMwIwYIKwYBBQUHAgIwFwwVaHR0cDovL3BraS5nb3Yua3ov\nY3BzMFYGA1UdHwRPME0wS6BJoEeGIWh0dHA6Ly9jcmwucGtpLmdvdi5rei9uY2FfcnNhLmNybIYi\naHR0cDovL2NybDEucGtpLmdvdi5rei9uY2FfcnNhLmNybDBaBgNVHS4EUzBRME+gTaBLhiNodHRw\nOi8vY3JsLnBraS5nb3Yua3ovbmNhX2RfcnNhLmNybIYkaHR0cDovL2NybDEucGtpLmdvdi5rei9u\nY2FfZF9yc2EuY3JsMGIGCCsGAQUFBwEBBFYwVDAuBggrBgEFBQcwAoYiaHR0cDovL3BraS5nb3Yu\na3ovY2VydC9uY2FfcnNhLmNlcjAiBggrBgEFBQcwAYYWaHR0cDovL29jc3AucGtpLmdvdi5rejAN\nBgkqhkiG9w0BAQsFAAOCAgEAYjldedn32bC/5yieYW2f9oKQ+/XZjS6MDIcYJi4kS0Y9iZYe5YyY\nw1qil8puVWKh0bMOph4lhaNx6RW+kUWRKj3dN9NUftMxLDoNNO0iEZ9wfJLxw3XKDd2VystH4wnE\neFiFCtV/BNUiStgo/q9wILLnNG57LuEkg2srdeM7QNO6svCavcasPCFbF3oIQDJPU9WmeLoVFqkZ\n1vp8YtBRH5+koiPbf/IM9FANZRNK438b8WWvip3R0rG151L56vwS48uy8GG2m+6glGLzxLYogZ/f\nT+3zpEKQgX5k9q6HdD9SSapHrp9tRwoQ3EdcLD+oRA39lgTdQNpMp7XYeZL9GEvxarxXJp5rFaDu\ncUSifkfGVtF7tjpVzABFwYvWDuMa5gz+O/43DY+dt8Lb2+sa9Mg1GKQIZequCOY3R9dLzMtsHlAy\nHs34PsH/f5ssA2ImJE6F1sG9ybDX4LpXeWnudUc1NkgAoIdPcWSh3enQ6TyFE8cWgnQM6iP/Zrlv\nIrGXddbEH+xkfS/OOjEl0lmSXCh9ri/uaf6OTH7prYyeFIfIgJIUfiHJ8t1VuNtD1Sojm7EeySWT\nZjECwXIJ1z9Y6LVY8p/FPma24XxUA5KzhqBG+WmOVgGXaCQEYAhYwmWuTgFjztnKhfKjrFmu8ZpZ\nQjgXtCSLNwVK9A0MSrtUVQo=\n</ds:X509Certificate>\n</ds:X509Data>\n</ds:KeyInfo>\n</ds:Signature></token>"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx
+        - name: Date
+          value: Tue, 27 Jul 2021 09:08:58 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "162"
+        - name: Connection
+          value: keep-alive
+      body:
+        type: json
+        data: |-
+          {
+              "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjgwNjgxNjUsInN1YiI6IjE4MiJ9.diB1-A_tQ8fo5DkAVckIcXnAndrd46FKXjt3uS7zdHA",
+              "token_type": "bearer"
+          }

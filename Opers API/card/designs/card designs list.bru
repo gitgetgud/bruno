@@ -1,0 +1,79 @@
+meta {
+  name: card designs list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/card/designs/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/designs/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 3449,
+          "results": [
+            {
+              "id": "string",
+              "small_image": "string",
+              "medium_image": "string",
+              "large_image_background": "string",
+              "large_image_foreground": "string"
+            },
+            {
+              "id": "string",
+              "small_image": "string",
+              "medium_image": "string",
+              "large_image_background": "string",
+              "large_image_foreground": "string"
+            }
+          ],
+          "next": "http://xRaKywcwCBYPfh.exVtO5VItIfbvSqJWSuLB9a+juDcP-HfJ0Hc7a,saVdTGs70vi",
+          "previous": "https://uCF.xaftupTD0W89BJkX0KHLBI3ej.oYSn8UNEVHgntvRehDgIVBIndBxw3,mP,Nb6f"
+        }
+      '''
+    }
+  }
+}

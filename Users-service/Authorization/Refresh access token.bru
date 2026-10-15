@@ -1,0 +1,27 @@
+meta {
+  name: Refresh access token
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://{{ARM_HOST}}/proxy/users-service/api/auth/refresh
+  body: json
+  auth: none
+}
+
+headers {
+  X-Fingerprint: {{X-Fingerprint}}
+  Accept-Language: {{Accept-Language}}
+  User-Agent: {{User-Agent}}
+}
+
+body:json {
+  {
+      "refresh_token": "{{JWT_REFRESH_TOKEN}}"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

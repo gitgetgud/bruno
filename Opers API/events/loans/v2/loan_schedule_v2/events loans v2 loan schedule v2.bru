@@ -1,0 +1,71 @@
+meta {
+  name: events loans v2 loan schedule v2
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/loans/v2/loan_schedule_v2/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "colvir_process_id": "strin"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  For mobile user return loan schedule from ibso.
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/loans/v2/loan_schedule_v2/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "colvir_process_id": "strin"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "colvir_process_id": "strin"
+        }
+      '''
+    }
+  }
+}

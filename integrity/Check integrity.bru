@@ -1,0 +1,73 @@
+meta {
+  name: Check integrity
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/integrity-service/check
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "iin": "960413001043",
+    "integrity_token": "CqICARCnMGvLJKzxOh7aiN4g8vaDStIqjdog7RF3ywwyFZsj3c7iPufA-5nVDpX7o9O_dy7_Xey875faEpD8a9K4L2iin4KHb6RxMgrbX8CVfN3rQBP9cEc7Es0xyH9tp8YoLVwkNwbepjGeW9m7kkpb4HfQcMcLhAh9U_o3s9CmHtNqXlf5xwQQYmlt3pJQX44N_1Khkcro9Uz4ttmFq39SQXPsffE8aVH-2wIif2fenHoaVS-TWky2vWCHxTQ9aT0dBMcDh18q_a2PEqIWT4eiuEPNGnkS6NhEKm10cInasosuWHs_4VF8O8ZOHKACcN1HTX1J-9bgeqRq-1Npn7uiD94oYZytv1twPtucuqhC-rex_LJ_0TclnD37XhJrzh-YxzAafwGX4-ggfiJ-aZHY7McHAGTJBHDUvSO6bHIFSGb7ybz1ICQp2FEnuhDv1n-2tS3R0munrgWHXjdbs9tLTZoDBpFlKqjyLR4B8a7dahaRqMm03NuUiCXbXGiCxJCDYdmP3G5B_pB-6FqS948YE5_eaIMVgqnhcgfnpw5bazvWj2I",
+    "os_version": 36,
+    "phone": "+77769702012",
+    "platform": "android"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Check integrity
+  
+  request: {
+    url: http://localhost:8080/proxy/integrity-service/check
+    method: POST
+    mode: json
+    body:json: {
+      {
+        "iin": "960413001043",
+        "integrity_token": "CqgCARCnMGszCJhVsTAEj77e0PmIw_JDlnbG5Zu6suPSGZXLS52fJe_jqiojkN_RKIaaP0l86RfRI3le-zbgzJjEKWiosoPgzgnAIQ1WdsCKk8OAA9mrYW3fuaYLtpJfM15e9bsynQIAr7W4q_aEuL6XtJ17oxsGh8odJPBpx9LBqfqfbojp4uzrJ0sME2DzY1dieCyD-ykMF-ZjwHVQH6Ze4k2wCGOHqNl-FAh7BtMcVKVhtW-kQPf3xE6jqVwELt8mwmodkCa3wzjFnvyMnUaacNrqEcBsczh17MGfmZ2fUY7anzVvTkMBSGNLTDvpcfRgil7Eg8iOMae3XCfEIFUcm8R10EMXQYCzElMkNGfdKtXkWahgI_FhHpE9ODVqRi-tjVVXO6vRekMafwGeWwsLKu6PXmvALP06OnQ7mZRt6i1pSH_2Nox0Sz8s3vzOZPELO7lElDgrkrOS2d0TPxrG8Duw_qkOZmG7turzw3hkY9-MVFfBzaXGIuHPsMZ3oemDjj45Bh_H-S3nNAcb3Jr54LC45L_7BW2jYT9gP6HUJa6PInAXqmTFasg",
+        "os_version": 23,
+        "phone": "+77769702012",
+        "platform": "android"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+      Date: Tue, 31 Mar 2026 10:45:22 GMT
+      Content-Length: 277
+    }
+  
+    status: {
+      code: 500
+      text: Internal Server Error
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "success": false,
+            "verdict": {
+                "device_verdict": "",
+                "app_verdict": "",
+                "licensing_verdict": "",
+                "passed": false
+            },
+            "error": "integrity - Verify - googleVerifier.DecodeToken: GoogleClient - DecodeToken - DecodeIntegrityToken: googleapi: Error 400: Integrity token has expired, badRequest"
+        }
+      '''
+    }
+  }
+}

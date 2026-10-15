@@ -1,0 +1,69 @@
+meta {
+  name: Подтверждение СМС и запуск процесса
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/junior_banking/process/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "registration_uuid": "2bfc66dd-32f2-f9d2-029d-70bf5c5d778b",
+    "passcode": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/junior_banking/process/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "registration_uuid": "2bfc66dd-32f2-f9d2-029d-70bf5c5d778b",
+        "passcode": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "registration_uuid": "b8735fa4-fce6-c5c6-dafa-330ab8a852df"
+        }
+      '''
+    }
+  }
+}

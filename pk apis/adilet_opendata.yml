@@ -1,0 +1,38 @@
+info:
+  name: adilet_opendata
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: https://data.egov.kz/egov-opendata-ws/ODWebServiceImpl
+  body:
+    type: xml
+    data: |-
+      <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.opendata.egov.nitec.kz/">
+          <soapenv:Header/>
+          <soapenv:Body>
+              <soap:request>
+                  <request>
+                      <requestInfo>
+                          <messageId>2464f484-d085-45ac-b63e-9bc951696b39</messageId>
+                          <messageDate>2021-05-15T19:18:14.144+06:00</messageDate>
+                          <indexName>aisoip</indexName>
+                          <apiKey>5f5769eb22dc49a6890e24971e52b284</apiKey>
+                      </requestInfo>
+                      <requestData>
+                          <data xmlns:ns2pep="http://bip.bee.kz/SyncChannel/v10/Types/Request" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2pep:RequestMessage">
+                              <iinOrBin>201040000013</iinOrBin>
+                          </data>
+                      </requestData>
+                  </request>
+              </soap:request>
+          </soapenv:Body>
+      </soapenv:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,75 @@
+meta {
+  name: Получить информацию о платеже по ID
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/why-happen/check_payment_info_wh/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "id": "string",
+    "dt": "1983-11-15T23:45:57.085Z",
+    "uid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/why-happen/check_payment_info_wh/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "id": "string",
+        "dt": "1983-11-15T23:45:57.085Z",
+        "uid": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "dt": "1998-05-11T18:12:09.367Z",
+          "uid": "string",
+          "id": "string",
+          "statusCode": "string",
+          "statusName": "string"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,77 @@
+meta {
+  name: colvir/v1/execute
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{colvir_adapter_url}}/colvir/v1/execute
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "meta": {
+          "version": "1.0",
+          "command": {
+              "source": "pkg",
+              "dso": "onboarding.pCheckAccountExists",
+              "dso_type": 1
+          },
+          "event": {
+              "id": "{{$randomUUID}}",
+              "time": "{{$isoTimestamp}}"
+          }
+      },
+      "payload": {
+          "taxcode": "<company-bin>"
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Default
+  
+  request: {
+    url: {{url}}/colvir/v1/execute
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: 
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "meta": {
+                "event": {
+                    "id": "38c582a6-2714-4ec3-a617-390dc9c97cd6",
+                    "parent": "5aa4f318-ac31-4fe6-b121-81deda3d9cbe",
+                    "previous": "5aa4f318-ac31-4fe6-b121-81deda3d9cbe",
+                    "time": "2024-03-27T01:30:00.000+05:00"
+                },
+                "version": "1.0"
+            },
+            "payload": {
+                "code": "CLIENT_HAS_ACCOUNT",
+                "message": "ORA-20000"
+            }
+        }
+      '''
+    }
+  }
+}

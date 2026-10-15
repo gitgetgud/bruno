@@ -1,0 +1,71 @@
+meta {
+  name: visa alias enroll card
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/visa_alias/enroll_card/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "rbs_number": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Привязка счета visa alias
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/visa_alias/enroll_card/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "rbs_number": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "phone": "string"
+        }
+      '''
+    }
+  }
+}

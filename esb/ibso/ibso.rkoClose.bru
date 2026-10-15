@@ -1,0 +1,40 @@
+meta {
+  name: ibso.rkoClose
+  type: http
+  seq: 15
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa
+  body: json
+  auth: basic
+}
+
+headers {
+  : 
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+     "Request": {
+        "serviceCode": "rkoClose",
+        "uuid": "qweqwe11132415",
+        "responseTime": "2019-10-31T13:51:45+00:00",
+        "sourceSystem": "esb",
+        "username": "esb",
+        "Data": {
+           "clientId": "1591373463",
+           "iban": "KZ028210339800018766"
+        }
+     }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

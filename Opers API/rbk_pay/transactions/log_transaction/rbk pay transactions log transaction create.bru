@@ -1,0 +1,82 @@
+meta {
+  name: rbk pay transactions log transaction create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/transactions/log_transaction/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "string",
+    "amount": "string",
+    "geo_data_declined": false,
+    "longitude": "string",
+    "latitude": "string",
+    "fingerprint": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/transactions/log_transaction/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "amount": "string",
+        "geo_data_declined": false,
+        "longitude": "string",
+        "latitude": "string",
+        "fingerprint": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "string",
+          "amount": "string",
+          "geo_data_declined": false,
+          "longitude": "string",
+          "latitude": "string",
+          "fingerprint": "string"
+        }
+      '''
+    }
+  }
+}

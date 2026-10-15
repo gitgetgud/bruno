@@ -1,0 +1,119 @@
+meta {
+  name: card plastic emission list
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/card/plastic_emission/?at_the_branch=string&search=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  at_the_branch: string
+  search: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/plastic_emission/?at_the_branch=string&search=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      at_the_branch: string
+      search: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 9284,
+          "results": [
+            {
+              "iin": "stri",
+              "fio": "string",
+              "client_id": "string",
+              "client_id_w4": "string",
+              "rbs_number": "string",
+              "card_number_mask": "string",
+              "institution": "string",
+              "order_department": "string",
+              "phone": "string",
+              "card_expiry": "string",
+              "delivery_address": "string",
+              "division": "string",
+              "plastic": "string",
+              "id": 4981,
+              "status": "string",
+              "created": "2010-12-19T21:40:10.546Z",
+              "modified": "1972-04-15T12:17:20.394Z",
+              "application_uuid": "b0ea4043-97bc-35fa-db8f-de2d0119a249",
+              "embossing_first_name": "string",
+              "embossing_last_name": "string",
+              "at_the_branch": true,
+              "with_pinset": true,
+              "failed_reason": "string"
+            },
+            {
+              "iin": "string",
+              "fio": "string",
+              "client_id": "string",
+              "client_id_w4": "string",
+              "rbs_number": "string",
+              "card_number_mask": "string",
+              "institution": "string",
+              "order_department": "string",
+              "phone": "string",
+              "card_expiry": "string",
+              "delivery_address": "string",
+              "division": "string",
+              "plastic": "string",
+              "id": 794,
+              "status": "string",
+              "created": "1975-04-07T21:43:38.529Z",
+              "modified": "2011-09-26T07:17:21.359Z",
+              "application_uuid": "c8f2e3bf-8d7b-7dac-4b56-7587349bdd92",
+              "embossing_first_name": "string",
+              "embossing_last_name": "string",
+              "at_the_branch": true,
+              "with_pinset": true,
+              "failed_reason": "string"
+            }
+          ],
+          "next": "https://dAhjJlourdzpR.uysVNY1CE2opzQDwjpSN1FK3Olh5",
+          "previous": "https://xameCtCWhHWyZKMsPfWGJSkQxpG.vnu7abmLztAOIs9gEfxiqFE"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,127 @@
+meta {
+  name: Logout View
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/notifications/logout/
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept-language: ru
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "token": "string",
+    "os": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/logout/
+    method: POST
+    mode: json
+    headers: {
+      accept-language: ru
+      Content-Type: application/json
+      Accept: application/json
+    }
+  
+    body:json: {
+      {
+        "token": "string",
+        "os": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Validation Error
+  
+  request: {
+    url: {{baseUrl}}/notifications/logout/
+    method: POST
+    mode: json
+    headers: {
+      accept-language: ru
+      Content-Type: application/json
+      Accept: application/json
+    }
+  
+    body:json: {
+      {
+        "token": "string",
+        "os": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 422
+      text: Unprocessable Entity (WebDAV) (RFC 4918)
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "detail": [
+            {
+              "loc": [
+                "string",
+                2136
+              ],
+              "msg": "string",
+              "type": "string"
+            },
+            {
+              "loc": [
+                3462,
+                "string"
+              ],
+              "msg": "string",
+              "type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

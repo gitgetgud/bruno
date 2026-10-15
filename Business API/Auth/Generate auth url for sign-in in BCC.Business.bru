@@ -1,0 +1,90 @@
+meta {
+  name: Generate auth url for sign-in in BCC.Business
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{openapi_base_url}}/bcc/production/v1/auth-client/generate-auth-url
+  body: formUrlEncoded
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{openapi_access_token}}
+}
+
+body:form-urlencoded {
+  scope: oapi.business.account.api
+  client_idn: 991040006615
+  redirect_uri: http://localhost:3000/callback
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Generate auth url for sign-in in BCC.Business
+  
+  request: {
+    url: {{openapi_base_url}}/bcc/production/v1/auth-client/generate-auth-url
+    method: POST
+    mode: formUrlEncoded
+    body:form-urlencoded: {
+      scope: oapi.business.account.api
+      client_idn: 991040006615
+      redirect_uri: http://localhost:3000/callback
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Tue, 10 Feb 2026 23:25:17 GMT
+      X-Global-Transaction-ID: 95dd62ed698bbe5d6bdcd114
+      Accept: */*
+      Postman-Token: 005bc4d8-494a-42e7-b040-73cc14deaadd
+      Accept-Encoding: gzip, deflate, br
+      Via: 1.1 AQAAAK+UAMY-
+      X-Client-IP: 178.91.1.236
+      IBM-App-User: eb0ce9c9-faa2-442e-8723-7b51bde76281
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      X-Frame-Options: deny
+      Content-Security-Policy: default-src 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+      X-Permitted-Cross-Domain-Policies: none
+      Referrer-Policy: no-referrer
+      Clear-Site-Data: "cache", "cookies", "storage"
+      Cross-Origin-Embedder-Policy: require-corp
+      Cross-Origin-Opener-Policy: same-origin
+      Cross-Origin-Resource-Policy: same-origin
+      Permissions-Policy: accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      Cache-Control: no-store, max-age=0
+      Pragma: cookieName=cookieValue; Path=/; Secure; HttpOnly; SameSite=Strict
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST
+      X-RateLimit-Limit: name=rate-limit,100;
+      X-RateLimit-Remaining: name=rate-limit,99;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "authUrl": "https://dbp-rc.bcc.kz/auth/realms/bank/protocol/openid-connect/auth?response_type=code&client_id=oapi-channels-eb0ce9c9-faa2-442e-8723-7b51bde76281&redirect_uri=http://localhost:3000/callback&client_type=bcc-business&client_idn=991040006615&lang=ru&scope=oapi.business.account.api%20offline_access"
+        }
+      '''
+    }
+  }
+}

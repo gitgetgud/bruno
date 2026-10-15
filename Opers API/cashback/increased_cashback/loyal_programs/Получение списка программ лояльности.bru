@@ -1,0 +1,210 @@
+meta {
+  name: Получение списка программ лояльности
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/cashback/increased_cashback/loyal_programs/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/cashback/increased_cashback/loyal_programs/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "code": "string",
+            "name": "string",
+            "minimal_cashback": "string",
+            "card_cashback": "string",
+            "deposit_cashback": "string",
+            "increased_categories": [
+              {
+                "category": {
+                  "category": "string",
+                  "category_icons": [
+                    {
+                      "id": 1486,
+                      "name": "string",
+                      "image_path": "string",
+                      "title": "string",
+                      "url": "string",
+                      "category_percent": "string",
+                      "category_name": "string"
+                    },
+                    {
+                      "id": 352,
+                      "name": "string",
+                      "image_path": "string",
+                      "title": "string",
+                      "url": "string",
+                      "category_percent": "string",
+                      "category_name": "string"
+                    }
+                  ]
+                },
+                "percent": "string"
+              },
+              {
+                "category": {
+                  "category": "string",
+                  "category_icons": [
+                    {
+                      "id": 1523,
+                      "name": "string",
+                      "image_path": "string",
+                      "title": "string",
+                      "url": "string",
+                      "category_percent": "string",
+                      "category_name": "string"
+                    },
+                    {
+                      "id": 3104,
+                      "name": "string",
+                      "image_path": "string",
+                      "title": "string",
+                      "url": "string",
+                      "category_percent": "string",
+                      "category_name": "string"
+                    }
+                  ]
+                },
+                "percent": "string"
+              }
+            ],
+            "cashback_descriptions": [
+              {
+                "description_type": 1774,
+                "is_hidden": false,
+                "priority": 9462,
+                "cashback_percent": 8208.160641793218
+              },
+              {
+                "description_type": 8582,
+                "is_hidden": true,
+                "priority": 8218,
+                "cashback_percent": 3365.853127425451
+              }
+            ]
+          },
+          {
+            "code": "string",
+            "name": "string",
+            "minimal_cashback": "string",
+            "card_cashback": "string",
+            "deposit_cashback": "string",
+            "increased_categories": [
+              {
+                "category": {
+                  "category": "stri",
+                  "category_icons": [
+                    {
+                      "id": 7749,
+                      "name": "string",
+                      "image_path": "string",
+                      "title": "string",
+                      "url": "string",
+                      "category_percent": "string",
+                      "category_name": "string"
+                    },
+                    {
+                      "id": 5416,
+                      "name": "string",
+                      "image_path": "string",
+                      "title": "string",
+                      "url": "string",
+                      "category_percent": "string",
+                      "category_name": "string"
+                    }
+                  ]
+                },
+                "percent": "string"
+              },
+              {
+                "category": {
+                  "category": "string",
+                  "category_icons": [
+                    {
+                      "id": 3064,
+                      "name": "string",
+                      "image_path": "string",
+                      "title": "string",
+                      "url": "string",
+                      "category_percent": "string",
+                      "category_name": "string"
+                    },
+                    {
+                      "id": 5930,
+                      "name": "string",
+                      "image_path": "string",
+                      "title": "string",
+                      "url": "string",
+                      "category_percent": "string",
+                      "category_name": "string"
+                    }
+                  ]
+                },
+                "percent": "string"
+              }
+            ],
+            "cashback_descriptions": [
+              {
+                "description_type": 3069,
+                "is_hidden": false,
+                "priority": 3570,
+                "cashback_percent": 7592.061893900462
+              },
+              {
+                "description_type": 2911,
+                "is_hidden": false,
+                "priority": 2307,
+                "cashback_percent": 773.6308648517087
+              }
+            ]
+          }
+        ]
+      '''
+    }
+  }
+}

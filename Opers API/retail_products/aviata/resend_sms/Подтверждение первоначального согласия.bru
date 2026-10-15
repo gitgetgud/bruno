@@ -1,0 +1,61 @@
+meta {
+  name: Подтверждение первоначального согласия
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/retail_products/aviata/resend_sms/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "datetime": "1961-11-03T22:14:56.919Z",
+    "application_uuid": "a6330d1e-f42b-857a-a686-e3db9a70c0c3"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/retail_products/aviata/resend_sms/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "datetime": "1961-11-03T22:14:56.919Z",
+        "application_uuid": "a6330d1e-f42b-857a-a686-e3db9a70c0c3"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

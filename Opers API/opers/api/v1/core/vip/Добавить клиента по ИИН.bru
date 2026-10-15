@@ -1,0 +1,100 @@
+meta {
+  name: Добавить клиента по ИИН
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/vip/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "iin": "string",
+    "client_type": "PREMIUM"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Добавить VIP или Premium клиента по ИИН.
+}
+
+example {
+  name: Клиент добавлен
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/vip/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "client_type": "PREMIUM"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Ошибка добавления клиента
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/vip/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "client_type": "PREMIUM"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 400
+      text: Bad Request
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

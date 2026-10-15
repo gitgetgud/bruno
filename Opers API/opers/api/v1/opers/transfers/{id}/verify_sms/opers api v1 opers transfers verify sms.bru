@@ -1,0 +1,101 @@
+meta {
+  name: opers api v1 opers transfers verify sms
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/opers/transfers/:id/verify_sms/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "client_id": "string",
+    "amount": "string",
+    "currency": "string",
+    "iin": "string",
+    "from_iban": "string",
+    "to_iban": "string",
+    "opers_name": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  View for transfer money for client
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/transfers/:id/verify_sms/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "client_id": "string",
+        "amount": "string",
+        "currency": "string",
+        "iin": "string",
+        "from_iban": "string",
+        "to_iban": "string",
+        "opers_name": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "client_id": "string",
+          "amount": "string",
+          "currency": "string",
+          "id": "5d7c1587-2a30-ab49-0cda-35a542e32d30",
+          "iin": "stri",
+          "created": "2016-05-31T21:12:23.982Z",
+          "from_iban": "string",
+          "to_iban": "string",
+          "status": "string",
+          "transfer_type": "string",
+          "opers_name": "string"
+        }
+      '''
+    }
+  }
+}

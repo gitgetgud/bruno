@@ -1,0 +1,19 @@
+info:
+  name: egov iin baseinfo
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: https://egov.kz/services/P20.45/rest/gbdfl/persons/860218351008?infotype=short
+  params:
+    - name: infotype
+      value: short
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

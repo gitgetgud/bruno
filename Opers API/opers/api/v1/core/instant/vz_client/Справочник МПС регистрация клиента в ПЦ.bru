@@ -1,0 +1,69 @@
+meta {
+  name: Справочник МПС регистрация клиента в ПЦ
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/instant/vz_client/
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/instant/vz_client/
+    method: GET
+    mode: none
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "hermes_id": "string",
+          "elements": {
+            "element": [
+              {
+                "id": "string",
+                "short_name": "string",
+                "acc_number": "string",
+                "card_branch": "string"
+              },
+              {
+                "id": "string",
+                "short_name": "string",
+                "acc_number": "s",
+                "card_branch": "string"
+              }
+            ]
+          }
+        }
+      '''
+    }
+  }
+}

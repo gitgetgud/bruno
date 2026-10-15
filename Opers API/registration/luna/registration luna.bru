@@ -1,0 +1,75 @@
+meta {
+  name: registration luna
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/luna/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "st",
+    "doc_iin": "string",
+    "full_name": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/registration/luna/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "st",
+        "doc_iin": "string",
+        "full_name": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "string",
+          "doc_iin": "string",
+          "full_name": "string",
+          "first_img": "http://MGLEbPlBnbmQofUT.pfsmjLIzXWwSTiLTN9uU2lZo4CwrqRmxy1t4cJLbvVEe1",
+          "second_img": "http://ZxdOeTLRdwcRbfUzDPOc.ubeI2VzJ0Ur2tpAZoHAXZHV"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,83 @@
+meta {
+  name: opers api v1 core filenet create person
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/filenet/create_person/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "stri",
+    "first_name": "string",
+    "last_name": "string",
+    "is_resident": false,
+    "middle_name": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Creates person in filenet and returns uuid.
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/filenet/create_person/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stri",
+        "first_name": "string",
+        "last_name": "string",
+        "is_resident": false,
+        "middle_name": ""
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "stri",
+          "first_name": "string",
+          "last_name": "string",
+          "is_resident": false,
+          "middle_name": ""
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,109 @@
+meta {
+  name: 2. P30.04/rest/app/get-signing-url
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://egov.kz/services/P30.04/rest/app/get-signing-url
+  body: json
+  auth: inherit
+}
+
+headers {
+  Connection: keep-alive
+  sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"
+  Accept: application/json, text/plain, */*
+  Content-Type: application/json;charset=UTF-8
+  sec-ch-ua-mobile: ?0
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36
+  sec-ch-ua-platform: "Windows"
+  Origin: https://egov.kz
+  Sec-Fetch-Site: same-origin
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Dest: empty
+  Referer: https://egov.kz/services/P30.04/
+  Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+  Cookie: LTT=1637580362823; LTT=1637580469885; LTT=1637580572160; cookiesession1=678B772AIKLMNOPQRSTVWXYZABCD71E1; _zero_cc=63843ac8a48982; _ym_d=1635242553; _ym_uid=1635242553260483271; _ga=GA1.2.61266959.1635242557; _gid=GA1.2.1732024309.1637573812; _ym_isad=2; egov-client-type=PORTAL; has_js=1; _ym_visorc=w; egovLang=ru; SSO=00f978af-adf9-4ed6-80fc-06abbfa44cd3; SSESSf0d09e6725a5b1994b1b0ab11a8d594d=NUlP2PxC8mq3JCqRVH7jMBQWsUhrhMWtgOIxO-gfQjQ; LTT=1637579863231; locale=ru; SERVERID=s2; sign.certType=file; sign.file=null; _zero_ss=619b7b8c7f12d.1637579660.1637580250.6
+}
+
+body:json {
+  {"declarantUin":"","iin":"801207300789"}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}
+
+example {
+  name: 2. P30.04/rest/app/get-signing-url
+  
+  request: {
+    url: https://egov.kz/services/P30.04/rest/app/get-signing-url
+    method: POST
+    mode: json
+    headers: {
+      Connection: keep-alive
+      sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"
+      Accept: application/json, text/plain, */*
+      Content-Type: application/json;charset=UTF-8
+      sec-ch-ua-mobile: ?0
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36
+      sec-ch-ua-platform: "Windows"
+      Origin: https://egov.kz
+      Sec-Fetch-Site: same-origin
+      Sec-Fetch-Mode: cors
+      Sec-Fetch-Dest: empty
+      Referer: https://egov.kz/services/P30.04/
+      Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+      Cookie: LTT=1637580362823; LTT=1637580469885; LTT=1637580572160; cookiesession1=678B772AIKLMNOPQRSTVWXYZABCD71E1; _zero_cc=63843ac8a48982; _ym_d=1635242553; _ym_uid=1635242553260483271; _ga=GA1.2.61266959.1635242557; _gid=GA1.2.1732024309.1637573812; _ym_isad=2; egov-client-type=PORTAL; has_js=1; _ym_visorc=w; egovLang=ru; SSO=00f978af-adf9-4ed6-80fc-06abbfa44cd3; SSESSf0d09e6725a5b1994b1b0ab11a8d594d=NUlP2PxC8mq3JCqRVH7jMBQWsUhrhMWtgOIxO-gfQjQ; LTT=1637579863231; locale=ru; SERVERID=s2; sign.certType=file; sign.file=null; _zero_ss=619b7b8c7f12d.1637579660.1637580250.6
+    }
+  
+    body:json: {
+      {"declarantUin":"","iin":"801207300789"}
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx
+      Date: Mon, 22 Nov 2021 11:37:20 GMT
+      Content-Type: application/json;charset=UTF-8
+      Connection: keep-alive
+      Set-Cookie: egov-client-type=PORTAL; Domain=egov.kz; Path=/
+      Set-Cookie: JSESSIONID=sNheon7CRegD3brxzU+OzLiG; Path=/P30.04
+      Set-Cookie: LTT=1637581039767
+      Access-Control-Allow-Origin: https://egov.kz
+      Access-Control-Allow-Credentials: true
+      Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD
+      Access-Control-Allow-Headers: Authorization, Origin, X-Requested-With, Content-Type, Accept
+      content-length: 207
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "signingUrl": "https://egov.kz/services/signing/?PageQueryID=60a83590-223f-4350-ad76-a290ef9f269f",
+            "status": {
+                "code": "OK",
+                "message": {
+                    "ru": "Успешно",
+                    "kk": "Сәтті",
+                    "en": "Success",
+                    "kz": "Сәтті"
+                }
+            }
+        }
+      '''
+    }
+  }
+}

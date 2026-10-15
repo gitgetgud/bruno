@@ -1,0 +1,72 @@
+meta {
+  name: Список филиалов в ЕО
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/branches/?page=80&dar_delivery=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  dar_delivery: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/branches/?page=80&dar_delivery=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      dar_delivery: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "division": "strin",
+            "code": "stri",
+            "institution": "string"
+          },
+          {
+            "division": "string",
+            "code": "string",
+            "institution": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

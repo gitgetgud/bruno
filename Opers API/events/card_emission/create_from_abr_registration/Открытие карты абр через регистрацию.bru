@@ -1,0 +1,89 @@
+meta {
+  name: Открытие карты абр через регистрацию
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/card_emission/create_from_abr_registration/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "iin": "string",
+    "currency": "string",
+    "product": "string",
+    "plastic": "string",
+    "should_deliver": true,
+    "phone": "string",
+    "commission": "string",
+    "manager_fio": "string",
+    "delivery_address": "string",
+    "division": "string",
+    "existing_iban": "string",
+    "client_id": "string",
+    "client_id_child": "string",
+    "is_exit_from_junior": false,
+    "at_the_branch": false,
+    "registration_uuid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/card_emission/create_from_abr_registration/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "currency": "string",
+        "product": "string",
+        "plastic": "string",
+        "should_deliver": true,
+        "phone": "string",
+        "commission": "string",
+        "manager_fio": "string",
+        "delivery_address": "string",
+        "division": "string",
+        "existing_iban": "string",
+        "client_id": "string",
+        "client_id_child": "string",
+        "is_exit_from_junior": false,
+        "at_the_branch": false,
+        "registration_uuid": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

@@ -1,0 +1,50 @@
+meta {
+  name: delivery status update
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{baseUrl}}/delivery/status/:id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/delivery/status/:id/
+    method: PUT
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

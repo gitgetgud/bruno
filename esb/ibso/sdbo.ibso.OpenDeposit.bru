@@ -1,0 +1,34 @@
+meta {
+  name: sdbo.ibso.OpenDeposit
+  type: http
+  seq: 10
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdbo/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboUser
+  password: s6L8EHOUuwhgHf6NyRyo
+}
+
+body:json {
+  {
+  	"version": "TL 1.0",
+  	"type": "CloseAccount",
+  	"id": "6F0000FF-8B00-D000-B00D-00CF4FC000FF",
+  	"dateTime": "2017-11-28T23:37:11.894",
+  	"source": "DBO_INFIN",
+  	"body": [ {
+  			"customerId": "65214163451",
+                          "iban":"KZ6682110AKE10000009"
+  	} ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

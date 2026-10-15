@@ -1,0 +1,35 @@
+meta {
+  name: queue_event
+  type: http
+  seq: 29
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "gateway.ToCloseContract",
+          "uuid": "3505c24a-9523-4594-85b2-60adca269fc3",
+          "requestTime": "2019-10-31T13:51:45+00:00",
+          "sourceSystem": "singleWindow",
+          "username": "singleWindow",
+          "Data": {
+              "contract": "KZ578210439870395151"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

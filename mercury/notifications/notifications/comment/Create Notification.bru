@@ -1,0 +1,134 @@
+meta {
+  name: Create Notification
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/notifications/notifications/comment/
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:basic {
+  username: {{basicAuthUsername}}
+  password: {{basicAuthPassword}}
+}
+
+body:json {
+  {
+    "terminal": "string",
+    "rrn": "string",
+    "comment": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Successful Response
+  
+  request: {
+    url: {{baseUrl}}/notifications/notifications/comment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "terminal": "string",
+        "rrn": "string",
+        "comment": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Validation Error
+  
+  request: {
+    url: {{baseUrl}}/notifications/notifications/comment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "terminal": "string",
+        "rrn": "string",
+        "comment": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 422
+      text: Unprocessable Entity (WebDAV) (RFC 4918)
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "detail": [
+            {
+              "loc": [
+                "string",
+                2136
+              ],
+              "msg": "string",
+              "type": "string"
+            },
+            {
+              "loc": [
+                3462,
+                "string"
+              ],
+              "msg": "string",
+              "type": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

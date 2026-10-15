@@ -1,0 +1,63 @@
+meta {
+  name: tayyab.tswitch.AddLimit
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/tayyab/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: TayyabUser
+  password: Onnhalr3pLSKghrH76sk
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "tswitch.AddLimit",
+          "uuid": "98316503-5ed1-47ad-a2d9-aa790a351d7f",
+          "sourceSystem": "Tayyab",
+          "username": "Tayyab",
+          "requestTime": "2021-10-20 14:16:46.662025",
+          "Data": {
+              "Application": {
+                  "RegNumber": "20/10/2021-14:16:46---b0336a55-60c2-4a73-9fb7-ea9a77874167",
+                  "Institution": "1004",
+                  "OrderDprt": "414",
+                  "ObjectType": "Usage",
+                  "ActionType": "ActivateStandard",
+                  "ObjectFor": {
+                      "ContractIDT": {
+                          "RBSNumber": "RBS-00451629",
+                          "Client": {
+                              "ClientInfo": {
+                                  "ShortName": "&lt;&lt;&lt;NONE&gt;&gt;&gt;"
+                              }
+                          }
+                      }
+                  },
+                  "Data": {
+                      "Usage": {
+                          "Code": "ENET_MOTO_IMP_KEYENTRY",
+                          "AddData": {
+                              "Parm": {
+                                  "ParmCode": "Reason",
+                                  "Value": "Test Comment"
+                              }
+                          },
+                          "UserAddData": "CUSTOM=FOO;"
+                      }
+                  }
+              }
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

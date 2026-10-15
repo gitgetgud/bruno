@@ -1,0 +1,81 @@
+meta {
+  name: Проверить возможность закрытия счета/карты
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/w4/check_contract_closing_opportunity/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iban": "string",
+    "rbs_number": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/w4/check_contract_closing_opportunity/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iban": "string",
+        "rbs_number": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "status": "string",
+          "reject_items": [
+            {
+              "description": "string"
+            },
+            {
+              "description": "string"
+            }
+          ],
+          "required_action": {
+            "type": "st",
+            "value": "string"
+          }
+        }
+      '''
+    }
+  }
+}

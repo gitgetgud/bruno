@@ -1,0 +1,38 @@
+meta {
+  name: 3_kcmr Copy
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdboul/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboulUser
+  password: SdboulUser2020
+}
+
+body:json {
+  {
+      "Request":
+      {
+          "serviceCode": "nbrk.Verify",
+          "uuid": "111",
+          "responseTime": "2022-06-22T11:30:05.497",
+          "sourceSystem": "SdboulL",
+          "username": "SdboulUser",
+          "Data":{
+              "idn": "971112301000",
+              "vendor": "1",
+              "clientPhotoBase64": "photo"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

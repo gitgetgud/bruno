@@ -1,0 +1,76 @@
+meta {
+  name: stories api v1 category stories
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/stories/api/v1/category/:id/stories/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Получить список сторис
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/stories/api/v1/category/:id/stories/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "image": "string",
+            "video": "string",
+            "button_text": "string",
+            "link": "string"
+          },
+          {
+            "image": "string",
+            "video": "string",
+            "button_text": "string",
+            "link": "string"
+          }
+        ]
+      '''
+    }
+  }
+}

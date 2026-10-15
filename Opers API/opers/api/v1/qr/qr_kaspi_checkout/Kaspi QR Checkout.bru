@@ -1,0 +1,42 @@
+meta {
+  name: Kaspi QR Checkout
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/qr/qr_kaspi_checkout/
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: None
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/qr/qr_kaspi_checkout/
+    method: POST
+    mode: none
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 204
+      text: No Content
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

@@ -1,0 +1,99 @@
+meta {
+  name: opers api v1 opers registration list
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/registration/?status=string&is_active=string&search=string&ordering=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  status: string
+  is_active: string
+  search: string
+  ordering: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/registration/?status=string&is_active=string&search=string&ordering=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      status: string
+      is_active: string
+      search: string
+      ordering: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 9214,
+          "results": [
+            {
+              "status_name": "string",
+              "iin": "string",
+              "phone": "string",
+              "id": "391c3c43-39c3-12b3-0473-eb8648ba16de",
+              "status": 500,
+              "created": "1965-04-07T18:52:24.154Z",
+              "modified": "2019-05-20T03:05:18.580Z",
+              "is_active": true,
+              "is_agreement_checked": true,
+              "fio": "string",
+              "error_reason": "string"
+            },
+            {
+              "status_name": "string",
+              "iin": "string",
+              "phone": "string",
+              "id": "da4c7767-2c4f-1f85-2f0d-166f0d48b57e",
+              "status": 6,
+              "created": "2014-11-28T21:05:17.924Z",
+              "modified": "1946-05-22T11:32:48.484Z",
+              "is_active": false,
+              "is_agreement_checked": true,
+              "fio": "string",
+              "error_reason": "string"
+            }
+          ],
+          "next": "https://dQdZhVBIhSPszeVKAKygNbxUmomcFO.vjZfEs0UvIK,KE8+ChIoxtN4PW5Dlf67ti-H8+eoqs+m0qtr",
+          "previous": "https://Wx.pyahHEIuiJFrE8xLOP8+-p6FVGdsWuyaZErrXCCa6PQIqLLPXihGE18es0Nf.c"
+        }
+      '''
+    }
+  }
+}

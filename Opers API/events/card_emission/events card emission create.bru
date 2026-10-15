@@ -1,0 +1,112 @@
+meta {
+  name: events card emission create
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/events/card_emission/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "string",
+    "currency": "string",
+    "product": "string",
+    "plastic": "string",
+    "should_deliver": true,
+    "phone": "string",
+    "commission": "string",
+    "manager_fio": "string",
+    "delivery_address": "string",
+    "division": "string",
+    "existing_iban": "string",
+    "client_id": "string",
+    "client_id_child": "string",
+    "is_exit_from_junior": false,
+    "at_the_branch": false,
+    "registration_uuid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/card_emission/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "currency": "string",
+        "product": "string",
+        "plastic": "string",
+        "should_deliver": true,
+        "phone": "string",
+        "commission": "string",
+        "manager_fio": "string",
+        "delivery_address": "string",
+        "division": "string",
+        "existing_iban": "string",
+        "client_id": "string",
+        "client_id_child": "string",
+        "is_exit_from_junior": false,
+        "at_the_branch": false,
+        "registration_uuid": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "string",
+          "currency": "string",
+          "product": "string",
+          "plastic": "string",
+          "should_deliver": true,
+          "phone": "string",
+          "commission": "string",
+          "manager_fio": "string",
+          "delivery_address": "string",
+          "division": "string",
+          "existing_iban": "string",
+          "client_id": "string",
+          "client_id_child": "string",
+          "is_exit_from_junior": false,
+          "at_the_branch": false,
+          "registration_uuid": "string"
+        }
+      '''
+    }
+  }
+}

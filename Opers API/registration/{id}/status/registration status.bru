@@ -1,0 +1,86 @@
+meta {
+  name: registration status
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/:id/status/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "string",
+    "phone": "string",
+    "should_open_account": false,
+    "should_open_card": true
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/registration/:id/status/
+    method: POST
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "phone": "string",
+        "should_open_account": false,
+        "should_open_card": true
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "string",
+          "phone": "string",
+          "id": "b4c1d183-fa83-ab33-39a5-c25c2d1fa5e0",
+          "status": 500,
+          "should_open_account": true,
+          "should_open_card": false
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Вызов отдельного сервиса
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://dev-bcc-gf-gateway-green-front.apps.dev-env.bcc.kz/client-info/api/clientinfo/extended
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "Переменная": "Значение переменной для старта нужного сервиса"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

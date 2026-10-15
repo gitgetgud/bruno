@@ -1,0 +1,79 @@
+meta {
+  name: GetAuthUrl
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://dev.centermarket.kz/bank/bcc/oapi/bcc-auth/api/v1/auth/url
+  body: json
+  auth: inherit
+}
+
+headers {
+  Cookie: {{cm_sid_dev}}
+}
+
+body:json {
+  {
+    "orderId": "{{$randomUUID}}"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: GetAuthUrl
+  
+  request: {
+    url: https://dev.centermarket.kz/bank/bcc/oapi/bcc-auth/api/v1/auth/url
+    method: POST
+    mode: json
+    headers: {
+      Cookie: {{cm_sid_dev}}
+    }
+  
+    body:json: {
+      {
+        "orderId": "{{$randomUUID}}"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx/1.25.5
+      Date: Wed, 25 Feb 2026 12:11:55 GMT
+      Content-Type: application/json
+      Content-Length: 420
+      Connection: keep-alive
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Content-Security-Policy: frame-ancestors 'self' *.bcc.kz *.centermarket.kz *.bcchub.kz
+      X-Content-Type-Options: nosniff
+      X-Permitted-Cross-Domain-Policies: none
+      Permissions-Policy: geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()
+      X-XSS-Protection: 1; mode=block
+      Referrer-Policy: no-referrer-when-downgrade
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "success": true,
+            "data": {
+                "authUrl": "https://dbp-rc.bcc.kz/auth/realms/bank/protocol/openid-connect/auth?response_type=code&client_id=oapi-channels-eb0ce9c9-faa2-442e-8723-7b51bde76281&redirect_uri=https://dev.centermarket.kz/bank/bcc/oapi/bcc-auth/api/v1/auth/callback&client_type=bcc-business&client_idn=010840005794&lang=ru&scope=oapi.business.account.api%20offline_access"
+            }
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "bcc-acc",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

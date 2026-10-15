@@ -1,0 +1,91 @@
+meta {
+  name: opers api v1 documents documents list
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/documents/documents/?iin=string&document_type=string&is_removed=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  iin: string
+  document_type: string
+  is_removed: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/documents/documents/?iin=string&document_type=string&is_removed=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      iin: string
+      document_type: string
+      is_removed: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 8259,
+          "results": [
+            {
+              "iin": "str",
+              "document_type": "string",
+              "file": "string",
+              "comment": "string",
+              "created": "1988-06-12T15:34:24.799Z",
+              "modified": "2018-07-26T04:00:19.982Z",
+              "id": "1b6b6ad9-1656-5d0b-bd41-f47171d6723d",
+              "is_removed": true
+            },
+            {
+              "iin": "str",
+              "document_type": "string",
+              "file": "string",
+              "comment": "string",
+              "created": "1992-03-22T18:31:49.093Z",
+              "modified": "1967-11-26T00:36:34.207Z",
+              "id": "81a754d7-8e96-fe2a-50ea-79b48cde7c45",
+              "is_removed": false
+            }
+          ],
+          "next": "https://FcmtaGOLpPTQF.ulYEmuSataQbDfc5YWZaqqZ4kJZRKicoDy-",
+          "previous": "https://hMcmsjvfkIIgFeZWoWKyxCVrOeYycJIJX.gqRcfmPust9K.sX4sxTJujwmP,"
+        }
+      '''
+    }
+  }
+}

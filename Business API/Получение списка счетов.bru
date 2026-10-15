@@ -1,0 +1,106 @@
+meta {
+  name: Получение списка счетов
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{openapi_base_url}}/bcc/production/v1/business-account-management/accounts
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-client-token: {{bccbiz_access_token}}
+}
+
+auth:bearer {
+  token: {{openapi_access_token}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  # Метод получения списка счетов
+  
+  Метод предназначен для получения списка счетов Клиента.
+}
+
+example {
+  name: 200 OK
+  
+  request: {
+    url: {{openapi_base_url}}/bcc/production/v1/business-account-management/accounts
+    method: GET
+    mode: none
+    headers: {
+      x-client-token: {{bccbiz_access_token}}
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Fri, 30 Jan 2026 04:07:55 GMT
+      X-Global-Transaction-ID: 95dd62ed697c2e9aa07edb50
+      vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+      x-traceparent-id: 00-697c2e9a12b401a514c94c36740c81af-81e02981d6bb55ce-00
+      x-xss-protection: 0
+      expires: 0
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      X-Frame-Options: deny
+      Content-Security-Policy: default-src 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+      X-Permitted-Cross-Domain-Policies: none
+      Referrer-Policy: no-referrer
+      Clear-Site-Data: "cache", "cookies", "storage"
+      Cross-Origin-Embedder-Policy: require-corp
+      Cross-Origin-Opener-Policy: same-origin
+      Cross-Origin-Resource-Policy: same-origin
+      Permissions-Policy: accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      Cache-Control: no-store, max-age=0
+      Pragma: cookieName=cookieValue; Path=/; Secure; HttpOnly; SameSite=Strict
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: GET
+      Set-Cookie: 62839b2cda72f65dd902b5b03f2db4b0=7de2bd7cdb9a5ea75eac13ecd695c268; path=/; HttpOnly
+      X-RateLimit-Limit: name=rate-limit,100;
+      X-RateLimit-Remaining: name=rate-limit,97;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+            {
+                "iban": "KZ628562203146438789",
+                "description": "Товарищество с ограниченной ответственностью \"Amanat Draft\"",
+                "name": "О ataООО\"tnrtn an ",
+                "currency": "KZT",
+                "status": "OPENED",
+                "division": "AG1",
+                "type": "CURR",
+                "balance": {
+                    "amount": "24747727.38",
+                    "blocked_amount": "0"
+                },
+                "id": 1529559,
+                "client_code": "08950992",
+                "is_main": false
+            }
+        ]
+      '''
+    }
+  }
+}

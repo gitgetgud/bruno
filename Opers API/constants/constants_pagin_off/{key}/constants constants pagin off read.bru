@@ -1,0 +1,65 @@
+meta {
+  name: constants constants pagin off read
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/constants/constants_pagin_off/:key/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  key: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/constants/constants_pagin_off/:key/
+    method: GET
+    mode: none
+    params:path: {
+      key: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "key": "string",
+          "value": "string",
+          "tags": [
+            "string"
+          ]
+        }
+      '''
+    }
+  }
+}

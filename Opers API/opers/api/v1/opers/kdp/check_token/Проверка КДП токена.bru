@@ -1,0 +1,63 @@
+meta {
+  name: Проверка КДП токена
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/kdp/check_token/?page=80&iin=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+  iin: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/kdp/check_token/?page=80&iin=string
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+      iin: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "status": "string"
+        }
+      '''
+    }
+  }
+}

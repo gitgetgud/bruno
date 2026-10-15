@@ -1,0 +1,76 @@
+meta {
+  name: rbk pay tolem qr payment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/tolem/qr_payment/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "phone": "string",
+    "qr_code": "string",
+    "iin": "stringstring",
+    "from_iban": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/tolem/qr_payment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "phone": "string",
+        "qr_code": "string",
+        "iin": "stringstring",
+        "from_iban": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "phone": "string",
+          "qr_code": "string",
+          "iin": "stringstring",
+          "from_iban": "string"
+        }
+      '''
+    }
+  }
+}

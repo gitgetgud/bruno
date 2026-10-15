@@ -1,0 +1,50 @@
+meta {
+  name: opers api v1 qr partial update
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/opers/api/v1/qr/:request_id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  request_id: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/qr/:request_id/
+    method: PATCH
+    mode: none
+    params:path: {
+      request_id: 
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

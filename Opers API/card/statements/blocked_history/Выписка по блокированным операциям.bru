@@ -1,0 +1,122 @@
+meta {
+  name: Выписка по блокированным операциям
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/card/statements/blocked_history/?iban=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  iban: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/statements/blocked_history/?iban=string
+    method: GET
+    mode: none
+    params:query: {
+      iban: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "records": [
+            {
+              "id": "string",
+              "operation_date": "1987-12-29T05:53:35.833Z",
+              "cashback": "string",
+              "fee_amount": "string",
+              "fee_currency": "string",
+              "request_category": "string",
+              "iban": "string",
+              "rbs_number": "string",
+              "payer": "string",
+              "service_class": "string",
+              "icon_path": "string",
+              "is_authorisation": "string",
+              "sender_name": "string",
+              "block_id": "string",
+              "operation_datetime": "string",
+              "amount": "0",
+              "amount_currency": "0",
+              "amount_curr": "",
+              "operation_currency": "",
+              "operation_type": "string",
+              "receiverName": "",
+              "additional_description": "string",
+              "doc_tag": "",
+              "city": "",
+              "country": "",
+              "transaction_type": "",
+              "rrn": "",
+              "terminal": ""
+            },
+            {
+              "id": "string",
+              "operation_date": "1975-10-13T23:54:17.334Z",
+              "cashback": "string",
+              "fee_amount": "string",
+              "fee_currency": "string",
+              "request_category": "st",
+              "iban": "string",
+              "rbs_number": "string",
+              "payer": "string",
+              "service_class": "string",
+              "icon_path": "string",
+              "is_authorisation": "string",
+              "sender_name": "string",
+              "block_id": "string",
+              "operation_datetime": "string",
+              "amount": "0",
+              "amount_currency": "0",
+              "amount_curr": "",
+              "operation_currency": "",
+              "operation_type": "string",
+              "receiverName": "",
+              "additional_description": "string",
+              "doc_tag": "",
+              "city": "",
+              "country": "",
+              "transaction_type": "",
+              "rrn": "",
+              "terminal": ""
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

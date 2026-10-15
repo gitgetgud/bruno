@@ -1,0 +1,285 @@
+meta {
+  name: [BE]<->[OpenAPI]: info - Статус онлайн заявки
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/info/:sme-leasing-uuid
+  body: none
+  auth: bearer
+}
+
+params:path {
+  sme-leasing-uuid: {{online_auto_leasing_id}}
+}
+
+headers {
+  X-User-ID: +77777777777
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: OTP_SEND: VERIFICATION-UNPROCESSED
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/info/98edfb9e-7563-438c-9705-cb4b1346030a
+    method: GET
+    mode: none
+    headers: {
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "VERIFICATION",
+            "id": "88fed386-c78e-42ae-8440-bc6c4c1eae92",
+            "orderNumber": "2023255477",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "",
+                    "ru": ""
+                },
+                "stageName": {
+                    "kz": "ОТП арқылы клиентті тексеру",
+                    "ru": "Верификация клиента по ОТП"
+                }
+            },
+            "processingEventStatus": "UNPROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: OTP_VERIFI: VERIFICATION-PROCESSED
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/info/98edfb9e-7563-438c-9705-cb4b1346030a
+    method: GET
+    mode: none
+    headers: {
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "VERIFICATION",
+            "id": "4daa11ab-6bfb-4638-b2f3-a3ce3d38351c",
+            "orderNumber": "2023255513",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "",
+                    "ru": ""
+                },
+                "stageName": {
+                    "kz": "ОТП арқылы клиентті тексеру",
+                    "ru": "Верификация клиента по ОТП"
+                }
+            },
+            "processingEventStatus": "PROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: SIGN_DOCS - UNPROCESSED
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/info/98edfb9e-7563-438c-9705-cb4b1346030a
+    method: GET
+    mode: none
+    headers: {
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "SIGN_DOCS",
+            "id": "cb733ebf-5148-4c63-aec7-c1baebe0bf65",
+            "orderNumber": "2023255522",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "",
+                    "ru": ""
+                },
+                "stageName": {
+                    "kz": "Құжаттарды электронды түрде қол қою",
+                    "ru": "Электронное подписание документов"
+                }
+            },
+            "processingEventStatus": "UNPROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: SCORING_RESULTS - UNPROCESSED
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/info/98edfb9e-7563-438c-9705-cb4b1346030a
+    method: GET
+    mode: none
+    headers: {
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "SCORING_RESULTS",
+            "id": "cb733ebf-5148-4c63-aec7-c1baebe0bf65",
+            "orderNumber": "2023255522",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "",
+                    "ru": ""
+                },
+                "stageName": {
+                    "kz": "Результат проверок",
+                    "ru": "Результат проверок"
+                }
+            },
+            "processingEventStatus": "UNPROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: BANK_REJECTED
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/info/98edfb9e-7563-438c-9705-cb4b1346030a
+    method: GET
+    mode: none
+    headers: {
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "BANK_REJECTED",
+            "id": "88fed386-c78e-42ae-8440-bc6c4c1eae92",
+            "orderNumber": "2023255477",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "Менеджер/уәкілетті тұлға туралы деректер жоқ",
+                    "ru": "Нет данных по руководителю/уполномоченного лица"
+                },
+                "stageName": {
+                    "kz": "Получение данных Уполномоченного лица",
+                    "ru": "Получение данных Уполномоченного лица"
+                }
+            },
+            "processingEventStatus": "PROCESSED",
+            "status": "ACTIVE"
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: CLIENT_CANCELED
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/loans/application/sme-leasing/info/98edfb9e-7563-438c-9705-cb4b1346030a
+    method: GET
+    mode: none
+    headers: {
+      X-User-ID: +77777777777
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "eventName": "CLIENT_CANCELED",
+            "id": "93c0118b-4e20-44ac-95a2-e4f0a2a5d70b",
+            "orderNumber": "2023255515",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+                "comments": {
+                    "kz": "Менеджер/уәкілетті тұлға туралы деректер жоқ",
+                    "ru": "Нет данных по руководителю/уполномоченного лица"
+                },
+                "stageName": {
+                    "kz": "Өтінім клиенттің бастамасымен тоқтатылды",
+                    "ru": "Заявка отменена клиентом"
+                }
+            },
+            "processingEventStatus": "PROCESSED",
+            "status": "CANCELED"
+        }
+      '''
+    }
+  }
+}

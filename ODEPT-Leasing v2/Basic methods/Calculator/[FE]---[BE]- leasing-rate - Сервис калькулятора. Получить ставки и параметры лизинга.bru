@@ -1,0 +1,335 @@
+meta {
+  name: [FE]<->[BE]: leasing/rate - Сервис калькулятора. Получить ставки и параметры лизинга.
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://test.centermarket.kz/bank/bcc/leasing/v1/rates
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Cookie: cm_sid=djQubG9jYWwuMlJJc0hWb0xoYWhidkR6MWlsU0U1T1BVU2pFNXpFcFgwaWFlbzRYOUtIQTA2dkxmX2tWZ1BvWEdROFVTWFZZNVQxT3hZYWtfT1JzYVJZLVJhQmZrVEJxR3lCOVRia0ZTSGFoS3RCUnloZXE4TTQ4U3BIY2lBZUc2ZEZ6cXlpZmJiQ0QwdnZ5bzI3VEI4VzVhbnZtcUVIM2YxcGxISkFxblRKQU1lRUpDYmJFN3F6LWd4X3M2Z2J4NUVJT2V6MEg0YkdtWWs0OHdqbDcxWG40WXIyYWFkRG4yRnJNWk5IUVpPOEpZSjlESFhPM0dib3lxSUNGa192M3JwSjJCcVdHVTlMZ0Y0VVRBdEIzTHJ1WEtzRGoweVFNZkp2RWxiVU5FeW1ORjh3YXVhSW8xVmNYS3B0Njl0TzNXY25kbjU2ZVZMczUzWTJxOTNTU2RTaTBXTE9ONjFtRjNUTjVNVTFXb0JJZDhYd0YwWEZmaWMzMW5paVZGS3Vza1JWSy1wa3pRZHRTaHp4eDRwcUdPMU5yNGpGZDE5Q2hmRnRJeDNDNWJUZV9jbnB0YnZTTGFBXzN0WXp3WWhtMUc2cUc1bWh6ZWxzUUxtaFN3QWxrU0RRWQ==
+}
+
+body:json {
+  {
+      "company_id": "{{company_id}}",
+      "merchant_id": "{{merchant_id}}",
+      "merchant_items_ids": [ "{{merchant_items_ids}}"
+      ]
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: [FE]<->[BE]: leasing/rate - Сервис калькулятора. Получить ставки и параметры лизинга.
+  
+  request: {
+    url: https://test.centermarket.kz/bank/bcc/leasing/v1/rates
+    method: POST
+    mode: json
+    headers: {
+      accept: application/json
+    }
+  
+    body:json: {
+      {
+          "company_id": "{{company_id}}",
+          "merchant_id": "{{merchant_id}}",
+          "merchant_items_ids": [ "{{merchant_items_ids}}"
+          ]
+      }
+      
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "status": "200",
+          "success": true,
+          "data": {
+            "rate_advance": [
+              {
+                "months": 37,
+                "advance": "15",
+                "rate": 24.3
+              }
+            ],
+            "max_min_sums": [
+              {
+                "name": "10%",
+                "min_sum": 5555556,
+                "max_sum": 77777777
+              }
+            ],
+            "items_info": [
+              {
+                "car_mark": "GEELY",
+                "car_model": "MONJARO",
+                "country_code": "CN",
+                "name_country": "КНР",
+                "build_year": 2025
+              }
+            ],
+            "company_info": {
+              "company_id": "3cd6f5cf-cad7-439f-903d-083dd8aff7c7",
+              "bin": "050640003525"
+            },
+            "merchant_info": {
+              "merchant_id": "3cd6f5cf-cad7-439f-903d-083dd8aff7c7",
+              "bin": "050640003525",
+              "short_name": "ТОО \"Allur Distribution\""
+            }
+          }
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: [FE]<->[BE]: leasing/rate - Сервис калькулятора. Получить ставки и параметры лизинга.
+  
+  request: {
+    url: https://test.centermarket.kz/bank/bcc/leasing/v1/rates
+    method: POST
+    mode: json
+    headers: {
+      accept: application/json
+      Cookie: cm_sid=djQubG9jYWwuMlJJc0hWb0xoYWhidkR6MWlsU0U1T1BVU2pFNXpFcFgwaWFlbzRYOUtIQTA2dkxmX2tWZ1BvWEdROFVTWFZZNVQxT3hZYWtfT1JzYVJZLVJhQmZrVEJxR3lCOVRia0ZTSGFoS3RCUnloZXE4TTQ4U3BIY2lBZUc2ZEZ6cXlpZmJiQ0QwdnZ5bzI3VEI4VzVhbnZtcUVIM2YxcGxISkFxblRKQU1lRUpDYmJFN3F6LWd4X3M2Z2J4NUVJT2V6MEg0YkdtWWs0OHdqbDcxWG40WXIyYWFkRG4yRnJNWk5IUVpPOEpZSjlESFhPM0dib3lxSUNGa192M3JwSjJCcVdHVTlMZ0Y0VVRBdEIzTHJ1WEtzRGoweVFNZkp2RWxiVU5FeW1ORjh3YXVhSW8xVmNYS3B0Njl0TzNXY25kbjU2ZVZMczUzWTJxOTNTU2RTaTBXTE9ONjFtRjNUTjVNVTFXb0JJZDhYd0YwWEZmaWMzMW5paVZGS3Vza1JWSy1wa3pRZHRTaHp4eDRwcUdPMU5yNGpGZDE5Q2hmRnRJeDNDNWJUZV9jbnB0YnZTTGFBXzN0WXp3WWhtMUc2cUc1bWh6ZWxzUUxtaFN3QWxrU0RRWQ==
+    }
+  
+    body:json: {
+      {
+          "company_id": "3c97ec99-e0af-4cbc-bc9b-2211cfa35f76",
+          "merchant_id": "3cd6f5cf-cad7-439f-903d-083dd8aff7c7",
+          "merchant_items_ids": [ "73933293-1468-40a3-8cf3-b28019e82092"
+          ]
+      }
+      
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx/1.25.5
+      Date: Mon, 02 Mar 2026 06:41:49 GMT
+      Content-Type: application/json
+      Content-Length: 465
+      Connection: keep-alive
+      content-encoding: gzip
+      vary: Origin
+      vary: Accept-Encoding
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Content-Security-Policy: frame-ancestors 'self' *.bcc.kz *.centermarket.kz *.bcchub.kz
+      X-Content-Type-Options: nosniff
+      X-Permitted-Cross-Domain-Policies: none
+      Permissions-Policy: geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()
+      X-XSS-Protection: 1; mode=block
+      Referrer-Policy: no-referrer-when-downgrade
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "success": true,
+            "data": {
+                "rate_advance": {
+                    "months": 37,
+                    "advance": "20",
+                    "rate": 23.75
+                },
+                "max_min_sums": [
+                    {
+                        "name": "10%",
+                        "min_sum": 5555556,
+                        "max_sum": 55555555
+                    },
+                    {
+                        "name": "15%",
+                        "min_sum": 6250000,
+                        "max_sum": 62500000
+                    },
+                    {
+                        "name": "20%",
+                        "min_sum": 5882353,
+                        "max_sum": 58823529
+                    },
+                    {
+                        "name": "25%",
+                        "min_sum": 6666667,
+                        "max_sum": 66666666
+                    },
+                    {
+                        "name": "30%",
+                        "min_sum": 7142858,
+                        "max_sum": 71428571
+                    }
+                ],
+                "items_info": [
+                    {
+                        "car_mark": "GEELY",
+                        "car_model": "COOLRAY FLAGSHIP",
+                        "car_model_id": 2316,
+                        "country_code": "CN",
+                        "name_country": "КНР",
+                        "build_year": 2025
+                    }
+                ],
+                "company_info": {
+                    "company_id": "3c97ec99-e0af-4cbc-bc9b-2211cfa35f76",
+                    "bin": "890824001171"
+                },
+                "merchant_info": {
+                    "merchant_id": "3cd6f5cf-cad7-439f-903d-083dd8aff7c7",
+                    "bin": "080940018336",
+                    "short_name": "ТОО \"АСБИС Казахстан\""
+                }
+            }
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: [FE]<->[BE]: leasing/rate - Сервис калькулятора. Получить ставки и параметры лизинга.
+  
+  request: {
+    url: https://test.centermarket.kz/bank/bcc/leasing/v1/rates
+    method: POST
+    mode: json
+    headers: {
+      accept: application/json
+      Cookie: cm_sid={{cm_sid}}
+    }
+  
+    body:json: {
+      {
+          "company_id": "3c97ec99-e0af-4cbc-bc9b-2211cfa35f76",
+          "merchant_id": "3cd6f5cf-cad7-439f-903d-083dd8aff7c7",
+          "merchant_items_ids": [ "73933293-1468-40a3-8cf3-b28019e82092", "73933293-1468-40a3-8cf3-b28019e82092"
+          ]
+      }
+      
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx/1.25.5
+      Date: Thu, 05 Mar 2026 11:49:37 GMT
+      Content-Type: application/json
+      Content-Length: 471
+      Connection: keep-alive
+      content-encoding: gzip
+      vary: Origin
+      vary: Accept-Encoding
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      Content-Security-Policy: frame-ancestors 'self' *.bcc.kz *.centermarket.kz *.bcchub.kz
+      X-Content-Type-Options: nosniff
+      X-Permitted-Cross-Domain-Policies: none
+      Permissions-Policy: geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()
+      X-XSS-Protection: 1; mode=block
+      Referrer-Policy: no-referrer-when-downgrade
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "success": true,
+            "data": {
+                "rate_advance": {
+                    "months": 37,
+                    "advance": "20",
+                    "rate": 23.75
+                },
+                "max_min_sums": [
+                    {
+                        "name": "10%",
+                        "min_sum": 5555556,
+                        "max_sum": 55555555
+                    },
+                    {
+                        "name": "15%",
+                        "min_sum": 6250000,
+                        "max_sum": 62500000
+                    },
+                    {
+                        "name": "20%",
+                        "min_sum": 5882353,
+                        "max_sum": 58823529
+                    },
+                    {
+                        "name": "25%",
+                        "min_sum": 6666667,
+                        "max_sum": 66666666
+                    },
+                    {
+                        "name": "30%",
+                        "min_sum": 7142858,
+                        "max_sum": 71428571
+                    }
+                ],
+                "items_info": [
+                    {
+                        "car_mark": "GEELY",
+                        "car_model": "COOLRAY FLAGSHIP",
+                        "car_model_id": 2316,
+                        "country_code": "CN",
+                        "name_country": "КНР",
+                        "build_year": 2025
+                    },
+                    {
+                        "car_mark": "GEELY",
+                        "car_model": "COOLRAY FLAGSHIP",
+                        "car_model_id": 2316,
+                        "country_code": "CN",
+                        "name_country": "КНР",
+                        "build_year": 2025
+                    }
+                ],
+                "company_info": {
+                    "company_id": "3c97ec99-e0af-4cbc-bc9b-2211cfa35f76",
+                    "bin": "890824001171"
+                },
+                "merchant_info": {
+                    "merchant_id": "3cd6f5cf-cad7-439f-903d-083dd8aff7c7",
+                    "bin": "080940018336",
+                    "short_name": "ТОО \"АСБИС Казахстан\""
+                }
+            }
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,91 @@
+meta {
+  name: opers api v1 core filenet create product mass blank documents
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/filenet/create_product_mass_blank_documents/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "types": [
+      {
+        "document_type": "string"
+      },
+      {
+        "document_type": "string"
+      }
+    ],
+    "dossier_id": "05fc62f5-53c3-820f-08de-cba4098e214b"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/filenet/create_product_mass_blank_documents/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "types": [
+          {
+            "document_type": "string"
+          },
+          {
+            "document_type": "string"
+          }
+        ],
+        "dossier_id": "05fc62f5-53c3-820f-08de-cba4098e214b"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "types": [
+            {
+              "document_type": "string"
+            },
+            {
+              "document_type": "string"
+            }
+          ],
+          "dossier_id": "05fc62f5-53c3-820f-08de-cba4098e214b"
+        }
+      '''
+    }
+  }
+}

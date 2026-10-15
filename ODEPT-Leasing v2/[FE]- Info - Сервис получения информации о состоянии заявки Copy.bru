@@ -1,0 +1,301 @@
+meta {
+  name: [FE]: Info - Сервис получения информации о состоянии заявки Copy
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://test.centermarket.kz/bank/bcc/leasing/v1/applications/info?bin=050640003525
+  body: none
+  auth: inherit
+}
+
+params:query {
+  bin: 050640003525
+  ~id: bf3289e9-7476-4a8c-b05a-ab53cdf404b0
+}
+
+headers {
+  accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: 200, Нет активных заявок
+  
+  request: {
+    url: https://odept.kz/api/bcc-leasing/v1/leasing/applications/info?bin=050640003525
+    method: GET
+    mode: none
+    params:query: {
+      bin: 050640003525
+      ~id: bf3289e9-7476-4a8c-b05a-ab53cdf404b0
+    }
+  
+    headers: {
+      accept: application/json
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "success": true,
+            "data": {}
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: 200, есть активная заявка шаг OTP
+  
+  request: {
+    url: https://odept.kz/api/bcc-leasing/v1/leasing/applications/info?bin=050640003525
+    method: GET
+    mode: none
+    params:query: {
+      bin: 050640003525
+      ~id: bf3289e9-7476-4a8c-b05a-ab53cdf404b0
+    }
+  
+    headers: {
+      accept: application/json
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "status": 200,
+          "success": true,
+          "data": {
+            "eventName": "VERIFICATION",
+            "id": "15d7576b-361e-4844-a65a-01f05d30982c",
+            "orderNumber": "2026363567",
+            "processDefinitionFKey": "auto_leasing_new",
+            "processInfo": {
+              "comments": {
+                "kz": "",
+                "ru": ""
+              },
+              "stageName": {
+                "kz": "ОТП арқылы клиентті тексеру",
+                "ru": "Верификация клиента по ОТП"
+              },
+              "processingEventStatus": "UNPROCESSED",
+              "status": "ACTIVE"
+            }
+          }
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: 200, есть активная заявка Шаг - Подписание документов
+  
+  request: {
+    url: https://odept.kz/api/bcc-leasing/v1/leasing/applications/info?bin=050640003525
+    method: GET
+    mode: none
+    params:query: {
+      bin: 050640003525
+      ~id: bf3289e9-7476-4a8c-b05a-ab53cdf404b0
+    }
+  
+    headers: {
+      accept: application/json
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 200,
+            "success": true,
+            "data": {
+                "eventName": "SIGN_DOCS",
+                "id": "15d7576b-361e-4844-a65a-01f05d30982c",
+                "orderNumber": "2026363567",
+                "processDefinitionFKey": "auto_leasing_new",
+                "processInfo": {
+                    "comments": {
+                        "kz": "",
+                        "ru": ""
+                    },
+                    "stageName": {
+                        "kz": "Құжаттарды электронды түрде қол қою",
+                        "ru": "Электронное подписание документов"
+                    },
+                    "processingEventStatus": "UNPROCESSED",
+                    "status": "ACTIVE"
+                }
+            }
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: [FE]<->[BE]: Info - Сервис получения информации о состоянии заявки
+  
+  request: {
+    url: https://odept.kz/api/bcc-leasing/v1/leasing/applications/info?bin=050640003525
+    method: GET
+    mode: none
+    params:query: {
+      bin: 050640003525
+      ~id: bf3289e9-7476-4a8c-b05a-ab53cdf404b0
+    }
+  
+    headers: {
+      accept: application/json
+    }
+  }
+  
+  response: {
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: 401, UNAUTHORIZED
+  
+  request: {
+    url: https://odept.kz/api/bcc-leasing/v1/leasing/applications/info?bin=050640003525
+    method: GET
+    mode: none
+    params:query: {
+      bin: 050640003525
+      ~id: bf3289e9-7476-4a8c-b05a-ab53cdf404b0
+    }
+  
+    headers: {
+      accept: application/json
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": 401,
+            "success": false,
+            "error": "E_UNAUTHORIZED",
+            "message": "авторизуйтесь и повторите запрос",
+            "data": {}
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: 404, Leasing application not found
+  
+  request: {
+    url: https://odept.kz/api/bcc-leasing/v1/leasing/applications/info?bin=050640003525
+    method: GET
+    mode: none
+    params:query: {
+      bin: 050640003525
+      ~id: bf3289e9-7476-4a8c-b05a-ab53cdf404b0
+    }
+  
+    headers: {
+      accept: application/json
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": "404",
+            "success": false,
+            "message": "Leasing application not found",
+            "error": "string",
+            "data": {}
+        }
+      '''
+    }
+  }
+}
+
+example {
+  name: 500, Internal Server Error
+  
+  request: {
+    url: https://odept.kz/api/bcc-leasing/v1/leasing/applications/info?bin=050640003525
+    method: GET
+    mode: none
+    params:query: {
+      bin: 050640003525
+      ~id: bf3289e9-7476-4a8c-b05a-ab53cdf404b0
+    }
+  
+    headers: {
+      accept: application/json
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "status": "500",
+            "success": false,
+            "message": "Internal Server Error",
+            "error": "string",
+            "data": {}
+        }
+      '''
+    }
+  }
+}

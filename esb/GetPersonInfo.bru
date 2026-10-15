@@ -1,0 +1,36 @@
+meta {
+  name: GetPersonInfo
+  type: http
+  seq: 33
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/tayyab/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: TayyabUser
+  password: Onnhalr3pLSKghrH76sk
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "nbrk.GetPersonInfo",
+          "uuid": "3505c24a-9523-4594-85b2-60adca269fc3",
+          "requestTime": "2019-10-31T13:51:45+00:00",
+          "sourceSystem": "singleWindow",
+          "username": "singleWindow",
+          "Data": {
+              "iin": "871030302815",
+              "consentConfirmed": "true"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

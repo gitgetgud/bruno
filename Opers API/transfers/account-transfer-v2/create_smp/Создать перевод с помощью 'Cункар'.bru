@@ -1,0 +1,105 @@
+meta {
+  name: Создать перевод с помощью 'Cункар'
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/account-transfer-v2/create_smp/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "amount": "string",
+    "from_iban": "string",
+    "sender_phone": "string",
+    "beneficiary_bank_bic": "string",
+    "beneficiary_phone": "string",
+    "paypurp": "string",
+    "additional_info": {
+      "sender_product": {
+        "id": 6629,
+        "type": "string",
+        "name": "string",
+        "number": "string"
+      },
+      "receiver_product": {
+        "id": 5528,
+        "type": "string",
+        "name": "stri",
+        "number": "string"
+      }
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/account-transfer-v2/create_smp/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "amount": "string",
+        "from_iban": "string",
+        "sender_phone": "string",
+        "beneficiary_bank_bic": "string",
+        "beneficiary_phone": "string",
+        "paypurp": "string",
+        "additional_info": {
+          "sender_product": {
+            "id": 6629,
+            "type": "string",
+            "name": "string",
+            "number": "string"
+          },
+          "receiver_product": {
+            "id": 5528,
+            "type": "string",
+            "name": "stri",
+            "number": "string"
+          }
+        }
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "23c4cf49-7e65-6bda-c65f-e3d49feea26a"
+        }
+      '''
+    }
+  }
+}

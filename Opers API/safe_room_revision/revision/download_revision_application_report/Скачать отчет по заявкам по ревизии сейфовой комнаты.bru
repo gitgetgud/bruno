@@ -1,0 +1,64 @@
+meta {
+  name: Скачать отчет по заявкам по ревизии сейфовой комнаты
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/safe_room_revision/revision/download_revision_application_report/?id=string&revision_kind=string&revision_type=string&created=string&modified=string&status=string&branch__code=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  id: string
+  revision_kind: string
+  revision_type: string
+  created: string
+  modified: string
+  status: string
+  branch__code: string
+  page: 80
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: FILE
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/download_revision_application_report/?id=string&revision_kind=string&revision_type=string&created=string&modified=string&status=string&branch__code=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      id: string
+      revision_kind: string
+      revision_type: string
+      created: string
+      modified: string
+      status: string
+      branch__code: string
+      page: 80
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

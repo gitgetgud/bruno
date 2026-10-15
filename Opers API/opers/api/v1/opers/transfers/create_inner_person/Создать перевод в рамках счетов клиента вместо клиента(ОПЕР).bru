@@ -1,0 +1,94 @@
+meta {
+  name: Создать перевод в рамках счетов клиента вместо клиента(ОПЕР)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/opers/transfers/create_inner_person/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "from_iban": "st",
+    "debit_currency": "string",
+    "credit_currency": "string",
+    "debit_amount": "string",
+    "credit_amount": "string",
+    "knp": "string",
+    "client_id": "string",
+    "beneficiary_fio": "string",
+    "to_iban": "string",
+    "iin": "string",
+    "paypurp": "string",
+    "phone": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  View for transfer money for client
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/transfers/create_inner_person/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "from_iban": "st",
+        "debit_currency": "string",
+        "credit_currency": "string",
+        "debit_amount": "string",
+        "credit_amount": "string",
+        "knp": "string",
+        "client_id": "string",
+        "beneficiary_fio": "string",
+        "to_iban": "string",
+        "iin": "string",
+        "paypurp": "string",
+        "phone": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "d672ea6e-8d0a-dd38-04c3-55651f156a76",
+          "is_sms_required": true
+        }
+      '''
+    }
+  }
+}

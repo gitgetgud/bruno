@@ -1,0 +1,27 @@
+meta {
+  name: Сервис по предоставлению регистрационных данных для БВУ
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{gov_tech_base_url}}/api/v1/gov/integration-bus/v1/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "type": "ASYNC",
+    "body": {
+      "BvuIeThree": {
+          "iinBin": "51749138241",
+          "requestId": "e18188f7-038c-4ece-98e3-ac8dd095be14"
+      }
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,30 @@
+meta {
+  name: docs-word->pdf
+  type: http
+  seq: 12
+}
+
+post {
+  url: https://apiarm.kazincombank.kz/internal/docs_generation/api/v1/templates/reg-2/generate_stream/
+  body: json
+  auth: basic
+}
+
+headers {
+  ~: 
+}
+
+auth:basic {
+  username: admin
+  password: admin123
+}
+
+body:json {
+  {
+     "bin":"test-bin-bin"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

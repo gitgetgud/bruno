@@ -1,0 +1,70 @@
+meta {
+  name: transfers domestic-transfer inner-person-accounts-transfer create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/domestic-transfer/inner-person-accounts-transfer/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "debitAmount": "string",
+    "debitCurrency": "str"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/domestic-transfer/inner-person-accounts-transfer/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "debitAmount": "string",
+        "debitCurrency": "str"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "debitAmount": "string",
+          "debitCurrency": "str"
+        }
+      '''
+    }
+  }
+}

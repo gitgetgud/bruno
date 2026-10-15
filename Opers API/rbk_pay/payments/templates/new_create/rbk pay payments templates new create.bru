@@ -1,0 +1,77 @@
+meta {
+  name: rbk pay payments templates new create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/payments/templates/new_create/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "name": "string",
+    "main_parametr": "string",
+    "from_iban": "string",
+    "payment_id": "c726bdde-2d92-c333-8b8c-1e77ca9ca118",
+    "additional_parameters": {}
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Новое создание шаблона
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/templates/new_create/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "name": "string",
+        "main_parametr": "string",
+        "from_iban": "string",
+        "payment_id": "c726bdde-2d92-c333-8b8c-1e77ca9ca118",
+        "additional_parameters": {}
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {}
+      '''
+    }
+  }
+}

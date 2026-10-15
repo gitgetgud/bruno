@@ -1,0 +1,67 @@
+meta {
+  name: opers api v1 core filenet retrieve document content
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/filenet/retrieve_document_content/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "document_id": "f68e4c3a-6382-cc51-8d84-427e65c04b6b"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/filenet/retrieve_document_content/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "document_id": "f68e4c3a-6382-cc51-8d84-427e65c04b6b"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "document_id": "f68e4c3a-6382-cc51-8d84-427e65c04b6b"
+        }
+      '''
+    }
+  }
+}

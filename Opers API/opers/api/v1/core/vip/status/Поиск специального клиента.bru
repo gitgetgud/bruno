@@ -1,0 +1,60 @@
+meta {
+  name: Поиск специального клиента
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/vip/status/?iin=string&fio__icontains=string&page=80&client_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  iin: string
+  fio__icontains: string
+  page: 80
+  client_id: string
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Проверка клиента на VIP/Premium статус по client_id.
+}
+
+example {
+  name: Клиент Найден
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/vip/status/?iin=string&fio__icontains=string&page=80&client_id=string
+    method: GET
+    mode: none
+    params:query: {
+      iin: string
+      fio__icontains: string
+      page: 80
+      client_id: string
+    }
+  
+    headers: {
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

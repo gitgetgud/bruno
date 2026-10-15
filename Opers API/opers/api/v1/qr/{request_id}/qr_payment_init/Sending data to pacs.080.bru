@@ -1,0 +1,105 @@
+meta {
+  name: Sending data to pacs.080
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/qr/:request_id/qr_payment_init/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  request_id: string
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "card_id": 1978
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: None
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/qr/:request_id/qr_payment_init/
+    method: POST
+    mode: json
+    params:path: {
+      request_id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "card_id": 1978
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
+
+example {
+  name: Account not found
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/qr/:request_id/qr_payment_init/
+    method: POST
+    mode: json
+    params:path: {
+      request_id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "card_id": 1978
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 404
+      text: Not Found
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

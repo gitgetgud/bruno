@@ -1,0 +1,95 @@
+meta {
+  name: Наименование клиента по иин/бин
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/opers/transfers/get_client_name/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  View for transfer money for client
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/opers/transfers/get_client_name/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 2901,
+          "results": [
+            {
+              "client_id": "string",
+              "amount": "string",
+              "currency": "string",
+              "id": "f2a998f0-cd92-d4e1-a9d4-c6215c302839",
+              "iin": "string",
+              "created": "1989-04-11T15:22:02.344Z",
+              "from_iban": "string",
+              "to_iban": "string",
+              "status": "string",
+              "transfer_type": "string",
+              "opers_name": "string"
+            },
+            {
+              "client_id": "string",
+              "amount": "string",
+              "currency": "string",
+              "id": "3d4de6c3-313e-6b14-ba4d-fc21dc7ff6e0",
+              "iin": "string",
+              "created": "1988-11-04T10:17:14.290Z",
+              "from_iban": "string",
+              "to_iban": "string",
+              "status": "string",
+              "transfer_type": "string",
+              "opers_name": "string"
+            }
+          ],
+          "next": "https://pGDaQvZNEoICFUgVKVnTbs.omDm06yZWl3Y",
+          "previous": "https://UROcumUzsjBjRfIXuiS.lvoHkWsD6BaG9M3FscX.d4HaApmka3A-lbYoWPY3I-dcwfIcHcG+MTesoRs"
+        }
+      '''
+    }
+  }
+}

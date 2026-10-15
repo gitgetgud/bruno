@@ -1,0 +1,38 @@
+meta {
+  name: 1_nbrk person info
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdboul/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboulUser
+  password: SdboulUser2020
+}
+
+body:json {
+  {
+      "Request":
+      {
+          "serviceCode": "nbrk.GetPersonInfo",
+          "uuid": "111",
+          "responseTime": "2022-07-04T13:51:45+00:00",
+          "sourceSystem": "sdboul",
+          "username": "SdboulUser",
+          "Data":
+          {
+              "iin": "940712401358",
+              "consentConfirmed": "true"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

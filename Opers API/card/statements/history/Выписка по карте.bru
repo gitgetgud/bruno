@@ -1,0 +1,110 @@
+meta {
+  name: Выписка по карте
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/card/statements/history/?date_begin=1988-09-03&date_end=1988-09-03&iban=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  date_begin: 1988-09-03
+  date_end: 1988-09-03
+  iban: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/statements/history/?date_begin=1988-09-03&date_end=1988-09-03&iban=string
+    method: GET
+    mode: none
+    params:query: {
+      date_begin: 1988-09-03
+      date_end: 1988-09-03
+      iban: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "records": [
+            {
+              "id": "string",
+              "document_number": "string",
+              "creating_date": "1968-05-24",
+              "operation_date": "2020-08-03",
+              "beneficiary": "string",
+              "amount_currency": "string",
+              "payment_purpose": "stri",
+              "amount": "string",
+              "cashback": "string",
+              "operation_currency": "string",
+              "operation_type": "string",
+              "additional_description": "string",
+              "request_category": "string",
+              "doc_tag": "string",
+              "iban": "string",
+              "payer": "string",
+              "service_class": "string",
+              "icon_path": "string",
+              "city": "string",
+              "country": "string"
+            },
+            {
+              "id": "string",
+              "document_number": "string",
+              "creating_date": "1994-10-15",
+              "operation_date": "1964-11-21",
+              "beneficiary": "string",
+              "amount_currency": "string",
+              "payment_purpose": "string",
+              "amount": "string",
+              "cashback": "string",
+              "operation_currency": "string",
+              "operation_type": "string",
+              "additional_description": "string",
+              "request_category": "string",
+              "doc_tag": "string",
+              "iban": "string",
+              "payer": "string",
+              "service_class": "string",
+              "icon_path": "string",
+              "city": "string",
+              "country": "string"
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,36 @@
+meta {
+  name: 5_checkAMLClient
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdboul/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboulUser
+  password: SdboulUser2020
+}
+
+body:json {
+  {
+    "Request": {
+      "serviceCode": "checkAMLClient",
+      "uuid": "299be153-826b-4a8a-bf1b-a8cf5814a93b",
+      "sourceSystem": "Sdboul",
+      "username": "SdboulUser",
+      "requestTime": "2022-06-22 05:42:49.418325",
+      "Data": {
+        "clientIdn": "940712401358",
+        "clientName": "ПУЗАНОВ РУСЛАН"
+      }
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

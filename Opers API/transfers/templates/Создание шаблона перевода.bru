@@ -1,0 +1,81 @@
+meta {
+  name: Создание шаблона перевода
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/transfers/templates/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "transfer": "string",
+    "currency_exchange": "string",
+    "card2card": {
+      "type": "WITHDRAWAL",
+      "rbs_number": "strin",
+      "pan_id": "string"
+    },
+    "alias": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/templates/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "transfer": "string",
+        "currency_exchange": "string",
+        "card2card": {
+          "type": "WITHDRAWAL",
+          "rbs_number": "strin",
+          "pan_id": "string"
+        },
+        "alias": ""
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "string"
+        }
+      '''
+    }
+  }
+}

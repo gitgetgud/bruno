@@ -1,0 +1,80 @@
+meta {
+  name: Информация о кэшбэк картах клиента
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/cashback/increased_cashback/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/cashback/increased_cashback/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "rbs_number": "string",
+            "is_turned": true,
+            "corr_by_card": true,
+            "corr_by_deposit": false,
+            "card_row_days": 4495,
+            "deposit_row_days": 2415,
+            "max_row_days": 8163,
+            "cashback_percent": 284.27022949395473
+          },
+          {
+            "rbs_number": "string",
+            "is_turned": true,
+            "corr_by_card": true,
+            "corr_by_deposit": true,
+            "card_row_days": 4234,
+            "deposit_row_days": 3488,
+            "max_row_days": 2245,
+            "cashback_percent": 5337.471658901119
+          }
+        ]
+      '''
+    }
+  }
+}

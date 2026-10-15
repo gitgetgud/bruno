@@ -1,0 +1,66 @@
+meta {
+  name: Список instant карт
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/instant/cards/?card_institution_id=string
+  body: none
+  auth: inherit
+}
+
+params:query {
+  card_institution_id: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/instant/cards/?card_institution_id=string
+    method: GET
+    mode: none
+    params:query: {
+      card_institution_id: string
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "application": "b5f5dc29-f3a3-cfe3-d155-4c0b1e775cf4",
+          "id": "3ef42845-1500-7a43-669b-98b67074dc60",
+          "created": "1948-04-08T20:48:31.862Z",
+          "modified": "1983-12-31T21:29:31.582Z",
+          "pan": "string",
+          "card_number": "string"
+        }
+      '''
+    }
+  }
+}

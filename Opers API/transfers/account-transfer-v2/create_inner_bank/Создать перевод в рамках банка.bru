@@ -1,0 +1,121 @@
+meta {
+  name: Создать перевод в рамках банка
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/account-transfer-v2/create_inner_bank/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "phone": "string",
+    "from_iban": "string",
+    "debit_currency": "string",
+    "credit_currency": "string",
+    "debit_amount": "string",
+    "credit_amount": "string",
+    "amount": "string",
+    "currency": "string",
+    "knp": "string",
+    "to_iban": "string",
+    "paypurp": "string",
+    "additional_info": {
+      "sender_product": {
+        "id": 8901,
+        "type": "string",
+        "name": "string",
+        "number": "stri"
+      },
+      "receiver_product": {
+        "id": 5230,
+        "type": "string",
+        "name": "string",
+        "number": "str"
+      }
+    },
+    "beneficiary_fio": "string",
+    "beneficiary_phone": "string",
+    "kbe": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/account-transfer-v2/create_inner_bank/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "phone": "string",
+        "from_iban": "string",
+        "debit_currency": "string",
+        "credit_currency": "string",
+        "debit_amount": "string",
+        "credit_amount": "string",
+        "amount": "string",
+        "currency": "string",
+        "knp": "string",
+        "to_iban": "string",
+        "paypurp": "string",
+        "additional_info": {
+          "sender_product": {
+            "id": 8901,
+            "type": "string",
+            "name": "string",
+            "number": "stri"
+          },
+          "receiver_product": {
+            "id": 5230,
+            "type": "string",
+            "name": "string",
+            "number": "str"
+          }
+        },
+        "beneficiary_fio": "string",
+        "beneficiary_phone": "string",
+        "kbe": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": "23c4cf49-7e65-6bda-c65f-e3d49feea26a"
+        }
+      '''
+    }
+  }
+}

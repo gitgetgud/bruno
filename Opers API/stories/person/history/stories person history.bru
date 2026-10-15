@@ -1,0 +1,96 @@
+meta {
+  name: stories person history
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/stories/person/history/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  История просмотра сторис
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/stories/person/history/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "story": {
+              "id": 2237,
+              "image": "https://cVtVkCnWbh.yfqQe6Ay6NzNhWGNAuOybFD0vLbUng,pwysU0CzhdTPTHdmwd1bef-aJ1YS",
+              "round_image": "http://iugkWHjVlFemZpqhl.vhlCRelyaxMyeuase7iPtT",
+              "link": "string",
+              "is_enable": false,
+              "priority": 1735730793,
+              "for_adult": true,
+              "for_junior": false,
+              "language": "en"
+            },
+            "client_id": "string",
+            "id": 8296,
+            "seen": false
+          },
+          {
+            "story": {
+              "id": 4100,
+              "image": "https://YZwGbrQoDnyeeeUbl.qrzq8aBdp.VAb.GX80CfE..NjC9wmXdF0dN1MQtR0kITgqLBS1X",
+              "round_image": "https://uxCWcXkRMtRJgkKydKVAXTQfTHxKqiBIh.ozdjI+PVBzp2OrVx,5qYiBeJXhKVGb4MCx",
+              "link": "string",
+              "is_enable": true,
+              "priority": -612312171,
+              "for_adult": false,
+              "for_junior": true,
+              "language": "ru"
+            },
+            "client_id": "string",
+            "id": 5561,
+            "seen": true
+          }
+        ]
+      '''
+    }
+  }
+}

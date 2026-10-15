@@ -1,0 +1,43 @@
+meta {
+  name: paynet.Payment
+  type: http
+  seq: 13
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/tayyab/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: TayyabUser
+  password: Onnhalr3pLSKghrH76sk
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "paynet.Payment",
+          "uuid": "3505c24a-9523-4594-85b2-60adca269fc3",
+          "requestTime": "2019-10-31T13:51:45+00:00",
+          "sourceSystem": "Tayyab",
+          "username": "Tayyab",
+          "Data": {
+              "hermesId": "56529885949",
+              "rrn": "56529885949",
+              "parameters": [
+                  "7771234567"
+              ],
+              "amount": "1000",
+              "fee": "0",
+              "currency": "KZT",
+              "serviceId": "1"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

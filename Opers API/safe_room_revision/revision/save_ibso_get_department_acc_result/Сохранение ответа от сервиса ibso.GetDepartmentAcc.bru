@@ -1,0 +1,106 @@
+meta {
+  name: Сохранение ответа от сервиса ibso.GetDepartmentAcc
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/safe_room_revision/revision/save_ibso_get_department_acc_result/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "first_work_day": "string",
+    "account": [
+      {
+        "iban": "string",
+        "currency": "str",
+        "balAcc": "string",
+        "depart": "string",
+        "balance": "string",
+        "acc_name": "string"
+      },
+      {
+        "iban": "string",
+        "currency": "string",
+        "balAcc": "string",
+        "depart": "string",
+        "balance": "string",
+        "acc_name": "string"
+      }
+    ],
+    "hermes_id": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/save_ibso_get_department_acc_result/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "first_work_day": "string",
+        "account": [
+          {
+            "iban": "string",
+            "currency": "str",
+            "balAcc": "string",
+            "depart": "string",
+            "balance": "string",
+            "acc_name": "string"
+          },
+          {
+            "iban": "string",
+            "currency": "string",
+            "balAcc": "string",
+            "depart": "string",
+            "balance": "string",
+            "acc_name": "string"
+          }
+        ],
+        "hermes_id": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "message": "string",
+          "saved_obj_id": "string"
+        }
+      '''
+    }
+  }
+}

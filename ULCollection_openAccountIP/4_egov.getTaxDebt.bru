@@ -1,0 +1,35 @@
+meta {
+  name: 4_egov.getTaxDebt
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{host}}/sdboul/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboulUser
+  password: SdboulUser2020
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "egov.getTaxDebt",
+          "uuid": "ffa9a523-c132-49c1-9664-3f017d973721",
+          "requestTime": "2019-10-303T06:07:06",
+          "sourceSystem": "SdboulL",
+          "username": "SdboulUser",
+          "Data": {
+              "iinBin": "940712401358"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

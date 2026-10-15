@@ -1,0 +1,87 @@
+meta {
+  name: delivery opers card delivery read
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/delivery/opers_card_delivery/:id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/delivery/opers_card_delivery/:id/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "status_name": "string",
+          "system_name": "string",
+          "system": "rbk_online",
+          "fio": "string",
+          "client_id": "string",
+          "iin": "string",
+          "phone": "string",
+          "rbs_number": "string",
+          "division": "string",
+          "id": 1581,
+          "actions": "string",
+          "created": "2020-05-02T10:33:35.975Z",
+          "modified": "1950-06-22T08:02:29.793Z",
+          "status": 400,
+          "application_id": "f0bbe47d-4a0a-50d1-45eb-0f13383fb5fb",
+          "client_id_w4": "string",
+          "delivery_address": "string",
+          "card_mask": "string",
+          "is_priority_card": true,
+          "embossing_first_name": "str",
+          "embossing_last_name": "string",
+          "is_dar_application": true,
+          "waybill_id": "string",
+          "dar_delivery_status": "string",
+          "ibso_id": "string",
+          "opers_username": "string",
+          "plastic": "string"
+        }
+      '''
+    }
+  }
+}

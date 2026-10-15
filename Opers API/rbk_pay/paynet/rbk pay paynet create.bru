@@ -1,0 +1,115 @@
+meta {
+  name: rbk pay paynet create
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/paynet/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "amount": "string",
+    "service_id": "string",
+    "parameters": [
+      "string",
+      "string"
+    ],
+    "commission": "string",
+    "phone": "string",
+    "iin": "stringstring",
+    "from_iban": "str",
+    "receiver_iban": "string",
+    "kbe": "string",
+    "knp": "string",
+    "operation_description": "string",
+    "pay_purpose": "string",
+    "add_info": {},
+    "request_uuid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/paynet/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "amount": "string",
+        "service_id": "string",
+        "parameters": [
+          "string",
+          "string"
+        ],
+        "commission": "string",
+        "phone": "string",
+        "iin": "stringstring",
+        "from_iban": "str",
+        "receiver_iban": "string",
+        "kbe": "string",
+        "knp": "string",
+        "operation_description": "string",
+        "pay_purpose": "string",
+        "add_info": {},
+        "request_uuid": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "amount": "string",
+          "service_id": "string",
+          "parameters": [
+            "string",
+            "string"
+          ],
+          "commission": "string",
+          "phone": "string",
+          "iin": "stringstring",
+          "from_iban": "str",
+          "receiver_iban": "string",
+          "kbe": "string",
+          "knp": "string",
+          "operation_description": "string",
+          "pay_purpose": "string",
+          "add_info": {},
+          "request_uuid": "string"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,73 @@
+meta {
+  name: Выключить 3D-Secure
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/card/card_service/turn_off_3d_secure/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "rbs_number": "string",
+    "institution": "string",
+    "order_dprt": "string",
+    "phone": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/card/card_service/turn_off_3d_secure/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "rbs_number": "string",
+        "institution": "string",
+        "order_dprt": "string",
+        "phone": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "id": 9601
+        }
+      '''
+    }
+  }
+}

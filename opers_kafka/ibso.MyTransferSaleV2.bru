@@ -1,0 +1,39 @@
+meta {
+  name: ibso.MyTransferSaleV2
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.MyTransferSaleV2",
+          "uuid": "6614db3-dc12-4334-b82a-f69fbb5b5a1",
+          "sourceSystem": "SingleWindow",
+          "username": "singleWindowUser",
+          "requestTime": "2021-11-05T04:05:44",
+          "Data": {
+              "operationType": "3035",
+              "fromIban": "KZ298210439871237033",
+              "toIban": "KZ7582116CY810000003",
+              "currency": "KZT",
+              "amount": "30.0000",
+              "knp": "342",
+              "debitCurrency": "USD",
+              "creditCurrency": "KZT",
+              "debitAmount": "30.0000",
+              "creditAmount": "15207.0000"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

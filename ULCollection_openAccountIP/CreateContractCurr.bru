@@ -1,0 +1,75 @@
+meta {
+  name: CreateContractCurr
+  type: http
+  seq: 14
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdboul/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboulUser
+  password: SdboulUser2020
+}
+
+body:json {
+  {
+  "Request": {
+  "serviceCode": "ibso.CreateContractCurr",
+  "uuid": "bd78ae15-931a-4350-8f4c-cf478e2f0012",
+  "sourceSystem": "Sdboul",
+  "username": "SdboulUser",
+  "requestTime": "2021-11-08 12:30:00.890808",
+  "Data": {
+  "doc": {
+  "attachedFileUrls": {
+  "attachedFileUrl": "/images/63d118694dbc4260bbcb650b4d9228e4.pdf"
+  },
+  "codeType": "42",
+  "created": "2022-05-25 15:05:53",
+  "customerId": "3426",
+  "docRef": "77582999",
+  "documentNumber": "5",
+  "eds": "Подписано пользователем Чижиков В С с помощью OTP",
+  "ContractInfo": {
+  "externalId": "",
+  "contractNumber": "Б/Н",
+  "contractDate": "2022-07-25",
+  "unkSign": "3",
+  "unkRegNumber": "2/821/0000/9999",
+  "unkRegDate": "2021-12-15",
+  "unkRegBank": "IRTYKZKA",
+  "contractCategory": "IMPORT",
+  "contractType": "1",
+  "amountSign": "2",
+  "contractAmount": "800000",
+  "contractCurrency": "840",
+  "repatr": "350.02",
+  "InterBen": {
+  "benefNumb": "683113",
+  "benefInn": "301654428",
+  "benefName": "ООО ASIA FIBER",
+  "benefOrgType": "27",
+  "benefCountry": "860",
+  "benefCity": "URGENCH",
+  "benefAddress": "УЛ НАВОИ ШОХ",
+  "benefAccount": "20208840204856700000",
+  "benefBankBic": "NBFAUZ2XXXX"
+  }
+  },
+  "Commission": {
+  "commissionAccount": "KZ31831HRCU010000001",
+  "urgent": "1"
+  }
+  }
+  }
+  }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

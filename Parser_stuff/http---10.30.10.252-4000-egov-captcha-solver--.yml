@@ -1,0 +1,22 @@
+info:
+  name: http://10.30.10.252:4000/egov-captcha-solver/?
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://10.30.10.252:4000/egov-captcha-solver/
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /home/kuku/captcha.png
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

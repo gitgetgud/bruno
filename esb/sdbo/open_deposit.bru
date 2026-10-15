@@ -1,0 +1,40 @@
+meta {
+  name: open_deposit
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://ala323131.kazincombank.kz:8081/ibso/deposit/create
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: sag
+  password: 123
+}
+
+body:json {
+  {
+      "version": "TL 1.0",
+      "type": "CreateDeposit",
+      "id": "6F0000FF-8B00-D000-B00D-00CF4FC000FF",
+      "dateTime": "2017-11-28T23:37:11.894",
+      "source": "DBO_INFIN",
+      "body": [
+          {
+              "customerId": "0006HF",
+              "sdclCode": "12673220808",
+              "iban": "KZ188210000010223800",
+              "amount": "113",
+              "capital": "1",
+              "rewarIban": ""
+          }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

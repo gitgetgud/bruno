@@ -1,0 +1,56 @@
+meta {
+  name: tswitch.ClientUpdate
+  type: http
+  seq: 12
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/tayyab/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: TayyabUser
+  password: Onnhalr3pLSKghrH76sk
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "tswitch.ClientUpdate",
+          "uuid": "3505c24a-9523-4594-85b2-60adca269fc3",
+          "requestTime": "2019-10-31T13:51:45+00:00",
+          "sourceSystem": "Tayyab",
+          "username": "Tayyab",
+          "Data": {
+              "Application": {
+                  "RegNumber": "12/11/2020-10:21:50---336071bc-9748-496c-a6c8-8036d9540d61",
+                  "Institution": "1004",
+                  "OrderDprt": "412",
+                  "ObjectType": "ClientAddress",
+                  "ActionType": "AddOrUpdate",
+                  "ObjectFor": {
+                      "ClientIDT": {
+                          "ClientInfo": {
+                              "ClientNumber": "003FTA",
+                              "ShortName": "&lt;&lt;&lt;NONE&gt;&gt;&gt;"
+                          }
+                      }
+                  },
+                  "Data": {
+                      "Address": {
+                          "AddressType": "SMS1",
+                          "PostalCode": "+77012064722",
+                          "AddressLine1": "SMS"
+                      }
+                  }
+              }
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

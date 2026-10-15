@@ -1,0 +1,72 @@
+meta {
+  name: visa alias resolve card
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/visa_alias/resolve_card/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "phone_number": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Данные по счету visa alias
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/visa_alias/resolve_card/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "phone_number": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "name": "string",
+          "bank": "string"
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,138 @@
+meta {
+  name: Получение всех полей по трансферу
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/transfers/transfers/:id/get_transfer/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/transfers/:id/get_transfer/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "upt": {
+            "beneficiary_country_code": "strin",
+            "beneficiary_name": "string",
+            "beneficiary_surname": "string",
+            "id": 1909,
+            "ref_number": "string",
+            "upt_transfer_id": "string",
+            "kbe": "string",
+            "beneficiary_number": "string",
+            "beneficiary_number_code": "string",
+            "country": "string"
+          },
+          "account_transfer_extension": {
+            "id": 137,
+            "knp": "string",
+            "kbe": "string",
+            "paypurp": "string",
+            "beneficiary_iin": "string",
+            "beneficiary_fio": "string",
+            "beneficiary_country_code": "string",
+            "commission_amount": "string",
+            "commission_currency": "st",
+            "beneficiary_bank_bic": "string",
+            "correspond_iban": "string",
+            "beneficiary_phone": "string",
+            "data": {}
+          },
+          "transfer_template": {
+            "id": 6395,
+            "created": "1969-06-02T14:24:07.798Z",
+            "modified": "1975-07-15T10:21:31.850Z",
+            "client_id": "string",
+            "alias": "string",
+            "is_enable": false,
+            "transfer": "26354cc3-94cd-1ea2-0524-77f7ab76bf44",
+            "currency_exchange": "1511d640-5db4-908f-88c0-e5a2760a6535",
+            "card2card": 5260
+          },
+          "client_id": "string",
+          "amount": "string",
+          "currency": "string",
+          "id": "94bb2764-1c80-c587-491b-ce9d61fa2b25",
+          "status": "string",
+          "created": "1948-04-27T04:02:15.858Z",
+          "modified": "2007-06-03T18:10:00.074Z",
+          "invoice_id": 271365571,
+          "reference_id": "string",
+          "transfer_type": "UPT_IN",
+          "phone": "string",
+          "iin": "string",
+          "from_card_id": 563417854,
+          "from_iban": "string",
+          "to_iban": "string",
+          "credit_currency": "CAD",
+          "debit_currency": "XAU",
+          "commission": "string",
+          "debit": "string",
+          "debit_amount": "string",
+          "credit_amount": "string",
+          "data": {},
+          "error_description": "string",
+          "comment": "string",
+          "hermes_id": "string",
+          "ibso_folder_id": "string",
+          "ibso_document_ref_id": "string",
+          "ibso_err_code": "string",
+          "ibso_err_message": "string",
+          "oper_id": "string",
+          "exchange_type": "URGENT",
+          "device_type": "OLD_ANDROID",
+          "app_version": "string",
+          "opers_name": "string",
+          "opers_username": "string",
+          "metal_document": "https://DiVpoFxunJseF.szgfs5sz1XBhl6TOauN6uCPy3oj.4RLZW5wGyh05iFaJl.ZwMIknr9yFOeL",
+          "verification_type": "string",
+          "failed_zod": true,
+          "is_sms_required": true,
+          "contract_closing_process": 6591
+        }
+      '''
+    }
+  }
+}

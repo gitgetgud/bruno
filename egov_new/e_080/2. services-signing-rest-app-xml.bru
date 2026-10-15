@@ -1,0 +1,97 @@
+meta {
+  name: 2. services/signing/rest/app/xml
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://egov.kz/services/signing/rest/app/xml?PageQueryID=c9b2d7e2-7b69-4364-b434-a82cfb1f48e7
+  body: none
+  auth: inherit
+}
+
+params:query {
+  PageQueryID: c9b2d7e2-7b69-4364-b434-a82cfb1f48e7
+}
+
+headers {
+  Connection: keep-alive
+  sec-ch-ua: "Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"
+  Accept: application/json, text/plain, */*
+  sec-ch-ua-mobile: ?0
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
+  sec-ch-ua-platform: "Windows"
+  Sec-Fetch-Site: same-origin
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Dest: empty
+  Referer: https://egov.kz/services/signing/?PageQueryID=c9b2d7e2-7b69-4364-b434-a82cfb1f48e7
+  Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+  Cookie: LTT=1637313644599; LTT=1637313629020; cookiesession1=678B772AIKLMNOPQRSTVWXYZABCD71E1; _zero_cc=63843ac8a48982; _ym_d=1635242553; _ym_uid=1635242553260483271; _ga=GA1.2.61266959.1635242557; egov-client-type=PORTAL; egovLang=ru; _ym_isad=2; _gid=GA1.2.1545545152.1637300626; SERVERID=s2; locale=ru; has_js=1; _ym_visorc=w; SSO=39d08ecf-bff1-4a89-b9f8-9d9a72614751; SSESSf0d09e6725a5b1994b1b0ab11a8d594d=kVx2JmzDX4SpyXmdc30ilEuozGwzwFZd9aXnOQ5aAp0; _zero_ss=6197685a368d0.1637312602.1637312691.4; LTT=1637312701966
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+}
+
+example {
+  name: services/signing/rest/app/xml
+  
+  request: {
+    url: https://egov.kz/services/signing/rest/app/xml?PageQueryID=c9b2d7e2-7b69-4364-b434-a82cfb1f48e7
+    method: GET
+    mode: none
+    params:query: {
+      PageQueryID: c9b2d7e2-7b69-4364-b434-a82cfb1f48e7
+    }
+  
+    headers: {
+      Connection: keep-alive
+      sec-ch-ua: "Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"
+      Accept: application/json, text/plain, */*
+      sec-ch-ua-mobile: ?0
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36
+      sec-ch-ua-platform: "Windows"
+      Sec-Fetch-Site: same-origin
+      Sec-Fetch-Mode: cors
+      Sec-Fetch-Dest: empty
+      Referer: https://egov.kz/services/signing/?PageQueryID=c9b2d7e2-7b69-4364-b434-a82cfb1f48e7
+      Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+      Cookie: LTT=1637313644599; LTT=1637313629020; cookiesession1=678B772AIKLMNOPQRSTVWXYZABCD71E1; _zero_cc=63843ac8a48982; _ym_d=1635242553; _ym_uid=1635242553260483271; _ga=GA1.2.61266959.1635242557; egov-client-type=PORTAL; egovLang=ru; _ym_isad=2; _gid=GA1.2.1545545152.1637300626; SERVERID=s2; locale=ru; has_js=1; _ym_visorc=w; SSO=39d08ecf-bff1-4a89-b9f8-9d9a72614751; SSESSf0d09e6725a5b1994b1b0ab11a8d594d=kVx2JmzDX4SpyXmdc30ilEuozGwzwFZd9aXnOQ5aAp0; _zero_ss=6197685a368d0.1637312602.1637312691.4; LTT=1637312701966
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx
+      Date: Fri, 19 Nov 2021 09:23:47 GMT
+      Content-Type: application/json;charset=UTF-8
+      Connection: keep-alive
+      Set-Cookie: egov-client-type=PORTAL; Domain=egov.kz; Path=/
+      Set-Cookie: JSESSIONID=Wv20EygH1Id8DoHSwYehZ2Ln; Path=/signing
+      Set-Cookie: LTT=1637313827747
+      Access-Control-Allow-Credentials: true
+      Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD
+      Access-Control-Allow-Headers: Authorization, Origin, X-Requested-With, Content-Type, Accept
+      content-length: 655
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "xml": [
+                "<request xmlns:ns2pep=\"http://www.w3.org/2000/09/xmldsig#\" xmlns=\"http://3005_v2.reports.egp.gbdul.tamur.kz\"><requestNumber>10100547728005</requestNumber><declarantId>141040028436</declarantId><businessData><BIN>201240013776</BIN><Requestor><Organization><BIN>141040028436</BIN><OrganizationNameRu>Товарищество с ограниченной ответственностью \"Учёт.Бухгалтерия\"</OrganizationNameRu><OrganizationNameKz>\"Учёт.Бухгалтерия\" жауапкершілігі шектеулі серіктестігі</OrganizationNameKz></Organization></Requestor></businessData></request>"
+            ]
+        }
+      '''
+    }
+  }
+}

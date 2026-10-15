@@ -1,0 +1,59 @@
+meta {
+  name: Массовое уничтожение карт
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/delivery/opers_card_delivery/mass_card_termination/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "cards_list": {}
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: FILE
+  
+  request: {
+    url: {{baseUrl}}/delivery/opers_card_delivery/mass_card_termination/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "cards_list": {}
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

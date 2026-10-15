@@ -1,0 +1,68 @@
+meta {
+  name: Отправка фото по заявке
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/liveness_process/reset_password/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "application_uuid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/registration/liveness_process/reset_password/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "application_uuid": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "application_uuid": "35f87c91-d21d-ed57-94a0-4be965930fcc",
+          "status": 2
+        }
+      '''
+    }
+  }
+}

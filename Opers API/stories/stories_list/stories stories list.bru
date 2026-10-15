@@ -1,0 +1,86 @@
+meta {
+  name: stories stories list
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/stories/stories_list/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Список сториз
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/stories/stories_list/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "id": 5016,
+            "image": "https://IQxUebYpkydyekLo.chexKDZ2Evcmk1VANoZYvC7OfD.Vvy3ncYi3TxuGRaIK5ohbV7wf8Hu3s7FFn8d0",
+            "round_image": "https://AvNUcCQi.fslWQSJg9oCacjwJXSsUqQPumcmfJZYOpGYAt8jaIdQ",
+            "link": "string",
+            "is_enable": false,
+            "priority": -1690509883,
+            "for_adult": true,
+            "for_junior": false,
+            "language": "ru"
+          },
+          {
+            "id": 8135,
+            "image": "http://kGtcEzpClvFnERhSmTtnGOAvxeeGtwya.ujslkIQjbDC0Le.VxB8CWrBQyI",
+            "round_image": "https://DmxotpFpcZtoEg.ivS.hMNU,RWb5V+wYhjpgRunhtaa8XVPA",
+            "link": "string",
+            "is_enable": true,
+            "priority": 2068394339,
+            "for_adult": true,
+            "for_junior": false,
+            "language": "en"
+          }
+        ]
+      '''
+    }
+  }
+}

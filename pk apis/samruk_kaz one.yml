@@ -1,0 +1,34 @@
+info:
+  name: samruk_kaz one
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: https://zakup.sk.kz/eprocglobal/open-api/suppliers/?identifier=181040001838&registerType=BAD_SUPPLIER&hash=gq2gjzvgeq2hp74r6isek&page=0&size=20&sort=includeNomenclatureDate,asc
+  params:
+    - name: identifier
+      value: "181040001838"
+      type: query
+    - name: registerType
+      value: BAD_SUPPLIER
+      type: query
+    - name: hash
+      value: gq2gjzvgeq2hp74r6isek
+      type: query
+    - name: page
+      value: "0"
+      type: query
+    - name: size
+      value: "20"
+      type: query
+    - name: sort
+      value: includeNomenclatureDate,asc
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,73 @@
+meta {
+  name: Забронировать очередь в отделении
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/booking/booking/book_event/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "branch_id": 237,
+    "service_id": 3765,
+    "booking_datetime": "1975-01-29T19:46:27.672Z",
+    "phone": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/booking/booking/book_event/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "branch_id": 237,
+        "service_id": 3765,
+        "booking_datetime": "1975-01-29T19:46:27.672Z",
+        "phone": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "code": "string"
+        }
+      '''
+    }
+  }
+}

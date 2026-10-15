@@ -1,0 +1,29 @@
+meta {
+  name: Смена пароля
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://{{ARM_HOST}}/proxy/users-service/api/auth/services/change_password
+  body: json
+  auth: inherit
+}
+
+headers {
+  X-Fingerprint: {{X-Fingerprint}}
+  Accept-Language: {{Accept-Language}}
+  User-Agent: {{User-Agent}}
+  Authorization:  Bearer {{JWT_ACCESS_TOKEN}}
+}
+
+body:json {
+  {
+    "old_password": "h8guKVw78IDwqnxAUwIVGUtyg49Mbxa3y9rRGRDKhvFR8lyZvN3ckqLZ/FtuZJDTw/Bph4d0POq6Rzo1SEQfOl5QcyDzRwQc3e26ISoiXeKJn/HC8QMfHJQ6IvSpoX6P9IAK5aexHhKnTtUKI4tbO0BXx3agyP9I6FztlOD0za9RQNgEjydRMP6r6yyFdN1i2koRP/lMCwNVaurYvnCGUF2eytjiQIrrPQKr4q9uZ46gFJqDD3rgDpRZUJ3FLPKId2KrP1tlTuUiygODq1SAf0/WEtX+XlThDjFXMWzkMfCEBWDORok6/0vMsvRvduBiXocyi0yCh9oFtqWQ3huVLw==",
+    "new_password": "pz6wnqGYoIPcnOGgRV+xMZOtQiuOXfEPjNqCVkTQpGTa+OMVtFi2eLLcM6dD3TzFgxIJsg/lhqH9eMtTq/FHZvvJU2jtyeSlkIXhi2saAOwh5zW8NUZ2oRBQNd5DXCXkoc4OhiPBTQL/cdBv/Shw1elLf4eCcLx/KK/950MPPPTwj9zrQQJxBC/azDiD0MMyHSirZrPu8uwwBSynHaW1w0rYlvscG7X6I0oH9gTgWmoHabL1I6qUvrU/UEjHiVI8nxI4ZFWud9gqSEXn7dHW7IHrCzd+5EVo92O/DK7I2hmKyHjK1ZBO0oOIUyJ4U4Zh932eiHX/b5PFOxmZQdEPAw=="
+  }
+}
+
+settings {
+  encodeUrl: true
+}

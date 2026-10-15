@@ -1,0 +1,140 @@
+meta {
+  name: events rpc search fines
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/events/rpc/search_fines/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "stringstring"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/events/rpc/search_fines/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "avOriginalId": "string",
+            "iin": "stringstring",
+            "lName": "string",
+            "fName": "string",
+            "mName": "string",
+            "birthday": "1948-05-07T20:49:09.710Z",
+            "offenceOrg": "string",
+            "actNum": "string",
+            "protocolNum": "string",
+            "protocolDate": "string",
+            "qualification": "string",
+            "commissionDate": "2006-02-24T08:17:00.232Z",
+            "penalitySize": "string",
+            "paymentSize": "string",
+            "balanceSize": "string",
+            "kbk": "string",
+            "kno": "string",
+            "knp": "string"
+          },
+          {
+            "avOriginalId": "string",
+            "iin": "stringstring",
+            "lName": "string",
+            "fName": "string",
+            "mName": "string",
+            "birthday": "2020-05-13T17:35:53.753Z",
+            "offenceOrg": "string",
+            "actNum": "string",
+            "protocolNum": "string",
+            "protocolDate": "string",
+            "qualification": "string",
+            "commissionDate": "1962-09-14T16:15:10.173Z",
+            "penalitySize": "string",
+            "paymentSize": "string",
+            "balanceSize": "string",
+            "kbk": "st",
+            "kno": "string",
+            "knp": "string"
+          }
+        ]
+      '''
+    }
+  }
+}
+
+example {
+  name: not valid
+  
+  request: {
+    url: {{baseUrl}}/events/rpc/search_fines/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 400
+      text: Bad Request
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

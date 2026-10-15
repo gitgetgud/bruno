@@ -1,0 +1,25 @@
+meta {
+  name: goszakup
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://ows.goszakup.gov.kz/v2/subject/all?limit=500
+  body: none
+  auth: inherit
+}
+
+params:query {
+  limit: 500
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer de1af70069094865bc62bca10956be43
+  Cookie: _csrf=tsQUTMDY5gj3-7knyAF3s-xyULQFQEOw
+}
+
+settings {
+  encodeUrl: true
+}

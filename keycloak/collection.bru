@@ -1,0 +1,13 @@
+meta {
+  name: keycloak
+}
+
+auth {
+  mode: none
+}
+
+vars:pre-request {
+  CLIENT_ID: boardclient
+  REALM_NAME: imageboardauth
+  KEYCLOAK_BASE_URL: http://localhost:8080
+}

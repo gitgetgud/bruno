@@ -1,0 +1,95 @@
+meta {
+  name: Список продуктов для открытия карты
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/opers/api/v1/core/card_emission/products_list/?iin=string&at_the_branch=string&search=string&ordering=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  iin: string
+  at_the_branch: string
+  search: string
+  ordering: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/card_emission/products_list/?iin=string&at_the_branch=string&search=string&ordering=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      iin: string
+      at_the_branch: string
+      search: string
+      ordering: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "description": "string",
+          "code": "string",
+          "currency": "string",
+          "card_products": [
+            {
+              "name": "string",
+              "code": "string",
+              "plastic": {
+                "code": "string",
+                "description": "string",
+                "image": "https://tRpLo.ptokag8XHTxOuhRAQyhDh6AVB1e.OwVhWaUvxHfVZ4+KoNJo",
+                "profile_id": "string"
+              },
+              "with_epin": false
+            },
+            {
+              "name": "string",
+              "code": "string",
+              "plastic": {
+                "code": "string",
+                "description": "string",
+                "image": "https://QJ.rrUwhvYFspkCTlweJ4w5M2qxcAzXtJKE",
+                "profile_id": "string"
+              },
+              "with_epin": false
+            }
+          ]
+        }
+      '''
+    }
+  }
+}

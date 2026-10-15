@@ -1,0 +1,75 @@
+meta {
+  name: Получение выписки по карте за период (для мобильного приложения)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/reports/cashflow_card_mobile/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "iin": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "branch_of_bank": "string",
+    "credit_limit": "string",
+    "date_from": "1967-12-04",
+    "date_to": "1982-09-07",
+    "currency": "string",
+    "card_id": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: FILE
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/reports/cashflow_card_mobile/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "string",
+        "first_name": "string",
+        "last_name": "string",
+        "branch_of_bank": "string",
+        "credit_limit": "string",
+        "date_from": "1967-12-04",
+        "date_to": "1982-09-07",
+        "currency": "string",
+        "card_id": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

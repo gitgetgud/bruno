@@ -1,0 +1,82 @@
+meta {
+  name: rbk pay tolem create payment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/tolem/create_payment/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "account": "stringstri",
+    "currency": "string",
+    "amount": "string",
+    "phone": "string",
+    "iin": "stringstring",
+    "from_iban": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/tolem/create_payment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "account": "stringstri",
+        "currency": "string",
+        "amount": "string",
+        "phone": "string",
+        "iin": "stringstring",
+        "from_iban": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "account": "stringstri",
+          "currency": "string",
+          "amount": "string",
+          "phone": "string",
+          "iin": "stringstring",
+          "from_iban": "string"
+        }
+      '''
+    }
+  }
+}

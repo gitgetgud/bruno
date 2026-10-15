@@ -1,0 +1,44 @@
+meta {
+  name: Unenroll
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/singleWindow/soa/
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SingleWindowUser
+  password: 6osupNmQ5UmEqvm7O7xo
+}
+
+body:json {
+  {
+     "Request":{
+        "serviceCode":"tswitch.UnenrollToken",
+        "uuid":"0c2375aa-abdd-4e04-ac01-87434452e12c",
+        "sourceSystem":"singleWindow",
+        "username":"singleWindow",
+        "requestTime":"2021-11-05 05:02:23.218639",
+        "Data":{
+           "UnenrollToken":{
+              "VisaAlias":{
+                 "Token":{
+                    "Value":"77772200003"
+                 },
+                 "Source":{
+                    "ContractNumber":"99999999"
+                 }
+              }
+           }
+        }
+     }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

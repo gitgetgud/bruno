@@ -1,0 +1,99 @@
+meta {
+  name: max-min-sum - Сервис получения минимальной и максимальной суммы по авансу автолизинга
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{gateway_host}}/bcc/production/api/v1/calculator/max-min-sum
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+body:json {
+  {
+      "cli_type": "TOO"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: max-min-sum - Сервис получения минимальной и максимальной суммы по авансу автолизинга
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/calculator/max-min-sum
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Mon, 23 Jun 2025 05:40:37 GMT
+      X-Global-Transaction-ID: 95dd62ed6858e8d5126290b1
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: GET
+      X-RateLimit-Limit: name=default,100;
+      X-RateLimit-Remaining: name=default,88;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "data": [
+                {
+                    "name": "10%",
+                    "min_sum": 5555556,
+                    "max_sum": 77777777
+                },
+                {
+                    "name": "15%",
+                    "min_sum": 5882353,
+                    "max_sum": 82352941
+                },
+                {
+                    "name": "20%",
+                    "min_sum": 6250000,
+                    "max_sum": 87500000
+                },
+                {
+                    "name": "25%",
+                    "min_sum": 6666667,
+                    "max_sum": 93333333
+                },
+                {
+                    "name": "30%",
+                    "min_sum": 7142858,
+                    "max_sum": 100000000
+                }
+            ],
+            "status": 0,
+            "message": null,
+            "isSuccess": true,
+            "isFailure": false,
+            "fromCache": false,
+            "isAsync": false,
+            "request": {}
+        }
+      '''
+    }
+  }
+}

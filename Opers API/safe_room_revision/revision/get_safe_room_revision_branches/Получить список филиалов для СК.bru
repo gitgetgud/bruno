@@ -1,0 +1,102 @@
+meta {
+  name: Получить список филиалов для СК
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/safe_room_revision/revision/get_safe_room_revision_branches/?id=string&revision_kind=string&revision_type=string&created=string&modified=string&status=string&branch__code=string&page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  id: string
+  revision_kind: string
+  revision_type: string
+  created: string
+  modified: string
+  status: string
+  branch__code: string
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/revision/get_safe_room_revision_branches/?id=string&revision_kind=string&revision_type=string&created=string&modified=string&status=string&branch__code=string&page=80
+    method: GET
+    mode: none
+    params:query: {
+      id: string
+      revision_kind: string
+      revision_type: string
+      created: string
+      modified: string
+      status: string
+      branch__code: string
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "code": "string",
+            "description": "string",
+            "address": "string",
+            "contact_email": "XRveZHjw@dhoYtD.uok",
+            "mapped_code": "string",
+            "institution": "string",
+            "order_department": "string",
+            "online_order_department": "string",
+            "is_active": true,
+            "is_delivery_city": true,
+            "dar_delivery": 3712,
+            "city": 3552
+          },
+          {
+            "code": "string",
+            "description": "string",
+            "address": "string",
+            "contact_email": "fsnlOsKJ@ksXzLjXRjWCqLUUScXF.gr",
+            "mapped_code": "s",
+            "institution": "string",
+            "order_department": "string",
+            "online_order_department": "string",
+            "is_active": true,
+            "is_delivery_city": true,
+            "dar_delivery": 3948,
+            "city": 4972
+          }
+        ]
+      '''
+    }
+  }
+}

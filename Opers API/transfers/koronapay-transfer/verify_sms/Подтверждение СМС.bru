@@ -1,0 +1,65 @@
+meta {
+  name: Подтверждение СМС
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/transfers/koronapay-transfer/verify_sms/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "id": "string",
+    "passcode": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+docs {
+  Золотая Корона
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/koronapay-transfer/verify_sms/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "id": "string",
+        "passcode": "string"
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

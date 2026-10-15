@@ -1,0 +1,3357 @@
+meta {
+  name: example sug
+  type: http
+  seq: 6
+}
+
+get {
+  url: https://api.post.kz/api/byAddress/Алматы Ауэзова 179а?from=0
+  body: none
+  auth: inherit
+}
+
+params:query {
+  from: 0
+}
+
+headers {
+  User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0
+  Accept: application/json, text/plain, */*
+  Accept-Language: en-US,en;q=0.5
+  Accept-Encoding: gzip, deflate, br
+  X-Requested-With: XMLHttpRequest
+  DNT: 1
+  Connection: keep-alive
+  Referer: https://m.krisha.kz/webview/valuation
+  Cookie: krssid=r47lpicvh26a0jbe1sru598vu8; krishauid=91a26aacffc707e679850c95fcbbeb02efae68db; ssaid=860133a0-6307-11ed-bafa-b73951f2b32e; _ga=GA1.2.860133a0-6307-11ed-bafa-b73951f2b32e; tutorial=%7B%22advPage%22%3A%22viewed%22%7D; kr_cdn_host=//alaps-kz.kcdn.online; __tld__=null
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: example sug
+  
+  request: {
+    url: https://api.post.kz/api/byAddress/Алматы Ауэзова 179а?from=0
+    method: GET
+    mode: none
+    params:query: {
+      from: 0
+    }
+  
+    headers: {
+      User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0
+      Accept: application/json, text/plain, */*
+      Accept-Language: en-US,en;q=0.5
+      Accept-Encoding: gzip, deflate, br
+      X-Requested-With: XMLHttpRequest
+      DNT: 1
+      Connection: keep-alive
+      Referer: https://m.krisha.kz/webview/valuation
+      Cookie: krssid=r47lpicvh26a0jbe1sru598vu8; krishauid=91a26aacffc707e679850c95fcbbeb02efae68db; ssaid=860133a0-6307-11ed-bafa-b73951f2b32e; _ga=GA1.2.860133a0-6307-11ed-bafa-b73951f2b32e; tutorial=%7B%22advPage%22%3A%22viewed%22%7D; kr_cdn_host=//alaps-kz.kcdn.online; __tld__=null
+      Sec-Fetch-Dest: empty
+      Sec-Fetch-Mode: cors
+      Sec-Fetch-Site: same-origin
+    }
+  }
+  
+  response: {
+    headers: {
+      Server: nginx
+      Date: Sun, 13 Nov 2022 05:27:25 GMT
+      Content-Type: application/json;charset=UTF-8
+      Connection: keep-alive
+      Vary: Accept-Encoding
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Credentials: true
+      Access-Control-Allow-Headers: *,OrganizationBin
+      X-Frame-Options: SAMEORIGIN
+      X-Content-Type-Options: nosniff
+      Content-Encoding: gzip
+      Set-Cookie: cookiesession1=678A3E1F7F48E825A1B2EE11557EDACB;Expires=Mon, 13 Nov 2023 05:27:25 GMT;Path=/;HttpOnly
+      content-length: 13292
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "data": [
+                {
+                    "id": "AYLWX9z5QbjTklFBHvO5",
+                    "postcode": "A15G7C5",
+                    "addressRus": "Алматы, Бостандыкский, улица Ауэзова, дом 179А",
+                    "addressKaz": "Алматы,көшесі Әуезов,үй  179А",
+                    "fullAddress": {
+                        "postcode": "A15G7C5",
+                        "rka": "0201300117896405",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G142004",
+                                "nameKaz": "Әуезов",
+                                "nameRus": "Ауэзова",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A141496",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A141496",
+                                "nameKaz": "Бостандық",
+                                "nameRus": "Бостандыкский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A8",
+                                    "nameRus": "Район в городе",
+                                    "nameKaz": "қала ішіндегі аудан"
+                                },
+                                "parentId": "A158106",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A158106",
+                                "nameKaz": "Алматы",
+                                "nameRus": "Алматы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A9",
+                                    "nameRus": "Город республиканского значения",
+                                    "nameKaz": "республикалық маңызы бар қаласы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "050057",
+                        "address": "almaty, ulica aue'zova, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "050057",
+                        "maintain_index": "050057",
+                        "delivery_index": "800510",
+                        "positionX": "76.904789",
+                        "positionY": "43.22714"
+                    }
+                },
+                {
+                    "id": "AYLUjsmIQbjTklFBBBGF",
+                    "postcode": "P16C8H7",
+                    "addressRus": "Область Костанайская, Рудный, Садовое общество 3, строение 179А",
+                    "addressKaz": "облысы Қостанай,Рудный,Бау-бақшалық қоғамы 3,құрылыс  179А",
+                    "fullAddress": {
+                        "postcode": "P16C8H7",
+                        "rka": "0201300109265403",
+                        "type": {
+                            "id": "B1",
+                            "nameRus": "строение",
+                            "nameKaz": "құрылыс"
+                        },
+                        "parts": [
+                            {
+                                "id": "G127185",
+                                "nameKaz": "3",
+                                "nameRus": "3",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G42",
+                                    "nameRus": "Садовое общество",
+                                    "nameKaz": "Бау-бақшалық қоғамы"
+                                },
+                                "parentId": "A126778",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A126778",
+                                "nameKaz": "Рудный",
+                                "nameRus": "Рудный",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A125189",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A125189",
+                                "nameKaz": "Қостанай",
+                                "nameRus": "Костанайская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "111502",
+                        "address": "oblast' kostanajskaya, rudnyj, sadovoe obshhestvo 3, stroenie 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "111502",
+                        "maintain_index": "111502",
+                        "delivery_index": "111502",
+                        "positionX": "63.133392",
+                        "positionY": "52.964432"
+                    }
+                },
+                {
+                    "id": "AYLUju2nQbjTklFBBBLc",
+                    "postcode": "L00F0E2",
+                    "addressRus": "Область Западно-Казахстанская, Уральск, Садоводческое товарищество Зачаганский, дом 179А",
+                    "addressKaz": "облысы Батыс Қазақстан,Орал,Бағбандық серіктестік Зачаганский,үй  179А",
+                    "fullAddress": {
+                        "postcode": "L00F0E2",
+                        "rka": "0201300328909300",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G53395",
+                                "nameKaz": "Зачаганский",
+                                "nameRus": "Зачаганский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G63",
+                                    "nameRus": "Садоводческое товарищество",
+                                    "nameKaz": "Бағбандық серіктестік"
+                                },
+                                "parentId": "A51071",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A51071",
+                                "nameKaz": "Орал",
+                                "nameRus": "Уральск",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A51068",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A51068",
+                                "nameKaz": "Батыс Қазақстан",
+                                "nameRus": "Западно-Казахстанская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "090009",
+                        "address": "oblast' zapadno-kazaxstanskaya, ural'sk, sadovodcheskoe tovarishhestvo zachaganskij, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "090009",
+                        "maintain_index": "090009",
+                        "delivery_index": "090009",
+                        "positionX": "51.305292",
+                        "positionY": "51.157122"
+                    }
+                },
+                {
+                    "id": "AYLUpCUGQbjTklFBBLCt",
+                    "postcode": "C58X7K0",
+                    "addressRus": "Область Акмолинская, Караоткельский, Каражар, улица Алкея Маргулана, дом 179А",
+                    "addressKaz": "облысы Ақмола,Қараөткел,Қаражар,көшесі Әлкей Марғұлан,үй  179А",
+                    "fullAddress": {
+                        "postcode": "C58X7K0",
+                        "rka": "0201700059838066",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G150897",
+                                "nameKaz": "Әлкей Марғұлан",
+                                "nameRus": "Алкея Маргулана",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A150850",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A150850",
+                                "nameKaz": "Қаражар",
+                                "nameRus": "Каражар",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A150843",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A150843",
+                                "nameKaz": "Қараөткел",
+                                "nameRus": "Караоткельский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A150807",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A150807",
+                                "nameKaz": "Целиноград",
+                                "nameRus": "Целиноградский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A144254",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A144254",
+                                "nameKaz": "Ақмола",
+                                "nameRus": "Акмолинская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "010000",
+                        "address": "Республика Казахстан, область Акмолинская, район Целиноградский, сельский округ Караоткельский, село Каражар, улица Алкея Маргулана, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "010000",
+                        "maintain_index": "010000",
+                        "delivery_index": "700147",
+                        "positionX": "71.227545",
+                        "positionY": "51.074091"
+                    }
+                },
+                {
+                    "id": "AYLUpZsOQbjTklFBBLvH",
+                    "postcode": "F34B1B8",
+                    "addressRus": "Область Восточно-Казахстанская, Тарханский, Тарханка, улица Степная, дом 179А",
+                    "addressKaz": "облысы Шығыс Қазақстан,Тархан,Тарханка,көшесі Степная,үй  179А",
+                    "fullAddress": {
+                        "postcode": "F34B1B8",
+                        "rka": "0201300331921904",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G39986",
+                                "nameKaz": "Степная",
+                                "nameRus": "Степная",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A39973",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A39973",
+                                "nameKaz": "Тарханка",
+                                "nameRus": "Тарханка",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A39958",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A39958",
+                                "nameKaz": "Тархан",
+                                "nameRus": "Тарханский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A38607",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A38607",
+                                "nameKaz": "Глубокое",
+                                "nameRus": "Глубоковский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A31221",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A31221",
+                                "nameKaz": "Шығыс Қазақстан",
+                                "nameRus": "Восточно-Казахстанская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "070519",
+                        "address": "oblast' vostochno-kazaxstanskaya, tarxanka, ulica stepnaya, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "070519",
+                        "maintain_index": "070519",
+                        "delivery_index": "070519",
+                        "positionX": "82.95161",
+                        "positionY": "50.112382"
+                    }
+                },
+                {
+                    "id": "AYLUyqDIQbjTklFBBiJb",
+                    "postcode": "A03A7G0",
+                    "addressRus": "Алматы, Алатауский, Микрорайон Теректи, улица Теректи, дом 179А",
+                    "addressKaz": "Алматы,Шағын ауданы Теректі,көшесі Теректі,үй  179А",
+                    "fullAddress": {
+                        "postcode": "A03A7G0",
+                        "rka": "0201500030106334",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G94927",
+                                "nameKaz": "Айналмалы",
+                                "nameRus": "Айналмалы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "G263049",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "G263049",
+                                "nameKaz": "Теректі",
+                                "nameRus": "Теректи",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G24",
+                                    "nameRus": "Микрорайон",
+                                    "nameKaz": "Шағын ауданы"
+                                },
+                                "parentId": "A138439",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A138439",
+                                "nameKaz": "Алатау",
+                                "nameRus": "Алатауский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A8",
+                                    "nameRus": "Район в городе",
+                                    "nameKaz": "қала ішіндегі аудан"
+                                },
+                                "parentId": "A158106",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A158106",
+                                "nameKaz": "Алматы",
+                                "nameRus": "Алматы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A9",
+                                    "nameRus": "Город республиканского значения",
+                                    "nameKaz": "республикалық маңызы бар қаласы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "050071",
+                        "address": "Республика Казахстан, город Алматы, район Алатауский, микрорайон Теректи, улица Айналмалы, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "050071",
+                        "maintain_index": "050071",
+                        "delivery_index": "050071",
+                        "positionX": "76.7834",
+                        "positionY": "43.240657"
+                    }
+                },
+                {
+                    "id": "AYLU8q_CQbjTklFBCEn_",
+                    "postcode": "X45E0X0",
+                    "addressRus": "Область Туркестанская, Туркестан, улица А.Юсупов, дом 179А",
+                    "addressKaz": "облысы Түркістан,Түркістан,көшесі А.Юсупов,үй  179А",
+                    "fullAddress": {
+                        "postcode": "X45E0X0",
+                        "rka": "0202000179754023",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G183033",
+                                "nameKaz": "А.Юсупов",
+                                "nameRus": "А.Юсупов",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A182036",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A182036",
+                                "nameKaz": "Түркістан",
+                                "nameRus": "Туркестан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A178760",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A178760",
+                                "nameKaz": "Түркістан",
+                                "nameRus": "Туркестанская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": null,
+                        "address": null,
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": null,
+                        "maintain_index": null,
+                        "delivery_index": null,
+                        "positionX": "68.281987",
+                        "positionY": "43.318661"
+                    }
+                },
+                {
+                    "id": "AYLVB91jQbjTklFBCYcJ",
+                    "postcode": "H22F3H8",
+                    "addressRus": "Область Жамбылская, Меркенский, Мерке, улица Азимбек Исмаилов, дом 179А",
+                    "addressKaz": "облысы Жамбыл,Меркі,Меркі,көшесі Әзімбек Ысмаилов,үй  179А",
+                    "fullAddress": {
+                        "postcode": "H22F3H8",
+                        "rka": "0201300719893405",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G175133",
+                                "nameKaz": "Әзімбек Ысмаилов",
+                                "nameRus": "Азимбек Исмаилов",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A175101",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A175101",
+                                "nameKaz": "Меркі",
+                                "nameRus": "Мерке",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A175093",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A175093",
+                                "nameKaz": "Меркі",
+                                "nameRus": "Меркенский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A175089",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A175089",
+                                "nameKaz": "Меркі",
+                                "nameRus": "Меркенский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A168532",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A168532",
+                                "nameKaz": "Жамбыл",
+                                "nameRus": "Жамбылская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "080500",
+                        "address": "oblast' zhambylskaya, merke, ulica azimbek ismailov, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "080500",
+                        "maintain_index": "080500",
+                        "delivery_index": "080500",
+                        "positionX": "73.129134",
+                        "positionY": "42.774906"
+                    }
+                },
+                {
+                    "id": "AYLVC4TNQbjTklFBCb2P",
+                    "postcode": "S03K8T0",
+                    "addressRus": "Область Павлодарская, Павлодар, улица Ломова, дом 179А",
+                    "addressKaz": "облысы Павлодар,Павлодар,көшесі Ломов,үй  179А",
+                    "fullAddress": {
+                        "postcode": "S03K8T0",
+                        "rka": "0201300723943400",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G10688",
+                                "nameKaz": "Ломов",
+                                "nameRus": "Ломова",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A9103",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A9103",
+                                "nameKaz": "Павлодар",
+                                "nameRus": "Павлодар",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A2",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A2",
+                                "nameKaz": "Павлодар",
+                                "nameRus": "Павлодарская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "140013",
+                        "address": "oblast' pavlodarskaya, pavlodar, ulica lomova, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "144304",
+                        "maintain_index": "140013",
+                        "delivery_index": "140013",
+                        "positionX": "76.987686",
+                        "positionY": "52.263828"
+                    }
+                },
+                {
+                    "id": "AYLVHK8VQbjTklFBCsMo",
+                    "postcode": "N04A5A6",
+                    "addressRus": "Область Кызылординская, Кызылорда, Микрорайон Акмаржан, улица Жаппасбай батыр, дом 179А",
+                    "addressKaz": "облысы Қызылорда,Қызылорда,Шағын ауданы Ақмаржан,көшесі Жаппасбай батыр,үй  179А",
+                    "fullAddress": {
+                        "postcode": "N04A5A6",
+                        "rka": "0201500036351030",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G167531",
+                                "nameKaz": "Жаппасбай батыр",
+                                "nameRus": "Жаппасбай батыр",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "G167868",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "G167868",
+                                "nameKaz": "Ақмаржан",
+                                "nameRus": "Акмаржан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G24",
+                                    "nameRus": "Микрорайон",
+                                    "nameKaz": "Шағын ауданы"
+                                },
+                                "parentId": "A165288",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A165288",
+                                "nameKaz": "Қызылорда",
+                                "nameRus": "Кызылорда",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A158628",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A158628",
+                                "nameKaz": "Қызылорда",
+                                "nameRus": "Кызылординская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "120000",
+                        "address": "Республика Казахстан, область Кызылординская, город Кызылорда, микрорайон Акмаржан, улица Жаппасбай батыр, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "120000",
+                        "maintain_index": "120000",
+                        "delivery_index": "120000",
+                        "positionX": "65.534867",
+                        "positionY": "44.842314"
+                    }
+                },
+                {
+                    "id": "AYLVJxxPQbjTklFBC2Uy",
+                    "postcode": "D28K8H6",
+                    "addressRus": "Область Актюбинская, Эмба, улица Забиқұлла Елубаев, строение 179А",
+                    "addressKaz": "облысы Ақтөбе,Ембі,көшесі Забиқұлла Елубаев,құрылыс  179А",
+                    "fullAddress": {
+                        "postcode": "D28K8H6",
+                        "rka": "0201400027152789",
+                        "type": {
+                            "id": "B1",
+                            "nameRus": "строение",
+                            "nameKaz": "құрылыс"
+                        },
+                        "parts": [
+                            {
+                                "id": "G74733",
+                                "nameKaz": "Забиқұлла Елубаев",
+                                "nameRus": "Забиқұлла Елубаев",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A74677",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A74677",
+                                "nameKaz": "Ембі",
+                                "nameRus": "Эмба",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A4",
+                                    "nameRus": "Город районного значения",
+                                    "nameKaz": "аудандық маңызы бар қаласы"
+                                },
+                                "parentId": "A74573",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A74573",
+                                "nameKaz": "Мұғалжар",
+                                "nameRus": "Мугалжарский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A68381",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A68381",
+                                "nameKaz": "Ақтөбе",
+                                "nameRus": "Актюбинская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "031300",
+                        "address": "oblast' aktyubinskaya, e'mba, ulica zabikulla elubaev, stroenie 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "031300",
+                        "maintain_index": "031300",
+                        "delivery_index": "031300",
+                        "positionX": "58.144669",
+                        "positionY": "48.81794"
+                    }
+                },
+                {
+                    "id": "AYLVLF30QbjTklFBC7nY",
+                    "postcode": "X63C2D0",
+                    "addressRus": "Область Туркестанская, Аксукентский, Аксу, улица Абылайхана, дом 179А",
+                    "addressKaz": "облысы Түркістан,Ақсукент,Ақсу,көшесі Абылайхан,үй  179А",
+                    "fullAddress": {
+                        "postcode": "X63C2D0",
+                        "rka": "0201300229404801",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G189789",
+                                "nameKaz": "Абылайхан",
+                                "nameRus": "Абылайхана",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A189664",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A189664",
+                                "nameKaz": "Ақсу",
+                                "nameRus": "Аксу",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A189663",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A189663",
+                                "nameKaz": "Ақсукент",
+                                "nameRus": "Аксукентский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A189662",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A189662",
+                                "nameKaz": "Сайрам",
+                                "nameRus": "Сайрамский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A178760",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A178760",
+                                "nameKaz": "Түркістан",
+                                "nameRus": "Туркестанская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "160800",
+                        "address": "oblast' turkestanskaya, aksu, ulica abylajxana, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "160800",
+                        "maintain_index": "160800",
+                        "delivery_index": "160800",
+                        "positionX": "69.828661",
+                        "positionY": "42.420712"
+                    }
+                },
+                {
+                    "id": "AYLVM9L5QbjTklFBDC6u",
+                    "postcode": "C55A5G7",
+                    "addressRus": "Область Акмолинская, Балкашинский, Балкашино, улица Имени Абылай-Хана, дом 179А",
+                    "addressKaz": "облысы Ақмола,Балкашин,Балкашино,көшесі Абылай-Хан атындағы,үй  179А",
+                    "fullAddress": {
+                        "postcode": "C55A5G7",
+                        "rka": "0201300143948001",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G150422",
+                                "nameKaz": "Абылай-Хан атындағы",
+                                "nameRus": "Имени Абылай-Хана",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A150420",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A150420",
+                                "nameKaz": "Балкашино",
+                                "nameRus": "Балкашино",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A150410",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A150410",
+                                "nameKaz": "Балкашин",
+                                "nameRus": "Балкашинский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A150409",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A150409",
+                                "nameKaz": "Сандықтау",
+                                "nameRus": "Сандыктауский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A144254",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A144254",
+                                "nameKaz": "Ақмола",
+                                "nameRus": "Акмолинская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "021400",
+                        "address": "oblast' akmolinskaya, balkashino, ulica abylaj xana, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "021400",
+                        "maintain_index": "021400",
+                        "delivery_index": "021499",
+                        "positionX": "68.748051",
+                        "positionY": "52.509134"
+                    }
+                },
+                {
+                    "id": "AYLVPS1uQbjTklFBDMED",
+                    "postcode": "B35C1Y6",
+                    "addressRus": "Область Алматинская, Узынагашский, Узынагаш, улица Тоққұлов, дом 179А",
+                    "addressKaz": "облысы Алматы,Ұзынағаш,Ұзынағаш,көшесі Тоққұлов,үй  179А",
+                    "fullAddress": {
+                        "postcode": "B35C1Y6",
+                        "rka": "0201900119350053",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G89783",
+                                "nameKaz": "Тоққұлов",
+                                "nameRus": "Тоққұлов",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A89731",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A89731",
+                                "nameKaz": "Ұзынағаш",
+                                "nameRus": "Узынагаш",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A89730",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A89730",
+                                "nameKaz": "Ұзынағаш",
+                                "nameRus": "Узынагашский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A89720",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A89720",
+                                "nameKaz": "Жамбыл",
+                                "nameRus": "Жамбылский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A79492",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A79492",
+                                "nameKaz": "Алматы",
+                                "nameRus": "Алматинская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": null,
+                        "address": "Республика Казахстан, область Алматинская, район Жамбылский, сельский округ Узынагашский, село Узынагаш, улица Тоққұлов, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": null,
+                        "maintain_index": null,
+                        "delivery_index": null,
+                        "positionX": "76.332149",
+                        "positionY": "43.214099"
+                    }
+                },
+                {
+                    "id": "AYLVSNEkQbjTklFBDXsU",
+                    "postcode": "A15M9D0",
+                    "addressRus": "Алматы, Бостандыкский, улица Радостовца, дом 179А",
+                    "addressKaz": "Алматы,көшесі Радостовец,үй  179А",
+                    "fullAddress": {
+                        "postcode": "A15M9D0",
+                        "rka": "0201300118096309",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G141528",
+                                "nameKaz": "Радостовец",
+                                "nameRus": "Радостовца",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A141496",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A141496",
+                                "nameKaz": "Бостандық",
+                                "nameRus": "Бостандыкский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A8",
+                                    "nameRus": "Район в городе",
+                                    "nameKaz": "қала ішіндегі аудан"
+                                },
+                                "parentId": "A158106",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A158106",
+                                "nameKaz": "Алматы",
+                                "nameRus": "Алматы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A9",
+                                    "nameRus": "Город республиканского значения",
+                                    "nameKaz": "республикалық маңызы бар қаласы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "050060",
+                        "address": "almaty, ulica radostovca, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "050060",
+                        "maintain_index": "050060",
+                        "delivery_index": "800510",
+                        "positionX": "76.892914",
+                        "positionY": "43.229669"
+                    }
+                },
+                {
+                    "id": "AYLVSiSEQbjTklFBDY-g",
+                    "postcode": "X67C0B9",
+                    "addressRus": "Область Туркестанская, Карамуртский, Карамурт, улица Ага-Ини Полатовы, дом 179А",
+                    "addressKaz": "облысы Түркістан,Қарамұрт,Қарамұрт,көшесі Аға-Іні Полатовтар,үй  179А",
+                    "fullAddress": {
+                        "postcode": "X67C0B9",
+                        "rka": "0201700070481764",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G191019",
+                                "nameKaz": "Аға-Іні Полатовтар",
+                                "nameRus": "Ага-Ини Полатовы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A190955",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A190955",
+                                "nameKaz": "Қарамұрт",
+                                "nameRus": "Карамурт",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A190954",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A190954",
+                                "nameKaz": "Қарамұрт",
+                                "nameRus": "Карамуртский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A189662",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A189662",
+                                "nameKaz": "Сайрам",
+                                "nameRus": "Сайрамский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A178760",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A178760",
+                                "nameKaz": "Түркістан",
+                                "nameRus": "Туркестанская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "160805",
+                        "address": "Республика Казахстан, область Туркестанская, район Сайрамский, сельский округ Карамуртский, село Карамурт, улица Ага-Ини Полатовы, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "160805",
+                        "maintain_index": "160805",
+                        "delivery_index": "160805",
+                        "positionX": "69.969059",
+                        "positionY": "42.309067"
+                    }
+                },
+                {
+                    "id": "AYLVzRktQbjTklFBFbq_",
+                    "postcode": "N22X4A8",
+                    "addressRus": "Область Кызылординская, Айтеке Би, улица Мустафа Шокайулы, дом 179А",
+                    "addressKaz": "облысы Қызылорда,Әйтеке Би,көшесі Мұстафа Шоқайұлы,үй  179А",
+                    "fullAddress": {
+                        "postcode": "N22X4A8",
+                        "rka": "0201900088823855",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G161599",
+                                "nameKaz": "Мұстафа Шоқайұлы",
+                                "nameRus": "Мустафа Шокайулы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A161586",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A161586",
+                                "nameKaz": "Әйтеке Би",
+                                "nameRus": "Айтеке Би",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A2",
+                                    "nameRus": "Поселок",
+                                    "nameKaz": "кенті"
+                                },
+                                "parentId": "A161561",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A161561",
+                                "nameKaz": "Қазалы",
+                                "nameRus": "Казалинский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A158628",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A158628",
+                                "nameKaz": "Қызылорда",
+                                "nameRus": "Кызылординская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": null,
+                        "address": "Республика Казахстан, область Кызылординская, район Казалинский, поселок Айтеке Би, улица Мустафа Шокайулы, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": null,
+                        "maintain_index": null,
+                        "delivery_index": null,
+                        "positionX": "62.148317",
+                        "positionY": "45.835934"
+                    }
+                },
+                {
+                    "id": "AYLVz3GcQbjTklFBFd93",
+                    "postcode": "P00Y9H0",
+                    "addressRus": "Область Костанайская, Костанай, улица Л.Беды, дом 179А",
+                    "addressKaz": "облысы Қостанай,Қостанай,көшесі Л.Беда,үй  179А",
+                    "fullAddress": {
+                        "postcode": "P00Y9H0",
+                        "rka": "0201300097226006",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G125343",
+                                "nameKaz": "Л.Беда",
+                                "nameRus": "Л.Беды",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A125193",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A125193",
+                                "nameKaz": "Қостанай",
+                                "nameRus": "Костанай",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A125189",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A125189",
+                                "nameKaz": "Қостанай",
+                                "nameRus": "Костанайская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "110001",
+                        "address": "oblast' kostanajskaya, kostanaj, ulica l.bedy, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "110011",
+                        "maintain_index": "110011",
+                        "delivery_index": "110011",
+                        "positionX": "63.60675",
+                        "positionY": "53.209136"
+                    }
+                },
+                {
+                    "id": "AYLVvbdlQbjTklFBFLnl",
+                    "postcode": "T01K5K1",
+                    "addressRus": "Область Северо-Казахстанская, Петропавловск, улица М.Горького, дом 179А",
+                    "addressKaz": "облысы Солтүстік Қазақстан,Петропавл,көшесі Горький,үй  179А",
+                    "fullAddress": {
+                        "postcode": "T01K5K1",
+                        "rka": "0201300095598003",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G113549",
+                                "nameKaz": "Горький",
+                                "nameRus": "М.Горького",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A113407",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A113407",
+                                "nameKaz": "Петропавл",
+                                "nameRus": "Петропавловск",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A113406",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A113406",
+                                "nameKaz": "Солтүстік Қазақстан",
+                                "nameRus": "Северо-Казахстанская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "150007",
+                        "address": "oblast' severo-kazaxstanskaya, petropavlovsk, ulica m.gor'kogo, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "150007",
+                        "maintain_index": "150007",
+                        "delivery_index": "801504",
+                        "positionX": "69.129359",
+                        "positionY": "54.863394"
+                    }
+                },
+                {
+                    "id": "AYLWG1FMQbjTklFBGqI0",
+                    "postcode": "H19H4B6",
+                    "addressRus": "Область Жамбылская, Кордайский, Кордай, Переулок Жибек жолы, дом 179А",
+                    "addressKaz": "облысы Жамбыл,Қордай,Қордай,Тұйық көше Жібек жолы,үй  179А",
+                    "fullAddress": {
+                        "postcode": "H19H4B6",
+                        "rka": "0201300162508906",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G173502",
+                                "nameKaz": "Жібек жолы",
+                                "nameRus": "Жибек жолы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G19",
+                                    "nameRus": "Переулок",
+                                    "nameKaz": "Тұйық көше"
+                                },
+                                "parentId": "A173469",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A173469",
+                                "nameKaz": "Қордай",
+                                "nameRus": "Кордай",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A173463",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A173463",
+                                "nameKaz": "Қордай",
+                                "nameRus": "Кордайский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A173461",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A173461",
+                                "nameKaz": "Қордай",
+                                "nameRus": "Кордайский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A168532",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A168532",
+                                "nameKaz": "Жамбыл",
+                                "nameRus": "Жамбылская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "080400",
+                        "address": "Республика Казахстан, область Жамбылская, район Кордайский, сельский округ Кордайский, село Кордай, переулок Жибек жолы, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "080400",
+                        "maintain_index": "080400",
+                        "delivery_index": "080400",
+                        "positionX": "74.706495",
+                        "positionY": "43.056956"
+                    }
+                },
+                {
+                    "id": "AYLWT8ahQbjTklFBHe4T",
+                    "postcode": "B73C6K0",
+                    "addressRus": "Область Алматинская, Жамбылский, Кошмамбет, улица Береке, дом 179А",
+                    "addressKaz": "облысы Алматы,Жамбыл,Қошмамбет,көшесі Береке,үй  179А",
+                    "fullAddress": {
+                        "postcode": "B73C6K0",
+                        "rka": "0201600047097191",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G94035",
+                                "nameKaz": "Береке",
+                                "nameRus": "Береке",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A94004",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A94004",
+                                "nameKaz": "Қошмамбет",
+                                "nameRus": "Кошмамбет",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A251368",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A251368",
+                                "nameKaz": "Жамбыл",
+                                "nameRus": "Жамбылский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A93701",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A93701",
+                                "nameKaz": "Қарасай",
+                                "nameRus": "Карасайский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A79492",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A79492",
+                                "nameKaz": "Алматы",
+                                "nameRus": "Алматинская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "040900",
+                        "address": "Республика Казахстан, область Алматинская, район Карасайский, сельский округ Жамбылский, село Кошмамбет, улица Береке, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "874164",
+                        "maintain_index": "874164",
+                        "delivery_index": "874164",
+                        "positionX": "76.645715",
+                        "positionY": "43.331266"
+                    }
+                },
+                {
+                    "id": "AYLWaEewQbjTklFBH3gj",
+                    "postcode": "M28D4P0",
+                    "addressRus": "Область Карагандинская, Темиртау, Проспект Республики, строение 179А",
+                    "addressKaz": "облысы Қарағанды,Теміртау,Даңғылы Республика,құрылыс  179А",
+                    "fullAddress": {
+                        "postcode": "M28D4P0",
+                        "rka": "0201300298314007",
+                        "type": {
+                            "id": "B1",
+                            "nameRus": "строение",
+                            "nameKaz": "құрылыс"
+                        },
+                        "parts": [
+                            {
+                                "id": "G215091",
+                                "nameKaz": "Республика",
+                                "nameRus": "Республики",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G15",
+                                    "nameRus": "Проспект",
+                                    "nameKaz": "Даңғылы"
+                                },
+                                "parentId": "A214935",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A214935",
+                                "nameKaz": "Теміртау",
+                                "nameRus": "Темиртау",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A202313",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A202313",
+                                "nameKaz": "Қарағанды",
+                                "nameRus": "Карагандинская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "101402",
+                        "address": "oblast' karagandinskaya, temirtau, prospekt respubliki, stroenie 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "101402",
+                        "maintain_index": "101402",
+                        "delivery_index": "101402",
+                        "positionX": "72.910727",
+                        "positionY": "50.088674"
+                    }
+                },
+                {
+                    "id": "AYLWRFBMQbjTklFBHTKi",
+                    "postcode": "H02T9H7",
+                    "addressRus": "Область Жамбылская, Тараз, улица Ыкылас Дукенулы, дом 179А",
+                    "addressKaz": "облысы Жамбыл,Тараз,көшесі Ықылас Дүкенұлы,үй  179А",
+                    "fullAddress": {
+                        "postcode": "H02T9H7",
+                        "rka": "0201300156406400",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G169157",
+                                "nameKaz": "Ықылас Дүкенұлы",
+                                "nameRus": "Ыкылас Дукенулы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A168533",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A168533",
+                                "nameKaz": "Тараз",
+                                "nameRus": "Тараз",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A168532",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A168532",
+                                "nameKaz": "Жамбыл",
+                                "nameRus": "Жамбылская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "080013",
+                        "address": "oblast' zhambylskaya, taraz, ulica ykylas dukenuly, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "080013",
+                        "maintain_index": "080013",
+                        "delivery_index": "080013",
+                        "positionX": "71.348233",
+                        "positionY": "42.868477"
+                    }
+                },
+                {
+                    "id": "AYLXJNvOQbjTklFBK1D_",
+                    "postcode": "B10T2H0",
+                    "addressRus": "Область Алматинская, Қонаев, Гаражный кооператив простое гаражное товарищество Робот, гараж 179А",
+                    "addressKaz": "облысы Алматы,Қонаев,Гараждық кооперативі Робот жай көлік-жай серіктестігі,көлікжай  179А",
+                    "fullAddress": {
+                        "postcode": "B10T2H0",
+                        "rka": "0201800083637423",
+                        "type": {
+                            "id": "B4",
+                            "nameRus": "гараж",
+                            "nameKaz": "көлікжай"
+                        },
+                        "parts": [
+                            {
+                                "id": "G80844",
+                                "nameKaz": "Робот жай көлік-жай серіктестігі",
+                                "nameRus": "простое гаражное товарищество Робот",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G33",
+                                    "nameRus": "Гаражный кооператив",
+                                    "nameKaz": "Гараждық кооперативі"
+                                },
+                                "parentId": "A80696",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A80696",
+                                "nameKaz": "Қонаев",
+                                "nameRus": "Қонаев",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A79492",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A79492",
+                                "nameKaz": "Алматы",
+                                "nameRus": "Алматинская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": null,
+                        "address": "Республика Казахстан, область Алматинская, город Капшагай, гаражный кооператив простое гаражное товарищество Робот, гараж №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": null,
+                        "maintain_index": null,
+                        "delivery_index": null,
+                        "positionX": "77.052859",
+                        "positionY": "43.338945"
+                    }
+                },
+                {
+                    "id": "AYLXMPYfQbjTklFBLBwP",
+                    "postcode": "F17X3T8",
+                    "addressRus": "Область Восточно-Казахстанская, Семей, улица Достоевского, дом 179А",
+                    "addressKaz": "облысы Шығыс Қазақстан,Семей,көшесі Достоевский,үй  179А",
+                    "fullAddress": {
+                        "postcode": "F17X3T8",
+                        "rka": "0201300020986803",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G34034",
+                                "nameKaz": "Достоевский",
+                                "nameRus": "Достоевского",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A33335",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A33335",
+                                "nameKaz": "Семей",
+                                "nameRus": "Семей",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A252179",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A252179",
+                                "nameKaz": "Абай",
+                                "nameRus": "Абай",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "071402",
+                        "address": "oblast' vostochno-kazaxstanskaya, semej, ulica dostoevskogo, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "071402",
+                        "maintain_index": "071402",
+                        "delivery_index": "071402",
+                        "positionX": "80.239318",
+                        "positionY": "50.412456"
+                    }
+                },
+                {
+                    "id": "AYLWswzEQbjTklFBJBjv",
+                    "postcode": "M00H1D6",
+                    "addressRus": "Область Карагандинская, Караганда, имени Казыбек Би, Микрорайон Кунгей, улица Матена Рахимбекова, дом 179А",
+                    "addressKaz": "облысы Қарағанды,Қарағанды,Шағын ауданы Күнгей,көшесі Мәтен Рахымбеков,үй  179А",
+                    "fullAddress": {
+                        "postcode": "M00H1D6",
+                        "rka": "0201300729881609",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G249960",
+                                "nameKaz": "Мәтен Рахымбеков",
+                                "nameRus": "Матена Рахимбекова",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "G213389",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "G213389",
+                                "nameKaz": "Күнгей",
+                                "nameRus": "Кунгей",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G24",
+                                    "nameRus": "Микрорайон",
+                                    "nameKaz": "Шағын ауданы"
+                                },
+                                "parentId": "A212923",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A212923",
+                                "nameKaz": "Қазыбек Би атындағы",
+                                "nameRus": "имени Казыбек Би",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A8",
+                                    "nameRus": "Район в городе",
+                                    "nameKaz": "қала ішіндегі аудан"
+                                },
+                                "parentId": "A212922",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A212922",
+                                "nameKaz": "Қарағанды",
+                                "nameRus": "Караганда",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A202313",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A202313",
+                                "nameKaz": "Қарағанды",
+                                "nameRus": "Карагандинская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "100025",
+                        "address": "Республика Казахстан, область Карагандинская, город Караганда, район имени Казыбек Би, микрорайон Кунгей, улица Матена Рахимбекова, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "100025",
+                        "maintain_index": "100025",
+                        "delivery_index": "802221",
+                        "positionX": "73.183842",
+                        "positionY": "49.775496"
+                    }
+                },
+                {
+                    "id": "AYLWuCZhQbjTklFBJGlw",
+                    "postcode": "B34G0C7",
+                    "addressRus": "Область Алматинская, Шолаккаргалинский, Касымбек, улица Бәйтерек, дом 179А",
+                    "addressKaz": "облысы Алматы,Шолаққарғалы,Қасымбек,көшесі Бәйтерек,үй  179А",
+                    "fullAddress": {
+                        "postcode": "B34G0C7",
+                        "rka": "0201300276674204",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G91265",
+                                "nameKaz": "Бәйтерек",
+                                "nameRus": "Бәйтерек",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A91264",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A91264",
+                                "nameKaz": "Қасымбек",
+                                "nameRus": "Касымбек",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A91242",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A91242",
+                                "nameKaz": "Шолаққарғалы",
+                                "nameRus": "Шолаккаргалинский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A89720",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A89720",
+                                "nameKaz": "Жамбыл",
+                                "nameRus": "Жамбылский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A79492",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A79492",
+                                "nameKaz": "Алматы",
+                                "nameRus": "Алматинская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "040619",
+                        "address": "oblast' almatinskaya, kasymbek, ulica bajterek, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "040619",
+                        "maintain_index": "040619",
+                        "delivery_index": "040619",
+                        "positionX": "76.436049",
+                        "positionY": "43.250744"
+                    }
+                },
+                {
+                    "id": "AYRV5VSYQbjTklFBPYgp",
+                    "postcode": "Z11F0E6",
+                    "addressRus": "Астана, Сарыарка, улица Жосалы, дом 179А",
+                    "addressKaz": "Астана,көшесі Жосалы,үй  179А",
+                    "fullAddress": {
+                        "postcode": "Z11F0E6",
+                        "rka": "0201400027018384",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G108557",
+                                "nameKaz": "Жосалы",
+                                "nameRus": "Жосалы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A107989",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A107989",
+                                "nameKaz": "Сарыарқа",
+                                "nameRus": "Сарыарка",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A8",
+                                    "nameRus": "Район в городе",
+                                    "nameKaz": "қала ішіндегі аудан"
+                                },
+                                "parentId": "A106724",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A106724",
+                                "nameKaz": "Астана",
+                                "nameRus": "Астана",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A9",
+                                    "nameRus": "Город республиканского значения",
+                                    "nameKaz": "республикалық маңызы бар қаласы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "010000",
+                        "address": "Республика Казахстан, город Нур-Султан, район Сарыарка, улица Мыржакыпа Дулатова, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "010013",
+                        "maintain_index": "010000",
+                        "delivery_index": "019900",
+                        "positionX": "71.360684",
+                        "positionY": "51.203336"
+                    }
+                },
+                {
+                    "id": "AYLUpRUUQbjTklFBBLfc",
+                    "postcode": "R13H7G8",
+                    "addressRus": "Область Мангистауская, Боранкул, Зона №1, дом 179А",
+                    "addressKaz": "облысы Маңғыстау,Боранқұл,Аймақ №1,үй  179А",
+                    "fullAddress": {
+                        "postcode": "R13H7G8",
+                        "rka": "0201500039447635",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G247634",
+                                "nameKaz": "№1",
+                                "nameRus": "№1",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G67",
+                                    "nameRus": "Зона",
+                                    "nameKaz": "Аймақ"
+                                },
+                                "parentId": "A111991",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A111991",
+                                "nameKaz": "Боранқұл",
+                                "nameRus": "Боранкул",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A111628",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A111628",
+                                "nameKaz": "Бейнеу",
+                                "nameRus": "Бейнеуский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A109099",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A109099",
+                                "nameKaz": "Маңғыстау",
+                                "nameRus": "Мангистауская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "130102",
+                        "address": "Республика Казахстан, область Мангистауская, район Бейнеуский, село Боранкул, зона №1, дом №179А",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "130102",
+                        "maintain_index": "130102",
+                        "delivery_index": "130102",
+                        "positionX": "54.475016",
+                        "positionY": "46.207472"
+                    }
+                },
+                {
+                    "id": "AYLUuEd2QbjTklFBBUSa",
+                    "postcode": "X64M1X0",
+                    "addressRus": "Область Туркестанская, Карасуский, Карасу, улица Жибек жолы, дом 179А",
+                    "addressKaz": "облысы Түркістан,Қарасу,Қарасу,көшесі Жібек жолы,үй  179А",
+                    "fullAddress": {
+                        "postcode": "X64M1X0",
+                        "rka": "0201300221071704",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G191157",
+                                "nameKaz": "Жібек жолы",
+                                "nameRus": "Жибек жолы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A191061",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A191061",
+                                "nameKaz": "Қарасу",
+                                "nameRus": "Карасу",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A1",
+                                    "nameRus": "Село",
+                                    "nameKaz": "ауылы"
+                                },
+                                "parentId": "A191060",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A191060",
+                                "nameKaz": "Қарасу",
+                                "nameRus": "Карасуский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A3",
+                                    "nameRus": "Сельский округ",
+                                    "nameKaz": "ауылдық округі"
+                                },
+                                "parentId": "A189662",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A189662",
+                                "nameKaz": "Сайрам",
+                                "nameRus": "Сайрамский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A5",
+                                    "nameRus": "Район",
+                                    "nameKaz": "ауданы"
+                                },
+                                "parentId": "A178760",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A178760",
+                                "nameKaz": "Түркістан",
+                                "nameRus": "Туркестанская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "160806",
+                        "address": "oblast' turkestanskaya, karasu, ulica zhibek zholy, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "160806",
+                        "maintain_index": "160806",
+                        "delivery_index": "160806",
+                        "positionX": "69.796474",
+                        "positionY": "42.40158"
+                    }
+                },
+                {
+                    "id": "AYLUyNq8QbjTklFBBhAw",
+                    "postcode": "A20E7E1",
+                    "addressRus": "Алматы, Жетысуский, улица Бокейханова, дом 179А",
+                    "addressKaz": "Алматы,көшесі Бөкейханов,үй  179А",
+                    "fullAddress": {
+                        "postcode": "A20E7E1",
+                        "rka": "0201300118743602",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G139335",
+                                "nameKaz": "Бөкейханов",
+                                "nameRus": "Бокейханова",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A139305",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A139305",
+                                "nameKaz": "Жетісу",
+                                "nameRus": "Жетысуский",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A8",
+                                    "nameRus": "Район в городе",
+                                    "nameKaz": "қала ішіндегі аудан"
+                                },
+                                "parentId": "A158106",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A158106",
+                                "nameKaz": "Алматы",
+                                "nameRus": "Алматы",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A9",
+                                    "nameRus": "Город республиканского значения",
+                                    "nameKaz": "республикалық маңызы бар қаласы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "050014",
+                        "address": "almaty, ulica bokejxanova, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "050014",
+                        "maintain_index": "050014",
+                        "delivery_index": "800504",
+                        "positionX": "76.900325",
+                        "positionY": "43.294001"
+                    }
+                },
+                {
+                    "id": "AYLU1DFsQbjTklFBBp2U",
+                    "postcode": "F17X0K3",
+                    "addressRus": "Область Восточно-Казахстанская, Семей, улица Джамбула, дом 179А",
+                    "addressKaz": "облысы Шығыс Қазақстан,Семей,көшесі Жамбыл,үй  179А",
+                    "fullAddress": {
+                        "postcode": "F17X0K3",
+                        "rka": "0201300027000105",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G34029",
+                                "nameKaz": "Жамбыл",
+                                "nameRus": "Джамбула",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A33335",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A33335",
+                                "nameKaz": "Семей",
+                                "nameRus": "Семей",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A252179",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A252179",
+                                "nameKaz": "Абай",
+                                "nameRus": "Абай",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "071410",
+                        "address": "oblast' vostochno-kazaxstanskaya, semej, ulica dzhambula, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "071410",
+                        "maintain_index": "071410",
+                        "delivery_index": "071410",
+                        "positionX": "80.24919",
+                        "positionY": "50.404964"
+                    }
+                },
+                {
+                    "id": "AYLU2VreQbjTklFBBuM7",
+                    "postcode": "D02B7M2",
+                    "addressRus": "Область Актюбинская, Актобе, Астана, Жилой массив Жанаконыс, дом 179А",
+                    "addressKaz": "облысы Ақтөбе,Ақтөбе,Тұрғын үй алабы Жаңақоныс,үй  179А",
+                    "fullAddress": {
+                        "postcode": "D02B7M2",
+                        "rka": "0201300234749702",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G217379",
+                                "nameKaz": "Жаңақоныс",
+                                "nameRus": "Жанаконыс",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G46",
+                                    "nameRus": "Жилой массив",
+                                    "nameKaz": "Тұрғын үй алабы"
+                                },
+                                "parentId": "A251453",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A251453",
+                                "nameKaz": "Астана",
+                                "nameRus": "Астана",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A8",
+                                    "nameRus": "Район в городе",
+                                    "nameKaz": "қала ішіндегі аудан"
+                                },
+                                "parentId": "A68402",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A68402",
+                                "nameKaz": "Ақтөбе",
+                                "nameRus": "Актобе",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A68381",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A68381",
+                                "nameKaz": "Ақтөбе",
+                                "nameRus": "Актюбинская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "030017",
+                        "address": "oblast' aktyubinskaya, aktobe, zhanakonys, zhiloj massiv zhanakonys, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "030017",
+                        "maintain_index": "030017",
+                        "delivery_index": "030017",
+                        "positionX": "57.076914",
+                        "positionY": "50.289898"
+                    }
+                },
+                {
+                    "id": "AYLU_SvFQbjTklFBCOXA",
+                    "postcode": "P10D7A2",
+                    "addressRus": "Область Костанайская, Аркалык, улица Ш. Жанибек, дом 179А",
+                    "addressKaz": "облысы Қостанай,Арқалық,көшесі Ш. Жанибек,үй  179А",
+                    "fullAddress": {
+                        "postcode": "P10D7A2",
+                        "rka": "0201300730333905",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G126226",
+                                "nameKaz": "Ш. Жанибек",
+                                "nameRus": "Ш. Жанибек",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A125938",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A125938",
+                                "nameKaz": "Арқалық",
+                                "nameRus": "Аркалык",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A125189",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A125189",
+                                "nameKaz": "Қостанай",
+                                "nameRus": "Костанайская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "110302",
+                        "address": "oblast' kostanajskaya, arkalyk, ulica sh zhanibeka, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "110300",
+                        "maintain_index": "110302",
+                        "delivery_index": "110300",
+                        "positionX": "66.913808",
+                        "positionY": "50.252964"
+                    }
+                },
+                {
+                    "id": "AYLVPctEQbjTklFBDMsa",
+                    "postcode": "P01A7M2",
+                    "addressRus": "Область Костанайская, Костанай, улица М.Дулатова, дом 179А",
+                    "addressKaz": "облысы Қостанай,Қостанай,көшесі М.Дулатов,үй  179А",
+                    "fullAddress": {
+                        "postcode": "P01A7M2",
+                        "rka": "0201300112154409",
+                        "type": {
+                            "id": "B2",
+                            "nameRus": "дом",
+                            "nameKaz": "үй"
+                        },
+                        "parts": [
+                            {
+                                "id": "G125791",
+                                "nameKaz": "М.Дулатов",
+                                "nameRus": "М.Дулатова",
+                                "typeId": null,
+                                "type": {
+                                    "id": "G11",
+                                    "nameRus": "улица",
+                                    "nameKaz": "көшесі"
+                                },
+                                "parentId": "A125193",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A125193",
+                                "nameKaz": "Қостанай",
+                                "nameRus": "Костанай",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A6",
+                                    "nameRus": "Город областного значения",
+                                    "nameKaz": "облыстық маңызы бар қаласы"
+                                },
+                                "parentId": "A125189",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A125189",
+                                "nameKaz": "Қостанай",
+                                "nameRus": "Костанайская",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A7",
+                                    "nameRus": "Область",
+                                    "nameKaz": "облысы"
+                                },
+                                "parentId": "A1",
+                                "actual": "1"
+                            },
+                            {
+                                "id": "A1",
+                                "nameKaz": "Қазақстан",
+                                "nameRus": "Казахстан",
+                                "typeId": null,
+                                "type": {
+                                    "id": "A10",
+                                    "nameRus": "Республика",
+                                    "nameKaz": "Республикасы"
+                                },
+                                "parentId": null,
+                                "actual": "1"
+                            }
+                        ],
+                        "number": "179А",
+                        "oldPostcode": "110000",
+                        "address": "oblast' kostanajskaya, kostanaj, ulica m.dulatova, dom 179a",
+                        "additional": null,
+                        "additionalType": null,
+                        "corpus": null,
+                        "corpusNumber": null,
+                        "actual": "1",
+                        "receive_index": "110000",
+                        "maintain_index": "110000",
+                        "delivery_index": "110000",
+                        "positionX": "63.48651",
+                        "positionY": "49.627353"
+                    }
+                }
+            ],
+            "total": 35,
+            "from": 0
+        }
+      '''
+    }
+  }
+}

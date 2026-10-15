@@ -1,0 +1,188 @@
+meta {
+  name: rbk pay payments read
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/rbk_pay/payments/:id/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 87320af2-737c-9461-b3c8-f6ac9d0d69ea
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/:id/
+    method: GET
+    mode: none
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "status": null,
+          "provider": {
+            "params": [
+              "string"
+            ],
+            "category": {
+              "name": "string",
+              "id": 1877
+            },
+            "id": "0240732d-03cd-80dc-8d7c-dcfa39c42580",
+            "name": "string",
+            "iban": "string",
+            "bin": "string",
+            "knp": "string",
+            "kbe": "string",
+            "region": [
+              "cc007d04-9a6f-345d-b8d5-efb16284089d",
+              "d30a9d49-3e85-ae50-0afd-7ce82d1f9ee8"
+            ],
+            "disclaimer": "string"
+          },
+          "client_id": "string",
+          "phone": "string",
+          "iin": "string",
+          "from_iban": "string",
+          "fare_tolem": {
+            "balance": "string",
+            "pay_route_number": "string",
+            "pay_bus_reg_number": "string",
+            "pay_ticket_number": "string",
+            "payment": "b4f403ad-1a6e-ccce-6ab3-cdda9e531792",
+            "id": 2035
+          },
+          "paynet": {
+            "parameters": [
+              "string",
+              "string"
+            ],
+            "service_id": "string",
+            "payment_service": {
+              "third_party_provider": {
+                "provider_uuid": "72d7d760-7316-528d-69f4-bfcd03ba3c94"
+              },
+              "code": "string"
+            },
+            "operation_description": "string",
+            "pay_purpose": "string"
+          },
+          "kassa24": {
+            "parameters": [
+              "string",
+              "string"
+            ],
+            "service_id": "string",
+            "payment_service": {
+              "third_party_provider": {
+                "provider_uuid": "908d6c55-98f8-617d-7e28-36e1fc239f05"
+              },
+              "code": "string"
+            },
+            "operation_description": "string",
+            "pay_purpose": "string",
+            "addings": {}
+          },
+          "penalties": {
+            "iin": "string",
+            "doc_num": "string",
+            "doc_issue_date": "2002-08-23",
+            "l_name": "s",
+            "f_name": "string",
+            "birthday": "1981-07-31T06:59:45.933Z",
+            "av_original_id": "string",
+            "offence_org": "string",
+            "commission_date": "2015-07-12T17:56:44.480Z",
+            "penalty_size": "string",
+            "payment_size": "string",
+            "balance_size": "string",
+            "kbk": "string",
+            "kno": "string",
+            "knp": "string",
+            "id": 6812,
+            "m_name": "string",
+            "act_num": "string",
+            "protocol_num": "string",
+            "protocol_date": "string",
+            "half_sum_expired_date": "1975-10-01T13:42:04.755Z",
+            "qualification": "string",
+            "decision": "string",
+            "doc_name": "string"
+          },
+          "otbasy": {
+            "payment_service": {
+              "third_party_provider": {
+                "provider_uuid": "a1b7a7d0-f120-c2e6-7ab5-620e4e7cdd05"
+              },
+              "code": "string"
+            },
+            "acc_alt_code": "string",
+            "p_code": "string",
+            "rrn": "string",
+            "iban": "string",
+            "currency": "string",
+            "payment": "3cd3ed17-9296-2960-89ca-f6690c925ead",
+            "id": 2784,
+            "hermes_id": "string",
+            "cancel_state": "string"
+          },
+          "egov_info": {
+            "order_number": "str"
+          },
+          "id": "9d32be6e-ce37-6956-c36b-d883fdfa3b1e",
+          "invoice_id": 458652569,
+          "account": "string",
+          "payment_type": "OTBASY_LOAN",
+          "to_iban": "string",
+          "currency": "string",
+          "ibso_folder_id": "string",
+          "ibso_document_ref_id": "string",
+          "ibso_err_code": "string",
+          "created": "1966-03-23T16:54:04.201Z",
+          "modified": "1985-10-08T16:48:25.170Z",
+          "amount": "string",
+          "icon_image": "string",
+          "invoice_generated": "string",
+          "repeat_available": "string",
+          "merchant_name": "string",
+          "link_receipt": "string",
+          "card_number_mask": "string"
+        }
+      '''
+    }
+  }
+}

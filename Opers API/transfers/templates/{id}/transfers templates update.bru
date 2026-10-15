@@ -1,0 +1,75 @@
+meta {
+  name: transfers templates update
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/transfers/templates/:id/
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: string
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "alias": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/transfers/templates/:id/
+    method: PUT
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "alias": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "alias": "string"
+        }
+      '''
+    }
+  }
+}

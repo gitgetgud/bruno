@@ -1,0 +1,94 @@
+meta {
+  name: Изменить документ в карточке клиента ИБСО
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/registration/ibso_card/update_document/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "iin": "stringstring",
+    "full_name": "string",
+    "document": {
+      "doctype": "string",
+      "docno": "string",
+      "issueddate": "string",
+      "enddate": "string",
+      "issuedby": "string"
+    },
+    "phone": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/registration/ibso_card/update_document/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "iin": "stringstring",
+        "full_name": "string",
+        "document": {
+          "doctype": "string",
+          "docno": "string",
+          "issueddate": "string",
+          "enddate": "string",
+          "issuedby": "string"
+        },
+        "phone": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "iin": "stringstring",
+          "full_name": "string",
+          "document": {
+            "doctype": "string",
+            "docno": "string",
+            "issueddate": "string",
+            "enddate": "string",
+            "issuedby": "string"
+          },
+          "phone": "string"
+        }
+      '''
+    }
+  }
+}

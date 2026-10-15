@@ -1,0 +1,77 @@
+meta {
+  name: Подтверждение оплаты услуг егов/цон
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/egov/confirm_payment/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "egov_payment_id": "6c1f4b49-45e0-8a5a-92c2-5aa6d0dc5762",
+    "phone": "string",
+    "iban": "string",
+    "card_number_mask": "string",
+    "provider_id": "919148a1-d353-cafb-39f3-09d81076de3a"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/egov/confirm_payment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "egov_payment_id": "6c1f4b49-45e0-8a5a-92c2-5aa6d0dc5762",
+        "phone": "string",
+        "iban": "string",
+        "card_number_mask": "string",
+        "provider_id": "919148a1-d353-cafb-39f3-09d81076de3a"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "amount": "string",
+          "id": "8e1f8dbe-ab49-7909-826e-648d09742fee",
+          "payment_data": "string"
+        }
+      '''
+    }
+  }
+}

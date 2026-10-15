@@ -1,0 +1,65 @@
+meta {
+  name: check version biometry constants read
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/check_version/biometry_constants/:key/
+  body: none
+  auth: inherit
+}
+
+params:path {
+  key: string
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/check_version/biometry_constants/:key/
+    method: GET
+    mode: none
+    params:path: {
+      key: 
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "key": "string",
+          "value": "string",
+          "tags": [
+            "string"
+          ]
+        }
+      '''
+    }
+  }
+}

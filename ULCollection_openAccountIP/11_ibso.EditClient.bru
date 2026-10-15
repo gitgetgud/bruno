@@ -1,0 +1,179 @@
+meta {
+  name: 11_ibso.EditClient
+  type: http
+  seq: 11
+}
+
+post {
+  url: https://esb-test.kazincombank.kz:5555/sdboul/soa
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: SdboulUser
+  password: SdboulUser2020
+}
+
+body:json {
+  {
+      "Request": {
+          "serviceCode": "ibso.EditClient",
+          "uuid": "3505c24a-9523-4594-85b2-60adca269fc3",
+          "requestTime": "2022-06-24T02:56:04",
+          "sourceSystem": "InFinIt",
+          "username": "InFinIt",
+          "Data": {
+  
+              "client": {
+                  "idn": 940712401358,
+                  "resident": 1,
+  
+                  "name": "Xanax",
+  
+                  "fullname": "ИП Xanax",
+  
+                  "shortname": "Xanax",
+  
+                  "namekaz": "Xanax",
+  
+                  "fullnamekaz": "ИП Xanax",
+  
+                  "propertytype": "Частная собственность (20 вместо текста)",
+  
+                  "branchcode": "001-004-001",
+  
+                  "activity": {
+  
+                      "oked": 62021,
+  
+                      "activityname": "ИТ технология"
+  
+                  },
+  
+                  "workreason": "Талон",
+  
+                  "orgsize": 101,
+  
+                  "contacts": [{
+  
+                          "type": "MAIL",
+  
+                          "activ": 1,
+  
+                          "numb": "salkinbayeva@gmail.com"
+  
+                      }, {
+  
+                          "type": "PHONE_MOBILE",
+  
+                          "activ": 1,
+  
+                          "numb": "+7(775)6922505"
+  
+                      }
+  
+                  ],
+  
+                  "document": {
+  
+                      "doctype": "KZ_UD_L",
+  
+                      "docno": 42641971,
+  
+                      "docser": 432432,
+  
+                      "issueddate": "2015-01-14",
+  
+                      "enddate": "2025-01-14",
+  
+                      "issuedby": "МВД РК"
+  
+                  },
+  
+                  "regstatus": {
+  
+                      "regstcode": 1,
+  
+                      "regstname": "Зарегистрирован"
+  
+                  },
+  
+                  "registrationdepartment": {
+  
+                      "regcode": "1930-НАО",
+  
+                      "regkato": 351013100,
+  
+                      "citykato": 750000000,
+  
+                      "regorgan": 910740000133,
+  
+                      "regname": "Отдел города Караганда по регистрации и земельному кадастру филиала НАО ГК «Правительство для граждан» по Карагандинской  области",
+  
+                      "registrationdate": "2002-02-23",
+  
+                      "registrationlastdate": "2002-02-23",
+  
+                      "registrationnum": "б/н"
+  
+                  },
+  
+                  "addresses": [{
+  
+                          "zipCode": "M01Y2A7",
+  
+                          "kato": 351013100,
+  
+                          "type": "CORP",
+  
+                          "city": 750000000,
+  
+                          "street": "ул. Спартака",
+  
+                          "district": 751910000,
+  
+                          "house": 10,
+  
+                          "flat": "-",
+  
+                          "korpus": "-"
+  
+                      }, {
+  
+                          "zipCode": "M01Y2A7",
+  
+                          "kato": 351013100,
+  
+                          "type": "FACT",
+  
+                          "city": 610000000,
+  
+                          "street": "Дербисекский, Дербисек,УЛИЦА К.Калменов",
+  
+                          "district": 610000000,
+  
+                          "house": 10,
+  
+                          "flat": "-",
+  
+                          "korpus": "-"
+  
+                      }
+  
+                  ]
+  
+              }
+  
+          },
+          "errCode": "0000",
+          "errMessage": ""
+  
+      }
+  
+  }
+}
+
+settings {
+  encodeUrl: true
+}

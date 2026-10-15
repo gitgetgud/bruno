@@ -1,0 +1,230 @@
+meta {
+  name: rate-advance - Сервис калькулятора
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{gateway_host}}/bcc/production/api/v1/directory/rate-advance
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{x_ibm_access_token}}
+}
+
+body:json {
+  {
+      "p_id_models": [
+          2316,
+          2318
+      ],
+      "p_cli_type": "TOO"//,
+  //    "p_advance": 25,
+  //    "p_cnt_month": 37
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: rate-advance - Сервис калькулятора
+  
+  request: {
+    url: {{gateway_host}}/bcc/production/api/v1/directory/rate-advance
+    method: POST
+    mode: json
+    body:json: {
+      {
+          "name_prtn": "ТОО \"Солнышко\"",
+          "name_cntr": "Китай",
+          "cnt_months": null
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      X-Backside-Transport: OK OK
+      Connection: Keep-Alive
+      Transfer-Encoding: chunked
+      Content-Type: application/json
+      Date: Thu, 18 Sep 2025 06:18:05 GMT
+      X-Global-Transaction-ID: 95dd62ed68cba41d57476d72
+      X-Content-Type-Options: nosniff
+      Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+      X-Frame-Options: deny
+      Content-Security-Policy: default-src 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+      X-Permitted-Cross-Domain-Policies: none
+      Referrer-Policy: no-referrer
+      Clear-Site-Data: "cache", "cookies", "storage"
+      Cross-Origin-Embedder-Policy: require-corp
+      Cross-Origin-Opener-Policy: same-origin
+      Cross-Origin-Resource-Policy: same-origin
+      Permissions-Policy: accelerometer=(),ambient-light-sensor=(),autoplay=(),battery=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),layout-animations=(self),legacy-image-formats=(self),magnetometer=(),microphone=(),midi=(),oversized-images=(self),payment=(),picture-in-picture=(),publickey-credentials-get=(),speaker-selection=(),sync-xhr=(self),unoptimized-images=(self),unsized-media=(self),usb=(),screen-wake-lock=(),web-share=(),xr-spatial-tracking=()
+      Cache-Control: no-store, max-age=0
+      Pragma: cookieName=cookieValue; Path=/; Secure; HttpOnly; SameSite=Strict
+      Access-Control-Expose-Headers: APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Methods: POST
+      X-RateLimit-Limit: name=default,100;
+      X-RateLimit-Remaining: name=default,85;
+      Content-Encoding: gzip
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "data": {
+                "p_dmnlst": [
+                    {
+                        "MONTHS": "37",
+                        "ADVANCE": "25",
+                        "ID_MODEL": 2316,
+                        "RATE": 23.3,
+                        "NAME_COUNTRY": "КНР",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9191
+                    },
+                    {
+                        "MONTHS": "37",
+                        "ADVANCE": "20",
+                        "ID_MODEL": 2316,
+                        "RATE": 23.5,
+                        "NAME_COUNTRY": "КНР",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9190
+                    },
+                    {
+                        "MONTHS": "37",
+                        "ADVANCE": "25",
+                        "ID_MODEL": 2318,
+                        "RATE": 23.3,
+                        "NAME_COUNTRY": "КНР",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9199
+                    },
+                    {
+                        "MONTHS": "37",
+                        "ADVANCE": "20",
+                        "ID_MODEL": 2318,
+                        "RATE": 23.5,
+                        "NAME_COUNTRY": "КНР",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9198
+                    },
+                    {
+                        "MONTHS": "60",
+                        "ADVANCE": "20",
+                        "ID_MODEL": 2320,
+                        "RATE": 23.9,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9231
+                    },
+                    {
+                        "MONTHS": "48",
+                        "ADVANCE": "25",
+                        "ID_MODEL": 2320,
+                        "RATE": 23.3,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9233
+                    },
+                    {
+                        "MONTHS": "60",
+                        "ADVANCE": "30",
+                        "ID_MODEL": 2320,
+                        "RATE": 23.2,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9237
+                    },
+                    {
+                        "MONTHS": "37",
+                        "ADVANCE": "20",
+                        "ID_MODEL": 2320,
+                        "RATE": 23.5,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9229
+                    },
+                    {
+                        "MONTHS": "37",
+                        "ADVANCE": "15",
+                        "ID_MODEL": 2320,
+                        "RATE": 23.8,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9226
+                    },
+                    {
+                        "MONTHS": "60",
+                        "ADVANCE": "15",
+                        "ID_MODEL": 2320,
+                        "RATE": 24.1,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9228
+                    },
+                    {
+                        "MONTHS": "48",
+                        "ADVANCE": "20",
+                        "ID_MODEL": 2320,
+                        "RATE": 23.5,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9230
+                    },
+                    {
+                        "MONTHS": "37",
+                        "ADVANCE": "25",
+                        "ID_MODEL": 2320,
+                        "RATE": 23.3,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9232
+                    },
+                    {
+                        "MONTHS": "60",
+                        "ADVANCE": "25",
+                        "ID_MODEL": 2320,
+                        "RATE": 23.6,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9234
+                    },
+                    {
+                        "MONTHS": "48",
+                        "ADVANCE": "15",
+                        "ID_MODEL": 2320,
+                        "RATE": 23.8,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9227
+                    },
+                    {
+                        "MONTHS": "48",
+                        "ADVANCE": "30",
+                        "ID_MODEL": 2320,
+                        "RATE": 23,
+                        "NAME_COUNTRY": "Южная Корея",
+                        "SUBS": null,
+                        "ID_RATES_MODEL": 9236
+                    }
+                ]
+            }
+        }
+      '''
+    }
+  }
+}

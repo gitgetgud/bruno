@@ -1,0 +1,76 @@
+meta {
+  name: opers api v1 core w4 payment history
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/opers/api/v1/core/w4/payment_history/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "start": "1986-04-23",
+    "end": "2015-03-14",
+    "card_id": "string",
+    "account_id": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/opers/api/v1/core/w4/payment_history/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "start": "1986-04-23",
+        "end": "2015-03-14",
+        "card_id": "string",
+        "account_id": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "start": "1986-04-23",
+          "end": "2015-03-14",
+          "card_id": "string",
+          "account_id": "string"
+        }
+      '''
+    }
+  }
+}

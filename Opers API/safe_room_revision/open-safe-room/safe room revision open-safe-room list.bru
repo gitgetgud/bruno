@@ -1,0 +1,83 @@
+meta {
+  name: safe room revision open-safe-room list
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/safe_room_revision/open-safe-room/?page=80
+  body: none
+  auth: inherit
+}
+
+params:query {
+  page: 80
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/safe_room_revision/open-safe-room/?page=80
+    method: GET
+    mode: none
+    params:query: {
+      page: 80
+    }
+  
+    headers: {
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "count": 126,
+          "results": [
+            {
+              "opened_by_full_name": "string",
+              "description": "string",
+              "id": 4714,
+              "created": "1969-11-14T18:15:55.454Z",
+              "modified": "1961-05-04T18:55:08.791Z",
+              "is_successfully_opened": true,
+              "branch": "string"
+            },
+            {
+              "opened_by_full_name": "string",
+              "description": "string",
+              "id": 4039,
+              "created": "1978-08-17T06:07:09.970Z",
+              "modified": "1963-10-20T06:07:54.086Z",
+              "is_successfully_opened": false,
+              "branch": "string"
+            }
+          ],
+          "next": "http://mwxijHHKPqeDeTNZmqrM.mzM2gzea5-6fba5iDFVgkgYTylUeAS23+RWfMAttrkHkgqwQ3rXHPVWMi8ek",
+          "previous": "http://PSDBybMYnxQwFbBhtdxfo.ycdyoH3sZVFL7IAdtlFQ0ejJqwwHAx6DHmXswH"
+        }
+      '''
+    }
+  }
+}

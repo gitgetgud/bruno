@@ -1,0 +1,88 @@
+meta {
+  name: rbk pay payments create payment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/rbk_pay/payments/create_payment/
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "currency": "string",
+    "amount": "string",
+    "comment": "string",
+    "provider": "733a20f4-6afe-0ced-57fb-fe5544ad4981",
+    "phone": "string",
+    "iin": "stringstring",
+    "from_iban": "string",
+    "request_uuid": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
+
+example {
+  name: Untitled Response
+  
+  request: {
+    url: {{baseUrl}}/rbk_pay/payments/create_payment/
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: Basic <credentials>
+    }
+  
+    body:json: {
+      {
+        "currency": "string",
+        "amount": "string",
+        "comment": "string",
+        "provider": "733a20f4-6afe-0ced-57fb-fe5544ad4981",
+        "phone": "string",
+        "iin": "stringstring",
+        "from_iban": "string",
+        "request_uuid": "string"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Type: application/json
+    }
+  
+    status: {
+      code: 201
+      text: Created
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+          "currency": "string",
+          "amount": "string",
+          "comment": "string",
+          "provider": "733a20f4-6afe-0ced-57fb-fe5544ad4981",
+          "phone": "string",
+          "iin": "stringstring",
+          "from_iban": "string",
+          "request_uuid": "string"
+        }
+      '''
+    }
+  }
+}
